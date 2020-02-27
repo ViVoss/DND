@@ -89,10 +89,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Appearance.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="SavingThrows.cs" />
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Race.cs" />
+    <Compile Include="Skills.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
