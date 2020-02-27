@@ -89,6 +89,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CharacterSheet1.xaml.cs">
+      <DependentUpon>CharacterSheet1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClassesSelection.xaml.cs">
+      <DependentUpon>ClassesSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
     </Compile>
@@ -106,6 +112,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CharacterCreationMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CharacterSheet1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassesSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,7 +192,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Icon_Barbarian.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Bard.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Cleric.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Druid.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Fighter.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Monk.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Paladin.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Ranger.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Rogue.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Sorcerer.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Warlock.jpeg" />
+    <Resource Include="Resources\Icons\Icon_Wizard.jpeg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\CreatorMain\ArrowDown.jpg" />
     <Resource Include="Resources\CreatorMain\ArrowUp.jpg" />
@@ -196,6 +223,15 @@
     <Resource Include="Resources\Menu\Spell.png" />
     <Resource Include="Resources\Menu\Wizard.png" />
     <Resource Include="Resources\Random\maintainweb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Frame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\BarbarianIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\BarbarIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

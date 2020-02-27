@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace DND
 {
     /// <summary>
-    /// Interaktionslogik für Creation.xaml
+    /// Interaktionslogik für CharacterSheet1.xaml
     /// </summary>
-    public partial class Creation : Window
+    public partial class CharacterSheet1 : Window
     {
-        ClassesSelection classesSelection = new ClassesSelection();
-        public Creation()
+        public CharacterSheet1()
         {
             InitializeComponent();
-            Frame1.Content = classesSelection;
         }
     }
 }
