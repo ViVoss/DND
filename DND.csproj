@@ -95,6 +95,9 @@
     <Compile Include="Page_ClassSelection.xaml.cs">
       <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page_RaceSelection.xaml.cs">
+      <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SavingThrows.cs" />
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
@@ -156,6 +159,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Page_ClassSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_RaceSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,6 +232,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\BarbarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreatorMain\Banner1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Races\Dragonborn.png" />
+    <Resource Include="Resources\Races\Dwarf.png" />
+    <Resource Include="Resources\Races\Elf.png" />
+    <Resource Include="Resources\Races\Gnome.png" />
+    <Resource Include="Resources\Races\Half-Elf.png" />
+    <Resource Include="Resources\Races\Half-Orc.png" />
+    <Resource Include="Resources\Races\Halfling.png" />
+    <Resource Include="Resources\Races\Human.png" />
+    <Resource Include="Resources\Races\Tiefling.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

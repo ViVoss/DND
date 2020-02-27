@@ -7,9 +7,16 @@
         mc:Ignorable="d"
         Title="Creation" Name="CreationName" Height="800" Width="1280" ResizeMode="NoResize">
     <Grid>
-        <Grid.Background>
-            <ImageBrush x:Name="Grid_Main_Background" ImageSource="Resources\CreatorMain\PaperTexture.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <Frame Name="Frame1" Margin="0,0,0,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Frame Name="Frame1"/>
+        <DockPanel Grid.Row="1">
+            <DockPanel.Background>
+                <ImageBrush ImageSource="Resources/CreatorMain/Banner1.jpg" Stretch="UniformToFill"/>
+            </DockPanel.Background>
+            <Button Name="Btn_Continue" Margin="20" Padding="5" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Btn_Continue_Click" Content="Continue"/>
+        </DockPanel>
     </Grid>
 </Window>

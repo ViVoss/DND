@@ -20,10 +20,21 @@ namespace DND
     public partial class Creation : Window
     {
         Page_ClassSelection ClassSelectionPage1 = new Page_ClassSelection();
+        Page_RaceSelection RaceSelectionPage1 = new Page_RaceSelection();
+        bool ClassPageOpen = false;
         public Creation()
         {
             InitializeComponent();
-            Frame1.Content = ClassSelectionPage1;
+            Frame1.Content = RaceSelectionPage1;
+        }
+
+        private void Btn_Continue_Click(object sender, RoutedEventArgs e)
+        {
+            if (!ClassPageOpen)
+            {
+                Frame1.Content = ClassSelectionPage1;
+                ClassPageOpen = true;
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace DND
 
         private void Barbarian_MouseEnter(object sender, MouseEventArgs e)
         {
-            TextBox_Description.Text = "Dies is der Barbar. Er macht Smash.";
+            TextBox_Description.Text = "Dies is der Barbar. Er macht Smash.\n\nHit Die: d12\nSaving Throws: Strength, Constitution";
         }
 
         private void Barbarian_MouseLeave(object sender, MouseEventArgs e)
@@ -43,6 +43,21 @@ namespace DND
         private void Bard_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBox_Description.Clear();
+        }
+
+        private void Druid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBox_Description.Text = "Dies is der Barbar. Er macht Smash.";
+        }
+
+        private void Druid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBox_Description.Clear();
+        }
+
+        private void Druid_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
