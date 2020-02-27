@@ -43,9 +43,10 @@ namespace DND
         }
         private void Barbarian_ButtonClick(object sender, RoutedEventArgs e)
         {
+            var Creation1 = new Creation();
+            Creation1.Show();
             //Barbarian BarbarianInfoPage = new Barbarian();
-            //this.NavigationService.Navigate(BarbarianInfoPage);
-            Maintenance MaintenancePage = new Maintenance();
+            //Maintenance MaintenancePage = new Maintenance();
             //this.NavigationService.Navigate(MaintenancePage);
         }
         // Barbarian <<<

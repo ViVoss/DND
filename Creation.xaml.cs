@@ -10,24 +10,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DND
 {
     /// <summary>
-    /// Interaktionslogik für Barbarian.xaml
+    /// Interaktionslogik für Creation.xaml
     /// </summary>
-    public partial class Barbarian : Page
+    public partial class Creation : Window
     {
-        public Barbarian()
+
+        public Creation()
         {
+
             InitializeComponent();
+            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Barbarian BarbarianPage = new Barbarian();
+            Frame1.Content = BarbarianPage;
+
+        }
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            Cleric clericPage = new Cleric();
+            Frame1.Content = clericPage;
         }
     }
 }

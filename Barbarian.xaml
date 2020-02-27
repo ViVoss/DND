@@ -7,4 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Barbarian" Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="Grid_Main_Background" ImageSource="https://cdn.netzpolitik.org/wp-upload/one-does-not-meme.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="363,195,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
 </Page>
