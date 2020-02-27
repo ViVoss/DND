@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush x:Name="Grid_Main_Background" ImageSource="C:\Users\vvoss\source\repos\DND\Resources\Menu\d20drawing.png" Stretch="UniformToFill"/>
+            <ImageBrush x:Name="Grid_Main_Background" ImageSource="Resources\Menu\d20drawing.png" Stretch="UniformToFill"/>
         </Grid.Background>
     </Grid>
 </Page>
