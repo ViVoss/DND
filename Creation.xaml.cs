@@ -19,11 +19,11 @@ namespace DND
     /// </summary>
     public partial class Creation : Window
     {
-        ClassesSelection classesSelection = new ClassesSelection();
+        Page_ClassSelection ClassSelectionPage1 = new Page_ClassSelection();
         public Creation()
         {
             InitializeComponent();
-            Frame1.Content = classesSelection;
+            Frame1.Content = ClassSelectionPage1;
         }
     }
 }

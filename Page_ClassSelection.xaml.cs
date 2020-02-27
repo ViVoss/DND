@@ -18,9 +18,9 @@ namespace DND
     /// <summary>
     /// Interaktionslogik für ClassesSelection.xaml
     /// </summary>
-    public partial class ClassesSelection : Page
+    public partial class Page_ClassSelection : Page
     {
-        public ClassesSelection()
+        public Page_ClassSelection()
         {
             InitializeComponent();
         }
