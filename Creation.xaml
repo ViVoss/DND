@@ -8,7 +8,7 @@
         Title="Creation" Name="CreationName" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush x:Name="Grid_Main_Background" ImageSource="C:\Users\vvoss\source\repos\DND\Resources\Random\maintainweb.jpg" Stretch="UniformToFill"/>
+            <ImageBrush x:Name="Grid_Main_Background" ImageSource="Resources\Random\maintainweb.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="Button2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,50,0,0" Click="Button2_Click"/>
