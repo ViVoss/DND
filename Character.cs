@@ -20,6 +20,7 @@ namespace DND
         public String PlayerName { get; set; }
         public String Background { get; set; }
         public String Race { get; set; }
+        public String SubRace { get; set; }
         public UInt64 ExperiencePoints { get; set; }
         public UInt16 Age { get; set; }
         public String Faction { get; set; }

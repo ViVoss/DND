@@ -4,9 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND"
-      mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1280"
-      Title="Page_RaceSelection">
+      mc:Ignorable="d"
+      d:DesignHeight="800" d:DesignWidth="1280" Name="RaceSelection" Title="Page_RaceSelection">
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
@@ -167,7 +166,7 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <TextBox Name="TextBox_Description" TextWrapping="Wrap" Grid.Column="1" Margin="10" Background="Transparent" BorderThickness="0" FontSize="10"/>
+            <TextBox Name="TextBox_Description" TextWrapping="Wrap" Grid.Column="1" Margin="10" IsReadOnly="True" Background="Transparent" BorderThickness="0" FontSize="10"/>
         </Grid>
     </Grid>
 </Page>
