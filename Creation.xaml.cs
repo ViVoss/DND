@@ -22,13 +22,15 @@ namespace DND
         Page_ClassSelection ClassSelectionPage1 = new Page_ClassSelection();
         Page_RaceSelection RaceSelectionPage1 = new Page_RaceSelection();
         bool ClassPageOpen = false;
+
+        
         
 
         public Creation()
         {
             InitializeComponent();
             Frame1.Content = RaceSelectionPage1;
-
+   
 
         }
 

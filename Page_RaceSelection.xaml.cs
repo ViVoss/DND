@@ -65,5 +65,10 @@ namespace DND
             return dwarfTraits;
         }
 
+        private void Dwarf_Click(object sender, RoutedEventArgs e)
+        {
+            ((Creation)Window.GetWindow(this)).Textbox_Creation_Race.Text = ((Button) sender).Tag.ToString();
+        }
+
     }
 }

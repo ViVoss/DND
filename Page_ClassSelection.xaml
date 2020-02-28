@@ -48,7 +48,7 @@
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/BarbarIcon.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources/Icons/Icon_Barbarian.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Barbarian"/>

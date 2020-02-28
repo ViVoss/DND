@@ -40,7 +40,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="Dwarf" Grid.Column="0" Grid.Row="0" MouseEnter="Dwarf_MouseEnter" MouseLeave="Dwarf_MouseLeave" ToolTip="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal." ToolTipService.InitialShowDelay="800">
+                <Button Name="Dwarf" Tag="DwarfBOI" Grid.Column="0" Grid.Row="0" MouseEnter="Dwarf_MouseEnter" MouseLeave="Dwarf_MouseLeave" Click="Dwarf_Click" ToolTip="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal." ToolTipService.InitialShowDelay="800">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -111,7 +111,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="Gnome" Grid.Column="2" Grid.Row="1">
+                <Button Name="Gnome" Grid.Column="2" Grid.Row="1" Click="Dwarf_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>

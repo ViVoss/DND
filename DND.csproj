@@ -113,6 +113,9 @@
     <Compile Include="Rogue.xaml.cs">
       <DependentUpon>Rogue.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Window_SubraceSelection.xaml.cs">
+      <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
+    </Compile>
     <Page Include="Barbarian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Rogue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_SubraceSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,9 +236,6 @@
     <Resource Include="Resources\Menu\Spell.png" />
     <Resource Include="Resources\Menu\Wizard.png" />
     <Resource Include="Resources\Random\maintainweb.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Icons\BarbarIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\CreatorMain\Banner1.jpg" />
