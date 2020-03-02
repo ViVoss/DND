@@ -67,7 +67,8 @@ namespace DND
 
         private void Dwarf_Click(object sender, RoutedEventArgs e)
         {
-            ((Creation)Window.GetWindow(this)).Textbox_Creation_Race.Text = ((Button) sender).Tag.ToString();
+            Window_SubraceSelection subra = new Window_SubraceSelection();
+            subra.ShowDialog();
         }
 
     }

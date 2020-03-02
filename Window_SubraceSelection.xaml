@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d"
-        Title="Window_SubraceSelection" Height="450" Width="800">
+        Title="Window_SubraceSelection" Height="450" Width="350">
     <!-- 
     Dwarf 2
     Elf 3
@@ -19,6 +19,6 @@
     
     -->
     <Grid>
-        <Frame/>
+        <Frame Name="Frame_SubraceSelection" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

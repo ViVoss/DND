@@ -19,9 +19,11 @@ namespace DND
     /// </summary>
     public partial class Window_SubraceSelection : Window
     {
+        Page_Subrace_Dwarf PageSubraceDwarf = new Page_Subrace_Dwarf();
         public Window_SubraceSelection()
         {
             InitializeComponent();
+            Frame_SubraceSelection.Content = PageSubraceDwarf;
         }
     }
 }

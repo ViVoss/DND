@@ -98,6 +98,9 @@
     <Compile Include="Page_RaceSelection.xaml.cs">
       <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page_Subrace_Dwarf.xaml.cs">
+      <DependentUpon>Page_Subrace_Dwarf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SavingThrows.cs" />
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page_RaceSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_Subrace_Dwarf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,6 +257,15 @@
     <Resource Include="Resources\Races\Halfling.png" />
     <Resource Include="Resources\Races\Human.png" />
     <Resource Include="Resources\Races\Tiefling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Random\Mountain.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Random\Hill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreatorMain\PaperTexture2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
