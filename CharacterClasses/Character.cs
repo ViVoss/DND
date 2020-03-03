@@ -12,6 +12,9 @@ namespace DND
         public Attributes Attributes { get; set; }
         public Appearance Appearance { get; set; }
         public Skills Skills { get; set; }
+        public TradeList TradeList { get; set; }
+        public Inventory Inventory { get; set; }
+        public SpellList SpellList { get; set; }
 
         //Eigenschaften
         public String CharacterName { get; set; }
@@ -32,6 +35,9 @@ namespace DND
             Attributes = new Attributes(this);
             Appearance = new Appearance();
             Skills = new Skills(this);
+            TradeList = new TradeList();
+            Inventory = new Inventory();
+            SpellList = new SpellList();
         }
     }
 }
