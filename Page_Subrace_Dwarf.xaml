@@ -16,9 +16,9 @@
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="175"/>
         </Grid.ColumnDefinitions>
-        <Button Click="Button_Click_HillDwarf">
+        <Button Click="Button_Click_HillDwarf" Tag="Hill Dwarf">
             <StackPanel Grid.Column="0">
-                <Label Name="Label_HillDwarf" Content="Hill Dwarf" HorizontalAlignment="Center"/>
+                <Label Name="Label_HillDwarf" Content="Hill Dwarf" HorizontalAlignment="Center" />
                 <Viewbox Margin="20" HorizontalAlignment="Center" Width="135" Height="80">
                     <Image Source="Resources/Random/Hill.jpg" Stretch="Fill"/>
                 </Viewbox>

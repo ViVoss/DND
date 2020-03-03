@@ -101,6 +101,9 @@
     <Compile Include="Page_Subrace_Dwarf.xaml.cs">
       <DependentUpon>Page_Subrace_Dwarf.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page_Subrace_Elf.xaml.cs">
+      <DependentUpon>Page_Subrace_Elf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SavingThrows.cs" />
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
@@ -173,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page_Subrace_Dwarf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_Subrace_Elf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

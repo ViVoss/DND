@@ -9,6 +9,9 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
+            <EventSetter Event="Click" Handler="Button_Race_Click"/>
+            <EventSetter Event="MouseEnter" Handler="Button_Race_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="Button_Race_MouseLeave"/>
             <!--Padding="5,5,5,5" Margin="10"-->
         </Style>
         <Style TargetType="TextBlock">
@@ -40,7 +43,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="Dwarf" Tag="DwarfBOI" Grid.Column="0" Grid.Row="0" MouseEnter="Dwarf_MouseEnter" MouseLeave="Dwarf_MouseLeave" Click="Dwarf_Click" ToolTip="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal." ToolTipService.InitialShowDelay="800">
+                <Button Name="Dwarf" Tag="Dwarf" Grid.Column="0" Grid.Row="0" ToolTip="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal." ToolTipService.InitialShowDelay="800">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -54,7 +57,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="Elf" Grid.Column="1" Grid.Row="0" MouseEnter="Elf_MouseEnter" MouseLeave="Elf_MouseLeave" ToolTip="Elves are a magical people of otherworldly grace, living in the world but not entirely part of it." ToolTipService.InitialShowDelay="800">
+                <Button Name="Elf" Tag="Elf" Grid.Column="1" Grid.Row="0" ToolTip="Elves are a magical people of otherworldly grace, living in the world but not entirely part of it." ToolTipService.InitialShowDelay="800">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -68,7 +71,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="Halfling" Grid.Column="2" Grid.Row="0">
+                <Button Name="Halfling" Tag="Halfling" Grid.Column="2" Grid.Row="0">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -82,7 +85,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="Human" Grid.Column="0" Grid.Row="1" MouseEnter="Human_MouseEnter" MouseLeave="Human_MouseLeave" Click="Human_Click">
+                <Button Name="Human" Grid.Column="0" Grid.Row="1" >
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -95,8 +98,6 @@
                         </Viewbox>
                     </StackPanel>
                 </Button>
-
-
                 <Button Name="Dragonborn" Grid.Column="1" Grid.Row="1">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
@@ -148,7 +149,7 @@
                             <Image Source="Resources/Races/Half-Elf.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
-                            <TextBlock VerticalAlignment="Bottom" Text="Ranger"/>
+                            <TextBlock VerticalAlignment="Bottom" Text="Half-Elf"/>
                         </Viewbox>
                     </StackPanel>
                 </Button>

@@ -25,6 +25,20 @@ namespace DND
             InitializeComponent();
         }
 
+        private void Button_Race_Click(object sender, RoutedEventArgs e)
+        {
+            string currRace = ((Button)sender).Tag.ToString();
+            Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)), currRace);
+            subra.ShowDialog();
+        }
+        private void Button_Race_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+        private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
         private void Dwarf_MouseEnter(object sender, MouseEventArgs e)
         {
             TextBox_Description.Text = getTestString_Dwarf();
@@ -32,7 +46,7 @@ namespace DND
 
         private void Dwarf_MouseLeave(object sender, MouseEventArgs e)
         {
-            TextBox_Description.Clear();
+            //TextBox_Description.Clear();
         }
         private void Elf_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -67,9 +81,18 @@ namespace DND
 
         private void Dwarf_Click(object sender, RoutedEventArgs e)
         {
-            Window_SubraceSelection subra = new Window_SubraceSelection();
-            subra.ShowDialog();
+            //Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)));
+            //subra.ShowDialog();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

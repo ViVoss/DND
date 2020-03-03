@@ -20,18 +20,24 @@ namespace DND
     /// </summary>
     public partial class Page_Subrace_Dwarf : Page
     {
-        public Page_Subrace_Dwarf()
+
+        public Creation Creation { get; set; }
+
+        public Page_Subrace_Dwarf(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
 
         private void Button_Click_HillDwarf(object sender, RoutedEventArgs e)
         {
-            ((Creation)Window.GetWindow(this)).Textbox_Creation_Race.Text = ((Button)sender).Tag.ToString();
+            this.Creation.Textbox_Creation_Race.Text = ((Button)sender).Tag.ToString();
+            ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
 
         private void Button_Click_MountainDwarf (object sender, RoutedEventArgs e)
         {
+
             ((Creation)Window.GetWindow(this)).Textbox_Creation_Race.Text = ((Button)sender).Tag.ToString();
         }
     }
