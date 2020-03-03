@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace DND
 {
     /// <summary>
@@ -28,17 +29,11 @@ namespace DND
             this.Creation = CreationWindow;
             InitializeComponent();
         }
-
-        private void Button_Click_HillDwarf(object sender, RoutedEventArgs e)
+        private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {
             this.Creation.Textbox_Creation_Race.Text = ((Button)sender).Tag.ToString();
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
 
-        private void Button_Click_MountainDwarf (object sender, RoutedEventArgs e)
-        {
-
-            ((Creation)Window.GetWindow(this)).Textbox_Creation_Race.Text = ((Button)sender).Tag.ToString();
-        }
     }
 }

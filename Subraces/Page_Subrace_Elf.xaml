@@ -1,0 +1,98 @@
+﻿<Page x:Class="DND.Page_Subrace_Elf"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DND"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="525"
+      Title="Page_Subrace_Elf">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <EventSetter Event="Click" Handler="Button_Click"/>
+            <!--<EventSetter Event="MouseEnter" Handler="Button_Subrace_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="Button_Subrace_MouseLeave"/>-->
+            <!--Padding="5,5,5,5" Margin="10"-->
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+    </Page.Resources>
+    <Grid Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/General/PaperTexture.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="175"/>
+        </Grid.ColumnDefinitions>
+        <Button Tag="High Elf">
+            <StackPanel VerticalAlignment="Top">
+                <Label Name="Label_HighElf" Content="High Elf"/>
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                    <Image Source="Resources/SubraceIcons/HighElf.jpg" Stretch="Fill"/>
+                </Viewbox>
+                <TextBlock Name="TextBlock_HighElf">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                    </TextBlock.Background>
+                As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.
+                Ability Score Increase
+                Your Wisdom score increases by 1.
+                Dwarven Toughness
+                Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+                </TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1">
+            <StackPanel>
+                <Label Name="Label_WoodElf" Content="Wood Elf"/>
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                    <Image Source="Resources/SubraceIcons/Wood.jpg" Stretch="Fill"/>
+                </Viewbox>
+                <TextBlock Name="TextBlock_WoodElf">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                    </TextBlock.Background>
+                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
+                Ability Score Increase
+                Your Strength score increases by 2.
+                Dwarven Armor Training
+                You have proficiency with light and medium armor.
+                </TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="2">
+            <StackPanel>
+                <Label Name="Label_Drow" Content="Drow"/>
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                    <Image Source="Resources/SubraceIcons/Drow.jpg" Stretch="Fill"/>
+                </Viewbox>
+                <TextBlock Name="TextBlock_Drow">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                    </TextBlock.Background>
+                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
+                Ability Score Increase
+                Your Strength score increases by 2.
+                Dwarven Armor Training
+                You have proficiency with light and medium armor.
+                </TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

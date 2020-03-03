@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DND.Subraces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,27 +35,28 @@ namespace DND
                     break;
                 case "Elf":
                     test = new Page_Subrace_Elf();
+                    this.Width = 540;
                     break;
                 case "Halfling":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_Halfling();
                     break;
                 case "Human":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_Human();
                     break;
                 case "Dragonborn":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_Dragonborn();
                     break;
                 case "Half-Elf":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_HalfElf();
                     break;
                 case "Half-Orc":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_HalfOrc();
                     break;
                 case "Tiefling":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_Tiefling();
                     break;
                 case "Gnome":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_Gnome();
                     break;
                 default:
                     break;

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DND
+namespace DND.Subraces
 {
     /// <summary>
-    /// Interaktionslogik für Page_Subrace_Elf.xaml
+    /// Interaktionslogik für Page_Subrace_HalfElf.xaml
     /// </summary>
-    public partial class Page_Subrace_Elf : Page
+    public partial class Page_Subrace_HalfElf : Page
     {
-        public Page_Subrace_Elf()
+        public Page_Subrace_HalfElf()
         {
             InitializeComponent();
         }
