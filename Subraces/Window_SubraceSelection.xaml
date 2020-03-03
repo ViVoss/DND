@@ -1,0 +1,24 @@
+﻿<Window x:Class="DND.Window_SubraceSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DND"
+        mc:Ignorable="d"
+        Title="Window_SubraceSelection" Height="450" Width="365" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <!-- 
+    Dwarf 2
+    Elf 3
+    Halfling 2
+    Human 9 - Faces with diff. Complexity
+    Dragonborn 10 - Scales in diff. Color ?
+    Gnome 2
+    Half-Elf 0
+    Half-Orc 0
+    Tiefling 0
+    
+    -->
+    <Grid>
+        <Frame Name="Frame_SubraceSelection" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

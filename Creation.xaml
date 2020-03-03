@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d"
-        Title="Creation" Name="CreationName" Height="450" Width="800">
+        Title="Creation" Name="CreationName" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.Background>
-            <ImageBrush x:Name="Grid_Main_Background" ImageSource="Resources\Random\maintainweb.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Button2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,50,0,0" Click="Button2_Click"/>
-
-        <Frame Name="Frame1" Margin="100,0,0,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Frame Name="Frame1" NavigationUIVisibility="Hidden"/>
+        <DockPanel Grid.Row="1">
+            <DockPanel.Background>
+                <ImageBrush ImageSource="Resources/CreatorMain/Banner1.jpg" Stretch="UniformToFill"/>
+            </DockPanel.Background>
+            <Button Name="Btn_Continue" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Continue_Click" Content="Continue"/>
+            <Button Name="Btn_Back" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Back_Click" Content="Back"/>
+        </DockPanel>
+        <TextBox TextWrapping="Wrap" Grid.Row="1" Name="Textbox_Creation_Race" Margin="10" HorizontalAlignment="Left" Width="150" IsReadOnly="True"/>
     </Grid>
 </Window>

@@ -19,25 +19,37 @@ namespace DND
     /// </summary>
     public partial class Creation : Window
     {
+        Page_ClassSelection ClassSelectionPage1 = new Page_ClassSelection();
+        Page_RaceSelection RaceSelectionPage1 = new Page_RaceSelection();
+        bool ClassPageOpen = false;
+
+        
+        
 
         public Creation()
         {
-
             InitializeComponent();
-            
+            Frame1.Content = RaceSelectionPage1;
+   
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_Continue_Click(object sender, RoutedEventArgs e)
         {
-            Barbarian BarbarianPage = new Barbarian();
-            Frame1.Content = BarbarianPage;
-
+            if (!ClassPageOpen)
+            {
+                Frame1.Content = ClassSelectionPage1;
+                ClassPageOpen = true;
+                
+            }
         }
-        private void Button2_Click(object sender, RoutedEventArgs e)
+
+        private void Btn_Back_Click(object sender, RoutedEventArgs e)
         {
-            Cleric clericPage = new Cleric();
-            Frame1.Content = clericPage;
+            //Frame1.Content = null;
+            Frame1.Content = RaceSelectionPage1;
+
+            ClassPageOpen = false;
         }
     }
 }
