@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 
 namespace DND
 {
@@ -20,10 +22,46 @@ namespace DND
     /// </summary>
     public partial class Page_RaceSelection : Page
     {
+        public string information = "";
+
         public Page_RaceSelection()
         {
             InitializeComponent();
+            
         }
+
+        public static async Task<string> GetRaceInformation()
+            {
+                string baseUrl = "http://dnd5eapi.co/api/races/dwarf";
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        using (HttpResponseMessage res = await client.GetAsync(baseUrl))
+                        {
+                            using (HttpContent content = res.Content)
+                            {
+                            var data = await content.ReadAsStringAsync();
+                            if(data != null)
+                            {
+                                return data;
+                            }
+                            else
+                            {
+                                return data;                                
+                            }
+                            }
+                        }
+
+}
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine("Exception Found ----- {0}", exception);
+                return null;
+                }
+            }
+
 
         private void Button_Race_Click(object sender, RoutedEventArgs e)
         {
@@ -31,17 +69,21 @@ namespace DND
             Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)), currRace);
             subra.ShowDialog();
         }
-        private void Button_Race_MouseEnter(object sender, MouseEventArgs e)
+        private async void Button_Race_MouseEnter(object sender, MouseEventArgs e)
         {
-
+           //TextBox_Description.Text = await GetRaceInformation();
+            string infor = await GetRaceInformation().ConfigureAwait(false);
+            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(infor);
+            var f = Newtonsoft.Json.JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented);
+            TextBox_Description.Text = Convert.ToString(f);
         }
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
         {
 
         }
-        private void Dwarf_MouseEnter(object sender, MouseEventArgs e)
+        private async void Dwarf_MouseEnter(object sender, MouseEventArgs e)
         {
-            TextBox_Description.Text = getTestString_Dwarf();
+           
         }
 
         private void Dwarf_MouseLeave(object sender, MouseEventArgs e)
