@@ -126,7 +126,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="HalfOrc" Tag="half-orc" Grid.Column="0" Grid.Row="2" Click="HalfOrc_Click">
+                <Button Name="HalfOrc" Tag="half-orc" Grid.Column="0" Grid.Row="2">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -140,7 +140,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="HalfElf" Tag="half-elf" Grid.Column="1" Grid.Row="2" Click="HalfElf_Click">
+                <Button Name="HalfElf" Tag="half-elf" Grid.Column="1" Grid.Row="2">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -153,7 +153,7 @@
                         </Viewbox>
                     </StackPanel>
                 </Button>
-                <Button Name="Tiefling" Tag="tiefling" Grid.Column="2" Grid.Row="2" Click="Tiefling_Click">
+                <Button Name="Tiefling" Tag="tiefling" Grid.Column="2" Grid.Row="2">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
