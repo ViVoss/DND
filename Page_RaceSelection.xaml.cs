@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Newtonsoft.Json.Linq;
-using System.Net.Http;
 
 namespace DND
 {
@@ -22,46 +13,62 @@ namespace DND
     /// </summary>
     public partial class Page_RaceSelection : Page
     {
+        public string race = "";
         public string information = "";
+
+
 
         public Page_RaceSelection()
         {
             InitializeComponent();
-            
+
         }
 
-        public static async Task<string> GetRaceInformation()
+        public static async Task<string> GetRaceInformation(string race)
+        {
+            
+                
+            string baseUrl = "http://dnd5eapi.co/api/races/rasse";
+            baseUrl = baseUrl.Replace("rasse", race);
+            try
             {
-                string baseUrl = "http://dnd5eapi.co/api/races/dwarf";
-                try
+                using (HttpClient client = new HttpClient())
                 {
-                    using (HttpClient client = new HttpClient())
+                    using (HttpResponseMessage res = await client.GetAsync(baseUrl))
                     {
-                        using (HttpResponseMessage res = await client.GetAsync(baseUrl))
+                        using (HttpContent content = res.Content)
                         {
-                            using (HttpContent content = res.Content)
-                            {
                             var data = await content.ReadAsStringAsync();
-                            if(data != null)
+                            if (data != null)
                             {
                                 return data;
                             }
                             else
                             {
-                                return data;                                
-                            }
+                                return data;
                             }
                         }
+                    }
 
-}
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine("Exception Found ----- {0}", exception);
-                return null;
                 }
             }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Exception Found ----- {0}", exception);
+                return null;
+            }
+        }
 
+        public async Task<string> fetchAPI(string race)
+        {
+            var infor = await GetRaceInformation(race).ConfigureAwait(false);
+            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(infor);
+            var fetchdata = Newtonsoft.Json.JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented);
+            Regex.Unescape(fetchdata);
+            fetchdata = fetchdata.Replace("[", "").Replace("]", "").Replace("\"", "").Replace("{", "").Replace("}", "").Replace(":", "").Replace(",", "");
+            fetchdata = Regex.Replace(fetchdata, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+            return fetchdata;
+        }
 
         private void Button_Race_Click(object sender, RoutedEventArgs e)
         {
@@ -71,19 +78,18 @@ namespace DND
         }
         private async void Button_Race_MouseEnter(object sender, MouseEventArgs e)
         {
-           //TextBox_Description.Text = await GetRaceInformation();
-            string infor = await GetRaceInformation().ConfigureAwait(false);
-            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(infor);
-            var f = Newtonsoft.Json.JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented);
-            TextBox_Description.Text = Convert.ToString(f);
+            string race = ((Button)sender).Tag.ToString();
+            string fetchdata = await fetchAPI(race);
+            TextBox_Description.Text = fetchdata.ToString();
+            //TextBox_Description.Text = await GetRaceInformation();            
         }
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
         {
 
         }
-        private async void Dwarf_MouseEnter(object sender, MouseEventArgs e)
+        private void Dwarf_MouseEnter(object sender, MouseEventArgs e)
         {
-           
+
         }
 
         private void Dwarf_MouseLeave(object sender, MouseEventArgs e)
