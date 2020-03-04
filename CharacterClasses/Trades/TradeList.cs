@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DND
 {
-    enum Race
+    class TradeList
     {
-
-        
+        //Eigenschaften
+        public List<Trade> Trades { get; set; } = new List<Trade>();
     }
 }
