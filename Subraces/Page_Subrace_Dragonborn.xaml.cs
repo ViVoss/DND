@@ -43,5 +43,19 @@ namespace DND.Subraces
             public string BreathWeapon { get; set; }
             //public int Completion { get; set; }
         }
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Listview_DraconicAncenstry.SelectedIndex = Convert.ToInt32(((Image)sender).Tag.ToString());
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Listview_DraconicAncenstry.SelectedIndex = Convert.ToInt32(((Image)sender).Tag.ToString());
+        }
+
+        private void Button_Select_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

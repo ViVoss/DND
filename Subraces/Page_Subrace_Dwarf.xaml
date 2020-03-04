@@ -43,7 +43,7 @@
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HillDwarf" Content="Hill Dwarf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Hill.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_HillDwarf">
                     <TextBlock.Background>
@@ -61,7 +61,7 @@
             <StackPanel>
             <Label Name="Label_MountainDwarf" Content="Mountain Dwarf"/>
             <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                <Image Source="Resources/SubraceIcons/Mountain.jpeg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
             </Viewbox>
             <TextBlock Name="TextBlock_MountainDwarf">
                 <TextBlock.Background>

@@ -5,27 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND.Subraces"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="365"
+      d:DesignHeight="460" d:DesignWidth="365"
       Title="Page_Subrace_Dragonborn">
-
+    <Page.Resources>
+        <Style TargetType="Image">
+            <EventSetter Event="MouseEnter" Handler="Image_MouseEnter"/>
+            <EventSetter Event="MouseDown" Handler="Image_MouseDown"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="Resources/General/PaperTexture.jpg"/>
         </Grid.Background>
-        <Label Name="Label_Dragonborn" Content="Dragonborn"/>
-        <TextBlock Name="TextBlock_DraconicAncestry"/>
-        <ListView Name="Listview_DraconicAncenstry" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="10">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Dragon" DisplayMemberBinding="{Binding Dragon}" Width="80"/>
-                    <GridViewColumn Header="Damage Type" DisplayMemberBinding="{Binding DamageType}" Width="80"/>
-                    <GridViewColumn Header="Breath Weapon" DisplayMemberBinding="{Binding BreathWeapon}" Width="170"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <StackPanel>
+            <Label Name="Label_Dragonborn" Content="Dragonborn" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold"/>
+            <TextBlock Name="TextBlock_DraconicAncestry" Margin="20,5,20,5" TextWrapping="Wrap" Text="You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table."/>
+            <DockPanel Margin="20,0,20,0">
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="0"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="1"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="2"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="3"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="4"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="5"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="6"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="7"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="8"/>
+                <Image Source="Resources/SubraceIcons/Dragon_Scale.png" Width="31" Tag="9"/>
+            </DockPanel>
+            <ListView Name="Listview_DraconicAncenstry" Margin="10" Background="Transparent" BorderThickness="0" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Dragon" DisplayMemberBinding="{Binding Dragon}" Width="75"/>
+                        <GridViewColumn Header="Damage Type" DisplayMemberBinding="{Binding DamageType}" Width="75"/>
+                        <GridViewColumn Header="Breath Weapon" DisplayMemberBinding="{Binding BreathWeapon}" Width="170"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Name="Button_Select" Content="Select" Margin="5" Padding="5,2,5,2" Click="Button_Select_Click" HorizontalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Page>

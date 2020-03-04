@@ -66,22 +66,33 @@ namespace DND
         private void Button_Race_Click(object sender, RoutedEventArgs e)
         {
             string currRace = ((Button)sender).Tag.ToString();
-            Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)), currRace);
-            subra.ShowDialog();
+            switch (currRace)
+            {
+                case "tiefling":
+                    break;
+                case "half-elf":
+                    break;
+                case "half-orc":
+                    break;
+                default:
+                    Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)), currRace);
+                    subra.ShowDialog();
+                    break;
+            }
         }
-        private async void Button_Race_MouseEnter(object sender, MouseEventArgs e)
-        {
+       private async void Button_Race_MouseEnter(object sender, MouseEventArgs e)
+        {/*
            //TextBox_Description.Text = await GetRaceInformation();
             string infor = await GetRaceInformation().ConfigureAwait(false);
             var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(infor);
             var f = Newtonsoft.Json.JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented);
             TextBox_Description.Text = Convert.ToString(f);
-        }
+        */}
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
         {
 
         }
-        private async void Dwarf_MouseEnter(object sender, MouseEventArgs e)
+        private void Dwarf_MouseEnter(object sender, MouseEventArgs e)
         {
            
         }
@@ -133,6 +144,21 @@ namespace DND
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HalfOrc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HalfElf_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tiefling_Click(object sender, RoutedEventArgs e)
         {
 
         }

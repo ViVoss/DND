@@ -30,32 +30,24 @@ namespace DND
             Page test = null;
             switch (currRace)
             {
-                case "Dwarf":
+                case "dwarf":
                     test = new Page_Subrace_Dwarf(Creation);
                     break;
-                case "Elf":
+                case "elf":
                     test = new Page_Subrace_Elf();
                     this.Width = 540;
                     break;
-                case "Halfling":
+                case "halfling":
                     test = new Page_Subrace_Halfling();
                     break;
-                case "Human":
+                case "human":
                     test = new Page_Subrace_Human();
                     break;
-                case "Dragonborn":
+                case "dragonborn":
                     test = new Page_Subrace_Dragonborn();
+                    this.Height = 460;
                     break;
-                case "Half-Elf":
-                    test = new Page_Subrace_HalfElf();
-                    break;
-                case "Half-Orc":
-                    test = new Page_Subrace_HalfOrc();
-                    break;
-                case "Tiefling":
-                    test = new Page_Subrace_Tiefling();
-                    break;
-                case "Gnome":
+                case "gnome":
                     test = new Page_Subrace_Gnome();
                     break;
                 default:

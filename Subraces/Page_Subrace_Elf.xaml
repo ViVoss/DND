@@ -44,20 +44,13 @@
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HighElf" Content="High Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/HighElf.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_HighElf">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Ability Score Increase
-Your Intelligence score increases by 1.
-Elf Weapon Training
-You have proficiency with the longsword, shortsword, shortbow, and longbow.
-Cantrip
-You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.
-Extra Language
-You can speak, read, and write one extra language of your choice.
+High
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -65,20 +58,13 @@ You can speak, read, and write one extra language of your choice.
             <StackPanel>
                 <Label Name="Label_WoodElf" Content="Wood Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Wood.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_WoodElf">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Ability Score Increase
-Your Wisdom score increases by 1.
-Elf Weapon Training
-You have proficiency with the longsword, shortsword, shortbow, and longbow.
-Fleet of Foot
-Your base walking speed increases to 35 feet.
-Mask of the Wild
-You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.
+Wood
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -86,19 +72,13 @@ You can attempt to hide even when you are only lightly obscured by foliage, heav
             <StackPanel>
                 <Label Name="Label_Drow" Content="Drow"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Drow.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_Drow">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Ability Score Increase
-Your Charisma score increases by 1.
-Drow Elf
-An Drow can choose one skill or tool proficiency. Your proficiency bonus is doubled for any ability check you make that uses this chosen proficiency.
-Cantrip
-Extra Language
-You can speak, read, and write one extra language of your choice.
+Drow
                 </TextBlock>
             </StackPanel>
         </Button>

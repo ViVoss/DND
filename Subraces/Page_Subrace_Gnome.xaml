@@ -43,7 +43,7 @@
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_RockGnome" Content="Rock Gnome"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Rock.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_RockGnome">
                     <TextBlock.Background>
@@ -57,7 +57,7 @@ Rock
             <StackPanel>
                 <Label Name="Label_ForestGnome" Content="Forest Gnome"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Forest.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_ForestGnome">
                     <TextBlock.Background>
