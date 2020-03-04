@@ -98,7 +98,7 @@
                         </Viewbox>
                     </StackPanel>
                 </Button>
-                <Button Name="Dragonborn" Grid.Column="1" Grid.Row="1">
+                <Button Name="Dragonborn" Grid.Column="1" Grid.Row="1" Tag="Dragonborn">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
@@ -112,7 +112,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="Gnome" Grid.Column="2" Grid.Row="1" Click="Dwarf_Click">
+                <Button Name="Gnome" Grid.Column="2" Grid.Row="1">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
                     </Button.Background>

@@ -5,10 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND.Subraces"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="365"
       Title="Page_Subrace_Dragonborn">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/General/PaperTexture.jpg"/>
+        </Grid.Background>
+        <Label Name="Label_Dragonborn" Content="Dragonborn"/>
+        <TextBlock Name="TextBlock_DraconicAncestry"/>
+        <ListView Name="Listview_DraconicAncenstry" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Dragon" DisplayMemberBinding="{Binding Dragon}" Width="80"/>
+                    <GridViewColumn Header="Damage Type" DisplayMemberBinding="{Binding DamageType}" Width="80"/>
+                    <GridViewColumn Header="Breath Weapon" DisplayMemberBinding="{Binding BreathWeapon}" Width="170"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

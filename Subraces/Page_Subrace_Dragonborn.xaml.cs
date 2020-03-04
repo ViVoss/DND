@@ -20,9 +20,28 @@ namespace DND.Subraces
     /// </summary>
     public partial class Page_Subrace_Dragonborn : Page
     {
+        List<DraconicAncestry> DraconicAncestryList = new List<DraconicAncestry>();
         public Page_Subrace_Dragonborn()
         {
             InitializeComponent();
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Black", DamageType = "Acid", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Blue", DamageType = "Lightning", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Brass", DamageType = "Fire", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Bronze", DamageType = "Lightning", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Copper", DamageType = "Acid", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Gold", DamageType = "Fire", BreathWeapon = "15 ft. cone (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Green", DamageType = "Poison", BreathWeapon = "15 ft. cone (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Red", DamageType = "Fire", BreathWeapon = "15 ft. cone (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Silver", DamageType = "Cold", BreathWeapon = "15 ft. cone (Dex. save)" });
+            DraconicAncestryList.Add(new DraconicAncestry { Dragon = "White", DamageType = "Cold", BreathWeapon = "15 ft. cone (Dex. save)" });
+            Listview_DraconicAncenstry.ItemsSource = DraconicAncestryList;
+        }
+        public class DraconicAncestry
+        {
+            public string Dragon { get; set; }
+            public string DamageType { get; set; }
+            public string BreathWeapon { get; set; }
+            //public int Completion { get; set; }
         }
     }
 }

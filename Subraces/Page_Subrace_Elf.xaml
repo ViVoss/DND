@@ -50,11 +50,14 @@
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.
-                Ability Score Increase
-                Your Wisdom score increases by 1.
-                Dwarven Toughness
-                Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+Ability Score Increase
+Your Intelligence score increases by 1.
+Elf Weapon Training
+You have proficiency with the longsword, shortsword, shortbow, and longbow.
+Cantrip
+You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.
+Extra Language
+You can speak, read, and write one extra language of your choice.
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -68,11 +71,14 @@
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
-                Ability Score Increase
-                Your Strength score increases by 2.
-                Dwarven Armor Training
-                You have proficiency with light and medium armor.
+Ability Score Increase
+Your Wisdom score increases by 1.
+Elf Weapon Training
+You have proficiency with the longsword, shortsword, shortbow, and longbow.
+Fleet of Foot
+Your base walking speed increases to 35 feet.
+Mask of the Wild
+You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -86,13 +92,16 @@
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
-                Ability Score Increase
-                Your Strength score increases by 2.
-                Dwarven Armor Training
-                You have proficiency with light and medium armor.
+Ability Score Increase
+Your Charisma score increases by 1.
+Drow Elf
+An Drow can choose one skill or tool proficiency. Your proficiency bonus is doubled for any ability check you make that uses this chosen proficiency.
+Cantrip
+Extra Language
+You can speak, read, and write one extra language of your choice.
                 </TextBlock>
             </StackPanel>
         </Button>
     </Grid>
 </Page>
+    
