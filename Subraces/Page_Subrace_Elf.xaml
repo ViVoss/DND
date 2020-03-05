@@ -44,17 +44,13 @@
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HighElf" Content="High Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/HighElf.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_HighElf">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.
-                Ability Score Increase
-                Your Wisdom score increases by 1.
-                Dwarven Toughness
-                Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+High
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -62,17 +58,13 @@
             <StackPanel>
                 <Label Name="Label_WoodElf" Content="Wood Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Wood.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_WoodElf">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
-                Ability Score Increase
-                Your Strength score increases by 2.
-                Dwarven Armor Training
-                You have proficiency with light and medium armor.
+Wood
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -80,19 +72,16 @@
             <StackPanel>
                 <Label Name="Label_Drow" Content="Drow"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/Drow.jpg" Stretch="Fill"/>
+                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_Drow">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
-                Ability Score Increase
-                Your Strength score increases by 2.
-                Dwarven Armor Training
-                You have proficiency with light and medium armor.
+Drow
                 </TextBlock>
             </StackPanel>
         </Button>
     </Grid>
 </Page>
+    
