@@ -8,10 +8,19 @@ namespace DND
 {
     class Attributes
     {
+
         //Verweise
         public Character Character { get; set; }
 
+        //Konstruktor
+        public Attributes(Character character)
+        {
+            this.Character = character;
+        }
+
         //Eigenschaften
+        public static readonly List<UInt16> AttributeValues = new List<UInt16>() { 15, 14, 13, 12, 10, 8 };
+
         public UInt16 Strength { get; set; }
         public Int16 StrengthModifier
         {
@@ -142,12 +151,6 @@ namespace DND
                 default:
                     return Int16.MinValue;
             }
-        }
-
-        //Konstruktor
-        public Attributes(Character character)
-        {
-            this.Character = character;
         }
     }
 }

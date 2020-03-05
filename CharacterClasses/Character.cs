@@ -14,8 +14,20 @@ namespace DND
         public Skills Skills { get; set; }
         public SavingThrows SavingThrows { get; set; }
         public TraitList TraitList { get; set; }
-        public Inventory Inventory { get; set; }
         public SpellList SpellList { get; set; }
+        public Inventory Inventory { get; set; }
+
+        //Konstruktor
+        public Character()
+        {
+            Appearance = new Appearance();
+            Attributes = new Attributes(this);
+            Skills = new Skills(this);
+            SavingThrows = new SavingThrows();
+            TraitList = new TraitList();
+            SpellList = new SpellList();
+            Inventory = new Inventory();
+        }
 
         //Eigenschaften
         public String CharacterName { get; set; }
@@ -30,15 +42,18 @@ namespace DND
         public String Faction { get; set; }
         public String Alignment { get; set; }
 
-        //Konstruktor
-        public Character()
+        public static Character Current { get; set; }
+        public static void New()
         {
-            Attributes = new Attributes(this);
-            Appearance = new Appearance();
-            Skills = new Skills(this);
-            TraitList = new TraitList();
-            Inventory = new Inventory();
-            SpellList = new SpellList();
+            Current = new Character();
+        }
+        public static void Load(String characterName)
+        {
+            
+        }
+        public static void Save()
+        {
+
         }
     }
 }
