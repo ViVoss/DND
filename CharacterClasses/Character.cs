@@ -9,10 +9,11 @@ namespace DND
     class Character
     {
         //Verweise
-        public Attributes Attributes { get; set; }
         public Appearance Appearance { get; set; }
+        public Attributes Attributes { get; set; }
         public Skills Skills { get; set; }
-        public TradeList TradeList { get; set; }
+        public SavingThrows SavingThrows { get; set; }
+        public TraitList TraitList { get; set; }
         public Inventory Inventory { get; set; }
         public SpellList SpellList { get; set; }
 
@@ -35,7 +36,7 @@ namespace DND
             Attributes = new Attributes(this);
             Appearance = new Appearance();
             Skills = new Skills(this);
-            TradeList = new TradeList();
+            TraitList = new TraitList();
             Inventory = new Inventory();
             SpellList = new SpellList();
         }

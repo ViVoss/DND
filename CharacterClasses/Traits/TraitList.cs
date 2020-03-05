@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DND
 {
-    class TradeList
+    class TraitList
     {
         //Eigenschaften
-        public List<Trade> Trades { get; set; } = new List<Trade>();
+        public List<Trait> Traits { get; set; } = new List<Trait>();
     }
 }

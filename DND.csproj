@@ -95,7 +95,7 @@
     <Compile Include="CharacterClasses\Inventory\Inventory.cs" />
     <Compile Include="CharacterClasses\Inventory\ItemStack.cs" />
     <Compile Include="CharacterClasses\Spells\SpellList.cs" />
-    <Compile Include="CharacterClasses\Trades\TradeList.cs" />
+    <Compile Include="CharacterClasses\Traits\TraitList.cs" />
     <Compile Include="CharacterClasses\Spells\Spell.cs" />
     <Compile Include="Page_ClassSelection.xaml.cs">
       <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
@@ -147,7 +147,7 @@
     <Compile Include="Subraces\Window_SubraceSelection.xaml.cs">
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CharacterClasses\Trades\Trade.cs" />
+    <Compile Include="CharacterClasses\Traits\Trait.cs" />
     <Page Include="Barbarian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
