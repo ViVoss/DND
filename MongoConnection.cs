@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DND
 {
@@ -11,15 +12,16 @@ namespace DND
     {
         public static IMongoClient Client { get; set; }
         public static IMongoDatabase Database { get; set; }
-        public static string ConnectionString { get; set; } = "mongodb+srv://dbAdmin:Passwort123@dnd-wqlyc.mongodb.net/test?retryWrites=true&w=majority";
-        public static string DatabaseString { get; set; } = "DnD";
+        public static string ConnectionLink { get; set; } = "mongodb+srv://dbAdmin:Passwort123@dnd-wqlyc.mongodb.net/test?retryWrites=true&w=majority";
+        public static string DatabaseName { get; set; } = "DnD";
 
         internal static void Connect()
         {
             try
             {
-                Client = new MongoClient(ConnectionString);
-                Database = Client.GetDatabase(DatabaseString);
+                Client = new MongoClient(ConnectionLink);
+                Database = Client.GetDatabase(DatabaseName);
+                MessageBox.Show("Successfully connected");                
             }
             catch (Exception)
             {
