@@ -91,16 +91,16 @@ namespace DND
 
             Character newCharacter = new Character();
 
-            BsonDocument
+            //BsonDocument
 
-            MongoConnection.Collection.InsertOne(newCharacter);
+            //MongoConnection.Collection.InsertOne(newCharacter);
             
         }
         public static void Load(String characterName)
         {
             MongoConnection.Connect();
 
-            MongoConnection.Collection.Find(new BsonDocument()).;
+            //MongoConnection.Collection.Find(new BsonDocument()).;
             
 
         }
