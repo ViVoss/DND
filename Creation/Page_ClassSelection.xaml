@@ -20,7 +20,7 @@
     </Page.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Resources\CreatorMain\PaperTexture.jpg"/>
+            <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
         </Grid.Background>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -44,11 +44,11 @@
                 </Grid.RowDefinitions>
                 <Button Name="Barbarian" Grid.Column="0" Grid.Row="0" MouseEnter="Barbarian_MouseEnter" MouseLeave="Barbarian_MouseLeave">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Barbarian.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Barbarian"/>
@@ -58,11 +58,11 @@
 
                 <Button Name="Bard" Grid.Column="1" Grid.Row="0" MouseEnter="Bard_MouseEnter" MouseLeave="Bard_MouseLeave">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Bard.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Bard"/>
@@ -72,11 +72,11 @@
 
                 <Button Name="Cleric" Grid.Column="2" Grid.Row="0">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Cleric.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Cleric"/>
@@ -86,11 +86,11 @@
 
                 <Button Name="Druid" Grid.Column="3" Grid.Row="0" MouseEnter="Druid_MouseEnter" MouseLeave="Druid_MouseLeave" Click="Druid_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Druid.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Druid"/>
@@ -101,11 +101,11 @@
 
                 <Button Name="Fighter" Grid.Column="0" Grid.Row="1">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Fighter.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Fighter"/>
@@ -115,11 +115,11 @@
 
                 <Button Name="Monk" Grid.Column="1" Grid.Row="1">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Monk.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Monk"/>
@@ -129,11 +129,11 @@
 
                 <Button Name="Paladin" Grid.Column="2" Grid.Row="1">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Paladin.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Paladin"/>
@@ -143,11 +143,11 @@
 
                 <Button Name="Ranger" Grid.Column="3" Grid.Row="1">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Ranger.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Ranger"/>
@@ -157,11 +157,11 @@
 
                 <Button Name="Rogue" Grid.Column="0" Grid.Row="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Rogue.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Rogue"/>
@@ -171,11 +171,11 @@
 
                 <Button Name="Sorcerer" Grid.Column="1" Grid.Row="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Sorcerer.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Sorcerer"/>
@@ -185,11 +185,11 @@
 
                 <Button Name="Warlock" Grid.Column="2" Grid.Row="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Warlock.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Warlock"/>
@@ -199,11 +199,11 @@
 
                 <Button Name="Wizard" Grid.Column="3" Grid.Row="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Icons/Icon_Wizard.jpeg" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Class_Icons/Placeholder.png" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Wizard"/>

@@ -1,4 +1,4 @@
-﻿<Page x:Class="DND.Subraces.Page_Subrace_Halfling"
+﻿<Page x:Class="DND.Subraces.Page_Subrace_Human"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:DND.Subraces"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="365"
-      Title="Page_Subrace_Halfling">
+      Title="Page_Subrace_Human">
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
@@ -33,37 +33,37 @@
     </Page.Resources>
     <Grid Name="MainGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/General/PaperTexture.jpg"/>
+            <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="175"/>
         </Grid.ColumnDefinitions>
-        <Button Tag="Lightfoot Halfling">
+        <Button Tag="Normal">
             <StackPanel VerticalAlignment="Top">
-                <Label Name="Label_Lightfoot" Content="Lightfoot Halfling"/>
+                <Label Name="Label_Normal" Content="Normal"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Lightfoot">
+                <TextBlock Name="TextBlock_Normal">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Lightfoot
+Normal
                 </TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Column="1">
             <StackPanel>
-                <Label Name="Label_Stout" Content="Stout Halfling"/>
+                <Label Name="Label_Variant" Content="Variant"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Stout">
+                <TextBlock Name="TextBlock_Variant">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Stout
+Variant
                 </TextBlock>
             </StackPanel>
         </Button>

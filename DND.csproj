@@ -99,6 +99,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -125,24 +126,28 @@
     <Compile Include="CharacterClasses\Spells\SpellList.cs" />
     <Compile Include="CharacterClasses\Traits\TraitList.cs" />
     <Compile Include="CharacterClasses\Spells\Spell.cs" />
-    <Compile Include="MongoConnection.cs" />
-    <Compile Include="Page_ClassSelection.xaml.cs">
-      <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Page_RaceSelection.xaml.cs">
-      <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Subraces\Page_Subrace_Dragonborn.xaml.cs">
+    <Compile Include="Converter.cs" />
+    <Compile Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_Dwarf.xaml.cs">
+    <Compile Include="MongoConnection.cs" />
+    <Compile Include="Creation\Page_ClassSelection.xaml.cs">
+      <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Creation\Page_RaceSelection.xaml.cs">
+      <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rasse.cs" />
+    <Compile Include="Serialize.cs" />
+    <Compile Include="Spells.cs" />
+    <Compile Include="Creation\Subraces\Page_Subrace_Dwarf.xaml.cs">
       <DependentUpon>Page_Subrace_Dwarf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_Elf.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_Elf.xaml.cs">
       <DependentUpon>Page_Subrace_Elf.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\SavingThrows.cs" />
-    <Compile Include="Creation.xaml.cs">
+    <Compile Include="Creation\Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Skills.cs" />
@@ -152,41 +157,33 @@
     <Compile Include="Maintenance.xaml.cs">
       <DependentUpon>Maintenance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_Gnome.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_Gnome.xaml.cs">
       <DependentUpon>Page_Subrace_Gnome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_HalfElf.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_HalfElf.xaml.cs">
       <DependentUpon>Page_Subrace_HalfElf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_Halfling.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_Halfling.xaml.cs">
       <DependentUpon>Page_Subrace_Halfling.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_HalfOrc.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_HalfOrc.xaml.cs">
       <DependentUpon>Page_Subrace_HalfOrc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_Human.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_Human.xaml.cs">
       <DependentUpon>Page_Subrace_Human.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Page_Subrace_Tiefling.xaml.cs">
+    <Compile Include="Creation\Subraces\Page_Subrace_Tiefling.xaml.cs">
       <DependentUpon>Page_Subrace_Tiefling.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Subraces\Window_SubraceSelection.xaml.cs">
+    <Compile Include="Creation\Subraces\Window_SubraceSelection.xaml.cs">
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
-    <Page Include="Barbarian.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CharacterCreationMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Cleric.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Creation.xaml">
+    <Page Include="Creation\Creation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,64 +203,58 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Barbarian.xaml.cs">
-      <DependentUpon>Barbarian.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CharacterCreationMain.xaml.cs">
       <DependentUpon>CharacterCreationMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Cleric.xaml.cs">
-      <DependentUpon>Cleric.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Page_ClassSelection.xaml">
+    <Page Include="Creation\Page_ClassSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page_RaceSelection.xaml">
+    <Page Include="Creation\Page_RaceSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Dragonborn.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Dwarf.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Dwarf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Elf.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Elf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Gnome.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Gnome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_HalfElf.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_HalfElf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Halfling.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Halfling.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_HalfOrc.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_HalfOrc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Human.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Human.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Page_Subrace_Tiefling.xaml">
+    <Page Include="Creation\Subraces\Page_Subrace_Tiefling.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subraces\Window_SubraceSelection.xaml">
+    <Page Include="Creation\Subraces\Window_SubraceSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -351,14 +342,30 @@
     <Resource Include="Resources\CreatorMain\PaperTexture2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Subraces\Resources\General\PaperTexture.jpg" />
-    <Resource Include="Subraces\Resources\General\PaperTexture2.jpg" />
+    <Resource Include="Creation\Subraces\Resources_Subraces\General\PaperTexture.jpg" />
+    <Resource Include="Creation\Subraces\Resources_Subraces\General\PaperTexture2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Subraces\Resources\SubraceIcons\Dragon_Scale.png" />
+    <Resource Include="Creation\Subraces\Resources_Subraces\SubraceIcons\Dragon_Scale.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Subraces\Resources\SubraceIcons\SubraceIconPlaceholder.png" />
+    <Resource Include="Creation\Subraces\Resources_Subraces\SubraceIcons\SubraceIconPlaceholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\PaperTexture2.jpg" />
+    <Resource Include="Creation\Resources_Creation\PNGTotal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\PaperTexture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\Banner1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\Race_Icons\Placeholder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

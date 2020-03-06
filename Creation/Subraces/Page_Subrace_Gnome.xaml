@@ -1,4 +1,4 @@
-﻿<Page x:Class="DND.Subraces.Page_Subrace_Human"
+﻿<Page x:Class="DND.Subraces.Page_Subrace_Gnome"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:DND.Subraces"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="365"
-      Title="Page_Subrace_Human">
+      Title="Page_Subrace_Gnome">
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
@@ -33,37 +33,37 @@
     </Page.Resources>
     <Grid Name="MainGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/General/PaperTexture.jpg"/>
+            <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="175"/>
         </Grid.ColumnDefinitions>
-        <Button Tag="Normal">
+        <Button Tag="Rock Gnome">
             <StackPanel VerticalAlignment="Top">
-                <Label Name="Label_Normal" Content="Normal"/>
+                <Label Name="Label_RockGnome" Content="Rock Gnome"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Normal">
+                <TextBlock Name="TextBlock_RockGnome">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Normal
+Rock
                 </TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Column="1">
             <StackPanel>
-                <Label Name="Label_Variant" Content="Variant"/>
+                <Label Name="Label_ForestGnome" Content="Forest Gnome"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Variant">
+                <TextBlock Name="TextBlock_ForestGnome">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Variant
+Forest
                 </TextBlock>
             </StackPanel>
         </Button>

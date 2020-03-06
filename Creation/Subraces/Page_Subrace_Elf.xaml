@@ -33,7 +33,7 @@
     </Page.Resources>
     <Grid Name="MainGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/General/PaperTexture.jpg"/>
+            <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="175"/>
@@ -44,11 +44,11 @@
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HighElf" Content="High Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_HighElf">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
 High
                 </TextBlock>
@@ -58,11 +58,11 @@ High
             <StackPanel>
                 <Label Name="Label_WoodElf" Content="Wood Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_WoodElf">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
 Wood
                 </TextBlock>
@@ -72,11 +72,11 @@ Wood
             <StackPanel>
                 <Label Name="Label_Drow" Content="Drow"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
-                    <Image Source="Resources/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
+                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_Drow">
                     <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources/General/PaperTexture2.jpg"/>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
 Drow
                 </TextBlock>
