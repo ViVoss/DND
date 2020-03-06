@@ -20,44 +20,16 @@ namespace DND
     /// </summary>
     public partial class Page_ClassSelection : Page
     {
+        WebAufruf call = new WebAufruf();
         public Page_ClassSelection()
         {
             InitializeComponent();
         }
 
-        private void Barbarian_MouseEnter(object sender, MouseEventArgs e)
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
-            TextBox_Description.Text = "Dies is der Barbar. Er macht Smash.\n\nHit Die: d12\nSaving Throws: Strength, Constitution";
-        }
-
-        private void Barbarian_MouseLeave(object sender, MouseEventArgs e)
-        {
-            TextBox_Description.Clear();
-        }
-
-        private void Bard_MouseEnter(object sender, MouseEventArgs e)
-        {
-            TextBox_Description.Text = "Dies is der Barde. Er kann singen und tanzen. Er ist im Prinzip ein Waldorfschüler der einen Hogwartsbrief bekommen hat.";
-        }
-
-        private void Bard_MouseLeave(object sender, MouseEventArgs e)
-        {
-            TextBox_Description.Clear();
-        }
-
-        private void Druid_MouseEnter(object sender, MouseEventArgs e)
-        {
-            TextBox_Description.Text = "Dies is der Barbar. Er macht Smash.";
-        }
-
-        private void Druid_MouseLeave(object sender, MouseEventArgs e)
-        {
-            TextBox_Description.Clear();
-        }
-
-        private void Druid_Click(object sender, RoutedEventArgs e)
-        {
-
+            string klasse = ((Button)sender).Tag.ToString();
+            TextBox_Description.Text = call.GetClassInformation(klasse);
         }
     }
 }

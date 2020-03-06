@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DND.Creation
+namespace DND
 {
     /// <summary>
     /// Interaktionslogik für Page_BackgroundSelection.xaml
     /// </summary>
-    public partial class Page_BackgroundSelection : Window
+    public partial class Page_BackgroundSelection : Page
     {
         public Page_BackgroundSelection()
         {

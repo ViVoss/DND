@@ -99,6 +99,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -126,18 +127,19 @@
     <Compile Include="CharacterClasses\Traits\TraitList.cs" />
     <Compile Include="CharacterClasses\Spells\Spell.cs" />
     <Compile Include="Converter.cs" />
-    <Compile Include="Creation\Page_BackgroundSelection.xaml.cs">
-      <DependentUpon>Page_BackgroundSelection.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Klasse.cs" />
     <Compile Include="MongoConnection.cs" />
     <Compile Include="Creation\Page_ClassSelection.xaml.cs">
       <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="Creation\Page_RaceSelection.xaml.cs">
       <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Creation\Page_BackgroundSelection.xaml.cs">
+      <DependentUpon>Page_BackgroundSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rasse.cs" />
     <Compile Include="Serialize.cs" />
@@ -181,15 +183,11 @@
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
+    <Compile Include="WebAufruf.cs" />
     <Page Include="CharacterCreationMain.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Creation.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Creation\Page_BackgroundSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -261,6 +259,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Subraces\Window_SubraceSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Creation\Page_BackgroundSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
