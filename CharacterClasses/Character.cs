@@ -1,6 +1,8 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,15 +100,28 @@ namespace DND
         }
         public static void Load(String characterName)
         {
+            //Connect
             MongoConnection.Connect();
 
-            //MongoConnection.Collection.Find(new BsonDocument()).;
-            
+            //IMongoQueryable<Character> obj = MongoConnection.Collection.AsQueryable<Character>();
+            //obj.Where();
+
+            BsonDocument doc = MongoConnection.Collection.ToBsonDocument();
+
+            //Deserialize
+            Character.Current = BsonSerializer.Deserialize<Character>(doc);
 
         }
         public static void Save()
         {
+            //Serialize
+            BsonDocument bsonCharacter = Character.Current.ToBsonDocument();
+
+            //Connect
             MongoConnection.Connect();
+
+            //Upload
+            //MongoConnection.Collection.
         }
     }
 }
