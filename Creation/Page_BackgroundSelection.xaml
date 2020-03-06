@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_BackgroundSelection">
-
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
@@ -17,19 +16,20 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <ListBox Name="ListBox_BackgroundTitle" Margin="10" Background="Transparent" BorderThickness="0" >
-            <ListBoxItem Content="Acolythe"/>
-            <ListBoxItem Content="Charlatan"/>
-            <ListBoxItem Content="Criminal"/>
-            <ListBoxItem Content="Entertainer"/>
-            <ListBoxItem Content="Folk Hero"/>
-            <ListBoxItem Content="Guild Artisan"/>
-            <ListBoxItem Content="Hermit"/>
-            <ListBoxItem Content="Noble"/>
-            <ListBoxItem Content="Outlander"/>
-            <ListBoxItem Content="Sage"/>
-            <ListBoxItem Content="Sailor"/>
-            <ListBoxItem Content="Soldier"/>
-            <ListBoxItem Content="Urchin"/>
+            <ListBoxItem Tag="acolythe" Content="Acolythe"/>
+            <ListBoxItem Tag="charlatan" Content="Charlatan"/>
+            <ListBoxItem Tag="criminal" Content="Criminal"/>
+            <ListBoxItem Tag="entertainer" Content="Entertainer"/>
+            <ListBoxItem Tag="folk-hero" Content="Folk Hero"/>
+            <ListBoxItem Tag="guild-artisan" Content="Guild Artisan"/>
+            <ListBoxItem Tag="hermit" Content="Hermit"/>
+            <ListBoxItem Tag="noble" Content="Noble"/>
+            <ListBoxItem Tag="outlander" Content="Outlander"/>
+            <ListBoxItem Tag="sage" Content="Sage"/>
+            <ListBoxItem Tag="sailor" Content="Sailor"/>
+            <ListBoxItem Tag="soldier" Content="Soldier"/>
+            <ListBoxItem Tag="urchin" Content="Urchin"/>
         </ListBox>
+        <TextBox Name="TextBox_Description" TextWrapping="Wrap" Grid.Column="1" Margin="10" Background="Transparent" BorderThickness="0" FontSize="16"/>
     </Grid>
 </Page>
