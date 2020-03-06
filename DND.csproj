@@ -183,7 +183,6 @@
     <Compile Include="WebAufruf.cs" />
     <Page Include="CharacterCreationMain.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Creation.xaml">
       <SubType>Designer</SubType>
