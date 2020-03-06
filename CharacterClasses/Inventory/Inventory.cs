@@ -6,11 +6,32 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DND
 {
     class Inventory
     {
+
+        //Eigenschaften
+        [BsonElement("items")]
+        public List<ItemStack> Items { get; set; } = new List<ItemStack>();
+
+
+        //Methoden
+        public decimal TotalWeight()
+        {
+            decimal weight = 0;
+            foreach (ItemStack itemstack in Items)
+            {
+                weight += itemstack.Quantity * itemstack.WeightPerItem;
+            }
+            return weight; 
+        }
+
+
+
+        //API
         public static async Task<string> GetEquipmentInformation(string equipment)
         {
 
@@ -55,19 +76,6 @@ namespace DND
             fetchdata = fetchdata.Replace("[", "").Replace("]", "").Replace("\"", "").Replace("{", "").Replace("}", "").Replace(":", "").Replace(",", "");
             fetchdata = Regex.Replace(fetchdata, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
             return fetchdata;
-        }
-
-        //Eigenschaften
-        public List<ItemStack> Items { get; set; } = new List<ItemStack>();
-
-        public decimal TotalWeight()
-        {
-            decimal weight = 0;
-            foreach (ItemStack itemstack in Items)
-            {
-                weight += itemstack.Quantity * itemstack.WeightPerItem;
-            }
-            return weight; 
         }
     }
 }

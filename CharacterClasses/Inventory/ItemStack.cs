@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,12 @@ namespace DND
     class ItemStack
     {
         //Eigenschaften
+        [BsonElement("name")]
         public string Name { get; set; }
+
+        [BsonElement("quantity")]
         public UInt32 Quantity { get; set; }
+
         public decimal WeightPerItem { 
             get
             {

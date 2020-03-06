@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace DND
     {
 
         //Verweise
+        [BsonIgnore]
         public Character Character { get; set; }
 
         //Konstruktor
@@ -18,10 +20,15 @@ namespace DND
             this.Character = character;
         }
 
+        [BsonIgnore]
         //Eigenschaften
         public static readonly List<UInt16> AttributeValues = new List<UInt16>() { 15, 14, 13, 12, 10, 8 };
 
+
+        [BsonElement("strength")]
         public UInt16 Strength { get; set; }
+
+        [BsonIgnore]
         public Int16 StrengthModifier
         {
             get
@@ -29,7 +36,12 @@ namespace DND
                 return CalculateModifier(Strength);
             }
         }
+
+
+        [BsonElement("dexterity")]
         public UInt16 Dexterity { get; set; }
+
+        [BsonIgnore]
         public Int16 DexterityModifier
         {
             get
@@ -37,7 +49,12 @@ namespace DND
                 return CalculateModifier(Dexterity);
             }
         }
+
+
+        [BsonElement("constitution")]
         public UInt16 Constitution { get; set; }
+
+        [BsonIgnore]
         public Int16 ConstitutionModifier
         {
             get
@@ -45,7 +62,12 @@ namespace DND
                 return CalculateModifier(Constitution);
             }
         }
+
+
+        [BsonElement("intelligence")]
         public UInt16 Intelligence { get; set; }
+
+        [BsonIgnore]
         public Int16 IntelligenceModifier
         {
             get
@@ -53,7 +75,12 @@ namespace DND
                 return CalculateModifier(Intelligence);
             }
         }
+
+
+        [BsonElement("wisdon")]
         public UInt16 Wisdon { get; set; }
+
+        [BsonIgnore]
         public Int16 WisdonModifier
         {
             get
@@ -61,7 +88,12 @@ namespace DND
                 return CalculateModifier(Wisdon);
             }
         }
+
+
+        [BsonElement("charisma")]
         public UInt16 Charisma { get; set; }
+
+        [BsonIgnore]
         public Int16 CharismaModifier
         {
             get
@@ -70,6 +102,8 @@ namespace DND
             }
         }
 
+
+        [BsonIgnore]
         public UInt16 ProficiencyBonus
         {
             get
