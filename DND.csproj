@@ -127,6 +127,9 @@
     <Compile Include="CharacterClasses\Traits\TraitList.cs" />
     <Compile Include="CharacterClasses\Spells\Spell.cs" />
     <Compile Include="Converter.cs" />
+    <Compile Include="Creation\Page_BackgroundSelection.xaml.cs">
+      <DependentUpon>Page_BackgroundSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Creation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Creation\Page_BackgroundSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
