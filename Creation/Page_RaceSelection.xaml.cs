@@ -12,16 +12,17 @@ using System.Net;
 
 namespace DND
 {
+
     /// <summary>
     /// Interaktionslogik für Page_RaceSelection.xaml
     /// </summary>
     public partial class Page_RaceSelection : Page
-    { 
-        public static string getRaceInformation(string race)
+    {
+        
+        public static string GetRaceInformation(string race)
         {
-            string test = "";
-            return test;
             string jsonstring;
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
             string url = "http://dnd5eapi.co/api/races/rasse";
             url = url.Replace("rasse", race);
 
@@ -33,18 +34,26 @@ namespace DND
 
             using (Stream dataStream = response.GetResponseStream())
             {
-                
+
                 StreamReader reader = new StreamReader(dataStream);
 
                 // Hier komm der JSon String
                 jsonstring = reader.ReadToEnd();
 
-                Race rasse = JsonConvert.DeserializeObject<Race>(jsonstring);
-                jsonstring = rasse.Results[1].Name;
-                
+                Rasse rasse = JsonConvert.DeserializeObject<Rasse>(jsonstring);
+
+                builder.Append(rasse.Name);
+                foreach (DND.AbilityBonus element in rasse.AbilityBonuses)
+                {
+                    
+                    builder.Append("\n" + element.Name + " +" + element.Bonus);
+                    
+                }
             }
             response.Close();
-            return jsonstring;
+            
+
+            return builder.ToString();
 
 
 
@@ -75,7 +84,9 @@ namespace DND
         private void Button_Race_MouseEnter(object sender, MouseEventArgs e)
         {
             string race = ((Button)sender).Tag.ToString();
-           TextBox_Description.Text = getRaceInformation(race);
+           TextBox_Description.Text = GetRaceInformation(race);
+
+
         }
 
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
