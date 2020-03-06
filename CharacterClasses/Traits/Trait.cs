@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DND
 {
-    class Trade
+    class Trait
     {
         public string Name { get; set; }
 
-        public Trade(string name)
+        public Trait(string name)
         {
             this.Name = name;
         }

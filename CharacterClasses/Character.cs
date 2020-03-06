@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +11,25 @@ namespace DND
     class Character
     {
         //Verweise
-        public Attributes Attributes { get; set; }
         public Appearance Appearance { get; set; }
+        public Attributes Attributes { get; set; }
         public Skills Skills { get; set; }
-        public TradeList TradeList { get; set; }
-        public Inventory Inventory { get; set; }
+        public SavingThrows SavingThrows { get; set; }
+        public TraitList TraitList { get; set; }
         public SpellList SpellList { get; set; }
+        public Inventory Inventory { get; set; }
+
+        //Konstruktor
+        public Character()
+        {
+            Appearance = new Appearance();
+            Attributes = new Attributes(this);
+            Skills = new Skills(this);
+            SavingThrows = new SavingThrows();
+            TraitList = new TraitList();
+            SpellList = new SpellList();
+            Inventory = new Inventory();
+        }
 
         //Eigenschaften
         public String CharacterName { get; set; }
@@ -29,15 +44,22 @@ namespace DND
         public String Faction { get; set; }
         public String Alignment { get; set; }
 
-        //Konstruktor
-        public Character()
+        public static Character Current { get; set; }
+        public static void New()
         {
-            Attributes = new Attributes(this);
-            Appearance = new Appearance();
-            Skills = new Skills(this);
-            TradeList = new TradeList();
-            Inventory = new Inventory();
-            SpellList = new SpellList();
+            Current = new Character();
+        }
+        public static void Load(String characterName)
+        {
+            MongoConnection.Connect();
+            
+            IMongoCollection<BsonDocument> doc = MongoConnection.Database.GetCollection<BsonDocument>("name");
+            
+
+        }
+        public static void Save()
+        {
+            MongoConnection.Connect();
         }
     }
 }
