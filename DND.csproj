@@ -141,6 +141,9 @@
     <Compile Include="Creation\Page_BackgroundSelection.xaml.cs">
       <DependentUpon>Page_BackgroundSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Creation\Page_AttributeSelection.xaml.cs">
+      <DependentUpon>Page_AttributeSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rasse.cs" />
     <Compile Include="Serialize.cs" />
     <Compile Include="Spells.cs" />
@@ -263,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Page_BackgroundSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Creation\Page_AttributeSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
