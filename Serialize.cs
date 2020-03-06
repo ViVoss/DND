@@ -9,8 +9,10 @@ namespace DND
 {
 
     public static class Serialize
-        {
-            public static string ToJson(this Rasse self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
-            public static string ToJson(this Spells self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
-        }
+    {
+        public static string ToJson(this Rasse self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
+        public static string ToJson(this Spells self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
+        public static string ToJson(this Klasse self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
+
     }
+}
