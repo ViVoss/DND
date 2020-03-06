@@ -87,7 +87,12 @@ namespace DND
             Maintenance MaintenancePage = new Maintenance();
             //this.NavigationService.Navigate(MaintenancePage);
         }
+
         // Rogue <<<
+        private void Spells_Click(object sender, RoutedEventArgs e)
+        {            
+
+        }
     }
 }
 

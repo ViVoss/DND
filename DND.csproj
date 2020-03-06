@@ -74,6 +74,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -106,6 +107,8 @@
     <Compile Include="Page_RaceSelection.xaml.cs">
       <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Race.cs" />
+    <Compile Include="Results.cs" />
     <Compile Include="Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>

@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using System.IO;
+using System.Net;
 
 namespace DND
 {
@@ -12,62 +16,41 @@ namespace DND
     /// Interaktionslogik für Page_RaceSelection.xaml
     /// </summary>
     public partial class Page_RaceSelection : Page
-    {
-        public string race = "";
-        public string information = "";
+    { 
+        public static string getRaceInformation(string race)
+        {
+            string jsonstring;
+            string url = "http://dnd5eapi.co/api/races/rasse";
+            url = url.Replace("rasse", race);
+
+            //Creates Request of URl
+            WebRequest request = WebRequest.Create(url);
+
+            //get Response
+            WebResponse response = request.GetResponse();
+
+            using (Stream dataStream = response.GetResponseStream())
+            {
+                
+                StreamReader reader = new StreamReader(dataStream);
+
+                // Hier komm der JSon String
+                jsonstring = reader.ReadToEnd();
+
+                Race rasse = JsonConvert.DeserializeObject<Race>(jsonstring);
+                jsonstring = rasse.Results[1].Name;
+                
+            }
+            response.Close();
+            return jsonstring;
 
 
 
+        }
         public Page_RaceSelection()
         {
             InitializeComponent();
 
-        }
-
-        public static async Task<string> GetRaceInformation(string race)
-        {
-            
-                
-            string baseUrl = "http://dnd5eapi.co/api/races/rasse";
-            baseUrl = baseUrl.Replace("rasse", race);
-            try
-            {
-                using (HttpClient client = new HttpClient())
-                {
-                    using (HttpResponseMessage res = await client.GetAsync(baseUrl))
-                    {
-                        using (HttpContent content = res.Content)
-                        {
-                            var data = await content.ReadAsStringAsync();
-                            if (data != null)
-                            {
-                                return data;
-                            }
-                            else
-                            {
-                                return data;
-                            }
-                        }
-                    }
-
-                }
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine("Exception Found ----- {0}", exception);
-                return null;
-            }
-        }
-
-        public async Task<string> fetchAPI(string race)
-        {
-            var infor = await GetRaceInformation(race).ConfigureAwait(false);
-            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(infor);
-            var fetchdata = Newtonsoft.Json.JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented);
-            Regex.Unescape(fetchdata);
-            fetchdata = fetchdata.Replace("[", "").Replace("]", "").Replace("\"", "").Replace("{", "").Replace("}", "").Replace(":", "").Replace(",", "");
-            fetchdata = Regex.Replace(fetchdata, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-            return fetchdata;
         }
 
         private void Button_Race_Click(object sender, RoutedEventArgs e)
@@ -87,12 +70,12 @@ namespace DND
                     break;
             }
         }
-        private async void Button_Race_MouseEnter(object sender, MouseEventArgs e)
+        private void Button_Race_MouseEnter(object sender, MouseEventArgs e)
         {
             string race = ((Button)sender).Tag.ToString();
-            string fetchdata = await fetchAPI(race);
-            TextBox_Description.Text = fetchdata.ToString();
-            //TextBox_Description.Text = await GetRaceInformation();            
+           TextBox_Description.Text = getRaceInformation(race);
+
+
         }
 
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
