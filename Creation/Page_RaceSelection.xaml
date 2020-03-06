@@ -22,7 +22,7 @@
     </Page.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Resources\CreatorMain\PaperTexture.jpg"/>
+            <ImageBrush ImageSource="Resources_Creation\PaperTexture.jpg"/>
         </Grid.Background>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -43,41 +43,33 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="Dwarf" Tag="dwarf" Grid.Column="0" Grid.Row="0" ToolTip="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal." ToolTipService.InitialShowDelay="800">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="Dwarf" Tag="dwarf" Grid.Column="0" Grid.Row="0" ToolTip="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal." ToolTipService.InitialShowDelay="800" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Dwarf.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Dwarf"/>
                         </Viewbox>
                     </StackPanel>
                 </Button>
-
                 <Button Name="Elf" Tag="elf" Grid.Column="1" Grid.Row="0" ToolTip="Elves are a magical people of otherworldly grace, living in the world but not entirely part of it." ToolTipService.InitialShowDelay="800">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
+                        <ImageBrush Opacity="0"/>
                     </Button.Background>
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Elf.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Elf"/>
                         </Viewbox>
                     </StackPanel>
                 </Button>
-
-                <Button Name="Halfling" Tag="halfling" Grid.Column="2" Grid.Row="0">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="Halfling" Tag="halfling" Grid.Column="2" Grid.Row="0" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Halfling.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Halfling"/>
@@ -85,40 +77,30 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="Human" Tag="human" Grid.Column="0" Grid.Row="1" >
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="Human" Tag="human" Grid.Column="0" Grid.Row="1"  Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Human.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Human"/>
                         </Viewbox>
                     </StackPanel>
                 </Button>
-                <Button Name="Dragonborn" Tag="dragonborn" Grid.Column="1" Grid.Row="1">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="Dragonborn" Tag="dragonborn" Grid.Column="1" Grid.Row="1" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Dragonborn.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
-                        <Viewbox Stretch="None" >
+                        <Viewbox Stretch="None">
                             <TextBlock VerticalAlignment="Bottom" Text="Dragonborn"/>
                         </Viewbox>
                     </StackPanel>
                 </Button>
-
-                <Button Name="Gnome" Tag="gnome" Grid.Column="2" Grid.Row="1">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="Gnome" Tag="gnome" Grid.Column="2" Grid.Row="1" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Gnome.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Gnome"/>
@@ -126,13 +108,10 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="HalfOrc" Tag="half-orc" Grid.Column="0" Grid.Row="2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="HalfOrc" Tag="half-orc" Grid.Column="0" Grid.Row="2" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Half-Orc.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Half-Orc"/>
@@ -140,26 +119,20 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="HalfElf" Tag="half-elf" Grid.Column="1" Grid.Row="2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="HalfElf" Tag="half-elf" Grid.Column="1" Grid.Row="2" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Half-Elf.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Half-Elf"/>
                         </Viewbox>
                     </StackPanel>
                 </Button>
-                <Button Name="Tiefling" Tag="tiefling" Grid.Column="2" Grid.Row="2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Menu/PNGTotal.png" Opacity="0"/>
-                    </Button.Background>
+                <Button Name="Tiefling" Tag="tiefling" Grid.Column="2" Grid.Row="2" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources/Races/Tiefling.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/Placeholder.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Tiefling"/>

@@ -14,7 +14,7 @@
         <Frame Name="Frame1" NavigationUIVisibility="Hidden"/>
         <DockPanel Grid.Row="1">
             <DockPanel.Background>
-                <ImageBrush ImageSource="Resources/CreatorMain/Banner1.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="Resources_Creation/Banner1.jpg" Stretch="UniformToFill"/>
             </DockPanel.Background>
             <Button Name="Btn_Continue" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Continue_Click" Content="Continue"/>
             <Button Name="Btn_Back" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Back_Click" Content="Back"/>

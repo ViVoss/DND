@@ -19,6 +19,8 @@ namespace DND
     { 
         public static string getRaceInformation(string race)
         {
+            string test = "";
+            return test;
             string jsonstring;
             string url = "http://dnd5eapi.co/api/races/rasse";
             url = url.Replace("rasse", race);
@@ -74,8 +76,6 @@ namespace DND
         {
             string race = ((Button)sender).Tag.ToString();
            TextBox_Description.Text = getRaceInformation(race);
-
-
         }
 
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)

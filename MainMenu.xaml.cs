@@ -26,71 +26,19 @@ namespace DND
         // Creation >>>
         private void Creation_ButtonClick(object sender, RoutedEventArgs e)
         {
-            var CreationMainPage = new CharacterCreationMain();
-            CreationMainPage.Show();
-            //this.NavigationService.Navigate(CreationMainPage);
-        }
-        // Creation <<<
-
-        // Barbarian >>>
-        private void Barbarian_MouseEnter(object sender, MouseEventArgs e)
-        {
-            this.ViewImage.Source = new BitmapImage(new Uri("/Resources/Menu/Barbarian.png", UriKind.Relative));
-        }
-        private void Barbarian_MouseLeave(object sender, MouseEventArgs e)
-        {
-            this.ViewImage.Source = new BitmapImage(new Uri("/Resources/Menu/PNGTotal.png", UriKind.Relative));
-        }
-        private void Barbarian_ButtonClick(object sender, RoutedEventArgs e)
-        {
             var Creation1 = new Creation();
             Creation1.Show();
-            //Barbarian BarbarianInfoPage = new Barbarian();
-            //Maintenance MaintenancePage = new Maintenance();
-            //this.NavigationService.Navigate(MaintenancePage);
         }
-        // Barbarian <<<
-
-
-        // Cleric >>>
-        private void Cleric_MouseEnter(object sender, MouseEventArgs e)
-        {
-            this.ViewImage.Source = new BitmapImage(new Uri("/Resources/Menu/Cleric.png", UriKind.Relative));
-        }
-        private void Cleric_MouseLeave(object sender, MouseEventArgs e)
-        {
-            this.ViewImage.Source = new BitmapImage(new Uri("/Resources/Menu/PNGTotal.png", UriKind.Relative));
-        }
-        private void Cleric_ButtonClick(object sender, RoutedEventArgs e)
-        {
-            //Cleric ClericInfoPage = new Cleric();
-            //this.NavigationService.Navigate(ClericInfoPage);
-            Maintenance MaintenancePage = new Maintenance();
-            //this.NavigationService.Navigate(MaintenancePage);
-        }
-        // Cleric <<<
-
-
-        // Rogue >>>
-        private void Rogue_MouseEnter(object sender, MouseEventArgs e)
-        {
-            this.ViewImage.Source = new BitmapImage(new Uri("/Resources/Menu/Rogue.png", UriKind.Relative));
-        }
-        private void Rogue_MouseLeave(object sender, MouseEventArgs e)
-        {
-            this.ViewImage.Source = new BitmapImage(new Uri("/Resources/Menu/PNGTotal.png", UriKind.Relative));
-        }
-        private void Rogue_ButtonClick(object sender, RoutedEventArgs e)
-        {
-            //Rogue RogueInfoPage = new Rogue();
-            //this.NavigationService.Navigate(RogueInfoPage);
-            Maintenance MaintenancePage = new Maintenance();
-            //this.NavigationService.Navigate(MaintenancePage);
-        }
-
-        // Rogue <<<
         private void Spells_Click(object sender, RoutedEventArgs e)
         {            
+
+        }
+        private void Races_ButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Classes_ButtonClick(object sender, RoutedEventArgs e)
+        {
 
         }
     }
