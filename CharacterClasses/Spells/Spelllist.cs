@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace DND
     class SpellList
     {
         //Eigenschaften
+
+        [BsonElement("spells")]
         public List<Spell> Spells { get; set; } = new List<Spell>();
     }
 }

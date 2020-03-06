@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,15 @@ namespace DND
     class Skills
     {
         //Verweise
+        [BsonIgnore]
         public Character Character { get; set; }
 
         //Eigenschaften
+        [BsonElement("acrobaticsproficiency")]
         public Boolean AcrobaticsProficiency { get; set; }
+        [BsonElement("acrobaticsexpertise")]
         public Boolean AcrobaticsExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Acrobatics { 
             get
             {
@@ -21,8 +26,11 @@ namespace DND
             } 
         }
 
+        [BsonElement("animalhandlingproficiency")]
         public Boolean AnimalHandlingProficiency { get; set; }
+        [BsonElement("animalhandlingexpertise")]
         public Boolean AnimalHandlingExpertise { get; set; }
+        [BsonIgnore]
         public Int32 AnimalHandling
         {
             get
@@ -31,8 +39,11 @@ namespace DND
             }
         }
 
+        [BsonElement("arcanaproficiency")]
         public Boolean ArcanaProficiency { get; set; }
+        [BsonElement("arcanaexpertise")]
         public Boolean ArcanaExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Arcana
         {
             get
@@ -41,8 +52,11 @@ namespace DND
             }
         }
 
+        [BsonElement("athleticsproficiency")]
         public Boolean AthleticsProficiency { get; set; }
+        [BsonElement("athleticsexpertise")]
         public Boolean AthleticsExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Athletics
         {
             get
@@ -51,8 +65,11 @@ namespace DND
             }
         }
 
+        [BsonElement("deceptionproficiency")]
         public Boolean DeceptionProficiency { get; set; }
+        [BsonElement("deceptionexpertise")]
         public Boolean DeceptionExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Deception
         {
             get
@@ -61,8 +78,11 @@ namespace DND
             }
         }
 
+        [BsonElement("historyproficiency")]
         public Boolean HistoryProficiency { get; set; }
+        [BsonElement("historyexpertise")]
         public Boolean HistoryExpertise { get; set; }
+        [BsonIgnore]
         public Int32 History
         {
             get
@@ -71,8 +91,11 @@ namespace DND
             }
         }
 
+        [BsonElement("insightproficiency")]
         public Boolean InsightProficiency { get; set; }
+        [BsonElement("insightexpertise")]
         public Boolean InsightExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Insight
         {
             get
@@ -81,8 +104,11 @@ namespace DND
             }
         }
 
+        [BsonElement("intimidationproficiency")]
         public Boolean IntimidationProficiency { get; set; }
+        [BsonElement("intimidationexpertise")]
         public Boolean IntimidationExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Intimidation
         {
             get
@@ -91,8 +117,11 @@ namespace DND
             }
         }
 
+        [BsonElement("investigationproficiency")]
         public Boolean InvestigationProficiency { get; set; }
+        [BsonElement("investigationexpertise")]
         public Boolean InvestigationExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Investigation
         {
             get
@@ -101,8 +130,11 @@ namespace DND
             }
         }
 
+        [BsonElement("medicineproficiency")]
         public Boolean MedicineProficiency { get; set; }
+        [BsonElement("medicineexpertise")]
         public Boolean MedicineExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Medicine
         {
             get
@@ -111,8 +143,11 @@ namespace DND
             }
         }
 
+        [BsonElement("natureproficiency")]
         public Boolean NatureProficiency { get; set; }
+        [BsonElement("natureexpertise")]
         public Boolean NatureExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Nature
         {
             get
@@ -121,8 +156,11 @@ namespace DND
             }
         }
 
+        [BsonElement("perceptionproficiency")]
         public Boolean PerceptionProficiency { get; set; }
+        [BsonElement("perceptionexpertise")]
         public Boolean PerceptionExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Perception
         {
             get
@@ -131,8 +169,11 @@ namespace DND
             }
         }
 
+        [BsonElement("performanceproficiency")]
         public Boolean PerformanceProficiency { get; set; }
+        [BsonElement("performanceexpertise")]
         public Boolean PerformanceExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Performance
         {
             get
@@ -141,8 +182,11 @@ namespace DND
             }
         }
 
+        [BsonElement("persuasionproficiency")]
         public Boolean PersuasionProficiency { get; set; }
+        [BsonElement("persuasionexpertise")]
         public Boolean PersuasionExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Persuasion
         {
             get
@@ -151,8 +195,11 @@ namespace DND
             }
         }
 
+        [BsonElement("religionproficiency")]
         public Boolean ReligionProficiency { get; set; }
+        [BsonElement("religionexpertise")]
         public Boolean ReligionExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Religion
         {
             get
@@ -161,8 +208,11 @@ namespace DND
             }
         }
 
+        [BsonElement("sleightofhandproficiency")]
         public Boolean SleightOfHandProficiency { get; set; }
+        [BsonElement("sleightofhandexpertise")]
         public Boolean SleightOfHandExpertise { get; set; }
+        [BsonIgnore]
         public Int32 SleightOfHand
         {
             get
@@ -171,8 +221,11 @@ namespace DND
             }
         }
 
+        [BsonElement("stealthproficiency")]
         public Boolean StealthProficiency { get; set; }
+        [BsonElement("stealthexpertise")]
         public Boolean StealthExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Stealth
         {
             get
@@ -181,8 +234,11 @@ namespace DND
             }
         }
 
+        [BsonElement("survivalproficiency")]
         public Boolean SurvivalProficiency { get; set; }
+        [BsonElement("survivalexpertise")]
         public Boolean SurvivalExpertise { get; set; }
+        [BsonIgnore]
         public Int32 Survival
         {
             get

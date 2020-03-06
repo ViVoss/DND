@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,14 @@ namespace DND
     class SavingThrows
     {
         //Verweise
+        [BsonIgnore]
         public Character Character { get; set; }
 
         //Eigenschaften
+        [BsonElement("strengthproficiency")]
         public Boolean StrengthProficiency { get; set; }
+
+        [BsonIgnore]
         public Int32 Strength
         {
             get
@@ -21,7 +26,10 @@ namespace DND
             }
         }
 
+        [BsonElement("dexterityproficiency")]
         public Boolean DexterityProficiency { get; set; }
+
+        [BsonIgnore]
         public Int32 Dexterity
         {
             get
@@ -29,7 +37,11 @@ namespace DND
                 return CalculateSavingThrow(Character.Attributes.StrengthModifier, DexterityProficiency);
             }
         }
+
+        [BsonElement("constitutionproficiency")]
         public Boolean ConstitutionProficiency { get; set; }
+
+        [BsonIgnore]
         public Int32 Constitution
         {
             get
@@ -37,7 +49,11 @@ namespace DND
                 return CalculateSavingThrow(Character.Attributes.StrengthModifier, ConstitutionProficiency);
             }
         }
+
+        [BsonElement("intelligenceproficiency")]
         public Boolean IntelligenceProficiency { get; set; }
+
+        [BsonIgnore]
         public Int32 Intelligence
         {
             get
@@ -45,7 +61,11 @@ namespace DND
                 return CalculateSavingThrow(Character.Attributes.StrengthModifier, IntelligenceProficiency);
             }
         }
+
+        [BsonElement("wisdonproficiency")]
         public Boolean WisdonProficiency { get; set; }
+
+        [BsonIgnore]
         public Int32 Wisdon
         {
             get
@@ -53,7 +73,11 @@ namespace DND
                 return CalculateSavingThrow(Character.Attributes.StrengthModifier, WisdonProficiency);
             }
         }
+
+        [BsonElement("charismaproficiency")]
         public Boolean CharismaProficiency { get; set; }
+
+        [BsonIgnore]
         public Int32 Charisma
         {
             get
