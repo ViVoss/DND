@@ -137,6 +137,9 @@
     <Compile Include="Creation\Page_RaceSelection.xaml.cs">
       <DependentUpon>Page_RaceSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Creation\Page_BackgroundSelection.xaml.cs">
+      <DependentUpon>Page_BackgroundSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rasse.cs" />
     <Compile Include="Serialize.cs" />
     <Compile Include="Spells.cs" />
@@ -254,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Subraces\Window_SubraceSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Creation\Page_BackgroundSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
