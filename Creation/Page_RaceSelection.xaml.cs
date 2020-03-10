@@ -32,6 +32,10 @@ namespace DND
         {
            
             string currRace = ((Button)sender).Tag.ToString();
+
+            //Rasse speichern
+            Character.Current.Race = currRace;
+
             switch (currRace)
             {
                 case "tiefling":

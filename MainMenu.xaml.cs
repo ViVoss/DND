@@ -29,6 +29,7 @@ namespace DND
             var Creation1 = new Creation();
             Creation1.Show();
 
+            //Neuer leerer Character erstellt
             Character.New();
         }
         private void Spells_Click(object sender, RoutedEventArgs e)
