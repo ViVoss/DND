@@ -186,6 +186,7 @@
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
+    <Compile Include="SubRace.cs" />
     <Compile Include="TEST_Window.xaml.cs">
       <DependentUpon>TEST_Window.xaml</DependentUpon>
     </Compile>

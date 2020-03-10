@@ -39,7 +39,7 @@
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="175"/>
         </Grid.ColumnDefinitions>
-        <Button Tag="Hill Dwarf">
+        <Button Tag="hill-dwarf">
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HillDwarf" Content="Hill Dwarf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">

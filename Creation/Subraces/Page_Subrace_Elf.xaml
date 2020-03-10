@@ -40,7 +40,7 @@
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="175"/>
         </Grid.ColumnDefinitions>
-        <Button Tag="High Elf">
+        <Button Tag="high-elf">
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HighElf" Content="High Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">

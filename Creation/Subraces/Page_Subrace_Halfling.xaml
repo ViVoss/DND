@@ -39,7 +39,7 @@
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="175"/>
         </Grid.ColumnDefinitions>
-        <Button Tag="Lightfoot Halfling">
+        <Button Tag="lightfoot-halfling">
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_Lightfoot" Content="Lightfoot Halfling"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
