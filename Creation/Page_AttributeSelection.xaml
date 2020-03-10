@@ -5,36 +5,89 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page_AttributeSelection">
-
+      d:DesignHeight="800" d:DesignWidth="1280"
+      Title="Page_AttributeSelection" Background="White">
+    <Page.Resources>
+        <DataTemplate x:Key="cmbAttributeValuesTemplate">
+            <WrapPanel Margin="0,5,0,5">
+                <Label Content="{Binding Number}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+            </WrapPanel>
+        </DataTemplate>
+        <ImageBrush x:Key="StackPanel_Background" ImageSource="Resources_Creation/Banner1.jpg"/>
+        <Style x:Key="StackPanel_Style" TargetType="StackPanel">
+            <Setter Property="Margin" Value="20,0,20,0"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="200"/>
+            <!--<Setter Property="Background" Value="{StaticResource StackPanel_Background}"/>-->
+            <Style.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="0,40,0,33"/>
+                    <Setter Property="FontSize" Value="42"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="Content" Value=" "/>
+                </Style>
+                <Style TargetType="ComboBox">
+                    <!--<EventSetter Event="SelectionChanged" Handler="ComboBox_SelectionChanged"/>-->
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="10"/>
+                    <Style.Resources>
+                        <DataTemplate x:Key="a">
+                            <Label Content="{Binding what}"/>
+                        </DataTemplate>
+                    </Style.Resources>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Page.Resources>
     <Grid Name="Main">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="2">
-            <StackPanel Name="Strength" Margin="5" Width="50">
+        <DockPanel Grid.Row="2" Margin="65,0,65,0">
+            <StackPanel Style="{StaticResource StackPanel_Style}">
+                <Label Name="Label_STR" Tag="STR"/>
+                <ComboBox x:Name="cmbAttributeValuesStr" Tag="STR" ItemTemplate="{StaticResource cmbAttributeValuesTemplate}" SelectionChanged="cmbAttributeValuesStr_SelectionChanged"/>
                 <StackPanel.Background>
-                    <ImageBrush ImageSource="Resources_Creation/Banner1.jpg"/>
+                    <ImageBrush ImageSource="Resources_Creation/Attributes/Strength.png"/>
                 </StackPanel.Background>
             </StackPanel>
-            <StackPanel Name="Dexterity" Margin="5">
-
+            <StackPanel Style="{StaticResource StackPanel_Style}">
+                <Label Name="Label_DEX" Tag="DEX"/>
+                <ComboBox x:Name="cmbAttributeValuesDex" Tag="DEX" ItemTemplate="{StaticResource cmbAttributeValuesTemplate}"/>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resources_Creation/Attributes/Dexterity.png"/>
+                </StackPanel.Background>
             </StackPanel>
-            <StackPanel Name="Constitution" DockPanel.Dock="Left" Margin="5">
-
+            <StackPanel Style="{StaticResource StackPanel_Style}">
+                <Label Name="Label_CON" Tag="CON"/>
+                <ComboBox x:Name="cmbAttributeValuesCon" Tag="CON" ItemTemplate="{StaticResource cmbAttributeValuesTemplate}"/>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resources_Creation/Attributes/Constitution.png"/>
+                </StackPanel.Background>
             </StackPanel>
-            <StackPanel Name="Intelligence" Margin="5">
-
+            <StackPanel Style="{StaticResource StackPanel_Style}">
+                <Label Name="Label_INT" Tag="INT"/>
+                <ComboBox x:Name="cmbAttributeValuesInt" Tag="INT" ItemTemplate="{StaticResource cmbAttributeValuesTemplate}"/>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resources_Creation/Attributes/Intelligence.png"/>
+                </StackPanel.Background>
             </StackPanel>
-            <StackPanel Name="Wisdom" Margin="5">
-
+            <StackPanel Style="{StaticResource StackPanel_Style}">
+                <Label Name="Label_WIS" Tag="WIS"/>
+                <ComboBox x:Name="cmbAttributeValuesWis" Tag="WIS" ItemTemplate="{StaticResource cmbAttributeValuesTemplate}"/>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resources_Creation/Attributes/Wisdom.png"/>
+                </StackPanel.Background>
             </StackPanel>
-            <StackPanel Name="Charisma" Margin="5">
-
+            <StackPanel Style="{StaticResource StackPanel_Style}">
+                <Label Name="Label_CHA" Tag="CHA"/>
+                <ComboBox x:Name="cmbAttributeValuesCha" Tag="CHA" ItemTemplate="{StaticResource cmbAttributeValuesTemplate}"/>
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resources_Creation/Attributes/Charisma.png"/>
+                </StackPanel.Background>
             </StackPanel>
         </DockPanel>
         <Grid Name="Skills" Grid.Row="3">

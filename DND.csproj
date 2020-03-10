@@ -186,6 +186,9 @@
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
+    <Compile Include="TEST_Window.xaml.cs">
+      <DependentUpon>TEST_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WebAufruf.cs" />
     <Page Include="CharacterCreationMain.xaml">
       <SubType>Designer</SubType>
@@ -270,6 +273,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Page_AttributeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEST_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -381,6 +388,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Creation\Resources_Creation\Race_Icons\Placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\Attributes\Charisma.png" />
+    <Resource Include="Creation\Resources_Creation\Attributes\Constitution.png" />
+    <Resource Include="Creation\Resources_Creation\Attributes\Dexterity.png" />
+    <Resource Include="Creation\Resources_Creation\Attributes\Intelligence.png" />
+    <Resource Include="Creation\Resources_Creation\Attributes\Strength.png" />
+    <Resource Include="Creation\Resources_Creation\Attributes\Wisdom.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

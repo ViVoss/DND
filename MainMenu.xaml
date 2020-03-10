@@ -52,7 +52,7 @@
                         </Viewbox>
                     </DockPanel>
                 </Button>
-                <Button Name="Classes" Margin="10,10,10,10" Grid.Column="3" Grid.Row="0" BorderBrush="{x:Null}" Click="Creation_ButtonClick">
+                <Button Name="Classes" Margin="10,10,10,10" Grid.Column="3" Grid.Row="0" BorderBrush="{x:Null}" Click="Classes_Click">
                     <DockPanel>
                         <Viewbox Margin="0" HorizontalAlignment="Left" Stretch="None">
                             <Image Source="Resources/Random/maintainweb.jpg" Width="40" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>

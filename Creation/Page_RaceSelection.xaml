@@ -12,7 +12,7 @@
             <EventSetter Event="Click" Handler="Button_Race_Click"/>
             <EventSetter Event="MouseEnter" Handler="Button_Race_MouseEnter"/>
             <EventSetter Event="MouseLeave" Handler="Button_Race_MouseLeave"/>
-            <!--Padding="5,5,5,5" Margin="10"-->
+            
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black" />

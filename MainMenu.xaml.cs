@@ -41,6 +41,12 @@ namespace DND
         {
 
         }
+
+        private void Classes_Click(object sender, RoutedEventArgs e)
+        {
+            var TEST = new TEST_Window();
+            TEST.Show();
+        }
     }
 }
 
