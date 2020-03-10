@@ -24,18 +24,19 @@ namespace DND
         public Page_AttributeSelection()
         {
             InitializeComponent();
-            AttributeValues.Add(new StatsList { Number = "8" });
-            AttributeValues.Add(new StatsList { Number = "10" });
-            AttributeValues.Add(new StatsList { Number = "12" });
-            AttributeValues.Add(new StatsList { Number = "13" });
-            AttributeValues.Add(new StatsList { Number = "14" });
-            AttributeValues.Add(new StatsList { Number = "15" });
-            cmbAttributeValuesStr.ItemsSource = cmbAttributeValuesDex.ItemsSource = cmbAttributeValuesCon.ItemsSource = cmbAttributeValuesInt.ItemsSource
-                = cmbAttributeValuesWis.ItemsSource = cmbAttributeValuesCha.ItemsSource = AttributeValues;
+            AttributeValues.Add(new StatsList { Number = 8 });
+            AttributeValues.Add(new StatsList { Number = 10 });
+            AttributeValues.Add(new StatsList { Number = 12 });
+            AttributeValues.Add(new StatsList { Number = 13 });
+            AttributeValues.Add(new StatsList { Number = 14 });
+            AttributeValues.Add(new StatsList { Number = 15 });
+//            cmbAttributeValuesDex.ItemsSource = cmbAttributeValuesCon.ItemsSource = cmbAttributeValuesInt.ItemsSource
+  //              = cmbAttributeValuesWis.ItemsSource = cmbAttributeValuesCha.ItemsSource = AttributeValues;
+            //cmbAttributeValuesStr.ItemsSource =
         }
         public class StatsList
         {
-            public string Number { get; set; }
+            public int Number { get; set; }
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
