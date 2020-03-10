@@ -46,6 +46,39 @@ namespace DND
             response.Close();
             return builder.ToString();
         }
+        public string GetSubRaceInformation(string race)
+        {
+            string jsonstring;
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            string url = "http://dnd5eapi.co/api/races/rasse";
+            url = url.Replace("rasse", race);
+
+            //Creates Request of URl
+            WebRequest request = WebRequest.Create(url);
+
+            //get Response
+            WebResponse response = request.GetResponse();
+
+            using (Stream dataStream = response.GetResponseStream())
+            {
+
+                StreamReader reader = new StreamReader(dataStream);
+
+                // Hier komm der JSon String
+                jsonstring = reader.ReadToEnd();
+
+                Rasse rasse = JsonConvert.DeserializeObject<Rasse>(jsonstring);
+
+                builder.Append(rasse.Name);
+                foreach (DND.AbilityBonus element in rasse.AbilityBonuses)
+                {
+                    builder.Append("\n" + element.Name + " +" + element.Bonus);
+                }
+            }
+            response.Close();
+            return builder.ToString();
+        }
+
         public string GetClassInformation(string klasse)
         {
             string jsonstring;
