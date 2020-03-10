@@ -19,18 +19,20 @@ namespace DND
 
         internal static void Connect()
         {
-            try
+            if(Collection == null)
             {
-                Client = new MongoClient(ConnectionLink);
-                Database = Client.GetDatabase(DatabaseName);
-                MessageBox.Show("Successfully connected");
+                try
+                {
+                    Client = new MongoClient(ConnectionLink);
+                    Database = Client.GetDatabase(DatabaseName);
+                    MessageBox.Show("Successfully connected");
 
-                Collection = Database.GetCollection<Character>("Character");
-            }
-            catch (Exception)
-            {
-
-                throw;
+                    Collection = Database.GetCollection<Character>("Character");
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
     }

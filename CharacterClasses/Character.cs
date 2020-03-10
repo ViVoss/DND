@@ -8,11 +8,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DND
 {
     class Character
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public String ID { get; set; }
 
         //Verweise
         [BsonElement("appearance")]
@@ -50,8 +54,7 @@ namespace DND
         }
 
         //Eigenschaften
-        [BsonId]
-        //[BsonElement("charactername")]
+        [BsonElement("charactername")]
         public String CharacterName { get; set; }
 
         [BsonElement("class")]
@@ -90,38 +93,49 @@ namespace DND
         public static void New()
         {
             Current = new Character();
-
-            Character newCharacter = new Character();
-
-            //BsonDocument
-
-            //MongoConnection.Collection.InsertOne(newCharacter);
-            
         }
-        public static void Load(String characterName)
+        public static bool Load(String characterName)
         {
             //Connect
             MongoConnection.Connect();
 
-            //IMongoQueryable<Character> obj = MongoConnection.Collection.AsQueryable<Character>();
-            //obj.Where();
+            List<Character> result = MongoConnection.Collection.Find<Character>(x => true).ToList();
 
-            BsonDocument doc = MongoConnection.Collection.ToBsonDocument();
+            List<Character> found = result.Where(x => x.CharacterName == characterName).ToList();
+            if(found.Count == 0)
+            {
+                MessageBox.Show("Fehler: Es konnte kein Character mit dem Namen '" + characterName + "' gefunden werden.");
+                return false;
+            }
+            else if(found.Count > 1)
+            {
+                MessageBox.Show("Fehler: Es wurden mehrere Character mit dem Namen '" + characterName + "' gefunden.");
+                return false;
+            }
+            else
+            {
+                Character.Current = found[0];
+                return true;
+            }
+            
 
-            //Deserialize
-            Character.Current = BsonSerializer.Deserialize<Character>(doc);
 
         }
         public static void Save()
         {
-            //Serialize
-            BsonDocument bsonCharacter = Character.Current.ToBsonDocument();
-
             //Connect
             MongoConnection.Connect();
 
-            //Upload
-            //MongoConnection.Collection.
+            MongoConnection.Collection.InsertOne(Character.Current);
+        }
+
+        public static void Delete(String characterName)
+        {
+            MongoConnection.Connect();
+
+            MongoConnection.Collection.DeleteOne<Character>(x => x.CharacterName == characterName);
+
+            MessageBox.Show("Deleted " + Character.Current.ID);
         }
     }
 }
