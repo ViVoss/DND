@@ -19,20 +19,24 @@ namespace DND
     /// </summary>
     public partial class Creation : Window
     {
-        Page_ClassSelection ClassSelection = new Page_ClassSelection();
-        Page_RaceSelection RaceSelection = new Page_RaceSelection();
-        Page_BackgroundSelection BackgroundSelection = new Page_BackgroundSelection();
-        Page_AttributeSelection AttributeSelection = new Page_AttributeSelection();
-        Page_SpellSelection SpellSelection = new Page_SpellSelection();
-        Page_InventorySelection InventorySelection = new Page_InventorySelection();
-        Page_Miscellaneous MiscellaneousSelection = new Page_Miscellaneous();
+        Page_ClassSelection ClassSelection;
+        Page_RaceSelection RaceSelection;
+        Page_BackgroundSelection BackgroundSelection;
+        Page_AttributeSelection AttributeSelection;
+        Page_SpellSelection SpellSelection;
+        Page_InventorySelection InventorySelection;
+        Page_Miscellaneous MiscellaneousSelection;
         bool RaceOpen, ClassOpen, BackgroundOpen, AttributeOpen, SpellOpen, InventoryOpen, MiscellaneousOpen;
 
         public Creation()
         {
-            ClassSelectionPage1 = new Page_ClassSelection();
-            RaceSelectionPage1 = new Page_RaceSelection(this);
-            BackgroundSelectionPage1 = new Page_BackgroundSelection();
+            ClassSelection = new Page_ClassSelection();
+            RaceSelection = new Page_RaceSelection(this);
+            BackgroundSelection = new Page_BackgroundSelection();
+            AttributeSelection = new Page_AttributeSelection();
+            SpellSelection = new Page_SpellSelection();
+            InventorySelection = new Page_InventorySelection();
+            MiscellaneousSelection = new Page_Miscellaneous();
 
             InitializeComponent();
             Frame1.Content = RaceSelection;
