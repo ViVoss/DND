@@ -57,6 +57,9 @@ namespace DND
         [BsonElement("charactername")]
         public String CharacterName { get; set; }
 
+        [BsonIgnore]
+        public string OldName { get; set; }
+
         [BsonElement("class")]
         public String Class { get; set; }
 

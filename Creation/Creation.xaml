@@ -19,6 +19,6 @@
             <Button Name="Btn_Continue" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Continue_Click" Content="Continue"/>
             <Button Name="Btn_Back" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Back_Click" Content="Back"/>
         </DockPanel>
-        <TextBox TextWrapping="Wrap" Grid.Row="1" Name="Textbox_Creation_Race" Margin="10" HorizontalAlignment="Left" Width="150" IsReadOnly="True"/>
+        <TextBox TextWrapping="Wrap" Grid.Row="1" Name="Textbox_Selection_Info" Margin="10" HorizontalAlignment="Left" Width="150" IsReadOnly="True"/>
     </Grid>
 </Window>

@@ -20,12 +20,15 @@ namespace DND
     public partial class Page_RaceSelection : Page
     {
         WebAufruf call = new WebAufruf();
-        
 
-        public Page_RaceSelection()
+        public Creation Creation { get; set; }
+
+        public Page_RaceSelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
 
+            this.Creation.Textbox_Selection_Info.Text = Character.Current.SubRace;
         }
 
         private void Button_Race_Click(object sender, RoutedEventArgs e)
@@ -33,7 +36,7 @@ namespace DND
            
             string currRace = ((Button)sender).Tag.ToString();
 
-            //Rasse speichern
+            //Rasse setzen
             Character.Current.Race = currRace;
 
             switch (currRace)

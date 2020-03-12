@@ -19,9 +19,9 @@ namespace DND
     /// </summary>
     public partial class Creation : Window
     {
-        Page_ClassSelection ClassSelectionPage1 = new Page_ClassSelection();
-        Page_RaceSelection RaceSelectionPage1 = new Page_RaceSelection();
-        Page_BackgroundSelection BackgroundSelectionPage1 = new Page_BackgroundSelection();
+        Page_ClassSelection ClassSelectionPage1;
+        Page_RaceSelection RaceSelectionPage1;
+        Page_BackgroundSelection BackgroundSelectionPage1;
         bool ClassPageOpen = false;
 
         
@@ -29,6 +29,10 @@ namespace DND
 
         public Creation()
         {
+            ClassSelectionPage1 = new Page_ClassSelection();
+            RaceSelectionPage1 = new Page_RaceSelection(this);
+            BackgroundSelectionPage1 = new Page_BackgroundSelection();
+
             InitializeComponent();
             Frame1.Content = RaceSelectionPage1;
    

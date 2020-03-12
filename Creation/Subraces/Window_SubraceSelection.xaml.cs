@@ -55,5 +55,13 @@ namespace DND
             }
             Frame_SubraceSelection.Content = test;
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            //Schreibt die Informationen aus der Textbox_Selection_Info der Creation Page 
+            //(die bevor das Fenster geschlossen wird, frisch mit der Subrace beschrieben wurde)
+            //in den Current Character
+            Character.Current.SubRace = this.Creation.Textbox_Selection_Info.Text;
+        }
     }
 }
