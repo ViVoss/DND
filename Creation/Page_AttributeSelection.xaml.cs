@@ -41,7 +41,9 @@ namespace DND
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Strength = Convert.ToUInt16(((ComboBox) sender).SelectedValue);
+            MessageBox.Show(((ComboBox)sender).SelectedItem.ToString()); //wie kommt man genau an den Inhalt?
+            MessageBox.Show(this.cmbAttributeValuesStr.Text);
+            Character.Current.Attributes.Strength = Convert.ToUInt16(this.cmbAttributeValuesStr.Text);
             this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
             
 
