@@ -30,6 +30,10 @@ namespace DND
 
         public Creation()
         {
+            ClassSelectionPage1 = new Page_ClassSelection();
+            RaceSelectionPage1 = new Page_RaceSelection(this);
+            BackgroundSelectionPage1 = new Page_BackgroundSelection();
+
             InitializeComponent();
             Frame1.Content = RaceSelection;
             RaceOpen = true;

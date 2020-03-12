@@ -24,7 +24,6 @@ namespace DND
         //Eigenschaften
         public static readonly List<UInt16> AttributeValues = new List<UInt16>() { 15, 14, 13, 12, 10, 8 };
 
-
         [BsonElement("strength")]
         public UInt16 Strength { get; set; }
 

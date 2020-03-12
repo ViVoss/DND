@@ -26,11 +26,28 @@ namespace DND
         // Creation >>>
         private void Creation_ButtonClick(object sender, RoutedEventArgs e)
         {
-            var Creation1 = new Creation();
-            Creation1.Show();
+            MessageBoxResult result = MessageBox.Show("Neuen Character erstellen?", "Charactererstellung", MessageBoxButton.YesNoCancel);
+            if (result == MessageBoxResult.Yes)
+            {
+                //Neuer leerer Character erstellt
+                Character.New();
+            }
+            else if(result == MessageBoxResult.No)
+            {
+                //Character finden und laden
+                if (Character.Load("") == false)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
 
-            //Neuer leerer Character erstellt
-            Character.New();
+
+            Creation Creation1 = new Creation();
+            Creation1.Show();
         }
         private void Spells_Click(object sender, RoutedEventArgs e)
         {            
@@ -47,7 +64,7 @@ namespace DND
 
         private void Classes_Click(object sender, RoutedEventArgs e)
         {
-            var TEST = new TEST_Window();
+            TEST_Window TEST = new TEST_Window();
             TEST.Show();
         }
     }
