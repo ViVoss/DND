@@ -41,8 +41,8 @@ namespace DND
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Strength = ((ComboBox) sender).SelectedValue;
-            this.Label_STR.Text = Character.Current.Attributes.StrengthModifier;
+            Character.Current.Attributes.Strength = Convert.ToUInt16(((ComboBox) sender).SelectedValue);
+            this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
             
 
 
