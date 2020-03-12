@@ -120,7 +120,7 @@
                 <Button Name="HalfElf" Tag="half-elf" Grid.Column="1" Grid.Row="2" Background="Transparent">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Left" Stretch="None">
-                            <Image Source="Resources_Creation/Race_Icons/Dragonborn.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Image Source="Resources_Creation/Race_Icons/HalfElf.png" Height="180" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Viewbox>
                         <Viewbox Stretch="None" >
                             <TextBlock VerticalAlignment="Bottom" Text="Half-Elf"/>
