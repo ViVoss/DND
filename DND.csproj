@@ -153,6 +153,9 @@
     <Compile Include="Creation\Page_SpellSelection.xaml.cs">
       <DependentUpon>Page_SpellSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Creation\Page_Overview.xaml.cs">
+      <DependentUpon>Page_Overview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rasse.cs" />
     <Compile Include="Serialize.cs" />
     <Compile Include="Spells.cs" />
@@ -295,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Page_SpellSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Creation\Page_Overview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

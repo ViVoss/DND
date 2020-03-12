@@ -26,7 +26,8 @@ namespace DND
         Page_SpellSelection SpellSelection;
         Page_InventorySelection InventorySelection;
         Page_Miscellaneous MiscellaneousSelection;
-        bool RaceOpen, ClassOpen, BackgroundOpen, AttributeOpen, SpellOpen, InventoryOpen, MiscellaneousOpen;
+        Page_Overview OverviewSelection;
+        bool RaceOpen, ClassOpen, BackgroundOpen, AttributeOpen, SpellOpen, InventoryOpen, MiscellaneousOpen, OverviewOpen;
 
         public Creation()
         {
@@ -39,6 +40,7 @@ namespace DND
             SpellSelection = new Page_SpellSelection();
             InventorySelection = new Page_InventorySelection();
             MiscellaneousSelection = new Page_Miscellaneous();
+            OverviewSelection = new Page_Overview();
 
             Frame1.Content = RaceSelection;
             RaceOpen = true;
@@ -84,7 +86,9 @@ namespace DND
             }
             else if (MiscellaneousOpen)
             {
-
+                Frame1.Content = OverviewSelection;
+                OverviewOpen = true;
+                MiscellaneousOpen = false;
             }
         }
 
@@ -129,6 +133,12 @@ namespace DND
                 Frame1.Content = SpellSelection;
                 SpellOpen = true;
                 MiscellaneousOpen = false;
+            }
+            else if (OverviewOpen)
+            {
+                Frame1.Content = MiscellaneousSelection;
+                MiscellaneousOpen = true;
+                OverviewOpen = false;
             }
         }
     }
