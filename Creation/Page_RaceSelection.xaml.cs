@@ -27,6 +27,8 @@ namespace DND
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            //Subrace laden, wenn vorhanden
             if (Character.Current.SubRace != "")
             {
                 this.Creation.Textbox_Selection_Info.Text = Character.Current.SubRace;
