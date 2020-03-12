@@ -27,8 +27,11 @@ namespace DND
         {
             this.Creation = CreationWindow;
             InitializeComponent();
-
-            this.Creation.Textbox_Selection_Info.Text = Character.Current.SubRace;
+            if (Character.Current.SubRace != "")
+            {
+                this.Creation.Textbox_Selection_Info.Text = Character.Current.SubRace;
+            }
+            
         }
 
         private void Button_Race_Click(object sender, RoutedEventArgs e)
