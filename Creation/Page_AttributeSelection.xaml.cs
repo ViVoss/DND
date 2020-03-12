@@ -45,7 +45,7 @@ namespace DND
             MessageBox.Show(this.cmbAttributeValuesStr.Text);
             Character.Current.Attributes.Strength = Convert.ToUInt16(this.cmbAttributeValuesStr.Text);
             this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
-            
+
 
 
 
@@ -77,6 +77,30 @@ namespace DND
             //        break;
             //}
             //Label_STR.Content = attval;
+        }
+        private void cmbAttributeValuesDex_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void cmbAttributeValuesCon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbAttributeValuesInt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbAttributeValuesWis_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbAttributeValuesCha_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

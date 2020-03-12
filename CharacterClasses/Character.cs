@@ -120,10 +120,8 @@ namespace DND
                 Character.Current = found[0];
                 return true;
             }
-            
-
-
         }
+
         public static void Save()
         {
             //Connect
@@ -134,11 +132,21 @@ namespace DND
 
         public static void Delete(String characterName)
         {
+            //Connect
             MongoConnection.Connect();
 
             MongoConnection.Collection.DeleteOne<Character>(x => x.CharacterName == characterName);
 
             MessageBox.Show("Deleted " + Character.Current.ID);
+        }
+
+        public static List<Character> GetAll()
+        {
+            //Connect
+            MongoConnection.Connect();
+
+            List<Character> result = MongoConnection.Collection.Find<Character>(x => true).ToList();
+            return result;
         }
     }
 }

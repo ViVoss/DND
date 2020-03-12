@@ -130,6 +130,9 @@
     <Compile Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialoges\Page_NewOrLoadCharacter.xaml.cs">
+      <DependentUpon>Page_NewOrLoadCharacter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Klasse.cs" />
     <Compile Include="MongoConnection.cs" />
     <Compile Include="Creation\Page_ClassSelection.xaml.cs">
@@ -173,9 +176,6 @@
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance.xaml.cs">
-      <DependentUpon>Maintenance.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Creation\Subraces\Page_Subrace_Gnome.xaml.cs">
       <DependentUpon>Page_Subrace_Gnome.xaml</DependentUpon>
     </Compile>
@@ -203,6 +203,9 @@
       <DependentUpon>TEST_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="WebAufruf.cs" />
+    <Compile Include="Dialoges\Window_Dialog.xaml.cs">
+      <DependentUpon>Window_Dialog.xaml</DependentUpon>
+    </Compile>
     <Page Include="CharacterCreationMain.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -210,17 +213,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialoges\Page_NewOrLoadCharacter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Maintenance.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -228,10 +227,6 @@
     </Compile>
     <Compile Include="CharacterCreationMain.xaml.cs">
       <DependentUpon>CharacterCreationMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Page Include="Creation\Page_ClassSelection.xaml">
       <SubType>Designer</SubType>
@@ -306,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TEST_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialoges\Window_Dialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
