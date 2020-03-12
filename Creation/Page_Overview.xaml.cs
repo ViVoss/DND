@@ -20,9 +20,15 @@ namespace DND
     /// </summary>
     public partial class Page_Overview : Page
     {
-        public Page_Overview()
+
+        public Creation Creation { get; set; }
+
+        public Page_Overview(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
+
+
         }
     }
 }

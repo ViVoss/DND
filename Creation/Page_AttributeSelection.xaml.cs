@@ -25,17 +25,19 @@ namespace DND
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            switch (((ComboBox)sender).Tag.ToString())
-            {
-                case "STR":
-                    Label_STR.Content = ((ComboBox)sender).Text;
-                    break;
-                default:
-                    break;
-            }
-        }
+
+        //Obsolete?
+        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    switch (((ComboBox)sender).Tag.ToString())
+        //    {
+        //        case "STR":
+        //            Label_STR.Content = ((ComboBox)sender).Text;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

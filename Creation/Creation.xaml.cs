@@ -40,7 +40,7 @@ namespace DND
             SpellSelection = new Page_SpellSelection();
             InventorySelection = new Page_InventorySelection();
             MiscellaneousSelection = new Page_Miscellaneous();
-            OverviewSelection = new Page_Overview();
+            OverviewSelection = new Page_Overview(this);
 
             Frame1.Content = RaceSelection;
             RaceOpen = true;
