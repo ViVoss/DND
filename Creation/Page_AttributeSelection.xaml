@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND"
-      mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1295"
+      mc:Ignorable="d"
+      d:DesignHeight="800" d:DesignWidth="1280"
       Title="Page_AttributeSelection" Background="White">
     <Page.Resources>
         <DataTemplate x:Key="cmbAttributeValuesTemplate">
@@ -13,7 +13,7 @@
         </DataTemplate>
         <ImageBrush x:Key="DockPanel_Background" ImageSource="Resources_Creation/Banner1.jpg"/>
         <Style x:Key="DockPanel_Style" TargetType="DockPanel">
-            <Setter Property="Margin" Value="20,0,20,0"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="150"/>
             <Style.Resources>
@@ -30,6 +30,7 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                     <Setter Property="FontSize" Value="12"/>
                     <Setter Property="Height" Value="20"/>
+                    <Setter Property="Margin" Value="0,0,0,0"/>
                     <Setter Property="ItemContainerStyle" Value="{Binding cmbTemplate}"/>
                     <Style.Resources>
                         <DataTemplate x:Key="a">
@@ -47,7 +48,7 @@
             <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="1" Margin="355,0,370,0">
+        <DockPanel Grid.Row="1" HorizontalAlignment="Center">
             <DockPanel Style="{StaticResource DockPanel_Style}">
                 <Label Name="Label_ProficiencyBonus"/>
                 <DockPanel.Background>
@@ -67,7 +68,7 @@
                 </DockPanel.Background>
             </DockPanel>
         </DockPanel>
-        <DockPanel Grid.Row="2" Margin="65,0,65,0">
+        <DockPanel Grid.Row="2" HorizontalAlignment="Center">
             <DockPanel Style="{StaticResource DockPanel_Style}">
                 <Label Name="Label_STR" Tag="STR"/>
                 <ComboBox x:Name="cmbAttributeValuesStr" Tag="STR" SelectionChanged="cmbAttributeValuesStr_SelectionChanged">

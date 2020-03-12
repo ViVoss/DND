@@ -56,7 +56,6 @@
                         </Viewbox>
                     </StackPanel>
                 </Button>
-
                 <Button Name="Bard" Grid.Column="1" Grid.Row="0" Tag="bard">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources_Creation/PNGTotal.png" Opacity="0"/>

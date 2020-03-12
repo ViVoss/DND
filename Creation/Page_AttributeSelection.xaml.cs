@@ -20,23 +20,9 @@ namespace DND
     /// </summary>
     public partial class Page_AttributeSelection : Page
     {
-        List<StatsList> AttributeValues = new List<StatsList>();
         public Page_AttributeSelection()
         {
             InitializeComponent();
-            AttributeValues.Add(new StatsList { Number = 8 });
-            AttributeValues.Add(new StatsList { Number = 10 });
-            AttributeValues.Add(new StatsList { Number = 12 });
-            AttributeValues.Add(new StatsList { Number = 13 });
-            AttributeValues.Add(new StatsList { Number = 14 });
-            AttributeValues.Add(new StatsList { Number = 15 });
-//            cmbAttributeValuesDex.ItemsSource = cmbAttributeValuesCon.ItemsSource = cmbAttributeValuesInt.ItemsSource
-  //              = cmbAttributeValuesWis.ItemsSource = cmbAttributeValuesCha.ItemsSource = AttributeValues;
-            //cmbAttributeValuesStr.ItemsSource =
-        }
-        public class StatsList
-        {
-            public int Number { get; set; }
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,10 +49,19 @@ namespace DND
                     attval = Convert.ToString(0);
                     break;
                 case 2:
-                    attval = Convert.ToString("+"+1);
+                    attval = Convert.ToString("+" + 1);
                     break;
                 case 3:
-                    attval = Convert.ToString("+"+1);
+                    attval = Convert.ToString("+" + 2);
+                    break;
+                case 4:
+                    attval = Convert.ToString("+" + 3);
+                    break;
+                case 5:
+                    attval = Convert.ToString("+" + 4);
+                    break;
+                case 6:
+                    attval = Convert.ToString("+" + 5);
                     break;
                 default:
                     break;
