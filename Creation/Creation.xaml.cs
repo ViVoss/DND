@@ -27,7 +27,6 @@ namespace DND
         Page_InventorySelection InventorySelection;
         Page_Miscellaneous MiscellaneousSelection;
         Page_Overview OverviewSelection;
-        bool RaceOpen, ClassOpen, BackgroundOpen, AttributeOpen, SpellOpen, InventoryOpen, MiscellaneousOpen, OverviewOpen;
 
         public static Creation OpenWindow()
         {
@@ -49,114 +48,89 @@ namespace DND
             OverviewSelection = new Page_Overview(this);
             this.Btn_Back.IsEnabled = false;
             Frame1.Content = RaceSelection;
-            RaceOpen = true;
         }
 
         private void Btn_Continue_Click(object sender, RoutedEventArgs e)
         {
-            if (RaceOpen)
+            if (Frame1.Content == RaceSelection)
             {
                 Frame1.Content = ClassSelection;
-                ClassOpen = true;
-                RaceOpen = false;
             }
-            else if (ClassOpen)
+            else if (Frame1.Content == ClassSelection)
             {
                 Frame1.Content = BackgroundSelection;
-                BackgroundOpen = true;
-                ClassOpen = false;
             }
-            else if (BackgroundOpen)
+            else if (Frame1.Content == BackgroundSelection)
             {
                 Frame1.Content = AttributeSelection;
-                AttributeOpen = true;
-                BackgroundOpen = false;
+
             }
-            else if (AttributeOpen)
+            else if (Frame1.Content == AttributeSelection)
             {
                 Frame1.Content = InventorySelection;
-                InventoryOpen = true;
-                AttributeOpen = false;
+
             }
-            else if (InventoryOpen)
+            else if (Frame1.Content == InventorySelection)
             {
                 Frame1.Content = SpellSelection;
-                SpellOpen = true;
-                InventoryOpen = false;
             }
-            else if (SpellOpen)
+            else if (Frame1.Content == SpellSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
-                MiscellaneousOpen = true;
-                SpellOpen = false;
             }
-            else if (MiscellaneousOpen)
+            else if (Frame1.Content == MiscellaneousSelection)
             {
                 Frame1.Content = OverviewSelection;
-                OverviewOpen = true;
-                MiscellaneousOpen = false;
             }
-            EnableDisableButtons();
+            //EnableDisableButtons();
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
         {
-            if (RaceOpen)
+
+            if (Frame1.Content == RaceSelection)
             {
 
             }
-            else if (ClassOpen)
+            else if (Frame1.Content == ClassSelection)
             {
                 Frame1.Content = RaceSelection;
-                RaceOpen = true;
-                ClassOpen = false;
             }
-            else if (BackgroundOpen)
+            else if (Frame1.Content == BackgroundSelection)
             {
                 Frame1.Content = ClassSelection;
-                ClassOpen = true;
-                BackgroundOpen = false;
             }
-            else if (AttributeOpen)
+            else if (Frame1.Content == AttributeSelection)
             {
                 Frame1.Content = BackgroundSelection;
-                BackgroundOpen = true;
-                AttributeOpen = false;
             }
-            else if (InventoryOpen)
+            else if (Frame1.Content == InventorySelection)
             {
                 Frame1.Content = AttributeSelection;
-                AttributeOpen = true;
-                InventoryOpen = false;
+
             }
-            else if (SpellOpen)
+            else if (Frame1.Content == SpellSelection)
             {
                 Frame1.Content = InventorySelection;
-                InventoryOpen = true;
-                SpellOpen = false;
             }
-            else if (MiscellaneousOpen)
+            else if (Frame1.Content == MiscellaneousSelection)
             {
                 Frame1.Content = SpellSelection;
-                SpellOpen = true;
-                MiscellaneousOpen = false;
             }
-            else if (OverviewOpen)
+            else if (Frame1.Content == OverviewSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
-                MiscellaneousOpen = true;
-                OverviewOpen = false;
             }
-            EnableDisableButtons();
+            //EnableDisableButtons();
         }
-        public void EnableDisableButtons()
+        
+        public void BackButtonEnabled(bool activated)
         {
-            if (!OverviewOpen)
-                this.Btn_Continue.IsEnabled = true;
-            else this.Btn_Continue.IsEnabled = false;
-            if (!RaceOpen)
-                this.Btn_Back.IsEnabled = true;
-            else this.Btn_Back.IsEnabled = false;
+            this.Btn_Back.IsEnabled = activated;
+        }
+        public void ContinueButtonEnabled(bool activated)
+        {
+            this.Btn_Continue.IsEnabled = activated;
         }
     }
 }
