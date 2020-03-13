@@ -20,17 +20,18 @@ namespace DND.Dialoges
     /// </summary>
     public partial class Page_NewOrLoadCharacter : Page
     {
+        public Window Window { get; set; }
         public MainMenu MainMenu { get; set; }
-        public Page_NewOrLoadCharacter(MainMenu mainMenu)
+        public Page_NewOrLoadCharacter(Window window, MainMenu mainMenu)
         {
             InitializeComponent();
+            this.Window = window;
             this.MainMenu = mainMenu;
-
+            this.MainMenu.CharacterName = "";
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
             List<Character> characterList = Character.GetAll();
             foreach (Character character in characterList)
             {
@@ -38,14 +39,20 @@ namespace DND.Dialoges
             }
         }
 
-        private void btnCharacterÖffnen_Click(object sender, RoutedEventArgs e)
-        {
-            this.MainMenu.CharacterName = this.pageCharacterList.SelectedItem.ToString();
-        }
-
         private void pageCharacterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.buttonCharacterÖffnen.IsEnabled = true;
         }
+
+        private void btnCharacterÖffnen_Click(object sender, RoutedEventArgs e)
+        {
+            this.MainMenu.CharacterName = this.pageCharacterList.SelectedItem.ToString();
+
+            //Schießt das Fenster
+            //Wenn wie oben der Name gesetzt wurde, wird es nach dem Schließen als Erfolg erkannt
+            Window.Close();
+        }
+
+
     }
 }

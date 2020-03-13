@@ -45,23 +45,19 @@ namespace DND
             {
                 //Abfragefenster erstellen
                 Window = new Window_Dialog();
-                Page = new Page_NewOrLoadCharacter(this);
+                Page = new Page_NewOrLoadCharacter(Window, this);
                 Window.frame.Content = Page;
                 //Öffnen
                 Window.ShowDialog();
 
 
                 //Eingabe gemacht?
-                if(CharacterName != null)
+                if(CharacterName != "")
                 {
                     //Character finden und laden
                     if (Character.Load(CharacterName))
                     {
                         DND.Creation.OpenWindow();
-                    }
-                    else
-                    {
-                        MessageBox.Show("'" + CharacterName + "' konnte nicht gefunden werden");
                     }
                 }
 
