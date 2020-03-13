@@ -63,12 +63,10 @@ namespace DND
             else if (Frame1.Content == BackgroundSelection)
             {
                 Frame1.Content = AttributeSelection;
-
             }
             else if (Frame1.Content == AttributeSelection)
             {
                 Frame1.Content = InventorySelection;
-
             }
             else if (Frame1.Content == InventorySelection)
             {
@@ -80,7 +78,14 @@ namespace DND
             }
             else if (Frame1.Content == MiscellaneousSelection)
             {
+                //Characternamen übernehmen
+                Character.Current.CharacterName = MiscellaneousSelection.CharacterName.Text;
+
                 Frame1.Content = OverviewSelection;
+            }
+            else if(Frame1.Content == OverviewSelection)
+            {
+
             }
             //EnableDisableButtons();
         }

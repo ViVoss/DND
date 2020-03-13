@@ -33,7 +33,8 @@ namespace DND
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-
+            Creation.Close();
+            Character.Save();
         }
     }
 }
