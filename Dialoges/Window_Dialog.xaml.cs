@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DND
 {
     /// <summary>
-    /// Interaktionslogik für Maintenance.xaml
+    /// Interaktionslogik für Window_Dialog.xaml
     /// </summary>
-    public partial class Maintenance : Page
+    public partial class Window_Dialog : Window
     {
-        public Maintenance()
+        public Window_Dialog()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DND.Dialoges;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace DND
     /// </summary>
     public partial class MainMenu : Window
     {
+        public String CharacterName { get; set; }
+
         public MainMenu()
         {
             InitializeComponent();
@@ -34,15 +37,20 @@ namespace DND
             }
             else if(result == MessageBoxResult.No)
             {
+                Window_Dialog window = new Window_Dialog();
+                Page_NewOrLoadCharacter page = new Page_NewOrLoadCharacter(this);
+                window.frame.Content = page;
+                window.ShowDialog();
+
                 //Character finden und laden
                 if (Character.Load("") == false)
                 {
-                    return;
+
                 }
             }
             else
             {
-                return;
+
             }
 
 
