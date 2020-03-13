@@ -55,7 +55,7 @@
             </Style.Resources>
         </Style>
     </Page.Resources>
-    <Grid Name="Main" Margin="0,-2,0,2">
+    <Grid Name="Main">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
