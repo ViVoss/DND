@@ -25,7 +25,7 @@ namespace DND
                 {
                     Client = new MongoClient(ConnectionLink);
                     Database = Client.GetDatabase(DatabaseName);
-                    MessageBox.Show("Successfully connected");
+                    //MessageBox.Show("Successfully connected");
 
                     Collection = Database.GetCollection<Character>("Character");
                 }

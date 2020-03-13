@@ -29,7 +29,14 @@ namespace DND
         Page_Overview OverviewSelection;
         bool RaceOpen, ClassOpen, BackgroundOpen, AttributeOpen, SpellOpen, InventoryOpen, MiscellaneousOpen, OverviewOpen;
 
-        public Creation()
+        public static Creation OpenWindow()
+        {
+            Creation creation = new Creation();
+            creation.Show();
+            return creation;
+        }
+
+        private Creation()
         {
             InitializeComponent();
 

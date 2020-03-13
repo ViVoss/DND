@@ -21,6 +21,8 @@ namespace DND
     public partial class MainMenu : Window
     {
         public String CharacterName { get; set; }
+        public Window_Dialog Window { get; set; }
+        public Page_NewOrLoadCharacter Page { get; set; }
 
         public MainMenu()
         {
@@ -34,28 +36,38 @@ namespace DND
             {
                 //Neuer leerer Character erstellt
                 Character.New();
+
+                DND.Creation.OpenWindow();
             }
             else if(result == MessageBoxResult.No)
             {
-                Window_Dialog window = new Window_Dialog();
-                Page_NewOrLoadCharacter page = new Page_NewOrLoadCharacter(this);
-                window.frame.Content = page;
-                window.ShowDialog();
+                //Abfragefenster erstellen
+                Window = new Window_Dialog();
+                Page = new Page_NewOrLoadCharacter(this);
+                Window.frame.Content = Page;
+                //Öffnen
+                Window.ShowDialog();
 
-                //Character finden und laden
-                if (Character.Load("") == false)
+
+                //Eingabe gemacht?
+                if(CharacterName != null)
                 {
-
+                    //Character finden und laden
+                    if (Character.Load(CharacterName))
+                    {
+                        DND.Creation.OpenWindow();
+                    }
+                    else
+                    {
+                        MessageBox.Show("'" + CharacterName + "' konnte nicht gefunden werden");
+                    }
                 }
-            }
-            else
-            {
 
             }
 
-
-            Creation Creation1 = new Creation();
-            Creation1.Show();
+            //In die Klammern verschoben
+            //Creation Creation1 = new Creation();
+            //Creation1.Show();
         }
         private void Spells_Click(object sender, RoutedEventArgs e)
         {            

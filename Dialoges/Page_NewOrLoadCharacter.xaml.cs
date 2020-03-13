@@ -26,6 +26,11 @@ namespace DND.Dialoges
             InitializeComponent();
             this.MainMenu = mainMenu;
 
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
             List<Character> characterList = Character.GetAll();
             foreach (Character character in characterList)
             {
@@ -36,6 +41,11 @@ namespace DND.Dialoges
         private void btnCharacterÖffnen_Click(object sender, RoutedEventArgs e)
         {
             this.MainMenu.CharacterName = this.pageCharacterList.SelectedItem.ToString();
+        }
+
+        private void pageCharacterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.buttonCharacterÖffnen.IsEnabled = true;
         }
     }
 }

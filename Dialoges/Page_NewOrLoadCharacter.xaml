@@ -6,16 +6,17 @@
       xmlns:local="clr-namespace:DND.Dialoges"
       mc:Ignorable="d" 
       d:DesignHeight="200" d:DesignWidth="300"
-      Title="Page_NewOrLoadCharacter">
+      Title="Page_NewOrLoadCharacter"
+      Loaded="Page_Loaded">
 
     <Grid>
-        <ListView x:Name="pageCharacterList" Margin="10,10,10,35" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <ListView x:Name="pageCharacterList" Margin="10,10,10,35" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionChanged="pageCharacterList_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnCharacterÖffnen" Content="Öffnen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10" Click="btnCharacterÖffnen_Click"/>
+        <Button x:Name="buttonCharacterÖffnen" Content="Öffnen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10" IsEnabled="False" Click="btnCharacterÖffnen_Click"/>
     </Grid>
 </Page>
