@@ -64,7 +64,7 @@ namespace DND
         public String Class { get; set; }
 
         [BsonElement("level")]
-        public UInt16 Level { get; set; }
+        public UInt16 Level { get; set; } = 1;
 
         [BsonElement("playername")]
         public String PlayerName { get; set; }

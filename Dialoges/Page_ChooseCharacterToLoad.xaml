@@ -10,15 +10,15 @@
       Loaded="Page_Loaded">
 
     <Grid>
-        <ListView x:Name="pageCharacterList" Margin="10,10,10,35" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionChanged="pageCharacterList_SelectionChanged">
+        <ListView Name="pageCharacterList" Margin="10,10,10,35" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionChanged="pageCharacterList_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="PlayerName" Header="Player Name"/>
-                    <GridViewColumn x:Name="CharacterName" Header="Character Name"/>
-                    <GridViewColumn x:Name="Level" Header="Level"/>
-                    <GridViewColumn x:Name="Race" Header="Race"/>
-                    <GridViewColumn x:Name="Subrace" Header="Subrace"/>
-                    <GridViewColumn x:Name="Class" Header="Class"/>
+                    <GridViewColumn Header="Player Name" DisplayMemberBinding="{Binding PlayerName}"/>
+                    <GridViewColumn Header="Character Name" DisplayMemberBinding="{Binding CharacterName}"/>
+                    <GridViewColumn Header="Level" DisplayMemberBinding="{Binding Level}"/>
+                    <GridViewColumn Header="Race" DisplayMemberBinding="{Binding Race}"/>
+                    <GridViewColumn Header="Subrace" DisplayMemberBinding="{Binding Subrace}"/>
+                    <GridViewColumn Header="Class" DisplayMemberBinding="{Binding Class}"/>
                 </GridView>
             </ListView.View>
         </ListView>

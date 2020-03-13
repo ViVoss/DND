@@ -22,6 +22,7 @@ namespace DND.Dialoges
     {
         public Window Window { get; set; }
         public MainMenu MainMenu { get; set; }
+        List<CharacterExcerpt> Excerpt = new List<CharacterExcerpt>();
         public Page_ChooseCharacterToLoad(Window window, MainMenu mainMenu)
         {
             InitializeComponent();
@@ -29,15 +30,24 @@ namespace DND.Dialoges
             this.MainMenu = mainMenu;
             this.MainMenu.CharacterName = "";
         }
-
+        public class CharacterExcerpt
+        {
+            public string PlayerName { get; set; }
+            public string CharacterName { get; set; }
+            public ushort Level { get; set; }
+            public string Race { get; set; }
+            public string Subrace { get; set; }
+            public string Class { get; set; }
+        }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+
             List<Character> characterList = Character.GetAll();
             foreach (Character character in characterList)
             {
-                //this.pageCharacterList.Items.Add(character.PlayerName, character.CharacterName);
-                this.pageCharacterList.Items.Add(new CharacterListData(character.PlayerName, character.CharacterName, character.Level, character.Race, character.SubRace, character.Class));
+                Excerpt.Add(new CharacterExcerpt { PlayerName = character.PlayerName, CharacterName = character.CharacterName, Level = character.Level, Race = character.Race, Subrace = character.SubRace, Class = character.Class });
             }
+            pageCharacterList.ItemsSource = Excerpt;
         }
 
         private void pageCharacterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,28 +62,6 @@ namespace DND.Dialoges
             //Schießt das Fenster
             //Wenn wie oben der Name gesetzt wurde, wird es nach dem Schließen als Erfolg erkannt
             Window.Close();
-        }
-
-
-    }
-
-    public class CharacterListData
-    {
-        public string PlayerName { get; set; }
-        public string CharacterName { get; set; }
-        public ushort Level { get; set; }
-        public string Race { get; set; }
-        public string Subrace { get; set; }
-        public string Class { get; set; }
-
-        public CharacterListData(string PlayerName, string CharacterName, ushort Level, string Race, string Subrace, string Class)
-        {
-            this.PlayerName = PlayerName;
-            this.CharacterName = CharacterName;
-            this.Level = Level;
-            this.Race = Race;
-            this.Subrace = Subrace;
-            this.Class = Class;
         }
     }
 }
