@@ -18,11 +18,11 @@ namespace DND.Dialoges
     /// <summary>
     /// Interaktionslogik für Page_NewOrLoadCharacter.xaml
     /// </summary>
-    public partial class Page_NewOrLoadCharacter : Page
+    public partial class Page_ChooseCharacterToLoad : Page
     {
         public Window Window { get; set; }
         public MainMenu MainMenu { get; set; }
-        public Page_NewOrLoadCharacter(Window window, MainMenu mainMenu)
+        public Page_ChooseCharacterToLoad(Window window, MainMenu mainMenu)
         {
             InitializeComponent();
             this.Window = window;
@@ -35,7 +35,8 @@ namespace DND.Dialoges
             List<Character> characterList = Character.GetAll();
             foreach (Character character in characterList)
             {
-                this.pageCharacterList.Items.Add(character.CharacterName);
+                //this.pageCharacterList.Items.Add(character.PlayerName, character.CharacterName);
+                this.pageCharacterList.Items.Add(new CharacterListData(character.PlayerName, character.CharacterName, character.Level, character.Race, character.SubRace, character.Class));
             }
         }
 
@@ -54,5 +55,25 @@ namespace DND.Dialoges
         }
 
 
+    }
+
+    public class CharacterListData
+    {
+        public string PlayerName { get; set; }
+        public string CharacterName { get; set; }
+        public ushort Level { get; set; }
+        public string Race { get; set; }
+        public string Subrace { get; set; }
+        public string Class { get; set; }
+
+        public CharacterListData(string PlayerName, string CharacterName, ushort Level, string Race, string Subrace, string Class)
+        {
+            this.PlayerName = PlayerName;
+            this.CharacterName = CharacterName;
+            this.Level = Level;
+            this.Race = Race;
+            this.Subrace = Subrace;
+            this.Class = Class;
+        }
     }
 }

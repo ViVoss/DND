@@ -1,11 +1,11 @@
-﻿<Page x:Class="DND.Dialoges.Page_NewOrLoadCharacter"
+﻿<Page x:Class="DND.Dialoges.Page_ChooseCharacterToLoad"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND.Dialoges"
       mc:Ignorable="d" 
-      d:DesignHeight="200" d:DesignWidth="300"
+      d:DesignHeight="400" d:DesignWidth="600"
       Title="Page_NewOrLoadCharacter"
       Loaded="Page_Loaded">
 
@@ -13,7 +13,12 @@
         <ListView x:Name="pageCharacterList" Margin="10,10,10,35" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionChanged="pageCharacterList_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn x:Name="PlayerName" Header="Player Name"/>
+                    <GridViewColumn x:Name="CharacterName" Header="Character Name"/>
+                    <GridViewColumn x:Name="Level" Header="Level"/>
+                    <GridViewColumn x:Name="Race" Header="Race"/>
+                    <GridViewColumn x:Name="Subrace" Header="Subrace"/>
+                    <GridViewColumn x:Name="Class" Header="Class"/>
                 </GridView>
             </ListView.View>
         </ListView>

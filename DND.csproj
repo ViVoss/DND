@@ -130,8 +130,8 @@
     <Compile Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dialoges\Page_NewOrLoadCharacter.xaml.cs">
-      <DependentUpon>Page_NewOrLoadCharacter.xaml</DependentUpon>
+    <Compile Include="Dialoges\Page_ChooseCharacterToLoad.xaml.cs">
+      <DependentUpon>Page_ChooseCharacterToLoad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Klasse.cs" />
     <Compile Include="MongoConnection.cs" />
@@ -213,7 +213,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dialoges\Page_NewOrLoadCharacter.xaml">
+    <Page Include="Dialoges\Page_ChooseCharacterToLoad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
