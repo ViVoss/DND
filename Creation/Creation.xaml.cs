@@ -39,7 +39,6 @@ namespace DND
         private Creation()
         {
             InitializeComponent();
-
             ClassSelection = new Page_ClassSelection();
             RaceSelection = new Page_RaceSelection(this);
             BackgroundSelection = new Page_BackgroundSelection();
@@ -48,7 +47,7 @@ namespace DND
             InventorySelection = new Page_InventorySelection();
             MiscellaneousSelection = new Page_Miscellaneous();
             OverviewSelection = new Page_Overview(this);
-
+            this.Btn_Back.IsEnabled = false;
             Frame1.Content = RaceSelection;
             RaceOpen = true;
         }
@@ -97,6 +96,7 @@ namespace DND
                 OverviewOpen = true;
                 MiscellaneousOpen = false;
             }
+            EnableDisableButtons();
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
@@ -147,6 +147,16 @@ namespace DND
                 MiscellaneousOpen = true;
                 OverviewOpen = false;
             }
+            EnableDisableButtons();
+        }
+        public void EnableDisableButtons()
+        {
+            if (!OverviewOpen)
+                this.Btn_Continue.IsEnabled = true;
+            else this.Btn_Continue.IsEnabled = false;
+            if (!RaceOpen)
+                this.Btn_Back.IsEnabled = true;
+            else this.Btn_Back.IsEnabled = false;
         }
     }
 }

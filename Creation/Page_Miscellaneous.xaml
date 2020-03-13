@@ -10,5 +10,6 @@
 
     <Grid>
         <TextBox Text="Miscellaneous"/>
+        <TextBox Name="CharacterName" Margin="150"/>
     </Grid>
 </Page>
