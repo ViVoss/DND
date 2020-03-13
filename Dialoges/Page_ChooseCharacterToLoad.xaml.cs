@@ -57,7 +57,7 @@ namespace DND.Dialoges
 
         private void btnCharacterÖffnen_Click(object sender, RoutedEventArgs e)
         {
-            this.MainMenu.CharacterName = this.pageCharacterList.SelectedItem.ToString();
+            this.MainMenu.CharacterName = ((CharacterExcerpt) this.pageCharacterList.SelectedItem).CharacterName;
 
             //Schießt das Fenster
             //Wenn wie oben der Name gesetzt wurde, wird es nach dem Schließen als Erfolg erkannt

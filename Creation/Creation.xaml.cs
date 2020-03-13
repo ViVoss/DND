@@ -75,6 +75,12 @@ namespace DND
             else if (Frame1.Content == SpellSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
+
+                //Characternamen einlesen
+                if(Character.Current.CharacterName != "")
+                {
+                    MiscellaneousSelection.CharacterName.Text = Character.Current.CharacterName;
+                }
             }
             else if (Frame1.Content == MiscellaneousSelection)
             {
