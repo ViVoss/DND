@@ -20,6 +20,7 @@ namespace DND
     /// </summary>
     public partial class MainMenu : Window
     {
+        string CopyrightDisclaimer = "Dungeons & Dragons, D&D, their respective logos, and all Wizards titles and characters are property of Wizards of the Coast LLC in the U.S.A. and other countries. ©2020 Wizards.";
         public String CharacterName { get; set; }
         public Window_Dialog Window { get; set; }
         public Page_NewOrLoadCharacter Page { get; set; }
@@ -27,6 +28,7 @@ namespace DND
         public MainMenu()
         {
             InitializeComponent();
+            Label_CopyrightDisclaimer.Content = CopyrightDisclaimer;
         }
         // Creation >>>
         private void Creation_ButtonClick(object sender, RoutedEventArgs e)
