@@ -27,12 +27,6 @@ namespace DND
         {
             this.Creation = CreationWindow;
             InitializeComponent();
-
-            //Subrace laden, wenn vorhanden
-            if (Character.Current.SubRace != "")
-            {
-                this.Creation.Textbox_Selection_Info.Text = Character.Current.SubRace;
-            }
             
         }
 
@@ -53,7 +47,7 @@ namespace DND
                 case "half-orc":
                     break;
                 default:
-                    Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)), currRace);
+                    Window_SubraceSelection subra = new Window_SubraceSelection((Creation)Window.GetWindow(this), currRace);
                     subra.ShowDialog();
                     break;
             }

@@ -28,7 +28,8 @@ namespace DND.Dialoges
             InitializeComponent();
             this.Window = window;
             this.MainMenu = mainMenu;
-            this.MainMenu.CharacterName = "";
+            this.MainMenu.TargetCharacterName = "";
+
         }
         public class CharacterExcerpt
         {
@@ -41,27 +42,53 @@ namespace DND.Dialoges
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            this.Window.Title = "Saved Character | loading...";
+            this.LoadCharacterList();
+            this.Window.Title = "Saved Character";
+        }
 
-            List<Character> characterList = Character.GetAll();
-            foreach (Character character in characterList)
+        public void LoadCharacterList()
+        {
+            this.Excerpt = new List<CharacterExcerpt>();
+            foreach (Character character in Character.GetAll())
             {
-                Excerpt.Add(new CharacterExcerpt { PlayerName = character.PlayerName, CharacterName = character.CharacterName, Level = character.Level, Race = character.Race, Subrace = character.SubRace, Class = character.Class });
+                this.Excerpt.Add(new CharacterExcerpt { PlayerName = character.PlayerName, CharacterName = character.CharacterName, Level = character.Level, Race = character.Race, Subrace = character.SubRace, Class = character.Class });
             }
-            pageCharacterList.ItemsSource = Excerpt;
+            this.pageCharacterList.ItemsSource = Excerpt;
         }
 
         private void pageCharacterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.buttonCharacterÖffnen.IsEnabled = true;
+            this.buttonCharacterLöschen.IsEnabled = true;
         }
 
         private void btnCharacterÖffnen_Click(object sender, RoutedEventArgs e)
         {
-            this.MainMenu.CharacterName = ((CharacterExcerpt) this.pageCharacterList.SelectedItem).CharacterName;
+            this.MainMenu.TargetCharacterName = ((CharacterExcerpt)this.pageCharacterList.SelectedItem).CharacterName;
 
             //Schießt das Fenster
             //Wenn wie oben der Name gesetzt wurde, wird es nach dem Schließen als Erfolg erkannt
             Window.Close();
+        }
+
+        private void btnCharacterLöschen_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterExcerpt characterExcerpt = ((CharacterExcerpt)this.pageCharacterList.SelectedItem);
+
+            MessageBoxResult result = MessageBox.Show("Soll der Character '" + characterExcerpt.CharacterName + "' mit dem Level " + characterExcerpt.Level + " von " + characterExcerpt.PlayerName + " wirklich gelöscht werden?", "Löschen", MessageBoxButton.YesNoCancel);
+            if (result == MessageBoxResult.Yes)
+            {
+                //Ausgewählten Character löschen
+                Character.Delete(characterExcerpt.CharacterName);
+
+                //Lädt die Tabelle neu und lässt damit den gelöschten Character daraus verschwinden
+                this.LoadCharacterList();
+
+                //Buttons deaktivieren
+                this.buttonCharacterÖffnen.IsEnabled = false;
+                this.buttonCharacterLöschen.IsEnabled = false;
+            }
         }
     }
 }

@@ -58,7 +58,7 @@ namespace DND
         public String CharacterName { get; set; }
 
         [BsonIgnore]
-        public string OldName { get; set; }
+        public String OldCharacterName { get; set; }
 
         [BsonElement("class")]
         public String Class { get; set; }
@@ -102,9 +102,8 @@ namespace DND
             //Connect
             MongoConnection.Connect();
 
-            List<Character> result = MongoConnection.Collection.Find<Character>(x => true).ToList();
+            List<Character> found = MongoConnection.Collection.Find<Character>(x => x.CharacterName == characterName).ToList();
 
-            List<Character> found = result.Where(x => x.CharacterName == characterName).ToList();
             if(found.Count == 0)
             {
                 MessageBox.Show("Fehler: Es konnte kein Character mit dem Namen '" + characterName + "' gefunden werden.");
@@ -127,6 +126,16 @@ namespace DND
             //Connect
             MongoConnection.Connect();
 
+            bool exists = Exists(Character.Current.OldCharacterName);
+
+            MessageBox.Show(exists.ToString());
+
+            if (exists)
+            {
+                //Löscht alten Eintrag
+                Delete(Character.Current.OldCharacterName);
+            }
+            //Erstellt neuen Eintrag
             MongoConnection.Collection.InsertOne(Character.Current);
         }
 
@@ -137,7 +146,6 @@ namespace DND
 
             MongoConnection.Collection.DeleteOne<Character>(x => x.CharacterName == characterName);
 
-            MessageBox.Show("Deleted " + Character.Current.ID);
         }
 
         public static List<Character> GetAll()
@@ -147,6 +155,15 @@ namespace DND
 
             List<Character> result = MongoConnection.Collection.Find<Character>(x => true).ToList();
             return result;
+        }
+
+        public static bool Exists(String characterName)
+        {
+            //Connect
+            MongoConnection.Connect();
+
+            bool notFound = MongoConnection.Collection.Find<Character>(x => x.CharacterName == characterName) == null;
+            return !notFound;
         }
     }
 }
