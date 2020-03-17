@@ -34,7 +34,7 @@ namespace DND
         [BsonElement("traitlist")]
         public TraitList TraitList { get; set; }
 
-        [BsonElement("spells")]
+        [BsonElement("spelllist")]
         public SpellList SpellList { get; set; }
 
         [BsonElement("inventory")]

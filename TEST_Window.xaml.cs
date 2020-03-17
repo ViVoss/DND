@@ -19,7 +19,7 @@ namespace DND
     /// </summary>
     public partial class TEST_Window : Window
     {
-        Page_AttributeSelection test = new Page_AttributeSelection();
+        Page_AttributeSelection test = new Page_AttributeSelection(null); //hier muss eigentlich Creation hin, da haben wir aber kein Zugang zu
         public TEST_Window()
         {
             InitializeComponent();

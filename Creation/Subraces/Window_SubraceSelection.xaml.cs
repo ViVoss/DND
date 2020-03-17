@@ -34,21 +34,21 @@ namespace DND
                     test = new Page_Subrace_Dwarf(Creation);
                     break;
                 case "elf":
-                    test = new Page_Subrace_Elf();
+                    test = new Page_Subrace_Elf(Creation);
                     this.Width = 540;
                     break;
                 case "halfling":
-                    test = new Page_Subrace_Halfling();
+                    test = new Page_Subrace_Halfling(Creation);
                     break;
                 case "human":
-                    test = new Page_Subrace_Human();
+                    test = new Page_Subrace_Human(Creation);
                     break;
                 case "dragonborn":
-                    test = new Page_Subrace_Dragonborn();
+                    test = new Page_Subrace_Dragonborn(Creation);
                     this.Height = 460;
                     break;
                 case "gnome":
-                    test = new Page_Subrace_Gnome();
+                    test = new Page_Subrace_Gnome(Creation);
                     break;
                 default:
                     break;

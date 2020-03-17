@@ -20,30 +20,17 @@ namespace DND
     /// </summary>
     public partial class Page_AttributeSelection : Page
     {
-        public Page_AttributeSelection()
+
+        public Creation Creation { get; set; }
+
+        public Page_AttributeSelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
 
-
-        //Obsolete?
-        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    switch (((ComboBox)sender).Tag.ToString())
-        //    {
-        //        case "STR":
-        //            Label_STR.Content = ((ComboBox)sender).Text;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(((ComboBox)sender).SelectedItem.ToString()); //wie kommt man genau an den Inhalt?
-            MessageBox.Show(this.cmbAttributeValuesStr.Text);
-
             Character.Current.Attributes.Strength = Convert.ToUInt16(this.cmbAttributeValuesStr.Text);
             this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
         }
