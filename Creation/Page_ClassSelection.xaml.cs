@@ -21,8 +21,12 @@ namespace DND
     public partial class Page_ClassSelection : Page
     {
         WebAufruf call = new WebAufruf();
-        public Page_ClassSelection()
+
+        public Creation Creation { get; set; }
+
+        public Page_ClassSelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
 
@@ -30,6 +34,11 @@ namespace DND
         {
             string klasse = ((Button)sender).Tag.ToString();
             TextBox_Description.Text = call.GetClassInformation(klasse);
+        }
+
+        private void Button_Class_Click(object sender, RoutedEventArgs e)
+        {
+            Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
         }
     }
 }

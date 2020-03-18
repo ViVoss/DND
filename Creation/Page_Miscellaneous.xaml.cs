@@ -20,9 +20,14 @@ namespace DND
     /// </summary>
     public partial class Page_Miscellaneous : Page
     {
-        public Page_Miscellaneous()
+
+        public Creation Creation { get; set; }
+
+        public Page_Miscellaneous(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
+
     }
 }

@@ -21,7 +21,6 @@ namespace DND
     /// </summary>
     public partial class Page_Subrace_Dwarf : Page
     {
-
         public Creation Creation { get; set; }
 
         public Page_Subrace_Dwarf(Creation CreationWindow)
@@ -32,8 +31,8 @@ namespace DND
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {
             this.Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
+            Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
-
     }
 }

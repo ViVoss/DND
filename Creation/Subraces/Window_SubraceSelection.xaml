@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d"
-        Title="Window_SubraceSelection" Height="450" Width="365" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+        Title="Window_SubraceSelection" Height="450" Width="365" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <!-- 
     Dwarf 2
     Elf 3

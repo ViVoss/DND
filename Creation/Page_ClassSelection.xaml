@@ -10,6 +10,7 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
+            <EventSetter Event="Click" Handler="Button_Class_Click"/>
             <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
             <!--Padding="5,5,5,5" Margin="10"-->
         </Style>
