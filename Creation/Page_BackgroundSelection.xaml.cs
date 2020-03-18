@@ -20,9 +20,18 @@ namespace DND
     /// </summary>
     public partial class Page_BackgroundSelection : Page
     {
-        public Page_BackgroundSelection()
+
+        public Creation Creation { get; set; }
+
+        public Page_BackgroundSelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
+        }
+
+        private void ListBox_BackgroundTitle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Creation.Textbox_Selection_Info.Text = ((ListBoxItem)this.ListBox_BackgroundTitle.SelectedItem).Content.ToString();
         }
     }
 }

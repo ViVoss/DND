@@ -62,7 +62,7 @@ namespace DND
                     SetRaceTextBox(currRace);
                     break;
                 default:
-                    Window_SubraceSelection subra = new Window_SubraceSelection(((Creation)Window.GetWindow(this)), currRace);
+                    Window_SubraceSelection subra = new Window_SubraceSelection((Creation)Window.GetWindow(this), currRace);
                     subra.ShowDialog();
                     break;
             }

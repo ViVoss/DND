@@ -26,6 +26,7 @@ namespace DND.Subraces
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
             DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Black", DamageType = "Acid", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
             DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Blue", DamageType = "Lightning", BreathWeapon = "5 by 30 ft. line (Dex. save)" });
             DraconicAncestryList.Add(new DraconicAncestry { Dragon = "Brass", DamageType = "Fire", BreathWeapon = "5 by 30 ft. line (Dex. save)" });

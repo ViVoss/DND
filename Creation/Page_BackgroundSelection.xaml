@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="ListBox_BackgroundTitle" Margin="10" Background="Transparent" BorderThickness="0" >
+        <ListBox Name="ListBox_BackgroundTitle" Margin="10" Background="Transparent" BorderThickness="0" SelectionChanged="ListBox_BackgroundTitle_SelectionChanged">
             <ListBoxItem Tag="acolythe" Content="Acolythe"/>
             <ListBoxItem Tag="charlatan" Content="Charlatan"/>
             <ListBoxItem Tag="criminal" Content="Criminal"/>

@@ -20,8 +20,12 @@ namespace DND
     /// </summary>
     public partial class Page_InventorySelection : Page
     {
-        public Page_InventorySelection()
+
+        public Creation Creation { get; set; }
+
+        public Page_InventorySelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
     }

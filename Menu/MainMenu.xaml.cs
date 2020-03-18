@@ -21,7 +21,7 @@ namespace DND
     public partial class MainMenu : Window
     {
         string CopyrightDisclaimer = "Dungeons & Dragons, D&D, their respective logos, and all Wizards titles and characters are property of Wizards of the Coast LLC in the U.S.A. and other countries. ©2020 Wizards.";
-        public String CharacterName { get; set; }
+        public String TargetCharacterName { get; set; }
         public Window_Dialog Window { get; set; }
         public Page_ChooseCharacterToLoad Page { get; set; }
 
@@ -36,7 +36,7 @@ namespace DND
             MessageBoxResult result = MessageBox.Show("Neuen Character erstellen?", "Charactererstellung", MessageBoxButton.YesNoCancel);
             if (result == MessageBoxResult.Yes)
             {
-                //Neuer leerer Character erstellt
+                //Neuen leeren Character erstellen
                 Character.New();
 
                 DND.Creation.OpenWindow();
@@ -52,15 +52,14 @@ namespace DND
 
 
                 //Eingabe gemacht?
-                if(CharacterName != "")
+                if(TargetCharacterName != "")
                 {
                     //Character finden und laden
-                    if (Character.Load(CharacterName))
+                    if (Character.Load(TargetCharacterName))
                     {
                         DND.Creation.OpenWindow();
                     }
                 }
-
             }
 
             //In die Klammern verschoben

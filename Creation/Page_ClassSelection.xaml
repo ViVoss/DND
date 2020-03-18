@@ -10,6 +10,7 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
+            <EventSetter Event="Click" Handler="Button_Class_Click"/>
             <Setter Property="Background" Value="Transparent"/>
             <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
         </Style>

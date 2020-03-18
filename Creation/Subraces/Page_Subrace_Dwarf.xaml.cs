@@ -21,7 +21,6 @@ namespace DND
     /// </summary>
     public partial class Page_Subrace_Dwarf : Page
     {
-
         public Creation Creation { get; set; }
 
         public Page_Subrace_Dwarf(Creation CreationWindow)
@@ -36,6 +35,5 @@ namespace DND
             this.Creation.TextBox_Race.Text = "Dwarf";
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
-
     }
 }

@@ -20,45 +20,48 @@ namespace DND
     /// </summary>
     public partial class Page_AttributeSelection : Page
     {
-        public Page_AttributeSelection()
+
+        public Creation Creation { get; set; }
+
+        public Page_AttributeSelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
 
-
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            return;
-            MessageBox.Show((((ComboBox)sender)).SelectedItem.ToString()); //wie kommt man genau an den Inhalt?
-            string test = (((ComboBox)sender)).SelectedItem.ToString();
-            Character.Current.Attributes.Strength = Convert.ToUInt16(test);
+            Character.Current.Attributes.Strength = Convert.ToUInt16(this.cmbAttributeValuesStr.Text);
             this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
-
-
         }
         private void cmbAttributeValuesDex_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            Character.Current.Attributes.Dexterity = Convert.ToUInt16(this.cmbAttributeValuesDex.Text);
+            this.Label_DEX.Content = Character.Current.Attributes.DexterityModifier;
         }
 
         private void cmbAttributeValuesCon_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Character.Current.Attributes.Constitution = Convert.ToUInt16(this.cmbAttributeValuesCon.Text);
+            this.Label_CON.Content = Character.Current.Attributes.ConstitutionModifier;
         }
 
         private void cmbAttributeValuesInt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Character.Current.Attributes.Intelligence = Convert.ToUInt16(this.cmbAttributeValuesInt.Text);
+            this.Label_INT.Content = Character.Current.Attributes.IntelligenceModifier;
         }
 
         private void cmbAttributeValuesWis_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Character.Current.Attributes.Wisdon = Convert.ToUInt16(this.cmbAttributeValuesWis.Text);
+            this.Label_WIS.Content = Character.Current.Attributes.WisdonModifier;
         }
 
         private void cmbAttributeValuesCha_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Character.Current.Attributes.Charisma = Convert.ToUInt16(this.cmbAttributeValuesCha.Text);
+            this.Label_CHA.Content = Character.Current.Attributes.CharismaModifier;
         }
     }
 }

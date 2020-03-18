@@ -20,8 +20,12 @@ namespace DND
     /// </summary>
     public partial class Page_SpellSelection : Page
     {
-        public Page_SpellSelection()
+
+        public Creation Creation { get; set; }
+
+        public Page_SpellSelection(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
     }
