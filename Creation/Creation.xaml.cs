@@ -22,7 +22,6 @@ namespace DND
         List<CharacterStats> characterStats = new List<CharacterStats>();
         Page_ClassSelection ClassSelection;
         Page_RaceSelection RaceSelection;
-        Page_ClassSelection ClassSelection;
         Page_BackgroundSelection BackgroundSelection;
         Page_AttributeSelection AttributeSelection;
         Page_InventorySelection InventorySelection;
@@ -68,10 +67,10 @@ namespace DND
             Frame1.Content = RaceSelection;
 
             //RaceSelection laden
-            this.Textbox_Selection_Info.Text = Character.Current.SubRace;
+            this.TextBox_Subrace.Text = Character.Current.SubRace;
 
             //Continue-Button zu Beginn deaktivieren
-            if (this.Textbox_Selection_Info.Text == "")
+            if (this.TextBox_Race.Text == "")
                 ButtonContinueEnabled(false);
             else
                 ButtonContinueEnabled(true);
@@ -85,15 +84,15 @@ namespace DND
             if (Frame1.Content == RaceSelection)
             {
                 //RaceSelection speichern
-                Character.Current.SubRace = this.Textbox_Selection_Info.Text;
+                Character.Current.SubRace = this.TextBox_Subrace.Text;
 
                 Frame1.Content = ClassSelection;
                 //ClassSelection laden
 
-                this.Textbox_Selection_Info.Text = Character.Current.Class;
+                this.TextBox_Class.Text = Character.Current.Class;
 
                 //Continue-Button zu Beginn deaktivieren
-                if (this.Textbox_Selection_Info.Text == "")
+                if (this.TextBox_Class.Text == "")
                     ButtonContinueEnabled(false);
                 else
                     ButtonContinueEnabled(true);
@@ -107,24 +106,23 @@ namespace DND
             else if (Frame1.Content == ClassSelection)
             {
                 //ClassSelection speichern
-                Character.Current.Class = this.Textbox_Selection_Info.Text;
+                Character.Current.Class = this.TextBox_Class.Text;
 
                 Frame1.Content = BackgroundSelection;
                 //BackgroundSelection laden
 
-                this.Textbox_Selection_Info.Text = Character.Current.Background;
+                this.TextBox_Background.Text = Character.Current.Background;
             }
 
 
             else if (Frame1.Content == BackgroundSelection)
             {
                 //BackgroundSelection speichern
-                Character.Current.Background = this.Textbox_Selection_Info.Text;
+                Character.Current.Background = this.TextBox_Background.Text;
 
                 Frame1.Content = AttributeSelection;
                 //AttributeSelection laden
 
-                this.Textbox_Selection_Info.Text = "";
                 AttributeSelection.cmbAttributeValuesStr.Text = Convert.ToString(Character.Current.Attributes.Strength);
                 AttributeSelection.cmbAttributeValuesDex.Text = Convert.ToString(Character.Current.Attributes.Dexterity);
                 AttributeSelection.cmbAttributeValuesCon.Text = Convert.ToString(Character.Current.Attributes.Constitution);
@@ -243,7 +241,7 @@ namespace DND
             else if (Frame1.Content == OverviewSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
-                ContinueButtonEnabled(true);
+                ButtonContinueEnabled(true);
                 Btn_Continue.Visibility = Visibility.Visible;
             }
         }

@@ -61,6 +61,7 @@ namespace DND.Subraces
             this.Creation.Label_Subrace.Content = "Draconic Ancestry";
             this.Creation.TextBox_Subrace.Text = GetDraconicAncestryFromIndex(Listview_DraconicAncenstry.SelectedIndex);
             this.Creation.TextBox_Race.Text = "Dragonborn";
+            this.Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
         private string GetDraconicAncestryFromIndex(int index)

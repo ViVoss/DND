@@ -31,7 +31,7 @@ namespace DND
 
         private void ListBox_BackgroundTitle_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Creation.Textbox_Selection_Info.Text = ((ListBoxItem)this.ListBox_BackgroundTitle.SelectedItem).Content.ToString();
+            Creation.TextBox_Background.Text = ((ListBoxItem)this.ListBox_BackgroundTitle.SelectedItem).Content.ToString();
         }
     }
 }

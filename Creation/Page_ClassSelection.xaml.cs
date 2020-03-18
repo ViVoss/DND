@@ -38,7 +38,7 @@ namespace DND
 
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
-            Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
+            Creation.TextBox_Class.Text = ((Button)sender).Tag.ToString();
         }
     }
 }
