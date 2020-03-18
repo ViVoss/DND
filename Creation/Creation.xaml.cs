@@ -46,7 +46,7 @@ namespace DND
             InventorySelection = new Page_InventorySelection();
             MiscellaneousSelection = new Page_Miscellaneous();
             OverviewSelection = new Page_Overview(this);
-            this.Btn_Back.IsEnabled = false;
+            Btn_Back.Visibility = Visibility.Hidden;
             Frame1.Content = RaceSelection;
         }
 
@@ -55,6 +55,7 @@ namespace DND
             if (Frame1.Content == RaceSelection)
             {
                 Frame1.Content = ClassSelection;
+                Btn_Back.Visibility = Visibility.Visible;
             }
             else if (Frame1.Content == ClassSelection)
             {
@@ -77,7 +78,7 @@ namespace DND
                 Frame1.Content = MiscellaneousSelection;
 
                 //Characternamen einlesen
-                if(Character.Current.CharacterName != "")
+                if (Character.Current.CharacterName != "")
                 {
                     MiscellaneousSelection.CharacterName.Text = Character.Current.CharacterName;
                 }
@@ -86,14 +87,13 @@ namespace DND
             {
                 //Characternamen übernehmen
                 Character.Current.CharacterName = MiscellaneousSelection.CharacterName.Text;
-
+                Btn_Continue.Visibility = Visibility.Hidden;
                 Frame1.Content = OverviewSelection;
             }
-            else if(Frame1.Content == OverviewSelection) 
+            else if (Frame1.Content == OverviewSelection)
             {
 
             }
-            //EnableDisableButtons();
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
@@ -101,11 +101,12 @@ namespace DND
 
             if (Frame1.Content == RaceSelection)
             {
-
+                
             }
             else if (Frame1.Content == ClassSelection)
             {
                 Frame1.Content = RaceSelection;
+                Btn_Back.Visibility = Visibility.Hidden;
             }
             else if (Frame1.Content == BackgroundSelection)
             {
@@ -118,7 +119,6 @@ namespace DND
             else if (Frame1.Content == InventorySelection)
             {
                 Frame1.Content = AttributeSelection;
-
             }
             else if (Frame1.Content == SpellSelection)
             {
@@ -131,10 +131,11 @@ namespace DND
             else if (Frame1.Content == OverviewSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
+                ContinueButtonEnabled(true);
+                Btn_Continue.Visibility = Visibility.Visible;
             }
-            //EnableDisableButtons();
         }
-        
+
         public void BackButtonEnabled(bool activated)
         {
             this.Btn_Back.IsEnabled = activated;

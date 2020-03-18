@@ -9,7 +9,7 @@
       Title="Page_Overview">
 
     <Grid>
-        <TextBox Text="OVERVIEW ALLA"/>
+        <TextBox Text="OVERVIEW"/>
         <Button Name="Save" Content="SAVE" Margin="50" Click="Save_Click"/>
     </Grid>
 </Page>
