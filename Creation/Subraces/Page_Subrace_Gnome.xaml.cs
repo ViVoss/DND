@@ -20,14 +20,19 @@ namespace DND.Subraces
     /// </summary>
     public partial class Page_Subrace_Gnome : Page
     {
-        public Page_Subrace_Gnome()
+        public Creation Creation { get; set; }
+        public Page_Subrace_Gnome(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Creation.Label_Subrace.Content = "Subrace";
+            this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
+            this.Creation.TextBox_Race.Text = "Gnome";
+            ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
     }
 }

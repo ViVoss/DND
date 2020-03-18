@@ -26,57 +26,15 @@ namespace DND
         }
 
 
-        //Obsolete?
-        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    switch (((ComboBox)sender).Tag.ToString())
-        //    {
-        //        case "STR":
-        //            Label_STR.Content = ((ComboBox)sender).Text;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(((ComboBox)sender).SelectedItem.ToString()); //wie kommt man genau an den Inhalt?
-            MessageBox.Show(this.cmbAttributeValuesStr.Text);
-            Character.Current.Attributes.Strength = Convert.ToUInt16(this.cmbAttributeValuesStr.Text);
+            return;
+            MessageBox.Show((((ComboBox)sender)).SelectedItem.ToString()); //wie kommt man genau an den Inhalt?
+            string test = (((ComboBox)sender)).SelectedItem.ToString();
+            Character.Current.Attributes.Strength = Convert.ToUInt16(test);
             this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
 
 
-
-
-            //string attval = "";
-            //switch (((ComboBox)sender).SelectedIndex)
-            //{
-            //    case 0:
-            //        attval = Convert.ToString(-1);
-            //        break;
-            //    case 1:
-            //        attval = Convert.ToString(0);
-            //        break;
-            //    case 2:
-            //        attval = Convert.ToString("+" + 1);
-            //        break;
-            //    case 3:
-            //        attval = Convert.ToString("+" + 2);
-            //        break;
-            //    case 4:
-            //        attval = Convert.ToString("+" + 3);
-            //        break;
-            //    case 5:
-            //        attval = Convert.ToString("+" + 4);
-            //        break;
-            //    case 6:
-            //        attval = Convert.ToString("+" + 5);
-            //        break;
-            //    default:
-            //        break;
-            //}
-            //Label_STR.Content = attval;
         }
         private void cmbAttributeValuesDex_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

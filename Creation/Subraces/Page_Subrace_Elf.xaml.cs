@@ -20,14 +20,19 @@ namespace DND
     /// </summary>
     public partial class Page_Subrace_Elf : Page
     {
-        public Page_Subrace_Elf()
+        public Creation Creation { get; set; }
+        public Page_Subrace_Elf(Creation CreationWindow)
         {
+            this.Creation = CreationWindow;
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Creation.Label_Subrace.Content = "Subrace";
+            this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
+            this.Creation.TextBox_Race.Text = "Elf";
+            ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
     }
 }

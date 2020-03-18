@@ -10,19 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DND.Subraces
+namespace DND
 {
     /// <summary>
-    /// Interaktionslogik für Page_Subrace_Human.xaml
+    /// Interaktionslogik für Window_Information_Classes.xaml
     /// </summary>
-    public partial class Page_Subrace_Human : Page
+    public partial class Window_Information : Window
     {
-        public Page_Subrace_Human()
+        Page_Information_Classes Information_Classes = new Page_Information_Classes();
+        public Window_Information()
         {
             InitializeComponent();
+            Frame_Information.Content = Information_Classes;
         }
     }
 }

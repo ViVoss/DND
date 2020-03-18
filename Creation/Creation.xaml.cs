@@ -19,6 +19,7 @@ namespace DND
     /// </summary>
     public partial class Creation : Window
     {
+        List<CharacterStats> characterStats = new List<CharacterStats>();
         Page_ClassSelection ClassSelection;
         Page_RaceSelection RaceSelection;
         Page_BackgroundSelection BackgroundSelection;
@@ -35,6 +36,13 @@ namespace DND
             return creation;
         }
 
+        public class CharacterStats
+        {
+            public string Race { get; set; }
+            public string Subrace { get; set; }
+            public string Class { get; set; }
+            public string Background { get; set; }
+        }
         private Creation()
         {
             InitializeComponent();

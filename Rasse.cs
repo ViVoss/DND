@@ -45,10 +45,10 @@ namespace DND
         public string SizeDescription { get; set; }
 
         [JsonProperty("starting_proficiencies")]
-        public List<Language> StartingProficiencies { get; set; }
+        public List<Proficiency> StartingProficiencies { get; set; }
 
         [JsonProperty("starting_proficiency_options")]
-        public StartingProficiencyOptions StartingProficiencyOptions { get; set; }
+        public List<StartingProficiencyOptions> StartingProficiencyOptions { get; set; }
 
         [JsonProperty("languages")]
         public List<Language> Languages { get; set; }
@@ -77,7 +77,7 @@ namespace DND
         [JsonProperty("bonus")]
         public long Bonus { get; set; }
     }
-
+    
     public partial class Language
     {
         [JsonProperty("url")]
@@ -96,11 +96,11 @@ namespace DND
         public string Type { get; set; }
 
         [JsonProperty("from")]
-        public List<Language> From { get; set; }
+        public List<Proficiency> From { get; set; }
     }
 
     public partial class Rasse
     {
-        public static Rasse FromJson(string json) => JsonConvert.DeserializeObject<Rasse>(json, DND.Converter.Settings);
+        public static Rasse FromJson(string json) => JsonConvert.DeserializeObject<Rasse>(json, Converter.Settings);
     }
 }

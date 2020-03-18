@@ -1,0 +1,183 @@
+﻿<Page x:Class="DND.Page_Information_Classes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DND"
+      mc:Ignorable="d" 
+      d:DesignHeight="725" d:DesignWidth="1280"
+      Title="Page_Information_Classes">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <EventSetter Event="Click" Handler="Button_Class_Click"/>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
+        </Grid.Background>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Name="Frame_LevelTable" Grid.Column="0" NavigationUIVisibility="Hidden"/>
+            <TextBlock Name="TextBlock_ClassInfo" TextWrapping="Wrap"/>
+            <Grid.Background>
+                <ImageBrush ImageSource="Resources_Information/PaperTexture.jpg"/>
+            </Grid.Background>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Name="Barbarian" Tag="barbarian">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Barbarian.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Barbarian"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Bard" Tag="bard" Grid.Row="1">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Bard.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Bard"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Cleric" Tag="cleric" Grid.Row="2">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Cleric.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Cleric"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Druid" Grid.Row="3">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Druid.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Druid"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Fighter" Grid.Row="4">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Fighter.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Fighter"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Monk" Grid.Row="5">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Monk.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Monk"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Paladin" Grid.Row="6">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Paladin.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Paladin"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Ranger" Grid.Row="7">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Ranger.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Ranger"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Rogue" Grid.Row="8">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Rogue.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Rogue"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Sorcerer" Grid.Row="9">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Sorcerer.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Sorcerer"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Warlock" Grid.Row="10">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Warlock.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Warlock"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Wizard" Grid.Row="11">
+                <DockPanel>
+                    <Viewbox>
+                        <Image Source="Resources_Information/Class_Icons/Wizard.png"/>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Wizard"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

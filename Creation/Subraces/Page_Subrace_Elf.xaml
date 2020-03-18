@@ -12,7 +12,7 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="VerticalContentAlignment" Value="Top"/>
-            <EventSetter Event="Click" Handler="Button_Click"/>
+            <EventSetter Event="Click" Handler="Button_Subrace_Click"/>
             <!--<EventSetter Event="MouseEnter" Handler="Button_Subrace_MouseEnter"/>
             <EventSetter Event="MouseLeave" Handler="Button_Subrace_MouseLeave"/>-->
             <!--Padding="5,5,5,5" Margin="10"-->
@@ -54,7 +54,7 @@ High
                 </TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Column="1">
+        <Button Grid.Column="1" Tag="wood-elf">
             <StackPanel>
                 <Label Name="Label_WoodElf" Content="Wood Elf"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
@@ -68,7 +68,7 @@ Wood
                 </TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Column="2">
+        <Button Grid.Column="2" Tag="drow">
             <StackPanel>
                 <Label Name="Label_Drow" Content="Drow"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">

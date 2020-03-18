@@ -31,7 +31,9 @@ namespace DND
         }
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {
-            this.Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
+            this.Creation.Label_Subrace.Content = "Subrace";
+            this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
+            this.Creation.TextBox_Race.Text = "Dwarf";
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
 
