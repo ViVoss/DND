@@ -33,6 +33,7 @@ namespace DND
             this.Creation.Label_Subrace.Content = "Subrace";
             this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
             this.Creation.TextBox_Race.Text = "Dwarf";
+            this.Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
     }

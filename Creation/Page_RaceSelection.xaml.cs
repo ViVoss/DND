@@ -48,18 +48,22 @@ namespace DND
                 case "tiefling":
                     ClearSubraceBox();
                     SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 case "half-elf":
                     ClearSubraceBox();
                     SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 case "half-orc":
                     ClearSubraceBox();
                     SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 case "human":
                     ClearSubraceBox();
                     SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 default:
                     Window_SubraceSelection subra = new Window_SubraceSelection((Creation)Window.GetWindow(this), currRace);

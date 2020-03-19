@@ -39,6 +39,8 @@ namespace DND
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
             Creation.TextBox_Class.Text = ((Button)sender).Tag.ToString();
+            Character.Current.Class = Creation.TextBox_Class.Text;
+            this.Creation.ButtonContinueEnabled(true);
         }
     }
 }
