@@ -138,7 +138,7 @@ namespace DND
                 AttributeSelection.cmbAttributeValuesDex.Text = Convert.ToString(Character.Current.Attributes.Dexterity);
                 AttributeSelection.cmbAttributeValuesCon.Text = Convert.ToString(Character.Current.Attributes.Constitution);
                 AttributeSelection.cmbAttributeValuesInt.Text = Convert.ToString(Character.Current.Attributes.Intelligence);
-                AttributeSelection.cmbAttributeValuesWis.Text = Convert.ToString(Character.Current.Attributes.Wisdon);
+                AttributeSelection.cmbAttributeValuesWis.Text = Convert.ToString(Character.Current.Attributes.Wisdom);
                 AttributeSelection.cmbAttributeValuesCha.Text = Convert.ToString(Character.Current.Attributes.Charisma);
             }
 
@@ -149,7 +149,7 @@ namespace DND
                 Character.Current.Attributes.Dexterity = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesDex.Text);
                 Character.Current.Attributes.Constitution = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesCon.Text);
                 Character.Current.Attributes.Intelligence = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesInt.Text);
-                Character.Current.Attributes.Wisdon = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesWis.Text);
+                Character.Current.Attributes.Wisdom = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesWis.Text);
                 Character.Current.Attributes.Charisma = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesCha.Text);
                 
                 //InventorySelection laden

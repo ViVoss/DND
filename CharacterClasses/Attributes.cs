@@ -72,15 +72,15 @@ namespace DND
         }
 
 
-        [BsonElement("wisdon")]
-        public UInt16 Wisdon { get; set; }
+        [BsonElement("wisdom")]
+        public UInt16 Wisdom { get; set; }
 
         [BsonIgnore]
-        public Int16 WisdonModifier
+        public Int16 WisdomModifier
         {
             get
             {
-                return CalculateModifier(Wisdon);
+                return CalculateModifier(Wisdom);
             }
         }
 
