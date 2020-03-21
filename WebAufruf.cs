@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Net;
 using System.Net.Cache;
+using System.Linq;
 
 namespace DND
 {
@@ -29,11 +30,11 @@ namespace DND
             string url = "http://dnd5eapi.co/api/races/rasse";
             url = url.Replace("rasse", race);
 
-            //Creates Request of URl
+            // Create WebRequest to URI
             WebRequest request = WebRequest.Create(url);
             setCache(request);
 
-            //get Response
+            // Get Response from WebRequest
             WebResponse response = request.GetResponse();
 
             using (Stream dataStream = response.GetResponseStream())
@@ -41,7 +42,7 @@ namespace DND
 
                 StreamReader reader = new StreamReader(dataStream);
 
-                // Hier komm der JSon String
+                // Filter JSON String from Response
                 jsonstring = reader.ReadToEnd();
 
                 Rasse rasse = JsonConvert.DeserializeObject<Rasse>(jsonstring);
@@ -95,11 +96,11 @@ namespace DND
             string url = "http://dnd5eapi.co/api/races/rasse";
             url = url.Replace("rasse", race);
 
-            //Creates Request of URl
+            // Create WebRequest of URI
             WebRequest request = WebRequest.Create(url);
             setCache(request);
 
-            //get Response
+            // Get Response from WebRequest
             WebResponse response = request.GetResponse();
 
             using (Stream dataStream = response.GetResponseStream())
@@ -107,7 +108,7 @@ namespace DND
 
                 StreamReader reader = new StreamReader(dataStream);
 
-                // Hier komm der JSon String
+                // Filter JSON String from Response
                 jsonstring = reader.ReadToEnd();
 
                 Rasse rasse = JsonConvert.DeserializeObject<Rasse>(jsonstring);
@@ -129,12 +130,11 @@ namespace DND
             string url = "http://dnd5eapi.co/api/classes/klasse";
             url = url.Replace("klasse", klasse);
 
-            //Creates Request of URl
-
+            // Create WebRequest of URI
             WebRequest request = WebRequest.Create(url);
             setCache(request);
 
-            //get Response
+            // Get Response from WebRequest
             WebResponse response = request.GetResponse();
 
             using (Stream dataStream = response.GetResponseStream())
@@ -142,34 +142,56 @@ namespace DND
 
                 StreamReader reader = new StreamReader(dataStream);
 
-                // Hier komm der JSon String
+                // Filter JSON String from Response
                 jsonstring = reader.ReadToEnd();
 
                 Klasse clazz = JsonConvert.DeserializeObject<Klasse>(jsonstring);
-                builder.Append("Hit Points:" + "\n");
-                builder.Append("Hit Dice: 1d" + clazz.HitDie + " per " + klasse + " level\n");
-                builder.Append("Hit Points at 1st Level: " + clazz.HitDie + " + your Constitution modifier\n");
-                builder.Append("Hit Points at Higher Levels: " + "1d" + clazz.HitDie + " (or " + ((clazz.HitDie / 2) + 1) + ") + your Constitution modifier per " + klasse + " lever after 1st\n");
-                builder.Append("Proficiencies:" + "\n");
+                builder.Append("Hit Points:" + "\n\n");
+                builder.Append("Hit Dice: 1d" + clazz.HitDie + " per " + klasse + " level\n\n");
+                builder.Append("Hit Points at 1st Level: " + clazz.HitDie + " + your Constitution modifier\n\n");
+                builder.Append("Hit Points at Higher Levels: " + "1d" + clazz.HitDie + " (or " + ((clazz.HitDie / 2) + 1) + ") + your Constitution modifier per " + klasse + " lever after 1st\n\n");
+                builder.Append("Proficiencies: ");
                 foreach (Proficiency prof in clazz.Proficiencies)
                 {
-                    builder.Append(prof.Name + ", ");
+                    if (prof.Equals(clazz.Proficiencies.Last()))
+                    {
+                        builder.Append(prof.Name);
+                    }
+                    else
+                    {
+                        builder.Append(prof.Name + ", ");
+                    }
+
                 }
-                builder.Append("Saving Throws:\n");
+                builder.Append("\n\nSaving Throws: ");
                 foreach (Proficiency saveThr in clazz.SavingThrows)
                 {
-                    builder.Append(saveThr.Name + ", ");
+                    if (saveThr.Equals(clazz.SavingThrows.Last()))
+                    {
+                        builder.Append(saveThr.Name);
+                    }
+                    else
+                    {
+                        builder.Append(saveThr.Name + ", ");
+                    }
                 }
                 foreach (ProficiencyChoice skills in clazz.ProficiencyChoices)
                 {
-                    builder.Append("Choose " + skills.Choose + " from: \n");
+                    builder.Append("\n\nChoose " + skills.Choose + " from: ");
                     foreach (Proficiency prof in skills.From)
                     {
-                        string a = prof.Name;
-                        a = a.Replace("Skill: ", "");
-                        builder.Append(a + ", ");
+                        string skillsStr = prof.Name;
+                        skillsStr = skillsStr.Replace("Skill: ", "");
+
+                        if (prof.Equals(skills.From.Last()))
+                        {
+                            builder.Append(skillsStr);
+                        }
+                        else
+                        {
+                            builder.Append(skillsStr + ", ");
+                        }
                     }
-                    builder.Append("\n");
                 }
 
             }
