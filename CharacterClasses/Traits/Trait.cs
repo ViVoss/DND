@@ -7,15 +7,7 @@ using System.Threading.Tasks;
 
 namespace DND
 {
-    class Trait
+    public partial class Trait
     {
-
-        [BsonElement("name")]
-        public string Name { get; set; }
-
-        public Trait(string name)
-        {
-            this.Name = name;
-        }
     }
 }
