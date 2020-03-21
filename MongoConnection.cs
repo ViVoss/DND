@@ -17,23 +17,60 @@ namespace DND
         public static string ConnectionLink { get; set; } = "mongodb+srv://dbAdmin:Passwort123@dnd-wqlyc.mongodb.net/test?retryWrites=true&w=majority";
         public static string DatabaseName { get; set; } = "DnD";
 
-        internal static void Connect()
+        public static void Connect()
         {
-            if(Collection == null)
-            {
-                try
-                {
-                    Client = new MongoClient(ConnectionLink);
-                    Database = Client.GetDatabase(DatabaseName);
-                    //MessageBox.Show("Successfully connected");
-
-                    Collection = Database.GetCollection<Character>("Character");
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
+            var client = new MongoClient(MongoUrl.Create(ConnectionLink));
+            IMongoDatabase db = client.GetDatabase("DnD");
         }
+
+        //public static void CreateCollection()
+        //{
+
+        //}
+
+        public static void GetCollection(string collectionName)
+        {
+            var client = new MongoClient(MongoUrl.Create(ConnectionLink));
+            IMongoDatabase db = client.GetDatabase("DnD");
+            IMongoCollection<BsonDocument> collection = db.GetCollection<BsonDocument>(collectionName);
+        }
+
+        public static void InsertOneDocument(BsonDocument bsonDoc, string collectionName)
+        {
+            var client = new MongoClient(MongoUrl.Create(ConnectionLink));
+            IMongoDatabase db = client.GetDatabase("DnD");
+            IMongoCollection<BsonDocument> collection = db.GetCollection<BsonDocument>(collectionName);
+            collection.InsertOne(bsonDoc);
+        }
+
+        public static void InsertManyDocuments(List<BsonDocument> bsonDocList ,string collectionName)
+        {
+            var client = new MongoClient(MongoUrl.Create(ConnectionLink));
+            IMongoDatabase db = client.GetDatabase("DnD");
+            IMongoCollection<BsonDocument> collection = db.GetCollection<BsonDocument>(collectionName);
+            collection.InsertMany(bsonDocList);
+        }
+
+
+
+        //internal static void Connect()
+        //{
+        //    if (Collection == null)
+        //    {
+        //        try
+        //        {
+        //            Client = new MongoClient(ConnectionLink);
+        //            Database = Client.GetDatabase(DatabaseName);
+        //            //MessageBox.Show("Successfully connected");
+
+        //            Collection = Database.GetCollection<Character>("Character");
+        //        }
+        //        catch (Exception)
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //}
+
     }
 }
