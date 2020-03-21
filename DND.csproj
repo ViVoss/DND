@@ -118,6 +118,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Background.cs" />
     <Compile Include="CharacterClasses\Appearance.cs" />
     <Compile Include="CharacterClasses\Attributes.cs" />
     <Compile Include="CharacterClasses\Character.cs" />

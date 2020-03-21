@@ -13,6 +13,7 @@ namespace DND
         public static string ToJson(this Rasse self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
         public static string ToJson(this Spells self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
         public static string ToJson(this Klasse self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
-        public static string ToJson(this SubRace self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);    
+        public static string ToJson(this SubRace self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
+        public static string ToJson(this Background self) => JsonConvert.SerializeObject(self, DND.Converter.Settings);
     }
 }
