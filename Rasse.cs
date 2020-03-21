@@ -36,10 +36,10 @@ namespace DND
         public string SizeDescription { get; set; }
 
         [JsonProperty("starting_proficiencies")]
-        public List<Proficiency> StartingProficiencies { get; set; }
+        public List<Language> StartingProficiencies { get; set; }
 
         [JsonProperty("starting_proficiency_options")]
-        public List<StartingProficiencyOptions> StartingProficiencyOptions { get; set; }
+        public StartingProficiencyOptions StartingProficiencyOptions { get; set; }
 
         [JsonProperty("languages")]
         public List<Language> Languages { get; set; }
@@ -48,10 +48,19 @@ namespace DND
         public string LanguageDesc { get; set; }
 
         [JsonProperty("traits")]
-        public List<Language> Traits { get; set; }
+        public List<Trait> Traits { get; set; }
 
         [JsonProperty("subraces")]
-        public List<Language> Subraces { get; set; }
+        public List<SubRace> Subraces { get; set; }
+
+        [JsonProperty("url")]
+        public string Url { get; set; }
+    }
+
+    public partial class Trait
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }
