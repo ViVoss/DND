@@ -11,6 +11,9 @@ namespace DND
         [JsonProperty("_id")]
         public Id Id { get; set; }
 
+        [JsonProperty("index")]
+        public string Index { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 
@@ -20,8 +23,11 @@ namespace DND
         [JsonProperty("tool_proficiences")]
         public List<string> ToolProficiences { get; set; }
 
-        [JsonProperty("laguage_options")]
-        public Options LaguageOptions { get; set; }
+        [JsonProperty("languages")]
+        public List<string> Languages { get; set; }
+
+        [JsonProperty("language_options")]
+        public Options LanguageOptions { get; set; }
 
         [JsonProperty("equipment")]
         public List<string> Equipment { get; set; }
@@ -30,7 +36,7 @@ namespace DND
         public Options EquipmentOptions { get; set; }
 
         [JsonProperty("feature")]
-        public List<object> Feature { get; set; }
+        public List<string> Feature { get; set; }
     }
 
     public partial class Options
@@ -39,7 +45,7 @@ namespace DND
         public long Choose { get; set; }
 
         [JsonProperty("from")]
-        public List<object> From { get; set; }
+        public List<string> From { get; set; }
 
         [JsonProperty("type")]
         public string Type { get; set; }
