@@ -15,7 +15,6 @@
             <EventSetter Event="Click" Handler="Button_Subrace_Click"/>
             <!--<EventSetter Event="MouseEnter" Handler="Button_Subrace_MouseEnter"/>
             <EventSetter Event="MouseLeave" Handler="Button_Subrace_MouseLeave"/>-->
-            <!--Padding="5,5,5,5" Margin="10"-->
         </Style>
         <Style TargetType="Label">
             <Setter Property="VerticalAlignment" Value="Top"/>
@@ -46,12 +45,16 @@
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_HighElf">
+                <TextBlock Name="TextBlock_HighElf" Text="High">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-High
                 </TextBlock>
+                <TextBlock Name="TextBlock_HighElf_Desc">
+                        <TextBlock.Background>
+                            <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
+                        </TextBlock.Background>
+                    </TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Tag="wood-elf">
@@ -60,11 +63,15 @@ High
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_WoodElf">
+                <TextBlock Name="TextBlock_WoodElf" Text="Wood">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Wood
+                </TextBlock>
+                <TextBlock Name="TextBlock_WoodElf_Desc">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
+                    </TextBlock.Background>
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -74,11 +81,15 @@ Wood
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Drow">
+                <TextBlock Name="TextBlock_Drow" Text="Drow">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Drow
+                </TextBlock>
+                <TextBlock Name="TextBlock_DrowElf_Desc">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
+                    </TextBlock.Background>
                 </TextBlock>
             </StackPanel>
         </Button>
