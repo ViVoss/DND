@@ -1,20 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace DND
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     public partial class Rasse
     {
         [JsonProperty("_id")]
@@ -77,7 +68,7 @@ namespace DND
         [JsonProperty("bonus")]
         public long Bonus { get; set; }
     }
-    
+
     public partial class Language
     {
         [JsonProperty("url")]
