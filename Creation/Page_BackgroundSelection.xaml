@@ -91,14 +91,14 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="FolkHero" Tag="folkhero" Grid.Row="4">
+            <Button Name="FolkHero" Tag="folk-hero" Grid.Row="4">
                 <DockPanel>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Folk Hero"/>
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="GuildArtisan" Tag="guildartisan" Grid.Row="5">
+            <Button Name="GuildArtisan" Tag="guild-artisan" Grid.Row="5">
                 <DockPanel>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Guild Artisan"/>
