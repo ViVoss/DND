@@ -20,7 +20,7 @@ namespace DND
         public static void Connect()
         {
             var client = new MongoClient(MongoUrl.Create(ConnectionLink));
-            IMongoDatabase db = client.GetDatabase("DnD");
+            client.GetDatabase("DnD");
         }
 
         //public static void CreateCollection()
@@ -32,7 +32,16 @@ namespace DND
         {
             var client = new MongoClient(MongoUrl.Create(ConnectionLink));
             IMongoDatabase db = client.GetDatabase("DnD");
+            db.GetCollection<BsonDocument>(collectionName);
+        }
+
+        public static void GetDocumentByIndex(string collectionName, string documentIndex)
+        {
+            var client = new MongoClient(MongoUrl.Create(ConnectionLink));
+            IMongoDatabase db = client.GetDatabase("DnD");
             IMongoCollection<BsonDocument> collection = db.GetCollection<BsonDocument>(collectionName);
+            var filter = Builders<BsonDocument>.Filter.Eq("index", documentIndex);
+            collection.Find(filter).First();
         }
 
         public static void InsertOneDocument(BsonDocument bsonDoc, string collectionName)
