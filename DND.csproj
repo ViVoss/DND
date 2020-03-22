@@ -138,6 +138,7 @@
       <DependentUpon>Page_ChooseCharacterToLoad.xaml</DependentUpon>
     </Compile>
     <Compile Include="DnDInformation.cs" />
+    <Compile Include="EnumKlasse.cs" />
     <Compile Include="Klasse.cs" />
     <Compile Include="Information\Level_Tables\Level_Table_Barbarian.xaml.cs">
       <DependentUpon>Level_Table_Barbarian.xaml</DependentUpon>
@@ -212,6 +213,7 @@
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
+    <Compile Include="StartingEquipment.cs" />
     <Compile Include="SubRace.cs" />
     <Compile Include="TEST_Window.xaml.cs">
       <DependentUpon>TEST_Window.xaml</DependentUpon>
