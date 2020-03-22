@@ -28,7 +28,7 @@ namespace DND
         public List<string> Languages { get; set; }
 
         [BsonElement("language_options")]
-        public LanguageOptions LanguageOptions { get; set; }
+        public Language_Options LanguageOptions { get; set; }
 
         [BsonElement("equipment")]
         public List<string> Equipment { get; set; }
@@ -38,6 +38,19 @@ namespace DND
 
         [BsonElement("feature")]
         public List<string> Feature { get; set; }
+    }
+
+    [BsonIgnoreExtraElements]
+    public class Language_Options
+    {
+        [BsonElement("choose")]
+        public int Choose { get; set; }
+
+        [BsonElement("from")]
+        public List<string> From { get; set; }
+
+        [BsonElement("type")]
+        public string Type { get; set; }
     }
 
     [BsonIgnoreExtraElements]
