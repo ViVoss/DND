@@ -20,6 +20,7 @@ namespace DND
     /// </summary>
     public partial class Page_BackgroundSelection : Page
     {
+        DnDInformation dndInformation = new DnDInformation();
 
         public Creation Creation { get; set; }
 
@@ -32,6 +33,7 @@ namespace DND
         private void Button_Background_MouseEnter(object sender, MouseEventArgs e)
         {
             string background = ((Button)sender).Tag.ToString();
+            TextBlock_BackgroundInfo.Text = dndInformation.GetBackgroundInformation(background);
         }
 
         private void Button_Background_MouseLeave(object sender, MouseEventArgs e)
