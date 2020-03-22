@@ -29,11 +29,14 @@ namespace DND
             InitializeComponent();
         }
 
-        private void ListBox_BackgroundTitle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Background_MouseEnter(object sender, MouseEventArgs e)
         {
-            Creation.TextBox_Background.Text = ((ListBoxItem)this.ListBox_BackgroundTitle.SelectedItem).Content.ToString();
-            Character.Current.Background = Creation.TextBox_Background.Text;
-            this.Creation.ButtonContinueEnabled(true);
+            string background = ((Button)sender).Tag.ToString();
+        }
+
+        private void Button_Background_MouseLeave(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
