@@ -75,7 +75,7 @@
                 </TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Column="2" Tag="drow">
+        <Button Grid.Column="2" Tag="dark-elf">
             <StackPanel>
                 <Label Name="Label_Drow" Content="Drow"/>
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
@@ -86,7 +86,7 @@
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
                 </TextBlock>
-                <TextBlock Name="TextBlock_DrowElf_Desc">
+                <TextBlock Name="TextBlock_DarkElf_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
