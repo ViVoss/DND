@@ -1,5 +1,7 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,11 @@ using System.Windows;
 
 namespace DND
 {
-    class MongoConnection
+    public class MongoConnection<T>
     {
         public static IMongoClient Client { get; set; }
         public static IMongoDatabase Database { get; set; }
-        public static IMongoCollection<Character> Collection { get; set; }
+        public static IMongoCollection<T> Collection { get; set; }
         public static string ConnectionLink { get; set; } = "mongodb+srv://dbAdmin:Passwort123@dnd-wqlyc.mongodb.net/test?retryWrites=true&w=majority";
         public static string DatabaseName { get; set; } = "DnD";
 
@@ -35,13 +37,14 @@ namespace DND
             db.GetCollection<BsonDocument>(collectionName);
         }
 
-        public static void GetDocumentByIndex(string collectionName, string documentIndex)
+        public dynamic GetDocumentByIndex(string collectionName, string documentIndex)
         {
             var client = new MongoClient(MongoUrl.Create(ConnectionLink));
             IMongoDatabase db = client.GetDatabase("DnD");
             IMongoCollection<BsonDocument> collection = db.GetCollection<BsonDocument>(collectionName);
             var filter = Builders<BsonDocument>.Filter.Eq("index", documentIndex);
-            collection.Find(filter).First();
+            var result = collection.Find(filter).First();
+            return BsonSerializer.Deserialize<T>(result);
         }
 
         public static void InsertOneDocument(BsonDocument bsonDoc, string collectionName)
