@@ -13,7 +13,7 @@
             <EventSetter Event="MouseDown" Handler="Image_MouseDown"/>
         </Style>
     </Page.Resources>
-    <Grid>
+    <Grid x:Name="Dragonborn_MainGrid">
         <Grid.Background>
             <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture.jpg"/>
         </Grid.Background>

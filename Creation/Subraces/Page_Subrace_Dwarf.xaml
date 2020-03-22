@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="350"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="Page_Subrace_Dwarf">
     <Page.Resources>
         <Style TargetType="Button">
@@ -36,13 +36,13 @@
             <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Tag="hill-dwarf" >
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HillDwarf" Content="Hill Dwarf"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_HillDwarf_Desc">
@@ -55,7 +55,7 @@
         <Button Grid.Column="1" Tag="mountain-dwarf">
             <StackPanel>
                 <Label Name="Label_MountainDwarf" Content="Mountain Dwarf"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
                 <TextBlock Name="TextBlock_MountainDwarf_Desc">

@@ -88,10 +88,102 @@ namespace DND
             SubRace subrace = webAufruf.GetJsonResponse(requestParameter);
 
             builder.Append(subrace.Desc);
-            builder.Append("\n\nAbility Score Increase: " + subrace.AbilityBonuses);
-            builder.Append("\n\nStarting Proficiences: " + subrace.StartingProficiencies);
-            builder.Append("\n\nLanguages: " + subrace.Languages);
-            builder.Append("\n\nRacial Traits: " + subrace.RacialTraits);
+            
+            if (subrace.AbilityBonuses.Count() > 0)
+            {
+                builder.Append("\n\nAbility Score Increase: ");
+                foreach (AbilityBonus abilityBonus in subrace.AbilityBonuses)
+                {
+                    if (abilityBonus.Equals(subrace.AbilityBonuses.Last()))
+                    {
+                        builder.Append(abilityBonus.Name + " + " + abilityBonus.Bonus);
+                    }
+                    else
+                    {
+                        builder.Append(abilityBonus.Name + ", ");
+                    }
+                }
+            }
+            
+            if (subrace.StartingProficiencies.Count() > 0)
+            {
+                builder.Append("\n\nStarting Proficiences: ");
+                foreach (StartingProficiency startingProficiency in subrace.StartingProficiencies)
+                {
+                    if (startingProficiency.Equals(subrace.StartingProficiencies.Last()))
+                    {
+                        builder.Append(startingProficiency.Name);
+                    }
+                    else
+                    {
+                        builder.Append(startingProficiency.Name + ", ");
+                    }
+                }
+            }
+
+            if (subrace.Languages.Count() > 0)
+            {
+                builder.Append("\n\nLanguages: ");
+                foreach (Language lang in subrace.Languages)
+                {
+                    if (lang.Equals(subrace.Languages.Last()))
+                    {
+                        builder.Append(lang.Name);
+                    }
+                    else
+                    {
+                        builder.Append(lang.Name + ", ");
+                    }
+                }
+            }
+
+            //if (subrace.GetType().GetProperty("LanguageOptions") != null)
+            //{
+            //    builder.Append("\n\nLanguages Options: Choose " + subrace.LanguageOptions?.Choose + " from: ");
+            //    foreach (From lang in subrace.LanguageOptions?.From)
+            //    {
+            //        if (lang.Equals(subrace.LanguageOptions.From.Last()))
+            //        {
+            //            builder.Append(lang.Name);
+            //        }
+            //        else
+            //        {
+            //            builder.Append(lang.Name + ", ");
+            //        }
+            //    }
+            //}
+
+            if (subrace.RacialTraits.Count() > 0)
+            {
+                builder.Append("\n\nRacial Traits: ");
+                foreach (Rac racialTrait in subrace.RacialTraits)
+                {
+                    if (racialTrait.Equals(subrace.RacialTraits.Last()))
+                    {
+                        builder.Append(racialTrait.Name);
+                    }
+                    else
+                    {
+                        builder.Append(racialTrait.Name + ", ");
+                    }
+                }
+            }
+
+            //if (subrace.GetType().GetProperty("RacialTraitOptions") != null)
+            //{
+            //    builder.Append("\n\nRacial Trait Options: Choose " + subrace.RacialTraitOptions?.Choose + "from: ");
+            //    foreach (From racialTraitOptions in subrace.RacialTraitOptions?.From)
+            //    {
+            //        if (racialTraitOptions.Equals(subrace.RacialTraitOptions.From.Last()))
+            //        {
+            //            builder.Append(racialTraitOptions.Name);
+            //        }
+            //        else
+            //        {
+            //            builder.Append(racialTraitOptions.Name + ", ");
+            //        }
+            //    }
+            //}
 
             return builder.ToString();
         }

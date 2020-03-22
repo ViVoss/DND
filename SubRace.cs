@@ -38,12 +38,13 @@ namespace DND
 
         [JsonProperty("starting_proficiencies")]
         [BsonElement("starting_proficiencies")]
-        public List<object> StartingProficiencies { get; set; }
+        public List<StartingProficiency> StartingProficiencies { get; set; }
 
         [JsonProperty("languages")]
         [BsonElement("languages")]
-        public List<object> Languages { get; set; }
+        public List<Language> Languages { get; set; }
 
+        [JsonProperty("language_options")]
         [BsonElement("language_options")]
         public LanguageOptions LanguageOptions { get; set; }
 
@@ -51,6 +52,7 @@ namespace DND
         [BsonElement("racial_traits")]
         public List<Rac> RacialTraits { get; set; }
 
+        [JsonProperty("racial_trait_options")]
         [BsonElement("racial_trait_options")]
         public RacialTraitOptions RacialTraitOptions { get; set; }
 
@@ -68,14 +70,30 @@ namespace DND
     }
 
     [BsonIgnoreExtraElements]
+    public partial class StartingProficiency
+    {
+        [JsonProperty("url")]
+        [BsonElement("url")]
+        public string Url { get; set; }
+
+        [JsonProperty("name")]
+        [BsonElement("name")]
+        public string Name { get; set; }
+
+    }
+
+    [BsonIgnoreExtraElements]
     public partial class LanguageOptions
     {
+        [JsonProperty("choose")]
         [BsonElement("choose")]
         public int Choose { get; set; }
 
+        [JsonProperty("from")]
         [BsonElement("from")]
         public List<From> From { get; set; }
 
+        [JsonProperty("type")]
         [BsonElement("type")]
         public string Type { get; set; }
     }
@@ -84,12 +102,15 @@ namespace DND
     [BsonIgnoreExtraElements]
     public partial class RacialTraitOptions
     {
+        [JsonProperty("choose")]
         [BsonElement("choose")]
         public int Choose { get; set; }
 
+        [JsonProperty("from")]
         [BsonElement("from")]
         public List<From> From { get; set; }
 
+        [JsonProperty("type")]
         [BsonElement("type")]
         public string Type { get; set; }
     }
@@ -97,9 +118,11 @@ namespace DND
     [BsonIgnoreExtraElements]
     public partial class From
     {
+        [JsonProperty("url")]
         [BsonElement("url")]
         public string Url { get; set; }
 
+        [JsonProperty("name")]
         [BsonElement("name")]
         public string Name { get; set; }
     }
