@@ -1,64 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DND
 {
-    public partial class Background
+    [BsonIgnoreExtraElements]
+    public class Background
     {
-        [JsonProperty("_id")]
-        public Id Id { get; set; }
+        [BsonId]
+        public ObjectId ID { get; set; }
 
-        [JsonProperty("index")]
+        [BsonElement("index")]
         public string Index { get; set; }
 
-        [JsonProperty("name")]
+        [BsonElement("name")]
         public string Name { get; set; }
 
-        [JsonProperty("skill_proficiences")]
+        [BsonElement("skill_proficiences")]
         public List<string> SkillProficiences { get; set; }
 
-        [JsonProperty("tool_proficiences")]
+        [BsonElement("tool_proficiences")]
         public List<string> ToolProficiences { get; set; }
 
-        [JsonProperty("languages")]
+        [BsonElement("languages")]
         public List<string> Languages { get; set; }
 
-        [JsonProperty("language_options")]
-        public Options LanguageOptions { get; set; }
+        [BsonElement("language_options")]
+        public LanguageOptions LanguageOptions { get; set; }
 
-        [JsonProperty("equipment")]
+        [BsonElement("equipment")]
         public List<string> Equipment { get; set; }
 
-        [JsonProperty("equipment_options")]
-        public Options EquipmentOptions { get; set; }
+        [BsonElement("equipment_options")]
+        public EquipmentOptions EquipmentOptions { get; set; }
 
-        [JsonProperty("feature")]
+        [BsonElement("feature")]
         public List<string> Feature { get; set; }
     }
 
-    public partial class Options
+    [BsonIgnoreExtraElements]
+    public class EquipmentOptions
     {
-        [JsonProperty("choose")]
-        public long Choose { get; set; }
+        [BsonElement("choose")]
+        public int Choose { get; set; }
 
-        [JsonProperty("from")]
+        [BsonElement("from")]
         public List<string> From { get; set; }
 
-        [JsonProperty("type")]
+        [BsonElement("type")]
         public string Type { get; set; }
-    }
-
-    public partial class Id
-    {
-        [JsonProperty("$oid")]
-        public string Oid { get; set; }
-    }
-
-    public partial class Background
-    {
-        public static Background FromJson(string json) => JsonConvert.DeserializeObject<Background>(json, DND.Converter.Settings);
     }
 }

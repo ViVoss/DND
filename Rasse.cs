@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -69,12 +70,15 @@ namespace DND
     public partial class AbilityBonus
     {
         [JsonProperty("name")]
+        [BsonElement("name")]
         public string Name { get; set; }
 
         [JsonProperty("url")]
+        [BsonElement("url")]
         public string Url { get; set; }
 
         [JsonProperty("bonus")]
+        [BsonElement("bonus")]
         public long Bonus { get; set; }
     }
 
