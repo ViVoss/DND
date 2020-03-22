@@ -21,12 +21,16 @@ namespace DND
     /// </summary>
     public partial class Page_Subrace_Dwarf : Page
     {
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
 
         public Page_Subrace_Dwarf(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            TextBlock_HillDwarf_Desc.Text = dndInformation.GetSubRaceInformation("hill-dwarf");
+            TextBlock_MountainDwarf_Desc.Text = dndInformation.GetSubraceDbInformation("mountain-dwarf");
         }
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {

@@ -20,15 +20,16 @@ namespace DND
     /// </summary>
     public partial class Page_Subrace_Elf : Page
     {
-        WebAufruf webAufruf = new WebAufruf();
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
         public Page_Subrace_Elf(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
-            TextBlock_HighElf_Desc.Text = webAufruf.GetSubRaceInformation("high-elf");
-            //TextBlock_HighElf_Desc.Text = webAufruf.GetSubRaceInformation("wood-elf");
-            //TextBlock_HighElf_Desc.Text = webAufruf.GetSubRaceInformation("drow");
+
+            TextBlock_HighElf_Desc.Text = dndInformation.GetSubRaceInformation("high-elf");
+            TextBlock_DarkElf_Desc.Text = dndInformation.GetSubraceDbInformation("dark-elf");
+            TextBlock_WoodElf_Desc.Text = dndInformation.GetSubraceDbInformation("wood-elf");
         }
 
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)

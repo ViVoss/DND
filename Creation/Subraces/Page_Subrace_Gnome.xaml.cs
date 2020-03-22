@@ -20,11 +20,15 @@ namespace DND.Subraces
     /// </summary>
     public partial class Page_Subrace_Gnome : Page
     {
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
         public Page_Subrace_Gnome(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            TextBlock_RockGnome_Desc.Text = dndInformation.GetSubRaceInformation("rock-gnome");
+            TextBlock_ForestGnome_Desc.Text = dndInformation.GetSubraceDbInformation("forest-gnome");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

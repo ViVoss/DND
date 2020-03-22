@@ -20,11 +20,15 @@ namespace DND.Subraces
     /// </summary>
     public partial class Page_Subrace_Halfling : Page
     {
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
         public Page_Subrace_Halfling(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            TextBlock_LightfootHalfling_Desc.Text = dndInformation.GetSubRaceInformation("lightfoot-halfling");
+            TextBlock_StoutHalfling_Desc.Text = dndInformation.GetSubraceDbInformation("stout-halfling");
         }
 
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)

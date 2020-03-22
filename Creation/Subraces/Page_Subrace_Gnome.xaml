@@ -45,11 +45,10 @@
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_RockGnome">
+                <TextBlock Name="TextBlock_RockGnome_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Rock
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -59,11 +58,10 @@ Rock
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_ForestGnome">
+                <TextBlock Name="TextBlock_ForestGnome_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Forest
                 </TextBlock>
             </StackPanel>
         </Button>

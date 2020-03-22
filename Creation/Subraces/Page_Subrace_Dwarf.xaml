@@ -45,35 +45,25 @@
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_HillDwarf">
+                <TextBlock Name="TextBlock_HillDwarf_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-                As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.
-                Ability Score Increase
-                Your Wisdom score increases by 1.
-                Dwarven Toughness
-                Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
                 </TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Tag="mountain-dwarf">
             <StackPanel>
-            <Label Name="Label_MountainDwarf" Content="Mountain Dwarf"/>
-            <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                <Label Name="Label_MountainDwarf" Content="Mountain Dwarf"/>
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-            </Viewbox>
-            <TextBlock Name="TextBlock_MountainDwarf">
-                <TextBlock.Background>
-                    <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                </TextBlock.Background>
-                As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
-                Ability Score Increase
-                Your Strength score increases by 2.
-                Dwarven Armor Training
-                You have proficiency with light and medium armor.
-            </TextBlock>
-        </StackPanel>
+                </Viewbox>
+                <TextBlock Name="TextBlock_MountainDwarf_Desc">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
+                    </TextBlock.Background>
+                </TextBlock>
+            </StackPanel>
         </Button>
     </Grid>
 </Page>

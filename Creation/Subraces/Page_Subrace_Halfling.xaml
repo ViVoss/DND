@@ -45,11 +45,10 @@
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Lightfoot">
+                <TextBlock Name="TextBlock_LightfootHalfling_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Lightfoot
                 </TextBlock>
             </StackPanel>
         </Button>
@@ -59,11 +58,10 @@ Lightfoot
                 <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Stout">
+                <TextBlock Name="TextBlock_StoutHalfling_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Stout
                 </TextBlock>
             </StackPanel>
         </Button>
