@@ -19,7 +19,7 @@ namespace DND
     /// </summary>
     public partial class Page_RaceSelection : Page
     {
-        WebAufruf call = new WebAufruf();
+        DnDInformation dndInformation = new DnDInformation();
 
         public Creation Creation { get; set; }
 
@@ -83,7 +83,8 @@ namespace DND
         private void Button_Race_MouseEnter(object sender, MouseEventArgs e)
         {
             string race = ((Button)sender).Tag.ToString();
-            TextBox_Description.Text = call.GetRaceInformation(race);
+            TextBox_Description.Text = dndInformation.GetRaceInformation(race);
+            //TextBox_Description.Text = call.GetRaceInformation(race);
         }
 
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
