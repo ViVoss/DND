@@ -228,10 +228,14 @@ namespace DND
             else if (Frame1.Content == BackgroundSelection)
             {
                 Frame1.Content = ClassSelection;
+                if (this.TextBox_Class.Text != "")
+                    ButtonContinueEnabled(true);
             }
             else if (Frame1.Content == AttributeSelection)
             {
                 Frame1.Content = BackgroundSelection;
+                if (this.TextBox_Background.Text != "")
+                    ButtonContinueEnabled(true);
             }
             else if (Frame1.Content == InventorySelection)
             {

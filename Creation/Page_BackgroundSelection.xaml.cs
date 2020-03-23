@@ -40,5 +40,12 @@ namespace DND
         {
 
         }
+
+        private void Button_Background_Click(object sender, RoutedEventArgs e)
+        {
+            Creation.TextBox_Background.Text = ((Button)sender).Tag.ToString();
+            Character.Current.Background = Creation.TextBox_Background.Text;
+            this.Creation.ButtonContinueEnabled(true);
+        }
     }
 }
