@@ -63,9 +63,11 @@ namespace DND
     public partial class Rac
     {
         [JsonProperty("url")]
+        [BsonElement("url")]
         public string Url { get; set; }
 
         [JsonProperty("name")]
+        [BsonElement("name")]
         public string Name { get; set; }
     }
 
