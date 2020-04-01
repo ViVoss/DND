@@ -31,37 +31,79 @@ namespace DND
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Strength = Convert.ToUInt16(this.cmbAttributeValuesStr.Text);
+            Character.Current.Attributes.Strength = Convert.ToUInt16(GetAttributeValueFromSelectedIndex(this.cmbAttributeValuesStr.SelectedIndex));
             this.Label_STR.Content = Character.Current.Attributes.StrengthModifier;
+            EnableContinueBtn();
         }
         private void cmbAttributeValuesDex_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Dexterity = Convert.ToUInt16(this.cmbAttributeValuesDex.Text);
+            Character.Current.Attributes.Dexterity = Convert.ToUInt16(GetAttributeValueFromSelectedIndex(this.cmbAttributeValuesDex.SelectedIndex));
             this.Label_DEX.Content = Character.Current.Attributes.DexterityModifier;
+            EnableContinueBtn();
         }
 
         private void cmbAttributeValuesCon_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Constitution = Convert.ToUInt16(this.cmbAttributeValuesCon.Text);
+            Character.Current.Attributes.Constitution = Convert.ToUInt16(GetAttributeValueFromSelectedIndex(this.cmbAttributeValuesCon.SelectedIndex));
             this.Label_CON.Content = Character.Current.Attributes.ConstitutionModifier;
+            EnableContinueBtn();
         }
 
         private void cmbAttributeValuesInt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Intelligence = Convert.ToUInt16(this.cmbAttributeValuesInt.Text);
+            Character.Current.Attributes.Intelligence = Convert.ToUInt16(GetAttributeValueFromSelectedIndex(this.cmbAttributeValuesInt.SelectedIndex));
             this.Label_INT.Content = Character.Current.Attributes.IntelligenceModifier;
+            EnableContinueBtn();
         }
 
         private void cmbAttributeValuesWis_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Wisdon = Convert.ToUInt16(this.cmbAttributeValuesWis.Text);
-            this.Label_WIS.Content = Character.Current.Attributes.WisdonModifier;
+            Character.Current.Attributes.Wisdom = Convert.ToUInt16(GetAttributeValueFromSelectedIndex(this.cmbAttributeValuesWis.SelectedIndex));
+            this.Label_WIS.Content = Character.Current.Attributes.WisdomModifier;
+            EnableContinueBtn();
         }
 
         private void cmbAttributeValuesCha_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Character.Current.Attributes.Charisma = Convert.ToUInt16(this.cmbAttributeValuesCha.Text);
+            Character.Current.Attributes.Charisma = Convert.ToUInt16(GetAttributeValueFromSelectedIndex(this.cmbAttributeValuesCha.SelectedIndex));
             this.Label_CHA.Content = Character.Current.Attributes.CharismaModifier;
+            EnableContinueBtn();
+        }
+        private void EnableContinueBtn()
+        {
+            if (Character.Current.Attributes.Strength != 0 & Character.Current.Attributes.Dexterity != 0 & Character.Current.Attributes.Constitution != 0 &
+                Character.Current.Attributes.Intelligence != 0 & Character.Current.Attributes.Wisdom != 0 & Character.Current.Attributes.Charisma != 0)
+                this.Creation.Btn_Continue.IsEnabled = true;
+            else
+                this.Creation.Btn_Continue.IsEnabled = false;
+        }
+        private string GetAttributeValueFromSelectedIndex(int index)
+        {
+            string value = "";
+            switch (index)
+            {
+                case 0:
+                    value = "8";
+                    break;
+                case 1:
+                    value = "10";
+                    break;
+                case 2:
+                    value = "12";
+                    break;
+                case 3:
+                    value = "13";
+                    break;
+                case 4:
+                    value = "14";
+                    break;
+                case 5:
+                    value = "15";
+                    break;
+                default:
+                    break;
+            }
+            return value;
         }
     }
 }

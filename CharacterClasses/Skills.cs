@@ -35,7 +35,7 @@ namespace DND
         {
             get
             {
-                return CalculateSkillBonus(Character.Attributes.WisdonModifier, AnimalHandlingProficiency, AnimalHandlingExpertise);
+                return CalculateSkillBonus(Character.Attributes.WisdomModifier, AnimalHandlingProficiency, AnimalHandlingExpertise);
             }
         }
 
@@ -100,7 +100,7 @@ namespace DND
         {
             get
             {
-                return CalculateSkillBonus(Character.Attributes.WisdonModifier, InsightProficiency, InsightExpertise);
+                return CalculateSkillBonus(Character.Attributes.WisdomModifier, InsightProficiency, InsightExpertise);
             }
         }
 
@@ -139,7 +139,7 @@ namespace DND
         {
             get
             {
-                return CalculateSkillBonus(Character.Attributes.WisdonModifier, MedicineProficiency, MedicineExpertise);
+                return CalculateSkillBonus(Character.Attributes.WisdomModifier, MedicineProficiency, MedicineExpertise);
             }
         }
 
@@ -165,7 +165,7 @@ namespace DND
         {
             get
             {
-                return CalculateSkillBonus(Character.Attributes.WisdonModifier, PerceptionProficiency, PerceptionExpertise);
+                return CalculateSkillBonus(Character.Attributes.WisdomModifier, PerceptionProficiency, PerceptionExpertise);
             }
         }
 
@@ -243,7 +243,7 @@ namespace DND
         {
             get
             {
-                return CalculateSkillBonus(Character.Attributes.WisdonModifier, SurvivalProficiency, SurvivalExpertise);
+                return CalculateSkillBonus(Character.Attributes.WisdomModifier, SurvivalProficiency, SurvivalExpertise);
             }
         }
 

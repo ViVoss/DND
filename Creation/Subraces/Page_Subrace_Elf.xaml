@@ -1,21 +1,20 @@
-﻿<Page x:Class="DND.Page_Subrace_Elf"
+﻿<Page x:Class="DND.Subraces.Page_Subrace_Elf"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:DND"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="525"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="Page_Subrace_Elf">
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="VerticalContentAlignment" Value="Top"/>
-            <EventSetter Event="Click" Handler="Button_Click"/>
+            <EventSetter Event="Click" Handler="Button_Subrace_Click"/>
             <!--<EventSetter Event="MouseEnter" Handler="Button_Subrace_MouseEnter"/>
             <EventSetter Event="MouseLeave" Handler="Button_Subrace_MouseLeave"/>-->
-            <!--Padding="5,5,5,5" Margin="10"-->
         </Style>
         <Style TargetType="Label">
             <Setter Property="VerticalAlignment" Value="Top"/>
@@ -31,54 +30,51 @@
             <Setter Property="VerticalAlignment" Value="Top"/>
         </Style>
     </Page.Resources>
-    <Grid Name="MainGrid">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Tag="high-elf">
+        <Button Grid.Column="0" Tag="high-elf">
             <StackPanel VerticalAlignment="Top">
                 <Label Name="Label_HighElf" Content="High Elf"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_HighElf">
+                <TextBlock Name="TextBlock_HighElf_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-High
                 </TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Column="1">
+        <Button Grid.Column="1" Tag="wood-elf">
             <StackPanel>
                 <Label Name="Label_WoodElf" Content="Wood Elf"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_WoodElf">
+                <TextBlock Name="TextBlock_WoodElf_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Wood
                 </TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Column="2">
+        <Button Grid.Column="2" Tag="dark-elf">
             <StackPanel>
                 <Label Name="Label_Drow" Content="Drow"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center">
+                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
                     <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
                 </Viewbox>
-                <TextBlock Name="TextBlock_Drow">
+                <TextBlock Name="TextBlock_DarkElf_Desc">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
                     </TextBlock.Background>
-Drow
                 </TextBlock>
             </StackPanel>
         </Button>

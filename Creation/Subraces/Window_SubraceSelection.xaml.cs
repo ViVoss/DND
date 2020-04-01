@@ -40,9 +40,6 @@ namespace DND
                 case "halfling":
                     test = new Page_Subrace_Halfling(Creation);
                     break;
-                case "human":
-                    test = new Page_Subrace_Human(Creation);
-                    break;
                 case "dragonborn":
                     test = new Page_Subrace_Dragonborn(Creation);
                     this.Height = 460;
@@ -51,9 +48,19 @@ namespace DND
                     test = new Page_Subrace_Gnome(Creation);
                     break;
                 default:
+                    this.Creation.TextBox_Subrace.Text = "";
+                    this.Creation.TextBox_Race.Text = "";
                     break;
             }
             Frame_SubraceSelection.Content = test;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            //Schreibt die Informationen aus der Textbox_Selection_Info der Creation Page in den Current Character
+            //(die bevor das Fenster geschlossen wird, frisch mit der Subrace beschrieben wurde)
+            Character.Current.SubRace = this.Creation.TextBox_Subrace.Text;
+            Character.Current.Race = this.Creation.TextBox_Race.Text;
         }
     }
 }

@@ -31,7 +31,8 @@ namespace DND.Subraces
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
+            return;
+            this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
             Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }

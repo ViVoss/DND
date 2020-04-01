@@ -13,27 +13,34 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DND
+namespace DND.Subraces
 {
     /// <summary>
     /// Interaktionslogik für Page_Subrace_Elf.xaml
     /// </summary>
     public partial class Page_Subrace_Elf : Page
     {
-
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
-
         public Page_Subrace_Elf(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            TextBlock_HighElf_Desc.Text = dndInformation.GetSubRaceInformation("high-elf");
+            TextBlock_DarkElf_Desc.Text = dndInformation.GetSubraceDbInformation("dark-elf");
+            TextBlock_WoodElf_Desc.Text = dndInformation.GetSubraceDbInformation("wood-elf");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {
-            this.Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
-            Creation.ButtonContinueEnabled(true);
+            this.Creation.Label_Subrace.Content = "Subrace";
+            this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
+            this.Creation.TextBox_Race.Text = "Elf";
+            this.Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
+
+
     }
 }

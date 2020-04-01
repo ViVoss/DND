@@ -21,7 +21,6 @@ namespace DND.Subraces
     public partial class Page_Subrace_Dragonborn : Page
     {
         public Creation Creation { get; set; }
-
         List<DraconicAncestry> DraconicAncestryList = new List<DraconicAncestry>();
         public Page_Subrace_Dragonborn(Creation CreationWindow)
         {
@@ -59,7 +58,52 @@ namespace DND.Subraces
 
         private void Button_Select_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.Creation.Label_Subrace.Content = "Draconic Ancestry";
+            this.Creation.TextBox_Subrace.Text = GetDraconicAncestryFromIndex(Listview_DraconicAncenstry.SelectedIndex);
+            this.Creation.TextBox_Race.Text = "Dragonborn";
+            this.Creation.ButtonContinueEnabled(true);
+            ((Window_SubraceSelection)Window.GetWindow(this)).Close();
+        }
+        private string GetDraconicAncestryFromIndex(int index)
+        {
+            string ancestry;
+            switch (index)
+            {
+                case 0:
+                    ancestry = "Black";
+                    break;
+                case 1:
+                    ancestry = "Blue";
+                    break;
+                case 2:
+                    ancestry = "Brass";
+                    break;
+                case 3:
+                    ancestry = "Bronze";
+                    break;
+                case 4:
+                    ancestry = "Copper";
+                    break;
+                case 5:
+                    ancestry = "Gold";
+                    break;
+                case 6:
+                    ancestry = "Green";
+                    break;
+                case 7:
+                    ancestry = "Red";
+                    break;
+                case 8:
+                    ancestry = "Silver";
+                    break;
+                case 9:
+                    ancestry = "White";
+                    break;
+                default:
+                    ancestry = "";
+                    break;
+            }
+            return ancestry;
         }
     }
 }

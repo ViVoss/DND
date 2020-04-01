@@ -20,19 +20,23 @@ namespace DND.Subraces
     /// </summary>
     public partial class Page_Subrace_Gnome : Page
     {
-
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
-
         public Page_Subrace_Gnome(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            TextBlock_RockGnome_Desc.Text = dndInformation.GetSubRaceInformation("rock-gnome");
+            TextBlock_ForestGnome_Desc.Text = dndInformation.GetSubraceDbInformation("forest-gnome");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
-            Creation.ButtonContinueEnabled(true);
+            this.Creation.Label_Subrace.Content = "Subrace";
+            this.Creation.TextBox_Subrace.Text = ((Button)sender).Tag.ToString();
+            this.Creation.TextBox_Race.Text = "Gnome";
+            this.Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
     }

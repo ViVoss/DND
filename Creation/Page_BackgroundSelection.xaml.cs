@@ -20,6 +20,7 @@ namespace DND
     /// </summary>
     public partial class Page_BackgroundSelection : Page
     {
+        DnDInformation dndInformation = new DnDInformation();
 
         public Creation Creation { get; set; }
 
@@ -29,9 +30,22 @@ namespace DND
             InitializeComponent();
         }
 
-        private void ListBox_BackgroundTitle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Background_MouseEnter(object sender, MouseEventArgs e)
         {
-            Creation.Textbox_Selection_Info.Text = ((ListBoxItem)this.ListBox_BackgroundTitle.SelectedItem).Content.ToString();
+            string background = ((Button)sender).Tag.ToString();
+            TextBlock_BackgroundInfo.Text = dndInformation.GetBackgroundInformation(background);
+        }
+
+        private void Button_Background_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Button_Background_Click(object sender, RoutedEventArgs e)
+        {
+            Creation.TextBox_Background.Text = ((Button)sender).Tag.ToString();
+            Character.Current.Background = Creation.TextBox_Background.Text;
+            this.Creation.ButtonContinueEnabled(true);
         }
     }
 }

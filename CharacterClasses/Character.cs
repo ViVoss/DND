@@ -100,9 +100,9 @@ namespace DND
         public static bool Load(String characterName)
         {
             //Connect
-            MongoConnection.Connect();
+            MongoConnection<Character>.Connect();
 
-            List<Character> found = MongoConnection.Collection.Find<Character>(x => x.CharacterName == characterName).ToList();
+            List<Character> found = MongoConnection<Character>.Collection.Find<Character>(x => x.CharacterName == characterName).ToList();
 
             if(found.Count == 0)
             {
@@ -124,7 +124,7 @@ namespace DND
         public static void Save()
         {
             //Connect
-            MongoConnection.Connect();
+            MongoConnection<Character>.Connect();
 
             bool exists = Exists(Character.Current.OldCharacterName);
 
@@ -136,33 +136,33 @@ namespace DND
                 Delete(Character.Current.OldCharacterName);
             }
             //Erstellt neuen Eintrag
-            MongoConnection.Collection.InsertOne(Character.Current);
+            MongoConnection<Character>.Collection.InsertOne(Character.Current);
         }
 
         public static void Delete(String characterName)
         {
             //Connect
-            MongoConnection.Connect();
+            MongoConnection<Character>.Connect();
 
-            MongoConnection.Collection.DeleteOne<Character>(x => x.CharacterName == characterName);
+            MongoConnection<Character>.Collection.DeleteOne<Character>(x => x.CharacterName == characterName);
 
         }
 
         public static List<Character> GetAll()
         {
             //Connect
-            MongoConnection.Connect();
+            MongoConnection<Character>.Connect();
 
-            List<Character> result = MongoConnection.Collection.Find<Character>(x => true).ToList();
+            List<Character> result = MongoConnection<Character>.Collection.Find<Character>(x => true).ToList();
             return result;
         }
 
         public static bool Exists(String characterName)
         {
             //Connect
-            MongoConnection.Connect();
+            MongoConnection<Character>.Connect();
 
-            bool notFound = MongoConnection.Collection.Find<Character>(x => x.CharacterName == characterName) == null;
+            bool notFound = MongoConnection<Character>.Collection.Find<Character>(x => x.CharacterName == characterName) == null;
             return !notFound;
         }
     }

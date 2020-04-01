@@ -20,8 +20,7 @@ namespace DND
     /// </summary>
     public partial class Page_ClassSelection : Page
     {
-        WebAufruf call = new WebAufruf();
-
+        DnDInformation dndInformation = new DnDInformation();
         public Creation Creation { get; set; }
 
         public Page_ClassSelection(Creation CreationWindow)
@@ -33,12 +32,14 @@ namespace DND
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             string klasse = ((Button)sender).Tag.ToString();
-            TextBox_Description.Text = call.GetClassInformation(klasse);
+            TextBox_Description.Text = dndInformation.GetClassInformation(klasse);
         }
 
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
-            Creation.Textbox_Selection_Info.Text = ((Button)sender).Tag.ToString();
+            Creation.TextBox_Class.Text = ((Button)sender).Tag.ToString();
+            Character.Current.Class = Creation.TextBox_Class.Text;
+            this.Creation.ButtonContinueEnabled(true);
         }
     }
 }

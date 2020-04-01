@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
+using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace DND
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     public partial class Rasse
     {
         [JsonProperty("_id")]
@@ -57,10 +49,19 @@ namespace DND
         public string LanguageDesc { get; set; }
 
         [JsonProperty("traits")]
-        public List<Language> Traits { get; set; }
+        public List<Trait> Traits { get; set; }
 
         [JsonProperty("subraces")]
-        public List<Language> Subraces { get; set; }
+        public List<SubRace> Subraces { get; set; }
+
+        [JsonProperty("url")]
+        public string Url { get; set; }
+    }
+
+    public partial class Trait
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }
@@ -69,12 +70,15 @@ namespace DND
     public partial class AbilityBonus
     {
         [JsonProperty("name")]
+        [BsonElement("name")]
         public string Name { get; set; }
 
         [JsonProperty("url")]
+        [BsonElement("url")]
         public string Url { get; set; }
 
         [JsonProperty("bonus")]
+        [BsonElement("bonus")]
         public long Bonus { get; set; }
     }
 
@@ -96,11 +100,11 @@ namespace DND
         public string Type { get; set; }
 
         [JsonProperty("from")]
-        public List<Language> From { get; set; }
+        public List<Proficiency> From { get; set; }
     }
 
     public partial class Rasse
     {
-        public static Rasse FromJson(string json) => JsonConvert.DeserializeObject<Rasse>(json, DND.Converter.Settings);
+        public static Rasse FromJson(string json) => JsonConvert.DeserializeObject<Rasse>(json, Converter.Settings);
     }
 }

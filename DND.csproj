@@ -55,6 +55,9 @@
     <Reference Include="MongoDB.Driver.Core, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MongoDB.Driver.Core.2.10.2\lib\net452\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\mongocsharpdriver.2.10.2\lib\net452\MongoDB.Driver.Legacy.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
     </Reference>
@@ -118,6 +121,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Background.cs" />
     <Compile Include="CharacterClasses\Appearance.cs" />
     <Compile Include="CharacterClasses\Attributes.cs" />
     <Compile Include="CharacterClasses\Character.cs" />
@@ -133,7 +137,21 @@
     <Compile Include="Dialoges\Page_ChooseCharacterToLoad.xaml.cs">
       <DependentUpon>Page_ChooseCharacterToLoad.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DnDInformation.cs" />
+    <Compile Include="EnumKlasse.cs" />
+    <Compile Include="Information\Page_Information_Spells.xaml.cs">
+      <DependentUpon>Page_Information_Spells.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Klasse.cs" />
+    <Compile Include="Information\Level_Tables\Level_Table_Barbarian.xaml.cs">
+      <DependentUpon>Level_Table_Barbarian.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Information\Level_Tables\Level_Table_Bard.xaml.cs">
+      <DependentUpon>Level_Table_Bard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Information\Level_Tables\Level_Table_Cleric.xaml.cs">
+      <DependentUpon>Level_Table_Cleric.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MongoConnection.cs" />
     <Compile Include="Creation\Page_ClassSelection.xaml.cs">
       <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
@@ -159,6 +177,9 @@
     <Compile Include="Creation\Page_Overview.xaml.cs">
       <DependentUpon>Page_Overview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Information\Page_Information_Classes.xaml.cs">
+      <DependentUpon>Page_Information_Classes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rasse.cs" />
     <Compile Include="Serialize.cs" />
     <Compile Include="Spells.cs" />
@@ -173,7 +194,7 @@
       <DependentUpon>Creation.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Skills.cs" />
-    <Compile Include="MainMenu.xaml.cs">
+    <Compile Include="Menu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Creation\Subraces\Page_Subrace_Gnome.xaml.cs">
@@ -198,6 +219,8 @@
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
+    <Compile Include="SpellsCollection.cs" />
+    <Compile Include="StartingEquipment.cs" />
     <Compile Include="SubRace.cs" />
     <Compile Include="TEST_Window.xaml.cs">
       <DependentUpon>TEST_Window.xaml</DependentUpon>
@@ -205,6 +228,9 @@
     <Compile Include="WebAufruf.cs" />
     <Compile Include="Dialoges\Window_Dialog.xaml.cs">
       <DependentUpon>Window_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Information\Window_Information.xaml.cs">
+      <DependentUpon>Window_Information.xaml</DependentUpon>
     </Compile>
     <Page Include="CharacterCreationMain.xaml">
       <SubType>Designer</SubType>
@@ -217,7 +243,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainMenu.xaml">
+    <Page Include="Information\Level_Tables\Level_Table_Barbarian.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Information\Level_Tables\Level_Table_Bard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Information\Page_Information_Spells.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Information\Level_Tables\Level_Table_Cleric.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,11 +342,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Information\Page_Information_Classes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TEST_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialoges\Window_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Information\Window_Information.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -335,61 +385,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Icons\Icon_Barbarian.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Bard.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Cleric.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Druid.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Fighter.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Monk.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Paladin.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Ranger.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Rogue.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Sorcerer.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Warlock.jpeg" />
-    <Resource Include="Resources\Icons\Icon_Wizard.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\CreatorMain\ArrowDown.jpg" />
-    <Resource Include="Resources\CreatorMain\ArrowUp.jpg" />
-    <Resource Include="Resources\CreatorMain\PaperTexture.jpg" />
-    <Resource Include="Resources\Menu\Barbarian.png" />
-    <Resource Include="Resources\Menu\Bard.png" />
-    <Resource Include="Resources\Menu\Cleric.png" />
-    <Resource Include="Resources\Menu\d20drawing.png" />
-    <Resource Include="Resources\Menu\Dwarf.png" />
-    <Resource Include="Resources\Menu\Elf.png" />
-    <Resource Include="Resources\Menu\Human.png" />
-    <Resource Include="Resources\Menu\Menu.jpg" />
-    <Resource Include="Resources\Menu\PNGTotal.png" />
-    <Resource Include="Resources\Menu\Rogue.png" />
-    <Resource Include="Resources\Menu\Spell.png" />
-    <Resource Include="Resources\Menu\Wizard.png" />
-    <Resource Include="Resources\Random\maintainweb.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\CreatorMain\Banner1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Races\Dragonborn.png" />
-    <Resource Include="Resources\Races\Dwarf.png" />
-    <Resource Include="Resources\Races\Elf.png" />
-    <Resource Include="Resources\Races\Gnome.png" />
-    <Resource Include="Resources\Races\Half-Elf.png" />
-    <Resource Include="Resources\Races\Half-Orc.png" />
-    <Resource Include="Resources\Races\Halfling.png" />
-    <Resource Include="Resources\Races\Human.png" />
-    <Resource Include="Resources\Races\Tiefling.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Random\Mountain.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Random\Hill.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\CreatorMain\PaperTexture2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Creation\Subraces\Resources_Subraces\General\PaperTexture.jpg" />
@@ -435,6 +430,72 @@
     <Resource Include="Creation\Resources_Creation\Race_Icons\HalfOrc.png" />
     <Resource Include="Creation\Resources_Creation\Race_Icons\Human.png" />
     <Resource Include="Creation\Resources_Creation\Race_Icons\Tiefling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Barbarian.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Bard.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Cleric.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Druid.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Fighter.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Monk.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Paladin.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Ranger.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Rogue.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Sorcerer.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Warlock.png" />
+    <Resource Include="Creation\Resources_Creation\Class_Icons\Wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\Background_MainMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Barbarian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Bard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Cleric.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Druid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Fighter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Monk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Paladin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Ranger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Rogue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Sorcerer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Warlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Wizard - Kopieren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Class_Icons\Wizard.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\PaperTexture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\PaperTexture2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

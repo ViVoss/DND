@@ -26,9 +26,6 @@
         </DataTemplate>
     </Window.Resources>
     <Grid Name="MainGrid" Margin="0,6,-0.4,-5.6">
-        <Grid.Background>
-            <ImageBrush ImageSource="Resources/CreatorMain/PaperTexture.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>

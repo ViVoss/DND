@@ -6,6 +6,16 @@
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d"
         Title="Creation" Name="CreationName" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Grid.Row" Value="1"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,6 +29,28 @@
             <Button Name="Btn_Continue" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Continue_Click" Content="Continue" FontSize="24"/>
             <Button Name="Btn_Back" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Right" DockPanel.Dock="Right" Click="Btn_Back_Click" Content="Back" FontSize="24"/>
         </DockPanel>
-        <TextBox TextWrapping="Wrap" Grid.Row="1" Name="Textbox_Selection_Info" Margin="10" HorizontalAlignment="Left" Width="150" IsReadOnly="True"/>
+        <Grid Name="selectedClassesList" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Height="50">
+            <Grid.Background>
+                <SolidColorBrush Color="White"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Name="Label_Race" Grid.Column="0" Content="Race"/>
+            <Label Name="Label_Subrace" Grid.Column="1" Content="Subrace"/>
+            <Label Name="Label_Class" Grid.Column="2" Content="Class"/>
+            <Label Name="Label_Background" Grid.Column="3" Content="Background"/>
+            <TextBox Name="TextBox_Race" Grid.Column="0"/>
+            <TextBox Name="TextBox_Subrace" Grid.Column="1"/>
+            <TextBox Name="TextBox_Class" Grid.Column="2"/>
+            <TextBox Name="TextBox_Background" Grid.Column="3"/>
+        </Grid>
     </Grid>
 </Window>

@@ -19,8 +19,9 @@ namespace DND
     /// </summary>
     public partial class Creation : Window
     {
-        Page_RaceSelection RaceSelection;
+        List<CharacterStats> characterStats = new List<CharacterStats>();
         Page_ClassSelection ClassSelection;
+        Page_RaceSelection RaceSelection;
         Page_BackgroundSelection BackgroundSelection;
         Page_AttributeSelection AttributeSelection;
         Page_InventorySelection InventorySelection;
@@ -40,6 +41,13 @@ namespace DND
             return creation;
         }
 
+        public class CharacterStats
+        {
+            public string Race { get; set; }
+            public string Subrace { get; set; }
+            public string Class { get; set; }
+            public string Background { get; set; }
+        }
         private Creation()
         {
             InitializeComponent();
@@ -53,21 +61,24 @@ namespace DND
             SpellSelection = new Page_SpellSelection(this);
             MiscellaneousSelection = new Page_Miscellaneous(this);
             OverviewSelection = new Page_Overview(this);
-            Btn_Back.Visibility = Visibility.Hidden;
 
             //Erste Seite anzeigen
             Frame1.Content = RaceSelection;
 
             //RaceSelection laden
-            this.Textbox_Selection_Info.Text = Character.Current.SubRace;
+            this.TextBox_Race.Text = Character.Current.Race;
+            this.TextBox_Subrace.Text = Character.Current.SubRace;
+            this.TextBox_Class.Text = Character.Current.Class;
+            this.TextBox_Background.Text = Character.Current.Background;
 
             //Continue-Button zu Beginn deaktivieren
-            if (this.Textbox_Selection_Info.Text == "")
+            if (this.TextBox_Race.Text == "")
                 ButtonContinueEnabled(false);
             else
                 ButtonContinueEnabled(true);
 
             //Back-Button zu Beginn deaktivieren
+            Btn_Back.Visibility = Visibility.Hidden;
             ButtonBackEnabled(false);
         }
 
@@ -76,54 +87,60 @@ namespace DND
             if (Frame1.Content == RaceSelection)
             {
                 //RaceSelection speichern
-                Character.Current.SubRace = this.Textbox_Selection_Info.Text;
+                Character.Current.Race = this.TextBox_Race.Text;
+                Character.Current.SubRace = this.TextBox_Subrace.Text;
 
-                Frame1.Content = ClassSelection;
                 //ClassSelection laden
-
-                this.Textbox_Selection_Info.Text = Character.Current.Class;
+                Frame1.Content = ClassSelection;
+                this.TextBox_Class.Text = Character.Current.Class;
 
                 //Continue-Button zu Beginn deaktivieren
-                if (this.Textbox_Selection_Info.Text == "")
+                if (this.TextBox_Class.Text == "")
                     ButtonContinueEnabled(false);
                 else
                     ButtonContinueEnabled(true);
 
                 //Back-Button aktivieren
+                Btn_Back.Visibility = Visibility.Visible;
                 ButtonBackEnabled(true);
-
             }
-
 
             else if (Frame1.Content == ClassSelection)
             {
                 //ClassSelection speichern
-                Character.Current.Class = this.Textbox_Selection_Info.Text;
+                Character.Current.Class = this.TextBox_Class.Text;
 
-                Frame1.Content = BackgroundSelection;
                 //BackgroundSelection laden
-
-                this.Textbox_Selection_Info.Text = Character.Current.Background;
+                Frame1.Content = BackgroundSelection;
+                this.TextBox_Background.Text = Character.Current.Background;
+                
+                //Continue-Button zu Beginn deaktivieren
+                if (this.TextBox_Background.Text == "")
+                    ButtonContinueEnabled(false);
+                else
+                    ButtonContinueEnabled(true);
             }
-
 
             else if (Frame1.Content == BackgroundSelection)
             {
                 //BackgroundSelection speichern
-                Character.Current.Background = this.Textbox_Selection_Info.Text;
+                Character.Current.Background = this.TextBox_Background.Text;
 
-                Frame1.Content = AttributeSelection;
                 //AttributeSelection laden
-
-                this.Textbox_Selection_Info.Text = "";
+                Frame1.Content = AttributeSelection;
+                if (AttributeSelection.cmbAttributeValuesStr.Text == "" || AttributeSelection.cmbAttributeValuesDex.Text == "" || AttributeSelection.cmbAttributeValuesCon.Text == "" ||
+                    AttributeSelection.cmbAttributeValuesInt.Text == "" || AttributeSelection.cmbAttributeValuesWis.Text == "" || AttributeSelection.cmbAttributeValuesCha.Text == "")
+                    ButtonContinueEnabled(false);
+                else
+                    ButtonContinueEnabled(true);
+                return;
                 AttributeSelection.cmbAttributeValuesStr.Text = Convert.ToString(Character.Current.Attributes.Strength);
                 AttributeSelection.cmbAttributeValuesDex.Text = Convert.ToString(Character.Current.Attributes.Dexterity);
                 AttributeSelection.cmbAttributeValuesCon.Text = Convert.ToString(Character.Current.Attributes.Constitution);
                 AttributeSelection.cmbAttributeValuesInt.Text = Convert.ToString(Character.Current.Attributes.Intelligence);
-                AttributeSelection.cmbAttributeValuesWis.Text = Convert.ToString(Character.Current.Attributes.Wisdon);
+                AttributeSelection.cmbAttributeValuesWis.Text = Convert.ToString(Character.Current.Attributes.Wisdom);
                 AttributeSelection.cmbAttributeValuesCha.Text = Convert.ToString(Character.Current.Attributes.Charisma);
             }
-
 
             else if (Frame1.Content == AttributeSelection)
             {
@@ -132,22 +149,19 @@ namespace DND
                 Character.Current.Attributes.Dexterity = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesDex.Text);
                 Character.Current.Attributes.Constitution = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesCon.Text);
                 Character.Current.Attributes.Intelligence = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesInt.Text);
-                Character.Current.Attributes.Wisdon = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesWis.Text);
+                Character.Current.Attributes.Wisdom = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesWis.Text);
                 Character.Current.Attributes.Charisma = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesCha.Text);
-
-
-                Frame1.Content = InventorySelection;
+                
                 //InventorySelection laden
+                Frame1.Content = InventorySelection;
             }
-
 
             else if (Frame1.Content == InventorySelection)
             {
                 //InventorySelection speichern
 
-
-                Frame1.Content = SpellSelection;
                 //SpellSelection laden
+                Frame1.Content = SpellSelection;
             }
 
 
@@ -155,9 +169,8 @@ namespace DND
             {
                 //SpellSelection speichern
 
-
-                Frame1.Content = MiscellaneousSelection;
                 //MiscellaneousSelection laden
+                Frame1.Content = MiscellaneousSelection;
 
                 if (Character.Current.CharacterName != "")
                 {
@@ -167,7 +180,7 @@ namespace DND
                         Character.Current.OldCharacterName = Character.Current.CharacterName;
                     }
 
-                    //Characternamen einlesen
+                    //Characternamen auslesen
                     MiscellaneousSelection.CharacterName.Text = Character.Current.CharacterName;
                 }
             }
@@ -185,15 +198,14 @@ namespace DND
                 else
                 {
                     Character.Current.CharacterName = MiscellaneousSelection.CharacterName.Text;
+                    //OverviewSelection laden
+                    Frame1.Content = OverviewSelection;
+                    Btn_Continue.Visibility = Visibility.Hidden;
                 }
-
-                Frame1.Content = OverviewSelection;
-                //OverviewSelection laden
-
             }
 
 
-            else if(Frame1.Content == OverviewSelection)
+            else if (Frame1.Content == OverviewSelection)
             {
                 //OverviewSelection speichern
 
@@ -210,14 +222,20 @@ namespace DND
             {
                 Frame1.Content = RaceSelection;
                 Btn_Back.Visibility = Visibility.Hidden;
+                if (this.TextBox_Race.Text != "")
+                    ButtonContinueEnabled(true);
             }
             else if (Frame1.Content == BackgroundSelection)
             {
                 Frame1.Content = ClassSelection;
+                if (this.TextBox_Class.Text != "")
+                    ButtonContinueEnabled(true);
             }
             else if (Frame1.Content == AttributeSelection)
             {
                 Frame1.Content = BackgroundSelection;
+                if (this.TextBox_Background.Text != "")
+                    ButtonContinueEnabled(true);
             }
             else if (Frame1.Content == InventorySelection)
             {
@@ -234,11 +252,11 @@ namespace DND
             else if (Frame1.Content == OverviewSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
-                //ContinueButtonEnabled(true);
+                ButtonContinueEnabled(true);
                 Btn_Continue.Visibility = Visibility.Visible;
             }
         }
-        
+
         public void ButtonBackEnabled(bool activated)
         {
             this.Btn_Back.IsEnabled = activated;

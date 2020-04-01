@@ -7,29 +7,155 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Page_BackgroundSelection">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
-        </Grid.Background>
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <EventSetter Event="MouseEnter" Handler="Button_Background_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="Button_Background_MouseLeave"/>
+            <EventSetter Event="Click" Handler="Button_Background_Click"/>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="ListBox_BackgroundTitle" Margin="10" Background="Transparent" BorderThickness="0" SelectionChanged="ListBox_BackgroundTitle_SelectionChanged">
-            <ListBoxItem Tag="acolythe" Content="Acolythe"/>
-            <ListBoxItem Tag="charlatan" Content="Charlatan"/>
-            <ListBoxItem Tag="criminal" Content="Criminal"/>
-            <ListBoxItem Tag="entertainer" Content="Entertainer"/>
-            <ListBoxItem Tag="folk-hero" Content="Folk Hero"/>
-            <ListBoxItem Tag="guild-artisan" Content="Guild Artisan"/>
-            <ListBoxItem Tag="hermit" Content="Hermit"/>
-            <ListBoxItem Tag="noble" Content="Noble"/>
-            <ListBoxItem Tag="outlander" Content="Outlander"/>
-            <ListBoxItem Tag="sage" Content="Sage"/>
-            <ListBoxItem Tag="sailor" Content="Sailor"/>
-            <ListBoxItem Tag="soldier" Content="Soldier"/>
-            <ListBoxItem Tag="urchin" Content="Urchin"/>
-        </ListBox>
-        <TextBox Name="TextBox_Description" TextWrapping="Wrap" Grid.Column="1" Margin="10" Background="Transparent" BorderThickness="0" FontSize="16"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="Information/Resources_Information/PaperTexture2.jpg"/>
+        </Grid.Background>-->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="701*"/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Name="Frame_LevelTable" Grid.Column="0" NavigationUIVisibility="Hidden" Grid.RowSpan="2"/>
+            <TextBlock Name="TextBlock_BackgroundInfo" TextWrapping="Wrap" Grid.RowSpan="2"/>
+            <!--<Grid.Background>
+                <ImageBrush ImageSource="Information/Resources_Information/PaperTexture.jpg"/>
+            </Grid.Background>-->
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Name="Acolythe" Tag="acolythe">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Acolythe"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Criminal" Tag="criminal" Grid.Row="1">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Criminal"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Charlatan" Tag="charlatan" Grid.Row="2">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Charlatan"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Entertainer" Tag="entertainer" Grid.Row="3">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Entertainer"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="FolkHero" Tag="folk-hero" Grid.Row="4">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Folk Hero"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="GuildArtisan" Tag="guild-artisan" Grid.Row="5">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Guild Artisan"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Hermit" Tag="hermit" Grid.Row="6">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Hermit"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Noble" Tag="noble" Grid.Row="7">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Noble"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Outlander" Tag="outlander" Grid.Row="8">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Outlander"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Sage" Tag="sage" Grid.Row="9">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Sage"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Sailor" Tag="sailor" Grid.Row="10">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Sailor"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Soldier" Tag="soldier" Grid.Row="11">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Soldier"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+            <Button Name="Urchin" Tag="urchin" Grid.Row="12">
+                <DockPanel>
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="Urchin"/>
+                    </Viewbox>
+                </DockPanel>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

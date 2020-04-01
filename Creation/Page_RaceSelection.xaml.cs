@@ -19,7 +19,7 @@ namespace DND
     /// </summary>
     public partial class Page_RaceSelection : Page
     {
-        WebAufruf call = new WebAufruf();
+        DnDInformation dndInformation = new DnDInformation();
 
         public Creation Creation { get; set; }
 
@@ -27,12 +27,17 @@ namespace DND
         {
             this.Creation = CreationWindow;
             InitializeComponent();
-            
+
+            //Subrace laden, wenn vorhanden
+            if (Character.Current.SubRace != "")
+            {
+                this.Creation.TextBox_Subrace.Text = Character.Current.SubRace;
+            }
         }
 
         private void Button_Race_Click(object sender, RoutedEventArgs e)
         {
-           
+
             string currRace = ((Button)sender).Tag.ToString();
 
             //Rasse setzen
@@ -41,10 +46,24 @@ namespace DND
             switch (currRace)
             {
                 case "tiefling":
+                    ClearSubraceBox();
+                    SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 case "half-elf":
+                    ClearSubraceBox();
+                    SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 case "half-orc":
+                    ClearSubraceBox();
+                    SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
+                    break;
+                case "human":
+                    ClearSubraceBox();
+                    SetRaceTextBox(currRace);
+                    this.Creation.ButtonContinueEnabled(true);
                     break;
                 default:
                     Window_SubraceSelection subra = new Window_SubraceSelection((Creation)Window.GetWindow(this), currRace);
@@ -52,10 +71,20 @@ namespace DND
                     break;
             }
         }
+        private void ClearSubraceBox()
+        {
+            this.Creation.Label_Subrace.Content = "Subrace";
+            this.Creation.TextBox_Subrace.Text = "";
+        }
+        private void SetRaceTextBox(string currrace)
+        {
+            this.Creation.TextBox_Race.Text = currrace;
+        }
         private void Button_Race_MouseEnter(object sender, MouseEventArgs e)
         {
-            string race = ((Button)sender).Tag.ToString();        
-            TextBox_Description.Text = call.GetRaceInformation(race);
+            string race = ((Button)sender).Tag.ToString();
+            TextBox_Description.Text = dndInformation.GetRaceInformation(race);
+            //TextBox_Description.Text = call.GetRaceInformation(race);
         }
 
         private void Button_Race_MouseLeave(object sender, MouseEventArgs e)
