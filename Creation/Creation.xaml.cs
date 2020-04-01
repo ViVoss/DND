@@ -234,7 +234,7 @@ namespace DND
             else if (Frame1.Content == OverviewSelection)
             {
                 Frame1.Content = MiscellaneousSelection;
-                ContinueButtonEnabled(true);
+                //ContinueButtonEnabled(true);
                 Btn_Continue.Visibility = Visibility.Visible;
             }
         }
