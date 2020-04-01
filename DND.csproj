@@ -146,6 +146,9 @@
     <Compile Include="Information\Level_Tables\Level_Table_Bard.xaml.cs">
       <DependentUpon>Level_Table_Bard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Information\Level_Tables\Level_Table_Cleric.xaml.cs">
+      <DependentUpon>Level_Table_Cleric.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MongoConnection.cs" />
     <Compile Include="Creation\Page_ClassSelection.xaml.cs">
       <DependentUpon>Page_ClassSelection.xaml</DependentUpon>
@@ -241,6 +244,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Information\Level_Tables\Level_Table_Bard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Information\Level_Tables\Level_Table_Cleric.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

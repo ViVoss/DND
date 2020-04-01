@@ -39,7 +39,6 @@ namespace DND
                     Frame_LevelTable.Navigate(new Level_Table_Bard());
                     break;
                 case "cleric":
-                    //Frame_LevelTable.Navigate(new Level_Table_Cleric());
                     break;
                 case "druid":
                     //Frame_LevelTable.Navigate(new Level_Table_Druid());

@@ -39,6 +39,7 @@
             </Grid.ColumnDefinitions>
             <Frame Name="Frame_LevelTable" Grid.Column="0" NavigationUIVisibility="Hidden"/>
             <TextBlock Name="TextBlock_ClassInfo" TextWrapping="Wrap"/>
+            <TextBox Margin="50,350,50,50"/>
             <Grid.Background>
                 <ImageBrush ImageSource="Resources_Information/PaperTexture.jpg"/>
             </Grid.Background>
