@@ -139,6 +139,9 @@
     </Compile>
     <Compile Include="DnDInformation.cs" />
     <Compile Include="EnumKlasse.cs" />
+    <Compile Include="Information\Page_Information_Spells.xaml.cs">
+      <DependentUpon>Page_Information_Spells.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Klasse.cs" />
     <Compile Include="Information\Level_Tables\Level_Table_Barbarian.xaml.cs">
       <DependentUpon>Level_Table_Barbarian.xaml</DependentUpon>
@@ -216,6 +219,7 @@
       <DependentUpon>Window_SubraceSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterClasses\Traits\Trait.cs" />
+    <Compile Include="SpellsCollection.cs" />
     <Compile Include="StartingEquipment.cs" />
     <Compile Include="SubRace.cs" />
     <Compile Include="TEST_Window.xaml.cs">
@@ -244,6 +248,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Information\Level_Tables\Level_Table_Bard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Information\Page_Information_Spells.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

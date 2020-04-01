@@ -1,5 +1,4 @@
-﻿using DND;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,22 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DND
 {
     /// <summary>
-    /// Interaktionslogik für Window_Information_Classes.xaml
+    /// Interaktionslogik für Page_Information_Spells.xaml
     /// </summary>
-    public partial class Window_Information : Window
+    public partial class Page_Information_Spells : Page
     {
-        Page_Information_Classes Information_Classes = new Page_Information_Classes();
-        Page_Information_Spells Information_Spells = new Page_Information_Spells();
-        public Window_Information()
+        DnDInformation dndInformation = new DnDInformation();
+        public Page_Information_Spells()
         {
             InitializeComponent();
-            Frame_Information.Content = Information_Spells;
-
+            DataGrid_Spells.ItemsSource = dndInformation.GetSpellsInformation();
         }
     }
 }

@@ -20,8 +20,8 @@ namespace DND
     /// </summary>
     public partial class MainMenu : Window
     {
-        string CopyrightDisclaimer = "Dungeons & Dragons, D&D, their respective logos, and all Wizards titles and characters are property of Wizards of the Coast LLC in the U.S.A. and other countries. ©2020 Wizards.";
-        public String TargetCharacterName { get; set; }
+        private string CopyrightDisclaimer = "Dungeons & Dragons, D&D, their respective logos, and all Wizards titles and characters are property of Wizards of the Coast LLC in the U.S.A. and other countries. ©2020 Wizards.";
+        public string TargetCharacterName { get; set; }
         public Window_Dialog Window { get; set; }
         public Page_ChooseCharacterToLoad Page { get; set; }
 
@@ -67,8 +67,9 @@ namespace DND
             //Creation1.Show();
         }
         private void Spells_Click(object sender, RoutedEventArgs e)
-        {            
-
+        {
+            Window_Information info = new Window_Information();
+            info.Show();
         }
         private void Races_ButtonClick(object sender, RoutedEventArgs e)
         {
