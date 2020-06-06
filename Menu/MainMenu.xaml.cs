@@ -33,7 +33,7 @@ namespace DND
         // Creation >>>
         private void Creation_ButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Neuen Character erstellen?", "Charactererstellung", MessageBoxButton.YesNoCancel);
+            MessageBoxResult result = MessageBox.Show("Do you want to create a new character?", "Character creation", MessageBoxButton.YesNoCancel);
             if (result == MessageBoxResult.Yes)
             {
                 //Neuen leeren Character erstellen
@@ -68,22 +68,19 @@ namespace DND
         }
         private void Spells_Click(object sender, RoutedEventArgs e)
         {
-            Window_Information info = new Window_Information();
-            info.Show();
+            Window_Information spellsInfo = new Window_Information("spells");
+            spellsInfo.Show();
         }
-        private void Races_ButtonClick(object sender, RoutedEventArgs e)
+        private void Races_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-        private void Classes_ButtonClick(object sender, RoutedEventArgs e)
-        {
-
+            Window_Information racesInfo = new Window_Information("races");
+            racesInfo.Show();
         }
 
         private void Classes_Click(object sender, RoutedEventArgs e)
         {
-            Window_Information info = new Window_Information();
-            info.Show();
+            Window_Information classesInfo = new Window_Information("classes");
+            classesInfo.Show();
         }
     }
 }

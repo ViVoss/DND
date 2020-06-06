@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d"
-        Title="Creation" Name="CreationName" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Character creator" Name="CreationName" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="FontWeight" Value="Bold"/>

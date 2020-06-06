@@ -59,7 +59,7 @@
                         </Viewbox>
                     </DockPanel>
                 </Button>
-                <Button Name="Races" Grid.Column="2" Grid.Row="0" Click="Races_ButtonClick">
+                <Button Name="Races" Grid.Column="2" Grid.Row="0" Click="Races_Click">
                     <DockPanel>
                         <Viewbox>
                             <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Button_Icon_Red.svg/2000px-Button_Icon_Red.svg.png"/>

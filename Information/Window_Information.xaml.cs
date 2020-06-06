@@ -22,10 +22,22 @@ namespace DND
     {
         Page_Information_Classes Information_Classes = new Page_Information_Classes();
         Page_Information_Spells Information_Spells = new Page_Information_Spells();
-        public Window_Information()
+        Page_Information_Races Information_Races = new Page_Information_Races();
+        public Window_Information(string str)
         {
             InitializeComponent();
-            Frame_Information.Content = Information_Spells;
+            if (str == "spells")
+            {
+                Frame_Information.Content = Information_Spells;
+            }
+            else if (str == "classes")
+            {
+                Frame_Information.Content = Information_Classes;
+            }
+            else if (str == "races")
+            {
+                Frame_Information.Content = Information_Races;
+            }
 
         }
     }
