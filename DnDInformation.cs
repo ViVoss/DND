@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -532,126 +533,134 @@ namespace DND
             return builder.ToString();
         }
 
-        public string GetBackgroundInformation(string hintergrund)
+        public Background GetBackgroundInformation(string hintergrund)
         {
-            builder.Clear();
             MongoConnection<Background> mongoConnection = new MongoConnection<Background>();
             Background background = mongoConnection.GetDocumentByIndex("Background", hintergrund);
 
-            if (background.SkillProficiences.Count() > 0)
-            {
-                builder.Append("Skill Proficiences: ");
-                foreach (string prof in background.SkillProficiences)
-                {
-                    if (prof.Equals(background.SkillProficiences.Last()))
-                    {
-                        builder.Append(prof);
-                    }
-                    else
-                    {
-                        builder.Append(prof + ", ");
-                    }
-                }
-            }
-
-            if (background.ToolProficiences.Count() > 0)
-            {
-                builder.Append("\n\nTool Proficiences: ");
-                foreach (string prof in background.ToolProficiences)
-                {
-                    if (prof.Equals(background.ToolProficiences.Last()))
-                    {
-                        builder.Append(prof);
-                    }
-                    else
-                    {
-                        builder.Append(prof + ", ");
-                    }
-                }
-            }
-
-            if (background.Languages.Count() > 0)
-            {
-                builder.Append("\n\nLanguages: " + background.Languages);
-                foreach (string lang in background.Languages)
-                {
-                    if (lang.Equals(background.Languages.Last()))
-                    {
-                        builder.Append(lang);
-                    }
-                    else
-                    {
-                        builder.Append(lang + ", ");
-                    }
-                }
-            }
-
-            if (background.LanguageOptions.Choose > 0)
-            {
-                builder.Append("\n\nLanguage Options: Choose " + background.LanguageOptions.Choose + " from: ");
-                foreach (string lang in background.LanguageOptions.From)
-                {
-                    if (lang.Equals(background.Equipment.Last()))
-                    {
-                        builder.Append(lang);
-                    }
-                    else
-                    {
-                        builder.Append(lang + ", ");
-                    }
-                }
-            }
-
-            if (background.Equipment.Count() > 0)
-            {
-                builder.Append("\n\nEquipment: ");
-                foreach (string equip in background.Equipment)
-                {
-                    if (equip.Equals(background.Equipment.Last()))
-                    {
-                        builder.Append(equip);
-                    }
-                    else
-                    {
-                        builder.Append(equip + ", ");
-                    }
-                }
-            }
-
-            if (background.EquipmentOptions.Choose > 0)
-            {
-                builder.Append("\n\nEquipment Options: Choose " + background.EquipmentOptions.Choose + " from: ");
-                foreach (string equip in background.EquipmentOptions.From)
-                {
-                    if (equip.Equals(background.Equipment.Last()))
-                    {
-                        builder.Append(equip);
-                    }
-                    else
-                    {
-                        builder.Append(equip + ", ");
-                    }
-                }
-            }
-
-            if (background.Feature.Count() > 0)
-            {
-                builder.Append("\n\nFeature: ");
-                foreach (string feat in background.Feature)
-                {
-                    if (feat.Equals(background.Feature.Last()))
-                    {
-                        builder.Append(feat);
-                    }
-                    else
-                    {
-                        builder.Append(feat + ", ");
-                    }
-                }
-            }
-
-            return builder.ToString();
+            return background;
         }
+
+        //public string GetBackgroundInformation(string hintergrund)
+        //{
+        //    builder.Clear();
+        //    MongoConnection<Background> mongoConnection = new MongoConnection<Background>();
+        //    Background background = mongoConnection.GetDocumentByIndex("Background", hintergrund);
+
+        //    if (background.SkillProficiences.Count() > 0)
+        //    {
+        //        builder.Append("Skill Proficiences: ");
+        //        foreach (string prof in background.SkillProficiences)
+        //        {
+        //            if (prof.Equals(background.SkillProficiences.Last()))
+        //            {
+        //                builder.Append(prof);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(prof + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    if (background.ToolProficiences.Count() > 0)
+        //    {
+        //        builder.Append("\n\nTool Proficiences: ");
+        //        foreach (string prof in background.ToolProficiences)
+        //        {
+        //            if (prof.Equals(background.ToolProficiences.Last()))
+        //            {
+        //                builder.Append(prof);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(prof + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    if (background.Languages.Count() > 0)
+        //    {
+        //        builder.Append("\n\nLanguages: " + background.Languages);
+        //        foreach (string lang in background.Languages)
+        //        {
+        //            if (lang.Equals(background.Languages.Last()))
+        //            {
+        //                builder.Append(lang);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(lang + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    if (background.LanguageOptions.Choose > 0)
+        //    {
+        //        builder.Append("\n\nLanguage Options: Choose " + background.LanguageOptions.Choose + " from: ");
+        //        foreach (string lang in background.LanguageOptions.From)
+        //        {
+        //            if (lang.Equals(background.Equipment.Last()))
+        //            {
+        //                builder.Append(lang);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(lang + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    if (background.Equipment.Count() > 0)
+        //    {
+        //        builder.Append("\n\nEquipment: ");
+        //        foreach (string equip in background.Equipment)
+        //        {
+        //            if (equip.Equals(background.Equipment.Last()))
+        //            {
+        //                builder.Append(equip);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(equip + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    if (background.EquipmentOptions.Choose > 0)
+        //    {
+        //        builder.Append("\n\nEquipment Options: Choose " + background.EquipmentOptions.Choose + " from: ");
+        //        foreach (string equip in background.EquipmentOptions.From)
+        //        {
+        //            if (equip.Equals(background.Equipment.Last()))
+        //            {
+        //                builder.Append(equip);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(equip + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    if (background.Feature.Count() > 0)
+        //    {
+        //        builder.Append("\n\nFeature: ");
+        //        foreach (string feat in background.Feature)
+        //        {
+        //            if (feat.Equals(background.Feature.Last()))
+        //            {
+        //                builder.Append(feat);
+        //            }
+        //            else
+        //            {
+        //                builder.Append(feat + ", ");
+        //            }
+        //        }
+        //    }
+
+        //    return builder.ToString();
+        //}
 
         public List<Spells> GetSpellsInformation()
         {
