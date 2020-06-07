@@ -18,7 +18,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Frame Name="Frame_Information" Grid.Row="1" NavigationUIVisibility="Hidden"/>

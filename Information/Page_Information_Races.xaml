@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
-      d:DesignHeight="725" d:DesignWidth="1280"
+      d:DesignHeight="800" d:DesignWidth="1280"
       Title="Page_Information_Races">
     <Page.Resources>
         <Style TargetType="Button">
@@ -34,10 +34,137 @@
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Frame Name="Frame_LevelTable" Grid.Column="0" NavigationUIVisibility="Hidden"/>
-            <TextBlock Name="TextBlock_RaceInfo" TextWrapping="Wrap"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="1" Name="TextBlock_RaceInfoTitle" TextWrapping="Wrap" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="4" Name="TextBlock_SubRaceInfoTitle" TextWrapping="Wrap" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <DataGrid MaxWidth="1100" Grid.Column="1" Grid.Row="2" Name="RaceDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=IdCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Ability Score Increase" Width="*" Binding="{Binding Path=AbilityScoreIncreaseCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Age" Width="*" Binding="{Binding Path=AgeCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Alignment" Width="*" Binding="{Binding Path=AlignmentCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Size" Width="70" Binding="{Binding Path=SizeCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Size Description" Width="*" Binding="{Binding Path=SizeDescCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Traits" Width="*" Binding="{Binding Path=TraitsCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Speed" Width="50" Binding="{Binding Path=SpeedCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Languages" Width="*" Binding="{Binding Path=LanguagesCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Language Description" Width="*" Binding="{Binding Path=LanguageDescCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid MaxWidth="1100" Grid.Column="1" Grid.Row="5" Name="SubraceDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=IdCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Path=NameCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Description" Width="350" Binding="{Binding Path=DescCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Ability Score Increase" Width="*" Binding="{Binding Path=AbilityScoreIncreaseCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Starting Proficiences" Width="*" Binding="{Binding Path=StartingProficiencesCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Languages" Width="*" Binding="{Binding Path=LanguagesCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Language Options" Width="*" Binding="{Binding Path=LanguageOptionsCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Racial Traits" Width="*" Binding="{Binding Path=RacialTraitsCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Racial Trait Options" Width="*" Binding="{Binding Path=RacialTraitOptionsCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
             <Grid.Background>
                 <ImageBrush ImageSource="Resources_Information/PaperTexture.jpg"/>
             </Grid.Background>

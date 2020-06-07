@@ -7,8 +7,56 @@
       d:DesignHeight="800" d:DesignWidth="1280"
       Title="Page_Information_Spells">
     <Grid>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <DataGrid x:Name="DataGrid_Spells" BorderBrush="AntiqueWhite" BorderThickness="5"/>
-        </ScrollViewer>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="TestOutput" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap"/>
+        <DataGrid MaxWidth="1260" Grid.Column="1" Grid.Row="1" Name="SpellDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=IdCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name" Width="250" Binding="{Binding Path=NameCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Description" Width="350" Binding="{Binding Path=DescCol}" IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Higher Level" Width="200" Binding="{Binding Path=HigherLvlCol}" IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Range" Binding="{Binding Path=RangeCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Components" Binding="{Binding Path=ComponentsCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Material" Width="100" Binding="{Binding Path=MaterialCol}" IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Ritual" Binding="{Binding Path=RitualCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Duration" Binding="{Binding Path=DurationCol}" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Concentration" Binding="{Binding Path=ConcentrationCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Casting Time" Binding="{Binding Path=CastingTimeCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Level" Binding="{Binding Path=LevelCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="School" Binding="{Binding Path=SchoolCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Classes" Binding="{Binding Path=ClassesCol}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Subclasses" Binding="{Binding Path=SubclassesCol}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources_Information/PaperTexture.jpg"/>
+        </Grid.Background>
     </Grid>
 </Page>

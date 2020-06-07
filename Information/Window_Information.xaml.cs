@@ -29,14 +29,21 @@ namespace DND
             if (str == "spells")
             {
                 Frame_Information.Content = Information_Spells;
+                this.Title = "Spells Overview";
             }
             else if (str == "classes")
             {
                 Frame_Information.Content = Information_Classes;
+                this.Title = "Classes Overview";
             }
             else if (str == "races")
             {
                 Frame_Information.Content = Information_Races;
+                this.Title = "Races & Subraces Overview";
+            }
+            else
+            {
+                MessageBox.Show("We are sorry an error occurred. Please contact the customer support!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }

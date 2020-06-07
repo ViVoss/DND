@@ -21,6 +21,7 @@ namespace DND
     public partial class Page_Information_Races : Page
     {
         DnDInformation dndInformation = new DnDInformation();
+
         public Page_Information_Races()
         {
             InitializeComponent();
@@ -30,38 +31,270 @@ namespace DND
         {
             string currRace = ((Button)sender).Tag.ToString();
 
+            TextBlock_RaceInfoTitle.Visibility = Visibility.Visible;
+
             switch (currRace)
             {
                 case "dwarf":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("dwarf");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Visible;
+
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Visible;
+                    TextBlock_RaceInfoTitle.Text = "Dwarf";
+                    TextBlock_SubRaceInfoTitle.Text = "Dwarf Subraces";
+
+                    Rasse dwarf = dndInformation.GetRaceDataGridInformation("dwarf");
+                    SubRace hillDwarf = dndInformation.GetSubRaceDataGridInformation("hill-dwarf");
+                    SubRace mountainDwarf = dndInformation.GetSubRaceDbDataGridInformation("mountain-dwarf");
+
+                    addRaceDataGridInformation(dwarf);
+                    addSubRaceDataGridInformation(hillDwarf, 1);
+                    addSubRaceDataGridInformation(mountainDwarf, 2);
+
                     break;
                 case "elf":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("elf");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Visible;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Visible;
+                    TextBlock_RaceInfoTitle.Text = "Elf";
+                    TextBlock_SubRaceInfoTitle.Text = "Elf Subraces";
+
+                    Rasse elf = dndInformation.GetRaceDataGridInformation("elf");
+                    SubRace highElf = dndInformation.GetSubRaceDataGridInformation("high-elf");
+                    SubRace darkElf = dndInformation.GetSubRaceDbDataGridInformation("dark-elf");
+                    SubRace woodElf = dndInformation.GetSubRaceDbDataGridInformation("wood-elf");
+
+                    addRaceDataGridInformation(elf);
+                    addSubRaceDataGridInformation(highElf, 1);
+                    addSubRaceDataGridInformation(darkElf, 2);
+                    addSubRaceDataGridInformation(woodElf, 3);
+
                     break;
                 case "halfling":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("halfling");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Visible;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Visible;
+                    TextBlock_RaceInfoTitle.Text = "Halfling";
+                    TextBlock_SubRaceInfoTitle.Text = "Halfling Subraces";
+
+                    Rasse halfling = dndInformation.GetRaceDataGridInformation("halfling");
+                    SubRace lightfootHalfling = dndInformation.GetSubRaceDataGridInformation("lightfoot-halfling");
+                    SubRace stoutHalfling = dndInformation.GetSubRaceDbDataGridInformation("stout-halfling");
+
+                    addRaceDataGridInformation(halfling);
+                    addSubRaceDataGridInformation(lightfootHalfling, 1);
+                    addSubRaceDataGridInformation(stoutHalfling, 2);
+
                     break;
                 case "human":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("human");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Hidden;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
+                    TextBlock_RaceInfoTitle.Text = "Human";
+
+                    Rasse human = dndInformation.GetRaceDataGridInformation("human");
+                    addRaceDataGridInformation(human);
+
                     break;
                 case "dragonborn":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("dragonborn");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Hidden;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
+                    TextBlock_RaceInfoTitle.Text = "Dragonborn";
+
+                    Rasse dragonborn = dndInformation.GetRaceDataGridInformation("dragonborn");
+
+                    addRaceDataGridInformation(dragonborn);
+
                     break;
                 case "gnome":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("gnome");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Visible;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Visible;
+                    TextBlock_RaceInfoTitle.Text = "Gnome";
+                    TextBlock_SubRaceInfoTitle.Text = "Gnome Subraces";
+
+                    Rasse gnome = dndInformation.GetRaceDataGridInformation("gnome");
+                    SubRace rockGnome = dndInformation.GetSubRaceDataGridInformation("rock-gnome");
+                    SubRace forestGnome = dndInformation.GetSubRaceDbDataGridInformation("forest-gnome");
+
+                    addRaceDataGridInformation(gnome);
+                    addSubRaceDataGridInformation(rockGnome, 1);
+                    addSubRaceDataGridInformation(forestGnome, 2);
+
                     break;
                 case "half-orc":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("half-orc");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Hidden;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
+                    TextBlock_RaceInfoTitle.Text = "Half-Orc";
+
+                    Rasse halfOrc = dndInformation.GetRaceDataGridInformation("half-orc");
+
+                    addRaceDataGridInformation(halfOrc);
+
                     break;
                 case "half-elf":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("half-elf");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Hidden;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
+                    TextBlock_RaceInfoTitle.Text = "Half-Ef";
+
+                    Rasse halfElf = dndInformation.GetRaceDataGridInformation("half-elf");
+
+                    addRaceDataGridInformation(halfElf);
+
                     break;
                 case "tiefling":
-                    TextBlock_RaceInfo.Text = dndInformation.GetRaceInformation("tiefling");
+                    RaceDataGrid.Items.Clear();
+                    SubraceDataGrid.Items.Clear();
+                    SubraceDataGrid.Visibility = Visibility.Hidden;
+
+                    TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
+                    TextBlock_RaceInfoTitle.Text = "Tiefling";
+
+                    Rasse tiefling = dndInformation.GetRaceDataGridInformation("tiefling");
+
+                    addRaceDataGridInformation(tiefling);
+
                     break;
                 default:
                     break;
             }
+        }
+
+        public void addRaceDataGridInformation(Rasse race)
+        {
+            string compAbilityBonuses = "";
+            string traits = "";
+            string languages = "";
+            
+            foreach (AbilityBonus abilityBonus in race.AbilityBonuses) {
+                if (abilityBonus.Equals(race.AbilityBonuses.Last())) {
+                    compAbilityBonuses += abilityBonus.Name + " +" + abilityBonus.Bonus;
+                }
+                else
+                {
+                    compAbilityBonuses += abilityBonus.Name + " +" + abilityBonus.Bonus + ", ";
+                }
+            }
+
+            foreach (Trait trait in race.Traits)
+            {
+                if (trait.Equals(race.Traits.Last()))
+                {
+                    traits += trait.Name;
+                }
+                else
+                {
+                    traits += trait.Name + ", ";
+                }
+            }
+
+            foreach (Language language in race.Languages)
+            {
+                if (language.Equals(race.Languages.Last()))
+                {
+                    languages += language.Name;
+                }
+                else
+                {
+                    languages += language.Name + ", ";
+                }
+            }
+
+            DataGridItem dataRaceGridItem = new DataGridItem()
+            {
+                IdCol = 1,
+                AbilityScoreIncreaseCol = compAbilityBonuses,
+                AgeCol = race.Age,
+                AlignmentCol = race.Alignment,
+                SizeCol = race.Size,
+                SizeDescCol = race.SizeDescription,
+                TraitsCol = traits,
+                SpeedCol = race.Speed,
+                LanguagesCol = languages,
+                LanguageDescCol = race.LanguageDesc
+            };
+
+            RaceDataGrid.Items.Add(dataRaceGridItem);
+        }
+
+        public void addSubRaceDataGridInformation(SubRace subrace, int id)
+        {
+            string compAbilityBonus = "";
+            string startingProficiencies = "";
+            string languages = "";
+            string languageOptions = "";
+            string racialTraits = "";
+            string racialTraitOptions = "";
+
+            foreach (AbilityBonus abilityBonus in subrace.AbilityBonuses)
+            {
+                if (abilityBonus.Equals(subrace.AbilityBonuses.Last()))
+                {
+                    compAbilityBonus += abilityBonus.Name;
+                }
+                else
+                {
+                    compAbilityBonus += abilityBonus.Name + ", ";
+                }
+            }
+            
+            foreach (StartingProficiency startingProficiency in subrace.StartingProficiencies)
+            {
+                if (startingProficiency.Equals(subrace.StartingProficiencies.Last()))
+                {
+                    startingProficiencies += startingProficiency.Name;
+                }
+                else
+                {
+                    startingProficiencies += startingProficiency.Name + ", ";
+                }
+            }
+
+            foreach (Language language in subrace.Languages)
+            {
+                if (language.Equals(subrace.Languages.Last()))
+                {
+                    languages += language.Name;
+                }
+                else
+                {
+                    languages += language.Name + ", ";
+                }
+            }
+
+            DataGridItem dataSubRaceGridItem = new DataGridItem()
+            {
+                IdCol = id,
+                NameCol = subrace.Name,
+                DescCol = subrace.Desc,
+                AbilityScoreIncreaseCol = compAbilityBonus,
+                StartingProficiencesCol = startingProficiencies,
+                LanguagesCol = languages,
+                LanguageOptionsCol = languageOptions,
+                RacialTraitsCol = racialTraits,
+                RacialTraitOptionsCol = racialTraitOptions
+            };
+
+            SubraceDataGrid.Items.Add(dataSubRaceGridItem);
         }
     }
 }

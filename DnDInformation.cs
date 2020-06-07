@@ -12,6 +12,15 @@ namespace DND
         StringBuilder builder = new StringBuilder();
         private string requestParameter;
         private int index;
+
+        public Rasse GetRaceDataGridInformation(string rasse)
+        {
+            WebAufruf<Rasse> webAufruf = new WebAufruf<Rasse>();
+            requestParameter = "races/" + rasse;
+            Rasse race = webAufruf.GetJsonResponse(requestParameter);
+
+            return race;
+        }
         public string GetRaceInformation(string rasse)
         {
             builder.Clear();
@@ -98,6 +107,16 @@ namespace DND
             }
 
             return builder.ToString();
+        }
+
+        public SubRace GetSubRaceDataGridInformation(string subrasse)
+        {
+
+            WebAufruf<SubRace> webAufruf = new WebAufruf<SubRace>();
+            requestParameter = "subraces/" + subrasse;
+            SubRace subrace = webAufruf.GetJsonResponse(requestParameter);
+
+            return subrace;
         }
 
         public string GetSubRaceInformation(string subrasse)
@@ -206,6 +225,14 @@ namespace DND
             //}
 
             return builder.ToString();
+        }
+
+        public SubRace GetSubRaceDbDataGridInformation(string subrasse)
+        {
+            MongoConnection<SubRace> mongoConnection = new MongoConnection<SubRace>();
+            SubRace subrace = mongoConnection.GetDocumentByIndex("Subrace", subrasse);
+
+            return subrace;
         }
 
         public string GetSubraceDbInformation(string subrasse)
@@ -645,12 +672,16 @@ namespace DND
                     Desc = spell.Desc,
                     HigherLevel = spell.HigherLevel,
                     Range = spell.Range,
+                    Components = spell.Components,
                     Material = spell.Material,
                     Ritual = spell.Ritual,
                     Duration = spell.Duration,
                     Concentration = spell.Concentration,
                     CastingTime = spell.CastingTime,
-                    Level = spell.Level
+                    Level = spell.Level,
+                    School = spell.School,
+                    Classes = spell.Classes,
+                    Subclasses = spell.Subclasses
                 });
                 
             }
