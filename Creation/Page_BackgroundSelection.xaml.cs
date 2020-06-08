@@ -30,15 +30,11 @@ namespace DND
             InitializeComponent();
         }
 
-        private void Button_Background_Click(object sender, RoutedEventArgs e)
+        private void Button_Background_MouseEnter(object sender, MouseEventArgs e)
         {
             string currBackground = ((Button)sender).Tag.ToString();
 
-            Creation.TextBox_Background.Text = currBackground;
-            Character.Current.Background = Creation.TextBox_Background.Text;
-            this.Creation.ButtonContinueEnabled(true);
-
-            TextBlock_BackgroundInfoTitle.Visibility = Visibility.Visible;
+            Label_BackgroundInfoTitle.Visibility = Visibility.Visible;
             TextBlock_BackgroundSkillProfKey.Visibility = Visibility.Visible;
             TextBlock_BackgroundToolProfKey.Visibility = Visibility.Visible;
             TextBlock_BackgroundLangOptionsKey.Visibility = Visibility.Visible;
@@ -49,91 +45,91 @@ namespace DND
             switch (currBackground)
             {
                 case "acolythe":
-                    TextBlock_BackgroundInfoTitle.Text = "Acolythe";
+                    Label_BackgroundInfoTitle.Content = "Acolythe";
 
                     Background acolythe = dndInformation.GetBackgroundInformation("acolythe");
                     addBackgroundInfoToTextBlock(acolythe);
 
                     break;
                 case "criminal":
-                    TextBlock_BackgroundInfoTitle.Text = "Criminal";
+                    Label_BackgroundInfoTitle.Content = "Criminal";
 
                     Background criminal = dndInformation.GetBackgroundInformation("criminal");
                     addBackgroundInfoToTextBlock(criminal);
 
                     break;
                 case "charlatan":
-                    TextBlock_BackgroundInfoTitle.Text = "Charlatan";
+                    Label_BackgroundInfoTitle.Content = "Charlatan";
 
                     Background charlatan = dndInformation.GetBackgroundInformation("charlatan");
                     addBackgroundInfoToTextBlock(charlatan);
 
                     break;
                 case "entertainer":
-                    TextBlock_BackgroundInfoTitle.Text = "Entertainer";
+                    Label_BackgroundInfoTitle.Content = "Entertainer";
 
                     Background entertainer = dndInformation.GetBackgroundInformation("entertainer");
                     addBackgroundInfoToTextBlock(entertainer);
 
                     break;
                 case "folk-hero":
-                    TextBlock_BackgroundInfoTitle.Text = "Folk Hero";
+                    Label_BackgroundInfoTitle.Content = "Folk Hero";
 
                     Background folkHero = dndInformation.GetBackgroundInformation("folk-hero");
                     addBackgroundInfoToTextBlock(folkHero);
 
                     break;
                 case "guild-artisan":
-                    TextBlock_BackgroundInfoTitle.Text = "Guild Artisan";
-                    
+                    Label_BackgroundInfoTitle.Content = "Guild Artisan";
+
                     Background guildArtisan = dndInformation.GetBackgroundInformation("guild-artisan");
                     addBackgroundInfoToTextBlock(guildArtisan);
 
                     break;
                 case "hermit":
-                    TextBlock_BackgroundInfoTitle.Text = "Hermit";
+                    Label_BackgroundInfoTitle.Content = "Hermit";
 
                     Background hermit = dndInformation.GetBackgroundInformation("hermit");
                     addBackgroundInfoToTextBlock(hermit);
 
                     break;
                 case "noble":
-                    TextBlock_BackgroundInfoTitle.Text = "Noble";
+                    Label_BackgroundInfoTitle.Content = "Noble";
 
                     Background noble = dndInformation.GetBackgroundInformation("noble");
                     addBackgroundInfoToTextBlock(noble);
 
                     break;
                 case "outlander":
-                    TextBlock_BackgroundInfoTitle.Text = "Outlander";
+                    Label_BackgroundInfoTitle.Content = "Outlander";
 
                     Background outlander = dndInformation.GetBackgroundInformation("outlander");
                     addBackgroundInfoToTextBlock(outlander);
 
                     break;
                 case "sage":
-                    TextBlock_BackgroundInfoTitle.Text = "Sage";
+                    Label_BackgroundInfoTitle.Content = "Sage";
 
                     Background sage = dndInformation.GetBackgroundInformation("sage");
                     addBackgroundInfoToTextBlock(sage);
 
                     break;
                 case "sailor":
-                    TextBlock_BackgroundInfoTitle.Text = "Sailor";
+                    Label_BackgroundInfoTitle.Content = "Sailor";
 
                     Background sailor = dndInformation.GetBackgroundInformation("sailor");
                     addBackgroundInfoToTextBlock(sailor);
 
                     break;
                 case "soldier":
-                    TextBlock_BackgroundInfoTitle.Text = "Soldier";
+                    Label_BackgroundInfoTitle.Content = "Soldier";
 
                     Background soldier = dndInformation.GetBackgroundInformation("soldier");
                     addBackgroundInfoToTextBlock(soldier);
 
                     break;
                 case "urchin":
-                    TextBlock_BackgroundInfoTitle.Text = "Urchin";
+                    Label_BackgroundInfoTitle.Content = "Urchin";
 
                     Background urchin = dndInformation.GetBackgroundInformation("urchin");
                     addBackgroundInfoToTextBlock(urchin);
@@ -142,10 +138,23 @@ namespace DND
                 default:
                     break;
             }
+        }
+
+        private void Button_Background_MouseLeave(object sender, MouseEventArgs e)
+        {
 
         }
+
+        private void Button_Background_Click(object sender, RoutedEventArgs e)
+        {
+            string currBackground = ((Button)sender).Tag.ToString();
+
+            Creation.TextBox_Background.Text = currBackground;
+            Character.Current.Background = Creation.TextBox_Background.Text;
+            this.Creation.ButtonContinueEnabled(true);                  
+        }
         
-        public void addBackgroundInfoToTextBlock(Background background)
+        private void addBackgroundInfoToTextBlock(Background background)
         {
             string skillProfs = "";
             string toolProfs = "";
@@ -208,6 +217,11 @@ namespace DND
             TextBlock_BackgroundEquipValue.Text = equipments;
             TextBlock_BackgroundEquipOptionsValue.Text = equipmentOptions;
             TextBlock_BackgroundFeatureValue.Text = features;
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

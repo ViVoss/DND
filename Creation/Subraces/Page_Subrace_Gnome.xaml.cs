@@ -27,8 +27,11 @@ namespace DND.Subraces
             this.Creation = CreationWindow;
             InitializeComponent();
 
-            TextBlock_RockGnome_Desc.Text = dndInformation.GetSubRaceInformation("rock-gnome");
-            TextBlock_ForestGnome_Desc.Text = dndInformation.GetSubraceDbInformation("forest-gnome");
+            SubRace rockGnome = dndInformation.GetSubRaceInformation("rock-gnome");
+            SubRace forestGnome = dndInformation.GetSubRaceDbInformation("forest-gnome");
+
+            Frame_ForestGnome_StackPanel.Content = new Page_Subrace_Info_StackPanel(forestGnome);
+            Frame_RockGnome_StackPanel.Content = new Page_Subrace_Info_StackPanel(rockGnome);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -27,9 +27,13 @@ namespace DND.Subraces
             this.Creation = CreationWindow;
             InitializeComponent();
 
-            TextBlock_HighElf_Desc.Text = dndInformation.GetSubRaceInformation("high-elf");
-            TextBlock_DarkElf_Desc.Text = dndInformation.GetSubraceDbInformation("dark-elf");
-            TextBlock_WoodElf_Desc.Text = dndInformation.GetSubraceDbInformation("wood-elf");
+            SubRace highElf = dndInformation.GetSubRaceInformation("high-elf");
+            SubRace woodElf = dndInformation.GetSubRaceDbInformation("wood-elf");
+            SubRace darkElf = dndInformation.GetSubRaceDbInformation("dark-elf");
+
+            Frame_HighElf_StackPanel.Content = new Page_Subrace_Info_StackPanel(highElf);
+            Frame_WoodElf_StackPanel.Content = new Page_Subrace_Info_StackPanel(woodElf);
+            Frame_DarkElf_StackPanel.Content = new Page_Subrace_Info_StackPanel(darkElf);
         }
 
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)

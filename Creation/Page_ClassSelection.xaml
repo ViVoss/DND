@@ -12,7 +12,8 @@
             <Setter Property="BorderThickness" Value="0"/>
             <EventSetter Event="Click" Handler="Button_Class_Click"/>
             <Setter Property="Background" Value="Transparent"/>
-            <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
+            <EventSetter Event="MouseEnter" Handler="Button_Class_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="Button_Class_MouseLeave"/>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black" />
@@ -32,7 +33,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid>
+            <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -165,7 +166,51 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <TextBox Name="TextBox_Description" TextWrapping="Wrap" Grid.Column="1" Margin="10" Background="Transparent" BorderThickness="0" FontSize="16"/>
+            <StackPanel Grid.Column="1" Margin="5">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type StackPanel}">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Label Name="Label_ClassInfoTitle" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                    <Label.Background>
+                        <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture2.jpg"/>
+                    </Label.Background>
+                </Label>
+                <StackPanel Name="ClassHitPointsStackPanel">
+                    <TextBlock Name="TextBlock_ClassHitPointsKey" Text="Hit Points: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassHitPointsValue" Padding="0,0,5,0"  TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassHitDicePanel">
+                    <TextBlock Name="TextBlock_ClassHitDiceKey" Text="Hit Dice: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassHitDiceValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassHitPoints1LvlStackPanel">
+                    <TextBlock Name="TextBlock_ClassHitPoints1LvlKey" Text="Hit Points at 1st Level: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassHitPoints1LvlValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassHitPointsHigherLevelStackPanel">
+                    <TextBlock Name="TextBlock_ClassHitPointsHigherLevelKey" Text="Hit Points at Higher Levels: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassHitPointsHigherLevelValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassProficienciesStackPanel">
+                    <TextBlock Name="TextBlock_ClassProficienciesKey" Text="Proficiencies: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassProficienciesValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassSavingThrowsStackPanel">
+                    <TextBlock Name="TextBlock_ClassSavingThrowsKey" Text="SavingThrows: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassSavingThrowsValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassSkillsStackPanel">
+                    <TextBlock Name="TextBlock_ClassSkillsKey" Text="Skills: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassSkillsToChoose" TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Normal" Visibility="Hidden" FontSize="11" FontStyle="Italic"/>
+                    <TextBlock Name="TextBlock_ClassSkillsValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="ClassStartingEquipmentStackPanel">
+                    <TextBlock Name="TextBlock_ClassStartingEquipmentKey" Text="Starting Equipment:" TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_ClassStartingEquipmentValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

@@ -31,7 +31,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid>
+            <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -138,7 +138,50 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <TextBox Name="TextBox_Description" TextWrapping="Wrap" Grid.Column="1" Margin="10" IsReadOnly="True" Background="Transparent" BorderThickness="0" FontSize="10"/>
+            <StackPanel Grid.Column="1" Margin="5">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type StackPanel}">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Label Name="Label_RaceInfoTitle" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                    <Label.Background>
+                        <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture2.jpg"/>
+                    </Label.Background>
+                </Label>
+                <StackPanel Name="RaceAbilityScoreIncStackPanel">
+                    <TextBlock Name="TextBlock_RaceAbilityScoreIncKey" Text="Ability Score Increase: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceAbilityScoreIncValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceAgePanel">
+                    <TextBlock Name="TextBlock_RaceAgeKey" Text="Age: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceAgeValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceAlignmentStackPanel">
+                    <TextBlock Name="TextBlock_RaceAlignmentKey" Text="Alignment: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceAlignmentValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceSizeStackPanel">
+                    <TextBlock Name="TextBlock_RaceSizeKey" Text="Size: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceSizeValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceTraitsStackPanel">
+                    <TextBlock Name="TextBlock_RaceTraitsKey" Text="Traits: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceTraitsValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceSpeedStackPanel">
+                    <TextBlock Name="TextBlock_RaceSpeedKey" Text="Speed: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceSpeedValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceLanguagesStackPanel">
+                    <TextBlock Name="TextBlock_RaceLanguagesKey" Text="Languages: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceLanguagesValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Name="RaceSubracesStackPanel">
+                    <TextBlock Name="TextBlock_RaceSubracesKey" Text="Subraces: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
+                    <TextBlock Name="TextBlock_RaceSubracesValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

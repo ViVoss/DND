@@ -134,6 +134,9 @@
     <Compile Include="Creation\Subraces\Page_Subrace_Dragonborn.xaml.cs">
       <DependentUpon>Page_Subrace_Dragonborn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Creation\Subraces\Page_Subrace_Info_StackPanel.xaml.cs">
+      <DependentUpon>Page_Subrace_Info_StackPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataGridItem.cs" />
     <Compile Include="Dialoges\Page_ChooseCharacterToLoad.xaml.cs">
       <DependentUpon>Page_ChooseCharacterToLoad.xaml</DependentUpon>
@@ -240,6 +243,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Creation\Creation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Creation\Subraces\Page_Subrace_Info_StackPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

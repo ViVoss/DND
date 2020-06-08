@@ -45,9 +45,9 @@ namespace DND
                     TextBlock_RaceInfoTitle.Text = "Dwarf";
                     TextBlock_SubRaceInfoTitle.Text = "Dwarf Subraces";
 
-                    Rasse dwarf = dndInformation.GetRaceDataGridInformation("dwarf");
-                    SubRace hillDwarf = dndInformation.GetSubRaceDataGridInformation("hill-dwarf");
-                    SubRace mountainDwarf = dndInformation.GetSubRaceDbDataGridInformation("mountain-dwarf");
+                    Rasse dwarf = dndInformation.GetRaceInformation("dwarf");
+                    SubRace hillDwarf = dndInformation.GetSubRaceInformation("hill-dwarf");
+                    SubRace mountainDwarf = dndInformation.GetSubRaceDbInformation("mountain-dwarf");
 
                     addRaceDataGridInformation(dwarf);
                     addSubRaceDataGridInformation(hillDwarf, 1);
@@ -63,10 +63,10 @@ namespace DND
                     TextBlock_RaceInfoTitle.Text = "Elf";
                     TextBlock_SubRaceInfoTitle.Text = "Elf Subraces";
 
-                    Rasse elf = dndInformation.GetRaceDataGridInformation("elf");
-                    SubRace highElf = dndInformation.GetSubRaceDataGridInformation("high-elf");
-                    SubRace darkElf = dndInformation.GetSubRaceDbDataGridInformation("dark-elf");
-                    SubRace woodElf = dndInformation.GetSubRaceDbDataGridInformation("wood-elf");
+                    Rasse elf = dndInformation.GetRaceInformation("elf");
+                    SubRace highElf = dndInformation.GetSubRaceInformation("high-elf");
+                    SubRace darkElf = dndInformation.GetSubRaceDbInformation("dark-elf");
+                    SubRace woodElf = dndInformation.GetSubRaceDbInformation("wood-elf");
 
                     addRaceDataGridInformation(elf);
                     addSubRaceDataGridInformation(highElf, 1);
@@ -83,9 +83,9 @@ namespace DND
                     TextBlock_RaceInfoTitle.Text = "Halfling";
                     TextBlock_SubRaceInfoTitle.Text = "Halfling Subraces";
 
-                    Rasse halfling = dndInformation.GetRaceDataGridInformation("halfling");
-                    SubRace lightfootHalfling = dndInformation.GetSubRaceDataGridInformation("lightfoot-halfling");
-                    SubRace stoutHalfling = dndInformation.GetSubRaceDbDataGridInformation("stout-halfling");
+                    Rasse halfling = dndInformation.GetRaceInformation("halfling");
+                    SubRace lightfootHalfling = dndInformation.GetSubRaceInformation("lightfoot-halfling");
+                    SubRace stoutHalfling = dndInformation.GetSubRaceDbInformation("stout-halfling");
 
                     addRaceDataGridInformation(halfling);
                     addSubRaceDataGridInformation(lightfootHalfling, 1);
@@ -100,7 +100,7 @@ namespace DND
                     TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
                     TextBlock_RaceInfoTitle.Text = "Human";
 
-                    Rasse human = dndInformation.GetRaceDataGridInformation("human");
+                    Rasse human = dndInformation.GetRaceInformation("human");
                     addRaceDataGridInformation(human);
 
                     break;
@@ -112,7 +112,7 @@ namespace DND
                     TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
                     TextBlock_RaceInfoTitle.Text = "Dragonborn";
 
-                    Rasse dragonborn = dndInformation.GetRaceDataGridInformation("dragonborn");
+                    Rasse dragonborn = dndInformation.GetRaceInformation("dragonborn");
 
                     addRaceDataGridInformation(dragonborn);
 
@@ -126,9 +126,9 @@ namespace DND
                     TextBlock_RaceInfoTitle.Text = "Gnome";
                     TextBlock_SubRaceInfoTitle.Text = "Gnome Subraces";
 
-                    Rasse gnome = dndInformation.GetRaceDataGridInformation("gnome");
-                    SubRace rockGnome = dndInformation.GetSubRaceDataGridInformation("rock-gnome");
-                    SubRace forestGnome = dndInformation.GetSubRaceDbDataGridInformation("forest-gnome");
+                    Rasse gnome = dndInformation.GetRaceInformation("gnome");
+                    SubRace rockGnome = dndInformation.GetSubRaceInformation("rock-gnome");
+                    SubRace forestGnome = dndInformation.GetSubRaceDbInformation("forest-gnome");
 
                     addRaceDataGridInformation(gnome);
                     addSubRaceDataGridInformation(rockGnome, 1);
@@ -143,7 +143,7 @@ namespace DND
                     TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
                     TextBlock_RaceInfoTitle.Text = "Half-Orc";
 
-                    Rasse halfOrc = dndInformation.GetRaceDataGridInformation("half-orc");
+                    Rasse halfOrc = dndInformation.GetRaceInformation("half-orc");
 
                     addRaceDataGridInformation(halfOrc);
 
@@ -156,7 +156,7 @@ namespace DND
                     TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
                     TextBlock_RaceInfoTitle.Text = "Half-Ef";
 
-                    Rasse halfElf = dndInformation.GetRaceDataGridInformation("half-elf");
+                    Rasse halfElf = dndInformation.GetRaceInformation("half-elf");
 
                     addRaceDataGridInformation(halfElf);
 
@@ -169,7 +169,7 @@ namespace DND
                     TextBlock_SubRaceInfoTitle.Visibility = Visibility.Hidden;
                     TextBlock_RaceInfoTitle.Text = "Tiefling";
 
-                    Rasse tiefling = dndInformation.GetRaceDataGridInformation("tiefling");
+                    Rasse tiefling = dndInformation.GetRaceInformation("tiefling");
 
                     addRaceDataGridInformation(tiefling);
 

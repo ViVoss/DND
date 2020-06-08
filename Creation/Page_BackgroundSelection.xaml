@@ -13,6 +13,8 @@
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
             <EventSetter Event="Click" Handler="Button_Background_Click"/>
+            <EventSetter Event="MouseEnter" Handler="Button_Background_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="Button_Background_MouseLeave"/>
         </Style>
         <Style TargetType="Image">
             <Setter Property="Width" Value="40"/>
@@ -33,52 +35,41 @@
             <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture2.jpg"/>
         </Grid.Background>
         <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5"/>
-                <RowDefinition Height="35"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="1" Grid.Row="1" Name="TextBlock_BackgroundInfoTitle" TextWrapping="Wrap" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
-                <TextBlock.Background>
-                    <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture2.jpg"/>
-                </TextBlock.Background>
-            </TextBlock>
-            <StackPanel Grid.Column="1" Grid.Row="2" Name="BackgroundSkillProfStackPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlock_BackgroundSkillProfKey" Text="Skill Proficiences: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                <TextBlock Name="TextBlock_BackgroundSkillProfValue" TextWrapping="Wrap"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="3" Name="BackgroundToolProfStackPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlock_BackgroundToolProfKey" Text="ToolProficiences: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                <TextBlock Name="TextBlock_BackgroundToolProfValue" TextWrapping="Wrap"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="4" Name="BackgroundLangOptionsStackPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlock_BackgroundLangOptionsKey" Text="Language Options: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                <TextBlock Name="TextBlock_BackgroundLangOptionsValue" TextWrapping="Wrap"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="5" Name="BackgroundEquipStackPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlock_BackgroundEquipKey" Text="Equipment: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                <TextBlock Name="TextBlock_BackgroundEquipValue" TextWrapping="Wrap"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="6" Name="BackgroundEquipOptionsStackPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlock_BackgroundEquipOptionsKey" Text="Equipment Options: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                <TextBlock Name="TextBlock_BackgroundEquipOptionsValue" TextWrapping="Wrap"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="7" Name="BackgroundFeatureStackPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlock_BackgroundFeatureKey" Text="Feature: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                <TextBlock Name="TextBlock_BackgroundFeatureValue" TextWrapping="Wrap"/>
+            <StackPanel Margin="5">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type StackPanel}">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Label Name="Label_BackgroundInfoTitle" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                    <Label.Background>
+                        <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture2.jpg"/>
+                    </Label.Background>
+                </Label>
+                <StackPanel Name="BackgroundSkillProfStackPanel">
+                    <TextBlock Name="TextBlock_BackgroundSkillProfKey" Text="Skill Proficiences: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_BackgroundSkillProfValue" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Name="BackgroundToolProfStackPanel">
+                    <TextBlock Name="TextBlock_BackgroundToolProfKey" Text="ToolProficiences: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_BackgroundToolProfValue" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Name="BackgroundLangOptionsStackPanel">
+                    <TextBlock Name="TextBlock_BackgroundLangOptionsKey" Text="Language Options: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_BackgroundLangOptionsValue" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Name="BackgroundEquipStackPanel">
+                    <TextBlock Name="TextBlock_BackgroundEquipKey" Text="Equipment: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_BackgroundEquipValue" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Name="BackgroundEquipOptionsStackPanel">
+                    <TextBlock Name="TextBlock_BackgroundEquipOptionsKey" Text="Equipment Options: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_BackgroundEquipOptionsValue" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Name="BackgroundFeatureStackPanel">
+                    <TextBlock Name="TextBlock_BackgroundFeatureKey" Text="Feature: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_BackgroundFeatureValue" TextWrapping="Wrap"/>
+                </StackPanel>
             </StackPanel>
             <Grid.Background>
                 <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture.jpg"/>

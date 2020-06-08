@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DND;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,8 +30,11 @@ namespace DND
             this.Creation = CreationWindow;
             InitializeComponent();
 
-            TextBlock_HillDwarf_Desc.Text = dndInformation.GetSubRaceInformation("hill-dwarf");
-            TextBlock_MountainDwarf_Desc.Text = dndInformation.GetSubraceDbInformation("mountain-dwarf");
+            SubRace hillDwarf = dndInformation.GetSubRaceInformation("hill-dwarf");
+            SubRace mountainDwarf = dndInformation.GetSubRaceDbInformation("mountain-dwarf");
+
+            Frame_HillDwarf_StackPanel.Content = new Page_Subrace_Info_StackPanel(hillDwarf);
+            Frame_MountainDwarf_StackPanel.Content = new Page_Subrace_Info_StackPanel(mountainDwarf);
         }
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)
         {
