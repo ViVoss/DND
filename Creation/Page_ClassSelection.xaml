@@ -203,7 +203,6 @@
                 </StackPanel>
                 <StackPanel Name="ClassSkillsStackPanel">
                     <TextBlock Name="TextBlock_ClassSkillsKey" Text="Skills: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
-                    <TextBlock Name="TextBlock_ClassSkillsToChoose" TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Normal" Visibility="Hidden" FontSize="11" FontStyle="Italic"/>
                     <TextBlock Name="TextBlock_ClassSkillsValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
                 </StackPanel>
                 <StackPanel Name="ClassStartingEquipmentStackPanel">

@@ -39,8 +39,7 @@ namespace DND
             TextBlock_ClassProficienciesKey.Visibility = Visibility.Visible;
             TextBlock_ClassSavingThrowsKey.Visibility = Visibility.Visible;
             TextBlock_ClassSkillsKey.Visibility = Visibility.Visible;
-
-            TextBlock_ClassSkillsToChoose.Visibility = Visibility.Visible;
+            TextBlock_ClassStartingEquipmentKey.Visibility = Visibility.Visible;
 
             TextBlock_ClassHitPointsValue.Visibility = Visibility.Visible;
             TextBlock_ClassHitDiceValue.Visibility = Visibility.Visible;
@@ -49,6 +48,7 @@ namespace DND
             TextBlock_ClassProficienciesValue.Visibility = Visibility.Visible;
             TextBlock_ClassSavingThrowsValue.Visibility = Visibility.Visible;
             TextBlock_ClassSkillsValue.Visibility = Visibility.Visible;
+            TextBlock_ClassStartingEquipmentValue.Visibility = Visibility.Visible;
 
             string currClass = ((Button)sender).Tag.ToString();
 
@@ -57,73 +57,97 @@ namespace DND
                 case "barbarian":
                     Label_ClassInfoTitle.Content = "Barbarian";
                     Klasse barbarian = dndInformation.GetClassInformation("barbarian");
+                    StartingEquipment barbarianStartingEquip = dndInformation.GetStartingEquipmentInformation("barbarian");
                     addClassInfoToTextBlock(barbarian);
+                    addStartingEquipInfoToTextBlock(barbarianStartingEquip);
 
                     break;
                 case "bard":
                     Label_ClassInfoTitle.Content = "Bard";
                     Klasse bard = dndInformation.GetClassInformation("bard");
+                    StartingEquipment bardStartingEquip = dndInformation.GetStartingEquipmentInformation("bard");
                     addClassInfoToTextBlock(bard);
+                    addStartingEquipInfoToTextBlock(bardStartingEquip);
 
                     break;
                 case "cleric":
                     Label_ClassInfoTitle.Content = "Cleric";
                     Klasse cleric = dndInformation.GetClassInformation("cleric");
+                    StartingEquipment clericStartingEquip = dndInformation.GetStartingEquipmentInformation("cleric");
                     addClassInfoToTextBlock(cleric);
+                    addStartingEquipInfoToTextBlock(clericStartingEquip);
 
                     break;
                 case "druid":
                     Label_ClassInfoTitle.Content = "Druid";
                     Klasse druid = dndInformation.GetClassInformation("druid");
+                    StartingEquipment druidStartingEquip = dndInformation.GetStartingEquipmentInformation("druid");
                     addClassInfoToTextBlock(druid);
+                    addStartingEquipInfoToTextBlock(druidStartingEquip);
 
                     break;
                 case "fighter":
                     Label_ClassInfoTitle.Content = "Fighter";
                     Klasse fighter = dndInformation.GetClassInformation("fighter");
+                    StartingEquipment fighterStartingEquip = dndInformation.GetStartingEquipmentInformation("fighter");
                     addClassInfoToTextBlock(fighter);
+                    addStartingEquipInfoToTextBlock(fighterStartingEquip);
 
                     break;
                 case "monk":
                     Label_ClassInfoTitle.Content = "Monk";
                     Klasse monk = dndInformation.GetClassInformation("monk");
+                    StartingEquipment monkStartingEquip = dndInformation.GetStartingEquipmentInformation("monk");
                     addClassInfoToTextBlock(monk);
+                    addStartingEquipInfoToTextBlock(monkStartingEquip);
 
                     break;
                 case "paladin":
                     Label_ClassInfoTitle.Content = "Paladin";
                     Klasse paladin = dndInformation.GetClassInformation("paladin");
+                    StartingEquipment paladinStartingEquip = dndInformation.GetStartingEquipmentInformation("paladin");
                     addClassInfoToTextBlock(paladin);
+                    addStartingEquipInfoToTextBlock(paladinStartingEquip);
 
                     break;
                 case "ranger":
                     Label_ClassInfoTitle.Content = "Ranger";
                     Klasse ranger = dndInformation.GetClassInformation("ranger");
+                    StartingEquipment rangerStartingEquip = dndInformation.GetStartingEquipmentInformation("ranger");
                     addClassInfoToTextBlock(ranger);
+                    addStartingEquipInfoToTextBlock(rangerStartingEquip);
 
                     break;
                 case "rogue":
                     Label_ClassInfoTitle.Content = "Rogue";
                     Klasse rogue = dndInformation.GetClassInformation("rogue");
+                    StartingEquipment rogueStartingEquip = dndInformation.GetStartingEquipmentInformation("rogue");
                     addClassInfoToTextBlock(rogue);
+                    addStartingEquipInfoToTextBlock(rogueStartingEquip);
 
                     break;
                 case "sorcerer":
                     Label_ClassInfoTitle.Content = "Sorcerer";
                     Klasse sorcerer = dndInformation.GetClassInformation("sorcerer");
+                    StartingEquipment sorcererStartingEquip = dndInformation.GetStartingEquipmentInformation("sorcerer");
                     addClassInfoToTextBlock(sorcerer);
+                    addStartingEquipInfoToTextBlock(sorcererStartingEquip);
 
                     break;
                 case "warlock":
                     Label_ClassInfoTitle.Content = "Warlock";
                     Klasse warlock = dndInformation.GetClassInformation("warlock");
+                    StartingEquipment warlockStartingEquip = dndInformation.GetStartingEquipmentInformation("warlock");
                     addClassInfoToTextBlock(warlock);
+                    addStartingEquipInfoToTextBlock(warlockStartingEquip);
 
                     break;
                 case "wizard":
                     Label_ClassInfoTitle.Content = "Wizard";
                     Klasse wizard = dndInformation.GetClassInformation("wizard");
+                    StartingEquipment wizardStartingEquip = dndInformation.GetStartingEquipmentInformation("wizard");
                     addClassInfoToTextBlock(wizard);
+                    addStartingEquipInfoToTextBlock(wizardStartingEquip);
 
                     break;
                 default:
@@ -170,12 +194,11 @@ namespace DND
 
             TextBlock_ClassSavingThrowsValue.Text = savingThrows;
 
-            string skillToChoose = "";
             string skillChoices = "";
 
             foreach (ProficiencyChoice skills in clazz.ProficiencyChoices)
             {
-                skillToChoose += "Choose " + skills.Choose + " from:";
+                skillChoices += "Choose " + skills.Choose + " from: ";
 
                 foreach (Proficiency skill in skills.From)
                 {
@@ -184,7 +207,7 @@ namespace DND
 
                     if (skill.Equals(skills.From.Last()))
                     {
-                        skillChoices += skillStr;
+                        skillChoices += skillStr + "\n\n";
                     }
                     else
                     {
@@ -193,8 +216,138 @@ namespace DND
                 }
             }
 
-            TextBlock_ClassSkillsToChoose.Text = skillToChoose;
             TextBlock_ClassSkillsValue.Text = skillChoices;
+        }
+
+        private void addStartingEquipInfoToTextBlock(StartingEquipment startingEquipment)
+        {
+            string startingEquip = "";
+
+            foreach (StartingEquipmentElement startingEquipmentElement in startingEquipment.StartingEquipmentElement)
+            {
+                if (startingEquipmentElement.Equals(startingEquipment.StartingEquipmentElement.Last()))
+                {
+                    startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name + "\n\n";
+                }
+                else
+                {
+                    startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name + ", ";
+                }
+            }
+
+            startingEquip += "Choices to make: " + startingEquipment.ChoicesToMake + "\n\n";
+
+            if (startingEquipment.Choice != null)
+            {
+                startingEquip += "Choice 1:\n";
+
+                foreach (Choice choice in startingEquipment.Choice)
+                {
+                    startingEquip += "Choose " + choice.Choose + " from: ";
+
+                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
+                    {
+                        if (startingEquipElem.Equals(choice.From.Last()))
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
+                        }
+                        else
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
+                        }
+                    }
+                }
+            }
+
+            if (startingEquipment.Choice2 != null)
+            {
+                startingEquip += "Choice 2: ";
+
+                foreach (Choice choice in startingEquipment.Choice2)
+                {
+                    startingEquip += "Choose " + choice.Choose + " from: ";
+
+                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
+                    {
+                        if (startingEquipElem.Equals(choice.From.Last()))
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
+                        }
+                        else
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
+                        }
+                    }
+                }
+            }
+
+            if (startingEquipment.Choice3 != null)
+            {
+                startingEquip += "Choice 3: ";
+
+                foreach (Choice choice in startingEquipment.Choice)
+                {
+                    startingEquip += "Choose " + choice.Choose + " from: ";
+
+                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
+                    {
+                        if (startingEquipElem.Equals(choice.From.Last()))
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
+                        }
+                        else
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
+                        }
+                    }
+                }
+            }
+
+            if (startingEquipment.Choice4 != null)
+            {
+                startingEquip += "Choice 4: ";
+
+                foreach (Choice choice in startingEquipment.Choice)
+                {
+                    startingEquip += "Choose " + choice.Choose + " from: ";
+
+                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
+                    {
+                        if (startingEquipElem.Equals(choice.From.Last()))
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
+                        }
+                        else
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
+                        }
+                    }
+                }
+            }
+
+            if (startingEquipment.Choice5 != null)
+            {
+                startingEquip += "Choice 5: ";
+
+                foreach (Choice choice in startingEquipment.Choice)
+                {
+                    startingEquip += "Choose " + choice.Choose + " from: ";
+
+                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
+                    {
+                        if (startingEquipElem.Equals(choice.From.Last()))
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
+                        }
+                        else
+                        {
+                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
+                        }
+                    }
+                }
+            }
+
+            TextBlock_ClassStartingEquipmentValue.Text = startingEquip;
         }
 
         private void Button_Class_MouseLeave(object sender, MouseEventArgs e)

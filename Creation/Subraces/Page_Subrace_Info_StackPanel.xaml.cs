@@ -95,9 +95,10 @@ namespace DND
 
             TextBlock_Subrace_LanguagesValue.Text = languages;
 
-            //if (subrace.GetType().GetProperty("LanguageOptions") != null)
+            string languageOptions = "";
+
+            //if (subrace.LanguageOptions != null)
             //{
-            //    builder.Append("\n\nLanguages Options: Choose " + subrace.LanguageOptions?.Choose + " from: ");
             //    foreach (From lang in subrace.LanguageOptions?.From)
             //    {
             //        if (lang.Equals(subrace.LanguageOptions.From.Last()))
@@ -110,6 +111,8 @@ namespace DND
             //        }
             //    }
             //}
+
+            TextBlock_Subrace_LanguageOptionsValue.Text = languageOptions;
 
             string racialTraits = "";
 
@@ -134,6 +137,8 @@ namespace DND
 
             TextBlock_Subrace_RacialTraitsValue.Text = racialTraits;
 
+            string racialTraitOptions = "";
+
             //if (subrace.GetType().GetProperty("RacialTraitOptions") != null)
             //{
             //    builder.Append("\n\nRacial Trait Options: Choose " + subrace.RacialTraitOptions?.Choose + "from: ");
@@ -149,6 +154,8 @@ namespace DND
             //        }
             //    }
             //}
+
+            TextBlock_Subrace_RacialTraitOptionsValue.Text = racialTraitOptions;
         }
     }
 }

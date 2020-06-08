@@ -239,46 +239,143 @@ namespace DND
         public void addSubRaceDataGridInformation(SubRace subrace, int id)
         {
             string compAbilityBonus = "";
+
+            if (subrace.AbilityBonuses.Count > 0)
+            {
+                foreach (AbilityBonus abilityBonus in subrace.AbilityBonuses)
+                {
+                    if (abilityBonus.Equals(subrace.AbilityBonuses.Last()))
+                    {
+                        compAbilityBonus += abilityBonus.Name;
+                    }
+                    else
+                    {
+                        compAbilityBonus += abilityBonus.Name + ", ";
+                    }
+                }
+            }
+            else
+            {
+                compAbilityBonus = "-";
+            }
+
             string startingProficiencies = "";
+
+            if (subrace.StartingProficiencies.Count > 0)
+            {
+                foreach (StartingProficiency startingProficiency in subrace.StartingProficiencies)
+                {
+                    if (startingProficiency.Equals(subrace.StartingProficiencies.Last()))
+                    {
+                        startingProficiencies += startingProficiency.Name;
+                    }
+                    else
+                    {
+                        startingProficiencies += startingProficiency.Name + ", ";
+                    }
+                }
+            }
+            else
+            {
+                startingProficiencies = "-";
+            }
+
             string languages = "";
+
+            if (subrace.Languages.Count > 0)
+            {
+                foreach (Language language in subrace.Languages)
+                {
+                    if (language.Equals(subrace.Languages.Last()))
+                    {
+                        languages += language.Name;
+                    }
+                    else
+                    {
+                        languages += language.Name + ", ";
+                    }
+                }
+            }
+            else
+            {
+                languages = "-";
+            }
+
             string languageOptions = "";
+
+            if (subrace.LanguageOptions != null)
+            {
+                if (subrace.LanguageOptions.From.Count > 0)
+                {
+                    foreach (From languageOpt in subrace.LanguageOptions.From)
+                    {
+                        if (languageOpt.Equals(subrace.LanguageOptions.From.Last()))
+                        {
+                            languageOptions += languageOpt.Name;
+                        }
+                        else
+                        {
+                            languageOptions += languageOpt.Name + ", ";
+                        }
+                    }
+                }
+                else
+                {
+                    languageOptions = "-";
+                }
+            }
+            else
+            {
+                languageOptions = "-";
+            }
+
             string racialTraits = "";
+
+            if (subrace.RacialTraits.Count > 0)
+            {
+                foreach (Rac racialTrait in subrace.RacialTraits)
+                {
+                    if (racialTrait.Equals(subrace.RacialTraits.Last()))
+                    {
+                        racialTraits += racialTrait.Name;
+                    }
+                    else
+                    {
+                        racialTraits += racialTrait.Name + ", ";
+                    }
+                }
+            }
+            else
+            {
+                racialTraits = "-";
+            }
+
             string racialTraitOptions = "";
 
-            foreach (AbilityBonus abilityBonus in subrace.AbilityBonuses)
+            if (subrace.RacialTraitOptions != null)
             {
-                if (abilityBonus.Equals(subrace.AbilityBonuses.Last()))
+                if (subrace.RacialTraitOptions.From.Count > 0)
                 {
-                    compAbilityBonus += abilityBonus.Name;
+                    foreach (From racialTraitOpt in subrace.RacialTraitOptions.From)
+                    {
+                        if (racialTraitOpt.Equals(subrace.RacialTraitOptions.From.Last()))
+                        {
+                            racialTraitOptions += racialTraitOpt.Name;
+                        }
+                        else
+                        {
+                            racialTraitOptions += racialTraitOpt.Name + ", ";
+                        }
+                    }
                 }
                 else
                 {
-                    compAbilityBonus += abilityBonus.Name + ", ";
+                    racialTraitOptions = "-";
                 }
             }
-            
-            foreach (StartingProficiency startingProficiency in subrace.StartingProficiencies)
+            else
             {
-                if (startingProficiency.Equals(subrace.StartingProficiencies.Last()))
-                {
-                    startingProficiencies += startingProficiency.Name;
-                }
-                else
-                {
-                    startingProficiencies += startingProficiency.Name + ", ";
-                }
-            }
-
-            foreach (Language language in subrace.Languages)
-            {
-                if (language.Equals(subrace.Languages.Last()))
-                {
-                    languages += language.Name;
-                }
-                else
-                {
-                    languages += language.Name + ", ";
-                }
+                racialTraitOptions = "-";
             }
 
             DataGridItem dataSubRaceGridItem = new DataGridItem()
