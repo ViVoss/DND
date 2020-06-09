@@ -97,20 +97,20 @@ namespace DND
 
             string languageOptions = "";
 
-            //if (subrace.LanguageOptions != null)
-            //{
-            //    foreach (From lang in subrace.LanguageOptions?.From)
-            //    {
-            //        if (lang.Equals(subrace.LanguageOptions.From.Last()))
-            //        {
-            //            builder.Append(lang.Name);
-            //        }
-            //        else
-            //        {
-            //            builder.Append(lang.Name + ", ");
-            //        }
-            //    }
-            //}
+            if (subrace.LanguageOptions != null)
+            {
+                foreach (From lang in subrace.LanguageOptions?.From)
+                {
+                    if (lang.Equals(subrace.LanguageOptions.From.Last()))
+                    {
+                        languageOptions += lang.Name;
+                    }
+                    else
+                    {
+                        languageOptions += lang.Name + ", ";
+                    }
+                }
+            }
 
             TextBlock_Subrace_LanguageOptionsValue.Text = languageOptions;
 
@@ -137,25 +137,28 @@ namespace DND
 
             TextBlock_Subrace_RacialTraitsValue.Text = racialTraits;
 
-            string racialTraitOptions = "";
+            string racialTraitOpt = "";
 
-            //if (subrace.GetType().GetProperty("RacialTraitOptions") != null)
-            //{
-            //    builder.Append("\n\nRacial Trait Options: Choose " + subrace.RacialTraitOptions?.Choose + "from: ");
-            //    foreach (From racialTraitOptions in subrace.RacialTraitOptions?.From)
-            //    {
-            //        if (racialTraitOptions.Equals(subrace.RacialTraitOptions.From.Last()))
-            //        {
-            //            builder.Append(racialTraitOptions.Name);
-            //        }
-            //        else
-            //        {
-            //            builder.Append(racialTraitOptions.Name + ", ");
-            //        }
-            //    }
-            //}
+            if (subrace.RacialTraitOptions != null)
+            {
+                foreach (From racialTraitOptions in subrace.RacialTraitOptions?.From)
+                {
+                    if (racialTraitOptions.Equals(subrace.RacialTraitOptions.From.Last()))
+                    {
+                        racialTraitOpt += racialTraitOptions.Name;
+                    }
+                    else
+                    {
+                        racialTraitOpt += racialTraitOptions.Name + ", ";
+                    }
+                }
+            }
+            else
+            {
+                racialTraitOpt = "-";
+            }
 
-            TextBlock_Subrace_RacialTraitOptionsValue.Text = racialTraitOptions;
+            TextBlock_Subrace_RacialTraitOptionsValue.Text = racialTraitOpt;
         }
     }
 }
