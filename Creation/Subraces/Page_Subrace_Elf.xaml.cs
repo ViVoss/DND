@@ -44,7 +44,5 @@ namespace DND.Subraces
             this.Creation.ButtonContinueEnabled(true);
             ((Window_SubraceSelection)Window.GetWindow(this)).Close();
         }
-
-
     }
 }

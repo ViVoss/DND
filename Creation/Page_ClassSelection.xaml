@@ -208,6 +208,8 @@
                 <StackPanel Name="ClassStartingEquipmentStackPanel">
                     <TextBlock Name="TextBlock_ClassStartingEquipmentKey" Text="Starting Equipment:" TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden" FontSize="11"/>
                     <TextBlock Name="TextBlock_ClassStartingEquipmentValue" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10"/>
+                    <TextBlock Name="TextBlock_ChoicesToMake" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10" Visibility="Hidden"/>
+                    <TextBlock Name="TextBlock_ChooseFrom" Padding="0,0,5,0" TextWrapping="Wrap" FontSize="10" Visibility="Hidden"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

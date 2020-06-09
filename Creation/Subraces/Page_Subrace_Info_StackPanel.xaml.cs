@@ -111,6 +111,10 @@ namespace DND
                     }
                 }
             }
+            else
+            {
+                languageOptions = "-";
+            }
 
             TextBlock_Subrace_LanguageOptionsValue.Text = languageOptions;
 
