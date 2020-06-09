@@ -49,6 +49,8 @@ namespace DND
             TextBlock_ClassSavingThrowsValue.Visibility = Visibility.Visible;
             TextBlock_ClassSkillsValue.Visibility = Visibility.Visible;
             TextBlock_ClassStartingEquipmentValue.Visibility = Visibility.Visible;
+            TextBlock_ChoicesToMake.Visibility = Visibility.Visible;
+            TextBlock_ChooseFrom.Visibility = Visibility.Visible;
 
             string currClass = ((Button)sender).Tag.ToString();
 
@@ -227,7 +229,7 @@ namespace DND
             {
                 if (startingEquipmentElement.Equals(startingEquipment.StartingEquipmentElement.Last()))
                 {
-                    startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name + "\n\n";
+                    startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name;
                 }
                 else
                 {
@@ -235,119 +237,44 @@ namespace DND
                 }
             }
 
-            startingEquip += "Choices to make: " + startingEquipment.ChoicesToMake + "\n\n";
+            TextBlock_ChoicesToMake.Text = "Choices to make: " + startingEquipment.ChoicesToMake;
 
-            if (startingEquipment.Choice != null)
-            {
-                startingEquip += "Choice 1:\n";
-
-                foreach (Choice choice in startingEquipment.Choice)
-                {
-                    startingEquip += "Choose " + choice.Choose + " from: ";
-
-                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
-                    {
-                        if (startingEquipElem.Equals(choice.From.Last()))
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
-                        }
-                        else
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
-                        }
-                    }
-                }
-            }
-
-            if (startingEquipment.Choice2 != null)
-            {
-                startingEquip += "Choice 2: ";
-
-                foreach (Choice choice in startingEquipment.Choice2)
-                {
-                    startingEquip += "Choose " + choice.Choose + " from: ";
-
-                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
-                    {
-                        if (startingEquipElem.Equals(choice.From.Last()))
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
-                        }
-                        else
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
-                        }
-                    }
-                }
-            }
-
-            if (startingEquipment.Choice3 != null)
-            {
-                startingEquip += "Choice 3: ";
-
-                foreach (Choice choice in startingEquipment.Choice)
-                {
-                    startingEquip += "Choose " + choice.Choose + " from: ";
-
-                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
-                    {
-                        if (startingEquipElem.Equals(choice.From.Last()))
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
-                        }
-                        else
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
-                        }
-                    }
-                }
-            }
-
-            if (startingEquipment.Choice4 != null)
-            {
-                startingEquip += "Choice 4: ";
-
-                foreach (Choice choice in startingEquipment.Choice)
-                {
-                    startingEquip += "Choose " + choice.Choose + " from: ";
-
-                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
-                    {
-                        if (startingEquipElem.Equals(choice.From.Last()))
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
-                        }
-                        else
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
-                        }
-                    }
-                }
-            }
-
-            if (startingEquipment.Choice5 != null)
-            {
-                startingEquip += "Choice 5: ";
-
-                foreach (Choice choice in startingEquipment.Choice)
-                {
-                    startingEquip += "Choose " + choice.Choose + " from: ";
-
-                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
-                    {
-                        if (startingEquipElem.Equals(choice.From.Last()))
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
-                        }
-                        else
-                        {
-                            startingEquip += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
-                        }
-                    }
-                }
-            }
+            addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice, 1);
+            addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice2, 2);
+            addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice3, 3);
+            addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice4, 4);
+            addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice5, 5);
 
             TextBlock_ClassStartingEquipmentValue.Text = startingEquip;
+        }
+
+        private void addStartingEquipmentChoiceToMakeInfoToTextBlock(List<Choice> choices, int choiceNumber)
+        {
+            string chooseFrom = "";
+
+            if (choices != null)
+            {
+                chooseFrom += "Choice " + choiceNumber + ":\n";
+
+                foreach (Choice choice in choices)
+                {
+                    chooseFrom += "Choose " + choice.Choose + " from:";
+
+                    foreach (StartingEquipmentElement startingEquipElem in choice.From)
+                    {
+                        if (startingEquipElem.Equals(choice.From.Last()))
+                        {
+                            chooseFrom += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
+                        }
+                        else
+                        {
+                            chooseFrom += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
+                        }
+                    }
+                }
+            }
+
+            TextBlock_ChooseFrom.Text += chooseFrom;
         }
 
         private void Button_Class_MouseLeave(object sender, MouseEventArgs e)

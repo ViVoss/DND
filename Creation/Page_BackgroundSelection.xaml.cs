@@ -157,65 +157,140 @@ namespace DND
         private void addBackgroundInfoToTextBlock(Background background)
         {
             string skillProfs = "";
-            string toolProfs = "";
-            string languageOptions = "";
-            string equipments = "";
-            string equipmentOptions = "";
-            string features = "";
 
-            foreach (string skillProf in background.SkillProficiences)
-            {
-                if (skillProf.Equals(background.SkillProficiences.Last()))
+            if (background.SkillProficiences.Count > 0) {
+                foreach (string skillProf in background.SkillProficiences)
                 {
-                    skillProfs += skillProf;
-                }
-                else
-                {
-                   skillProfs += skillProf + ", ";
+                    if (skillProf.Equals(background.SkillProficiences.Last()))
+                    {
+                        skillProfs += skillProf;
+                    }
+                    else
+                    {
+                        skillProfs += skillProf + ", ";
+                    }
                 }
             }
-
-            foreach (string toolProf in background.SkillProficiences)
+            else
             {
-                if (toolProf.Equals(background.SkillProficiences.Last()))
-                {
-                    toolProfs += toolProf;
-                }
-                else
-                {
-                    toolProfs += toolProf + ", ";
-                }
-            }
-
-            foreach (string equipment in background.Equipment)
-            {
-                if (equipment.Equals(background.Equipment.Last()))
-                {
-                    equipments += equipment;
-                }
-                else
-                {
-                    equipments += equipment + ", ";
-                }
-            }
-
-            foreach (string feature in background.Feature)
-            {
-                if (feature.Equals(background.Feature.Last()))
-                {
-                    features += feature;
-                }
-                else
-                {
-                    features += feature + ", ";
-                }
+                skillProfs = "-";
             }
 
             TextBlock_BackgroundSkillProfValue.Text = skillProfs;
+
+            string toolProfs = "";
+
+            if (background.ToolProficiences.Count > 0)
+            {
+                foreach (string toolProf in background.ToolProficiences)
+                {
+                    if (toolProf.Equals(background.ToolProficiences.Last()))
+                    {
+                        toolProfs += toolProf;
+                    }
+                    else
+                    {
+                        toolProfs += toolProf + ", ";
+                    }
+                }
+            }
+            else
+            {
+                toolProfs = "-";
+            }
+
             TextBlock_BackgroundToolProfValue.Text = toolProfs;
+
+            string languageOptions = "";
+
+            if (background.LanguageOptions.From.Count > 0)
+            {
+                foreach (string language in background.LanguageOptions.From)
+                {
+                    if (language.Equals(background.ToolProficiences.Last()))
+                    {
+                        languageOptions += language;
+                    }
+                    else
+                    {
+                        languageOptions += language + ", ";
+                    }
+                }
+            }
+            else
+            {
+                languageOptions = "-";
+            }
+
             TextBlock_BackgroundLangOptionsValue.Text = languageOptions;
+
+            string equipments = "";
+
+            if (background.Equipment.Count > 0)
+            {
+                foreach (string equipment in background.Equipment)
+                {
+                    if (equipment.Equals(background.Equipment.Last()))
+                    {
+                        equipments += equipment;
+                    }
+                    else
+                    {
+                        equipments += equipment + ", ";
+                    }
+                }
+            }
+            else
+            {
+                equipments = "-";
+            }
+
             TextBlock_BackgroundEquipValue.Text = equipments;
+            
+            string equipmentOptions = "";
+
+            if (background.EquipmentOptions.From.Count > 0)
+            {
+                foreach (string equipmentOption in background.EquipmentOptions.From)
+                {
+                    if (equipmentOption.Equals(background.ToolProficiences.Last()))
+                    {
+                        equipmentOptions += equipmentOption;
+                    }
+                    else
+                    {
+                        equipmentOptions += equipmentOption + ", ";
+                    }
+                }
+            }
+            else
+            {
+                equipmentOptions = "-";
+            }
+
             TextBlock_BackgroundEquipOptionsValue.Text = equipmentOptions;
+
+            string features = "";
+
+            if (background.Feature.Count > 0)
+            {
+                foreach (string feature in background.Feature)
+                {
+                    if (feature.Equals(background.Feature.Last()))
+                    {
+                        features += feature;
+                    }
+                    else
+                    {
+                        features += feature + ", ";
+                    }
+                }
+            }
+            else
+            {
+                features = "-";
+            }
+            
             TextBlock_BackgroundFeatureValue.Text = features;
         }
 

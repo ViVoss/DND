@@ -25,7 +25,7 @@ namespace DND
         public List<string> ToolProficiences { get; set; }
 
         [BsonElement("languages")]
-        public List<string> Languages { get; set; }
+        public List<Language> Languages { get; set; }
 
         [BsonElement("language_options")]
         public Language_Options LanguageOptions { get; set; }
