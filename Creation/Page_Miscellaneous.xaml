@@ -3,14 +3,40 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DND"
+      xmlns:local="clr-namespace:DND" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page_Miscellaneous" Background="Green">
+      d:DesignHeight="700" d:DesignWidth="1280"
+      Title="Miscellaneous" Background="Green">
 
     <Grid>
-        <TextBox Text="Miscellaneous"/>
-        <Label Content="Character Name:" Margin="50,150,0,0"/>
-        <TextBox Name="CharacterName" Margin="150"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
+        </Grid.Background>
+        <StackPanel Margin="10">
+            <xctk:WatermarkTextBox Name="CharacterName" MaxLength="64" Width="406" Margin="0,0,0,2" Watermark="Character Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal">
+                <xctk:WatermarkTextBox Width="202" MaxLength="31" Name="PlayerName" Margin="0,0,2,2" Watermark="Player Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <xctk:WatermarkTextBox Width="202" MaxLength="31" Name="CharacterExperiencePoints" Margin="0,0,0,2" Watermark="Experience Points" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <xctk:WatermarkTextBox Name="CharacterAge" MaxLength="14" Width="100" Margin="0,0,2,2" Watermark="Age" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <xctk:WatermarkTextBox Name="CharacterSex" MaxLength="14" Width="100" Margin="0,0,2,2" Watermark="Sex" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <xctk:WatermarkTextBox Name="CharacterHeight" MaxLength="14" Width="100" Margin="0,0,2,2" Watermark="Height" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <xctk:WatermarkTextBox Name="CharacterWeight" MaxLength="14" Width="100" Margin="0,0,2,2" Watermark="Weight" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <xctk:WatermarkTextBox Name="CharacterHairColor" MaxLength="20" Width="134" Margin="0,0,2,2" Watermark="Hair Color" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <xctk:WatermarkTextBox Name="CharacterEyeColor" MaxLength="20" Width="134" Margin="0,0,2,2" Watermark="Eye Color" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <xctk:WatermarkTextBox Name="CharacterSkinColor" MaxLength="20" Width="134" Margin="0,0,0,2" Watermark="Skin Color" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+            <xctk:WatermarkTextBox Name="CharacterPersonalityTrait1" MaxLength="64" Width="406" Margin="0,0,0,2" Watermark="Personality Trait 1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterPersonalityTrait2" MaxLength="64" Width="406" Margin="0,0,0,2" Watermark="Personality Trait 2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterIdeals" Width="406" MaxLength="64" Margin="0,0,0,2" Watermark="Ideals" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterBonds" Width="406" MaxLength="64" Margin="0,0,0,2" Watermark="Bonds" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterFlaws" Width="406" MaxLength="64" Margin="0,0,0,2" Watermark="Flaws" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterFactionName" MaxLength="64" Width="406" Margin="0,0,0,2" Watermark="Faction Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterDescriptionBackstory" MaxLength="704" Width="406" MaxWidth="406" TextWrapping="Wrap" Height="195" Margin="0,0,2,2" Watermark="Description/BackStory" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <xctk:WatermarkTextBox Name="CharacterNotes" MaxLength="704" Width="406" Height="195" Margin="0,0,2,2" MaxWidth="406" TextWrapping="Wrap"  Watermark="Notes" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DND"
       mc:Ignorable="d"
-      d:DesignHeight="800" d:DesignWidth="1280"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="Page_AttributeSelection" Background="White">
     <Page.Resources>
         <DataTemplate x:Key="cmbAttributeValuesTemplate">
@@ -174,5 +174,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources_Creation\PaperTexture.jpg"/>
+        </Grid.Background>
     </Grid>
 </Page>

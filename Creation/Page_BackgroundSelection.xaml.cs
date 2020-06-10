@@ -30,7 +30,7 @@ namespace DND
             InitializeComponent();
         }
 
-        private void Button_Background_MouseEnter(object sender, MouseEventArgs e)
+        private void Button_Background_Click(object sender, RoutedEventArgs e)
         {
             string currBackground = ((Button)sender).Tag.ToString();
 
@@ -138,16 +138,6 @@ namespace DND
                 default:
                     break;
             }
-        }
-
-        private void Button_Background_MouseLeave(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void Button_Background_Click(object sender, RoutedEventArgs e)
-        {
-            string currBackground = ((Button)sender).Tag.ToString();
 
             Creation.TextBox_Background.Text = currBackground;
             Character.Current.Background = Creation.TextBox_Background.Text;
@@ -292,11 +282,6 @@ namespace DND
             }
             
             TextBlock_BackgroundFeatureValue.Text = features;
-        }
-
-        private void Button_MouseLeave(object sender, MouseEventArgs e)
-        {
-
         }
     }
 }

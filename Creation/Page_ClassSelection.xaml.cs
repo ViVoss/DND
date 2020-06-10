@@ -29,8 +29,13 @@ namespace DND
             InitializeComponent();
         }
 
-        private void Button_Class_MouseEnter(object sender, MouseEventArgs e)
+        private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
+
+            Creation.TextBox_Class.Text = ((Button)sender).Tag.ToString();
+            Character.Current.Class = Creation.TextBox_Class.Text;
+            this.Creation.ButtonContinueEnabled(true);
+
             Label_ClassInfoTitle.Visibility = Visibility.Visible;
             TextBlock_ClassHitPointsKey.Visibility = Visibility.Visible;
             TextBlock_ClassHitDiceKey.Visibility = Visibility.Visible;
@@ -275,18 +280,6 @@ namespace DND
             }
 
             TextBlock_ChooseFrom.Text += chooseFrom;
-        }
-
-        private void Button_Class_MouseLeave(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void Button_Class_Click(object sender, RoutedEventArgs e)
-        {
-            Creation.TextBox_Class.Text = ((Button)sender).Tag.ToString();
-            Character.Current.Class = Creation.TextBox_Class.Text;
-            this.Creation.ButtonContinueEnabled(true);
         }
     }
 }
