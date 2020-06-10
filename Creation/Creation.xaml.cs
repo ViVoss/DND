@@ -197,7 +197,6 @@ namespace DND
                 }
                 else
                 {
-                    Character.Current.CharacterName = MiscellaneousSelection.CharacterName.Text;
                     //OverviewSelection laden
                     Frame1.Content = OverviewSelection;
                     Btn_Continue.Visibility = Visibility.Hidden;
