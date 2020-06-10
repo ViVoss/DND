@@ -28,7 +28,6 @@ namespace DND
         private int id = 1;
         private string spellClasses = "-";
         private string spellSubclasses = "-";
-        private ICollectionView spellDataGridCollection;
         public Page_Information_Spells()
         {
             InitializeComponent();
