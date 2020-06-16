@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d"
-        Title="D&amp;D Character Creator" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="D&amp;D Character Creator" Height="800" Width="1280" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="10"/>

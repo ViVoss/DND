@@ -54,7 +54,7 @@
                     <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
                 </TextBlock.Background>
             </TextBlock>
-            <DataGrid MaxWidth="1100" Grid.Column="1" Grid.Row="2" Name="RaceDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <DataGrid MaxWidth="1100" Grid.Column="1" Grid.Row="2" Name="RaceDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=IdCol}" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Ability Score Increase" Width="*" Binding="{Binding Path=AbilityScoreIncreaseCol}" IsReadOnly="True">
