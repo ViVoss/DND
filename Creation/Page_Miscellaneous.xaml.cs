@@ -58,12 +58,31 @@ namespace DND
 
         private void CharacterExperiencePoints_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Character.Current.ExperiencePoints = ((TextBox)sender).Text != "" ? Convert.ToUInt64(((TextBox)sender).Text) : 0;
+            try
+            {
+                Character.Current.ExperiencePoints = ((TextBox)sender).Text != "" ? Convert.ToUInt64(((TextBox)sender).Text) : 0;
+            }
+            catch (Exception)
+            {
+                Character.Current.ExperiencePoints = 0;
+                ((TextBox)sender).Text = "";
+                MessageBox.Show("Ungültiger Wert");
+            }
+
         }
 
         private void CharacterAge_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Character.Current.Age = ((TextBox)sender).Text != "" ? Convert.ToUInt16(((TextBox)sender).Text) : (ushort)0;
+            try
+            {
+                Character.Current.Age = ((TextBox)sender).Text != "" ? Convert.ToUInt16(((TextBox)sender).Text) : (ushort)0;
+            }
+            catch (Exception)
+            {
+                Character.Current.Age = 0;
+                ((TextBox)sender).Text = "";
+                MessageBox.Show("Ungültiger Wert");
+            }
         }
 
         private void CharacterSex_TextChanged(object sender, TextChangedEventArgs e)
