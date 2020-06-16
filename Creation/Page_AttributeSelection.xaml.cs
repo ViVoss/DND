@@ -23,7 +23,8 @@ namespace DND
     /// </summary>
     public partial class Page_AttributeSelection : Page
     {
-        
+        public ObservableCollection<int> cmbItemList = new ObservableCollection<int>();
+
         public Creation Creation { get; set; }
 
         public Page_AttributeSelection(Creation CreationWindow)
@@ -31,19 +32,19 @@ namespace DND
             this.Creation = CreationWindow;
             InitializeComponent();
 
-            loadAttributes();
-        }
+            cmbItemList.Add(8);
+            cmbItemList.Add(10);
+            cmbItemList.Add(12);
+            cmbItemList.Add(13);
+            cmbItemList.Add(14);
+            cmbItemList.Add(15);
 
-        private void loadAttributes()
-        {
-            this.cmbAttributeValuesStr.Text = Character.Current.Attributes.Strength.ToString();
-            this.cmbAttributeValuesDex.Text = Character.Current.Attributes.Dexterity.ToString();
-            this.cmbAttributeValuesCon.Text = Character.Current.Attributes.Constitution.ToString();
-            this.cmbAttributeValuesInt.Text = Character.Current.Attributes.Intelligence.ToString();
-            this.cmbAttributeValuesWis.Text = Character.Current.Attributes.Wisdom.ToString();
-            this.cmbAttributeValuesCha.Text = Character.Current.Attributes.Charisma.ToString();
-
-
+            cmbAttributeValuesStr.ItemsSource = cmbItemList;
+            cmbAttributeValuesDex.ItemsSource = cmbItemList;
+            cmbAttributeValuesCon.ItemsSource = cmbItemList;
+            cmbAttributeValuesInt.ItemsSource = cmbItemList;
+            cmbAttributeValuesWis.ItemsSource = cmbItemList;
+            cmbAttributeValuesCha.ItemsSource = cmbItemList;
         }
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -100,13 +101,15 @@ namespace DND
                     Character.Current.Attributes.Charisma
                 };
 
-                if (attrValues.Distinct().Count() == attrValues.Length) {
+                if (attrValues.Distinct().Count() == attrValues.Length)
+                {
                     TextBlock_Attribute_Selection_Error.Visibility = Visibility.Hidden;
                     this.Creation.Btn_Continue.IsEnabled = true;
-                } else
+                }
+                else
                 {
                     this.Creation.Btn_Continue.IsEnabled = false;
-                    TextBlock_Attribute_Selection_Error.Text = "Die Attributsauswahl darf keine überienstimmenden Werte haben!";
+                    TextBlock_Attribute_Selection_Error.Text = "Die Attributsauswahl darf keine übereinstimmenden Werte haben!";
                     TextBlock_Attribute_Selection_Error.Visibility = Visibility.Visible;
                 }
             }
@@ -114,36 +117,42 @@ namespace DND
             {
                 this.Creation.Btn_Continue.IsEnabled = false;
             }
-                
         }
-        private string GetAttributeValueFromSelectedIndex(int index)
+
+        private int GetAttributeValueFromSelectedIndex(int index)
         {
-            string value = "";
+            int value = 0;
+            
             switch (index)
             {
                 case 0:
-                    value = "8";
+                    value = 8;
                     break;
                 case 1:
-                    value = "10";
+                    value = 10;
                     break;
                 case 2:
-                    value = "12";
+                    value = 12;
                     break;
                 case 3:
-                    value = "13";
+                    value = 13;
                     break;
                 case 4:
-                    value = "14";
+                    value = 14;
                     break;
                 case 5:
-                    value = "15";
+                    value = 15;
                     break;
                 default:
                     break;
             }
+
             return value;
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            EnableContinueBtn();
+        }
     }
 }
