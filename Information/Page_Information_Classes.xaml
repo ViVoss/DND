@@ -36,9 +36,67 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Frame Name="Frame_LevelTable" Grid.Column="0" NavigationUIVisibility="Hidden"/>
-            <TextBlock Name="TextBlock_ClassInfo" TextWrapping="Wrap"/>
-            <TextBox Margin="50,350,50,50"/>
+            <TextBlock Grid.Column ="0" Grid.Row="1" Name="TextBlock_ClassInfoTitle" TextWrapping="Wrap" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Level" Width="30" Binding="{Binding Path=LevelCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="nd" Width="*" Binding="{Binding Path=ndCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Age" Width="*" Binding="{Binding Path=AgeCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Alignment" Width="*" Binding="{Binding Path=AlignmentCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Size" Width="70" Binding="{Binding Path=SizeCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Size Description" Width="*" Binding="{Binding Path=SizeDescCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Traits" Width="*" Binding="{Binding Path=TraitsCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Speed" Width="50" Binding="{Binding Path=SpeedCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Languages" Width="*" Binding="{Binding Path=LanguagesCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Language Description" Width="*" Binding="{Binding Path=LanguageDescCol}" IsReadOnly="True">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
             <Grid.Background>
                 <ImageBrush ImageSource="Resources_Information/PaperTexture.jpg"/>
             </Grid.Background>

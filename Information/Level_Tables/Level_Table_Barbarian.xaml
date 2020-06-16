@@ -9,7 +9,7 @@
       Title="Level_Table_Barbarian">
 
     <Grid>
-        <ListView Name="ListView_LevelTable" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Margin="10" BorderBrush="Black" BorderThickness="1" SelectionChanged="ListView_LevelTable_SelectionChanged">
+        <ListView Name="ListView_LevelTable" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Margin="10" BorderBrush="Black" BorderThickness="1" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Level" DisplayMemberBinding="{Binding Level}" Width="50"/>

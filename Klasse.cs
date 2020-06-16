@@ -78,4 +78,8 @@ namespace DND
     {
         public static Klasse FromJson(string json) => JsonConvert.DeserializeObject<Klasse>(json, DND.Converter.Settings);
     }
+    public partial class ClassLevels
+    {
+        public static ClassLevels FromJson(string json) => JsonConvert.DeserializeObject<ClassLevels>(json, DND.Converter.Settings);
+    }
 }

@@ -344,7 +344,7 @@ namespace DND
             return builder.ToString();
         }
 
-        public string GetClassInformation(string klasse)
+            public string GetClassInformation(string klasse)
         {
             builder.Clear();
             WebAufruf<Klasse> webAufruf = new WebAufruf<Klasse>();

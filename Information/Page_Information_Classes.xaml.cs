@@ -20,6 +20,7 @@ namespace DND
     /// </summary>
     public partial class Page_Information_Classes : Page
     {
+        DnDInformation dndInformation = new DnDInformation();
         public Page_Information_Classes()
         {
             InitializeComponent();
@@ -27,25 +28,91 @@ namespace DND
 
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
-            string currClass = ((Button)sender).Tag.ToString();
+            string currRace = ((Button)sender).Tag.ToString();
 
-            
-            switch (currClass)
+            //TextBlock_RaceInfoTitle.Visibility = Visibility.Visible;
+
+            switch (currRace)
             {
                 case "barbarian":
-                    Frame_LevelTable.Navigate(new Level_Table_Barbarian(this));
-                    break;
-                case "bard":
-                    Frame_LevelTable.Navigate(new Level_Table_Bard());
-                    break;
-                case "cleric":
-                    break;
-                case "druid":
-                    //Frame_LevelTable.Navigate(new Level_Table_Druid());
-                    break;
-                default:
+                    ClassDataGrid.Items.Clear();
+                    //SubraceDataGrid.Items.Clear();
+                    //SubraceDataGrid.Visibility = Visibility.Visible;
+
+
+                    //TextBlock_SubRaceInfoTitle.Visibility = Visibility.Visible;
+                    TextBlock_ClassInfoTitle.Text = "Barbarian";
+                    //TextBlock_SubRaceInfoTitle.Text = "Dwarf Subraces";
+
+                    ClassLevels barbarian = dndInformation.GetClassLevelsDataGridInformation("barbarian");
+                    //SubRace hillDwarf = dndInformation.GetSubRaceDataGridInformation("hill-dwarf");
+                    //SubRace mountainDwarf = dndInformation.GetSubRaceDbDataGridInformation("mountain-dwarf");
+
+                    addClassDataGridInformation(barbarian,1);
+                    //addSubRaceDataGridInformation(hillDwarf, 1);
+                    //addSubRaceDataGridInformation(mountainDwarf, 2);
+
                     break;
             }
+        }
+        public void addClassDataGridInformation(ClassLevels classlvls, int lvl)
+        {
+            /*string compAbilityBonuses = "";
+            string traits = "";
+            string languages = "";
+            */
+            /*
+            foreach (AbilityBonus abilityBonus in race.AbilityBonuses)
+            {
+                if (abilityBonus.Equals(race.AbilityBonuses.Last()))
+                {
+                    compAbilityBonuses += abilityBonus.Name + " +" + abilityBonus.Bonus;
+                }
+                else
+                {
+                    compAbilityBonuses += abilityBonus.Name + " +" + abilityBonus.Bonus + ", ";
+                }
+            }
+
+            foreach (Trait trait in race.Traits)
+            {
+                if (trait.Equals(race.Traits.Last()))
+                {
+                    traits += trait.Name;
+                }
+                else
+                {
+                    traits += trait.Name + ", ";
+                }
+            }
+
+            foreach (Language language in race.Languages)
+            {
+                if (language.Equals(race.Languages.Last()))
+                {
+                    languages += language.Name;
+                }
+                else
+                {
+                    languages += language.Name + ", ";
+                }
+            }
+            */
+            DataGridItem dataClassGridItem = new DataGridItem()
+            {
+                LevelCol = lvl,
+                ProficiencyBonusCol = classlvls.Class,
+                /*AgeCol = race.Age,
+                AlignmentCol = race.Alignment,
+                SizeCol = race.Size,
+                SizeDescCol = race.SizeDescription,
+                TraitsCol = traits,
+                SpeedCol = race.Speed,
+                LanguagesCol = languages,
+                LanguageDescCol = race.LanguageDesc*/
+            };
+
+            ClassDataGrid.Items.Add(dataClassGridItem);
         }
     }
 }
