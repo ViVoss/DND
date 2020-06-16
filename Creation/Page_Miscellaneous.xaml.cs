@@ -35,8 +35,8 @@ namespace DND
         {
             this.CharacterName.Text = Character.Current.CharacterName;
             this.PlayerName.Text = Character.Current.PlayerName;
-            this.CharacterExperiencePoints.Text = Character.Current.ExperiencePoints == 0 ? Character.Current.ExperiencePoints.ToString() : "";
-            this.CharacterAge.Text = Character.Current.Age == 0 ? Character.Current.Age.ToString() : "";
+            this.CharacterExperiencePoints.Text = Character.Current.ExperiencePoints != 0 ? Character.Current.ExperiencePoints.ToString() : "";
+            this.CharacterAge.Text = Character.Current.Age != 0 ? Character.Current.Age.ToString() : "";
             this.CharacterSex.Text = Character.Current.Appearance.Gender;
             this.CharacterHeight.Text = Character.Current.Appearance.Size;
             this.CharacterWeight.Text = Character.Current.Appearance.Weight;
