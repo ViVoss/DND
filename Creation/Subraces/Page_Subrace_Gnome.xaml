@@ -40,30 +40,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Tag="rock-gnome">
-            <StackPanel VerticalAlignment="Top">
-                <Label Name="Label_RockGnome" Content="Rock Gnome"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_RockGnome_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_RockGnome_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
         <Button Grid.Column="1" Tag="forest-gnome">
-            <StackPanel>
-                <Label Name="Label_ForestGnome" Content="Forest Gnome"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_ForestGnome_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_ForestGnome_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
     </Grid>
 </Page>

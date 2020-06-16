@@ -40,43 +40,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Grid.Column="0" Tag="high-elf">
-            <StackPanel VerticalAlignment="Top">
-                <Label Name="Label_HighElf" Content="High Elf"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_HighElf_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_HighElf_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
         <Button Grid.Column="1" Tag="wood-elf">
-            <StackPanel>
-                <Label Name="Label_WoodElf" Content="Wood Elf"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_WoodElf_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_WoodElf_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
         <Button Grid.Column="2" Tag="dark-elf">
-            <StackPanel>
-                <Label Name="Label_Drow" Content="Drow"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_DarkElf_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_DarkElf_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
     </Grid>
 </Page>

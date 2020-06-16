@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,13 +23,27 @@ namespace DND
     /// </summary>
     public partial class Page_AttributeSelection : Page
     {
-
+        
         public Creation Creation { get; set; }
 
         public Page_AttributeSelection(Creation CreationWindow)
         {
             this.Creation = CreationWindow;
             InitializeComponent();
+
+            loadAttributes();
+        }
+
+        private void loadAttributes()
+        {
+            this.cmbAttributeValuesStr.Text = Character.Current.Attributes.Strength.ToString();
+            this.cmbAttributeValuesDex.Text = Character.Current.Attributes.Dexterity.ToString();
+            this.cmbAttributeValuesCon.Text = Character.Current.Attributes.Constitution.ToString();
+            this.cmbAttributeValuesInt.Text = Character.Current.Attributes.Intelligence.ToString();
+            this.cmbAttributeValuesWis.Text = Character.Current.Attributes.Wisdom.ToString();
+            this.cmbAttributeValuesCha.Text = Character.Current.Attributes.Charisma.ToString();
+
+
         }
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -73,9 +90,31 @@ namespace DND
         {
             if (Character.Current.Attributes.Strength != 0 & Character.Current.Attributes.Dexterity != 0 & Character.Current.Attributes.Constitution != 0 &
                 Character.Current.Attributes.Intelligence != 0 & Character.Current.Attributes.Wisdom != 0 & Character.Current.Attributes.Charisma != 0)
-                this.Creation.Btn_Continue.IsEnabled = true;
+            {
+                int[] attrValues = new int[6] {
+                    Character.Current.Attributes.Strength,
+                    Character.Current.Attributes.Dexterity,
+                    Character.Current.Attributes.Constitution,
+                    Character.Current.Attributes.Intelligence,
+                    Character.Current.Attributes.Wisdom,
+                    Character.Current.Attributes.Charisma
+                };
+
+                if (attrValues.Distinct().Count() == attrValues.Length) {
+                    TextBlock_Attribute_Selection_Error.Visibility = Visibility.Hidden;
+                    this.Creation.Btn_Continue.IsEnabled = true;
+                } else
+                {
+                    this.Creation.Btn_Continue.IsEnabled = false;
+                    TextBlock_Attribute_Selection_Error.Text = "Die Attributsauswahl darf keine überienstimmenden Werte haben!";
+                    TextBlock_Attribute_Selection_Error.Visibility = Visibility.Visible;
+                }
+            }
             else
+            {
                 this.Creation.Btn_Continue.IsEnabled = false;
+            }
+                
         }
         private string GetAttributeValueFromSelectedIndex(int index)
         {
@@ -105,5 +144,6 @@ namespace DND
             }
             return value;
         }
+
     }
 }

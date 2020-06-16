@@ -40,30 +40,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Tag="lightfoot-halfling">
-            <StackPanel VerticalAlignment="Top">
-                <Label Name="Label_Lightfoot" Content="Lightfoot Halfling"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_LightfootHalfling_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_LightfootHalfling_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
         <Button Grid.Column="1" Tag="stout-halfling">
-            <StackPanel>
-                <Label Name="Label_Stout" Content="Stout Halfling"/>
-                <Viewbox Margin="20,0,20,0" HorizontalAlignment="Center" Width="150">
-                    <Image Source="Resources_Subraces/SubraceIcons/SubraceIconPlaceholder.png" Stretch="Fill"/>
-                </Viewbox>
-                <TextBlock Name="TextBlock_StoutHalfling_Desc">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>
-                    </TextBlock.Background>
-                </TextBlock>
-            </StackPanel>
+            <Frame Name="Frame_StoutHalfling_StackPanel" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
         </Button>
     </Grid>
 </Page>

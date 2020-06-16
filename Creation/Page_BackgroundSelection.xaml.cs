@@ -34,11 +34,7 @@ namespace DND
         {
             string currBackground = ((Button)sender).Tag.ToString();
 
-            Creation.TextBox_Background.Text = currBackground;
-            Character.Current.Background = Creation.TextBox_Background.Text;
-            this.Creation.ButtonContinueEnabled(true);
-
-            TextBlock_BackgroundInfoTitle.Visibility = Visibility.Visible;
+            Label_BackgroundInfoTitle.Visibility = Visibility.Visible;
             TextBlock_BackgroundSkillProfKey.Visibility = Visibility.Visible;
             TextBlock_BackgroundToolProfKey.Visibility = Visibility.Visible;
             TextBlock_BackgroundLangOptionsKey.Visibility = Visibility.Visible;
@@ -49,91 +45,91 @@ namespace DND
             switch (currBackground)
             {
                 case "acolythe":
-                    TextBlock_BackgroundInfoTitle.Text = "Acolythe";
+                    Label_BackgroundInfoTitle.Content = "Acolythe";
 
                     Background acolythe = dndInformation.GetBackgroundInformation("acolythe");
                     addBackgroundInfoToTextBlock(acolythe);
 
                     break;
                 case "criminal":
-                    TextBlock_BackgroundInfoTitle.Text = "Criminal";
+                    Label_BackgroundInfoTitle.Content = "Criminal";
 
                     Background criminal = dndInformation.GetBackgroundInformation("criminal");
                     addBackgroundInfoToTextBlock(criminal);
 
                     break;
                 case "charlatan":
-                    TextBlock_BackgroundInfoTitle.Text = "Charlatan";
+                    Label_BackgroundInfoTitle.Content = "Charlatan";
 
                     Background charlatan = dndInformation.GetBackgroundInformation("charlatan");
                     addBackgroundInfoToTextBlock(charlatan);
 
                     break;
                 case "entertainer":
-                    TextBlock_BackgroundInfoTitle.Text = "Entertainer";
+                    Label_BackgroundInfoTitle.Content = "Entertainer";
 
                     Background entertainer = dndInformation.GetBackgroundInformation("entertainer");
                     addBackgroundInfoToTextBlock(entertainer);
 
                     break;
                 case "folk-hero":
-                    TextBlock_BackgroundInfoTitle.Text = "Folk Hero";
+                    Label_BackgroundInfoTitle.Content = "Folk Hero";
 
                     Background folkHero = dndInformation.GetBackgroundInformation("folk-hero");
                     addBackgroundInfoToTextBlock(folkHero);
 
                     break;
                 case "guild-artisan":
-                    TextBlock_BackgroundInfoTitle.Text = "Guild Artisan";
-                    
+                    Label_BackgroundInfoTitle.Content = "Guild Artisan";
+
                     Background guildArtisan = dndInformation.GetBackgroundInformation("guild-artisan");
                     addBackgroundInfoToTextBlock(guildArtisan);
 
                     break;
                 case "hermit":
-                    TextBlock_BackgroundInfoTitle.Text = "Hermit";
+                    Label_BackgroundInfoTitle.Content = "Hermit";
 
                     Background hermit = dndInformation.GetBackgroundInformation("hermit");
                     addBackgroundInfoToTextBlock(hermit);
 
                     break;
                 case "noble":
-                    TextBlock_BackgroundInfoTitle.Text = "Noble";
+                    Label_BackgroundInfoTitle.Content = "Noble";
 
                     Background noble = dndInformation.GetBackgroundInformation("noble");
                     addBackgroundInfoToTextBlock(noble);
 
                     break;
                 case "outlander":
-                    TextBlock_BackgroundInfoTitle.Text = "Outlander";
+                    Label_BackgroundInfoTitle.Content = "Outlander";
 
                     Background outlander = dndInformation.GetBackgroundInformation("outlander");
                     addBackgroundInfoToTextBlock(outlander);
 
                     break;
                 case "sage":
-                    TextBlock_BackgroundInfoTitle.Text = "Sage";
+                    Label_BackgroundInfoTitle.Content = "Sage";
 
                     Background sage = dndInformation.GetBackgroundInformation("sage");
                     addBackgroundInfoToTextBlock(sage);
 
                     break;
                 case "sailor":
-                    TextBlock_BackgroundInfoTitle.Text = "Sailor";
+                    Label_BackgroundInfoTitle.Content = "Sailor";
 
                     Background sailor = dndInformation.GetBackgroundInformation("sailor");
                     addBackgroundInfoToTextBlock(sailor);
 
                     break;
                 case "soldier":
-                    TextBlock_BackgroundInfoTitle.Text = "Soldier";
+                    Label_BackgroundInfoTitle.Content = "Soldier";
 
                     Background soldier = dndInformation.GetBackgroundInformation("soldier");
                     addBackgroundInfoToTextBlock(soldier);
 
                     break;
                 case "urchin":
-                    TextBlock_BackgroundInfoTitle.Text = "Urchin";
+                    Label_BackgroundInfoTitle.Content = "Urchin";
 
                     Background urchin = dndInformation.GetBackgroundInformation("urchin");
                     addBackgroundInfoToTextBlock(urchin);
@@ -143,70 +139,148 @@ namespace DND
                     break;
             }
 
+            Creation.TextBox_Background.Text = currBackground;
+            Character.Current.Background = Creation.TextBox_Background.Text;
+            this.Creation.ButtonContinueEnabled(true);                  
         }
         
-        public void addBackgroundInfoToTextBlock(Background background)
+        private void addBackgroundInfoToTextBlock(Background background)
         {
             string skillProfs = "";
-            string toolProfs = "";
-            string languageOptions = "";
-            string equipments = "";
-            string equipmentOptions = "";
-            string features = "";
 
-            foreach (string skillProf in background.SkillProficiences)
-            {
-                if (skillProf.Equals(background.SkillProficiences.Last()))
+            if (background.SkillProficiences.Count > 0) {
+                foreach (string skillProf in background.SkillProficiences)
                 {
-                    skillProfs += skillProf;
-                }
-                else
-                {
-                   skillProfs += skillProf + ", ";
+                    if (skillProf.Equals(background.SkillProficiences.Last()))
+                    {
+                        skillProfs += skillProf;
+                    }
+                    else
+                    {
+                        skillProfs += skillProf + ", ";
+                    }
                 }
             }
-
-            foreach (string toolProf in background.SkillProficiences)
+            else
             {
-                if (toolProf.Equals(background.SkillProficiences.Last()))
-                {
-                    toolProfs += toolProf;
-                }
-                else
-                {
-                    toolProfs += toolProf + ", ";
-                }
-            }
-
-            foreach (string equipment in background.Equipment)
-            {
-                if (equipment.Equals(background.Equipment.Last()))
-                {
-                    equipments += equipment;
-                }
-                else
-                {
-                    equipments += equipment + ", ";
-                }
-            }
-
-            foreach (string feature in background.Feature)
-            {
-                if (feature.Equals(background.Feature.Last()))
-                {
-                    features += feature;
-                }
-                else
-                {
-                    features += feature + ", ";
-                }
+                skillProfs = "-";
             }
 
             TextBlock_BackgroundSkillProfValue.Text = skillProfs;
+
+            string toolProfs = "";
+
+            if (background.ToolProficiences.Count > 0)
+            {
+                foreach (string toolProf in background.ToolProficiences)
+                {
+                    if (toolProf.Equals(background.ToolProficiences.Last()))
+                    {
+                        toolProfs += toolProf;
+                    }
+                    else
+                    {
+                        toolProfs += toolProf + ", ";
+                    }
+                }
+            }
+            else
+            {
+                toolProfs = "-";
+            }
+
             TextBlock_BackgroundToolProfValue.Text = toolProfs;
+
+            string languageOptions = "";
+
+            if (background.LanguageOptions.From.Count > 0)
+            {
+                foreach (string language in background.LanguageOptions.From)
+                {
+                    if (language.Equals(background.ToolProficiences.Last()))
+                    {
+                        languageOptions += language;
+                    }
+                    else
+                    {
+                        languageOptions += language + ", ";
+                    }
+                }
+            }
+            else
+            {
+                languageOptions = "-";
+            }
+
             TextBlock_BackgroundLangOptionsValue.Text = languageOptions;
+
+            string equipments = "";
+
+            if (background.Equipment.Count > 0)
+            {
+                foreach (string equipment in background.Equipment)
+                {
+                    if (equipment.Equals(background.Equipment.Last()))
+                    {
+                        equipments += equipment;
+                    }
+                    else
+                    {
+                        equipments += equipment + ", ";
+                    }
+                }
+            }
+            else
+            {
+                equipments = "-";
+            }
+
             TextBlock_BackgroundEquipValue.Text = equipments;
+            
+            string equipmentOptions = "";
+
+            if (background.EquipmentOptions.From.Count > 0)
+            {
+                foreach (string equipmentOption in background.EquipmentOptions.From)
+                {
+                    if (equipmentOption.Equals(background.ToolProficiences.Last()))
+                    {
+                        equipmentOptions += equipmentOption;
+                    }
+                    else
+                    {
+                        equipmentOptions += equipmentOption + ", ";
+                    }
+                }
+            }
+            else
+            {
+                equipmentOptions = "-";
+            }
+
             TextBlock_BackgroundEquipOptionsValue.Text = equipmentOptions;
+
+            string features = "";
+
+            if (background.Feature.Count > 0)
+            {
+                foreach (string feature in background.Feature)
+                {
+                    if (feature.Equals(background.Feature.Last()))
+                    {
+                        features += feature;
+                    }
+                    else
+                    {
+                        features += feature + ", ";
+                    }
+                }
+            }
+            else
+            {
+                features = "-";
+            }
+            
             TextBlock_BackgroundFeatureValue.Text = features;
         }
     }

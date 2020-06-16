@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -27,8 +28,11 @@ namespace DND.Subraces
             this.Creation = CreationWindow;
             InitializeComponent();
 
-            TextBlock_LightfootHalfling_Desc.Text = dndInformation.GetSubRaceInformation("lightfoot-halfling");
-            TextBlock_StoutHalfling_Desc.Text = dndInformation.GetSubraceDbInformation("stout-halfling");
+            SubRace lightfootHalfling = dndInformation.GetSubRaceInformation("lightfoot-halfling");
+            SubRace stoutHalfling = dndInformation.GetSubRaceDbInformation("stout-halfling");
+
+            Frame_LightfootHalfling_StackPanel.Content = new Page_Subrace_Info_StackPanel(lightfootHalfling);
+            Frame_StoutHalfling_StackPanel.Content = new Page_Subrace_Info_StackPanel(stoutHalfling);
         }
 
         private void Button_Subrace_Click(object sender, RoutedEventArgs e)
