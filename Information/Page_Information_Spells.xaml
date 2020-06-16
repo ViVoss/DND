@@ -14,12 +14,12 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <xctk:WatermarkTextBox Grid.Column="1" Name="TextBox_Spells_Info_Filter" Watermark="Filter Spells" Margin="54,38,816,38" TextChanged="TextBoxSpellsInfoFilter_TextChanged"/>
-        <DataGrid Grid.Column="1" Grid.Row="1" MaxWidth="1260" Name="Spell_Info_DataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" CanUserAddRows="False" CanUserDeleteRows="False">
+        <xctk:WatermarkTextBox Grid.Column="1" Name="TextBox_Spells_Info_Filter" Watermark="Filter by spell name" Width="500" Height="25" TextChanged="TextBoxSpellsInfoFilter_TextChanged" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DataGrid Grid.Column="1" Grid.Row="1" MaxWidth="1260" Name="Spell_Info_DataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" CanUserAddRows="False" CanUserDeleteRows="False" SelectedItem="{Binding Path=Selected}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=IdCol}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name" Width="250" Binding="{Binding Path=NameCol}" IsReadOnly="True"/>
