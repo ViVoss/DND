@@ -44,11 +44,11 @@ namespace DND
                     TextBlock_ClassInfoTitle.Text = "Barbarian";
                     //TextBlock_SubRaceInfoTitle.Text = "Dwarf Subraces";
 
-                    ClassLevels barbarian = dndInformation.GetClassLevelsDataGridInformation("barbarian");
+                    //ClassLevels barbarian = dndInformation.GetClassLevelsDataGridInformation("barbarian");
                     //SubRace hillDwarf = dndInformation.GetSubRaceDataGridInformation("hill-dwarf");
                     //SubRace mountainDwarf = dndInformation.GetSubRaceDbDataGridInformation("mountain-dwarf");
 
-                    addClassDataGridInformation(barbarian,1);
+                    //addClassDataGridInformation(barbarian,1);
                     //addSubRaceDataGridInformation(hillDwarf, 1);
                     //addSubRaceDataGridInformation(mountainDwarf, 2);
 
@@ -101,7 +101,7 @@ namespace DND
             DataGridItem dataClassGridItem = new DataGridItem()
             {
                 LevelCol = lvl,
-                ProficiencyBonusCol = classlvls.Class,
+                //ProficiencyBonusCol = classlvls.Class,
                 /*AgeCol = race.Age,
                 AlignmentCol = race.Alignment,
                 SizeCol = race.Size,
