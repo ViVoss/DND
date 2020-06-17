@@ -32,7 +32,7 @@
                 <Image Source="Resources_Subraces/SubraceIcons/Dragon_Scale.png" Width="31" Tag="8"/>
                 <Image Source="Resources_Subraces/SubraceIcons/Dragon_Scale.png" Width="31" Tag="9"/>
             </DockPanel>
-            <ListView Name="Listview_DraconicAncenstry" Margin="10" Background="Transparent" BorderThickness="0" >
+            <ListView Name="Listview_DraconicAncenstry" MaxHeight="190" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False" Margin="10" Background="Transparent" BorderThickness="0" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Dragon" DisplayMemberBinding="{Binding Dragon}" Width="75"/>

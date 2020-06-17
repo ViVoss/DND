@@ -62,5 +62,10 @@ namespace DND
             Character.Current.SubRace = this.Creation.TextBox_Subrace.Text;
             Character.Current.Race = this.Creation.TextBox_Race.Text;
         }
+
+        private void Btn_Subrace_Close_Click(object sender, RoutedEventArgs e)
+        {
+            ((Window_SubraceSelection)Window.GetWindow(this)).Close();
+        }
     }
 }

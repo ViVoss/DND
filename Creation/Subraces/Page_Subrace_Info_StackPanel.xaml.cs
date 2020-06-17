@@ -95,28 +95,17 @@ namespace DND
 
             TextBlock_Subrace_LanguagesValue.Text = languages;
 
-            string languageOptions = "";
-
             if (subrace.LanguageOptions != null)
             {
                 foreach (From lang in subrace.LanguageOptions?.From)
                 {
-                    if (lang.Equals(subrace.LanguageOptions.From.Last()))
-                    {
-                        languageOptions += lang.Name;
-                    }
-                    else
-                    {
-                        languageOptions += lang.Name + ", ";
-                    }
+                    LanguageOption_ComboBox.Items.Add(lang.Name);
                 }
             }
             else
             {
-                languageOptions = "-";
+                LanguageOption_ComboBox.IsEnabled = false;
             }
-
-            TextBlock_Subrace_LanguageOptionsValue.Text = languageOptions;
 
             string racialTraits = "";
 
@@ -141,28 +130,18 @@ namespace DND
 
             TextBlock_Subrace_RacialTraitsValue.Text = racialTraits;
 
-            string racialTraitOpt = "";
-
             if (subrace.RacialTraitOptions != null)
             {
                 foreach (From racialTraitOptions in subrace.RacialTraitOptions?.From)
                 {
-                    if (racialTraitOptions.Equals(subrace.RacialTraitOptions.From.Last()))
-                    {
-                        racialTraitOpt += racialTraitOptions.Name;
-                    }
-                    else
-                    {
-                        racialTraitOpt += racialTraitOptions.Name + ", ";
-                    }
+                    RacialTraitOption_ComboBox.Items.Add(racialTraitOptions.Name);
                 }
             }
             else
             {
-                racialTraitOpt = "-";
+                RacialTraitOption_ComboBox.IsEnabled = false;
             }
 
-            TextBlock_Subrace_RacialTraitOptionsValue.Text = racialTraitOpt;
         }
     }
 }
