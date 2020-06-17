@@ -32,6 +32,7 @@ namespace DND
             string currRace = ((Button)sender).Tag.ToString();
 
             TextBlock_RaceInfoTitle.Visibility = Visibility.Visible;
+            RaceDataGrid.Visibility = Visibility.Visible;
 
             switch (currRace)
             {

@@ -6,11 +6,9 @@
       xmlns:local="clr-namespace:DND"
       mc:Ignorable="d"
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="Page_AttributeSelection" Background="White">
+      Title="Page_AttributeSelection" Background="White"
+      Loaded="Page_Loaded">
     <Page.Resources>
-        <DataTemplate x:Key="cmbAttributeValuesTemplate">
-            <Label Content="{Binding Number}" FontSize="12"/>
-        </DataTemplate>
         <ImageBrush x:Key="DockPanel_Background" ImageSource="Resources_Creation/Banner1.jpg"/>
         <Style x:Key="DockPanel_Style" TargetType="DockPanel">
             <Setter Property="Margin" Value="10,0,10,0"/>
@@ -26,17 +24,11 @@
                 </Style>
                 <Style TargetType="ComboBox">
                     <Setter Property="DockPanel.Dock" Value="Bottom"/>
-                    <Setter Property="ItemTemplate" Value="{StaticResource cmbAttributeValuesTemplate}"/>
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                     <Setter Property="FontSize" Value="12"/>
                     <Setter Property="Height" Value="20"/>
                     <Setter Property="Margin" Value="0,0,0,20"/>
                     <Setter Property="ItemContainerStyle" Value="{Binding cmbTemplate}"/>
-                    <Style.Resources>
-                        <DataTemplate x:Key="a">
-                            <Label Content="{Binding what}"/>
-                        </DataTemplate>
-                    </Style.Resources>
                 </Style>
             </Style.Resources>
         </Style>
@@ -58,110 +50,47 @@
     <Grid Name="Main">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="1" HorizontalAlignment="Center">
-            <DockPanel Style="{StaticResource DockPanel_Style2}">
-                <Label Name="Label_ProficiencyBonus"/>
-                <DockPanel.Background>
-                    <ImageBrush ImageSource="Resources_Creation/Attributes/Statblock.png"/>
-                </DockPanel.Background>
-            </DockPanel>
-            <DockPanel Style="{StaticResource DockPanel_Style2}">
-                <Label Name="Label_ArmorClass"/>
-                <DockPanel.Background>
-                    <ImageBrush ImageSource="Resources_Creation/Attributes/Statblock.png"/>
-                </DockPanel.Background>
-            </DockPanel>
-            <DockPanel Style="{StaticResource DockPanel_Style2}">
-                <Label Name="Label_Movement"/>
-                <DockPanel.Background>
-                    <ImageBrush ImageSource="Resources_Creation/Attributes/Statblock.png"/>
-                </DockPanel.Background>
-            </DockPanel>
-        </DockPanel>
-        <DockPanel Grid.Row="2" HorizontalAlignment="Center">
             <DockPanel Style="{StaticResource DockPanel_Style}">
-                <ComboBox x:Name="cmbAttributeValuesStr" Tag="STR" SelectionChanged="cmbAttributeValuesStr_SelectionChanged" IsEditable="False">
-                    <ComboBoxItem Name="cmbAttributeValuesStrItem1" Content="8"/>
-                    <ComboBoxItem Name="cmbAttributeValuesStrItem2" Content="10"/>
-                    <ComboBoxItem Name="cmbAttributeValuesStrItem3" Content="12"/>
-                    <ComboBoxItem Name="cmbAttributeValuesStrItem4" Content="13"/>
-                    <ComboBoxItem Name="cmbAttributeValuesStrItem5" Content="14"/>
-                    <ComboBoxItem Name="cmbAttributeValuesStrItem6" Content="15"/>
-                </ComboBox>
+                <ComboBox x:Name="cmbAttributeValuesStr" Tag="STR" SelectionChanged="cmbAttributeValuesStr_SelectionChanged" IsEditable="False"/>
                 <Label Name="Label_STR" Tag="STR"/>
                 <DockPanel.Background>
                     <ImageBrush ImageSource="Resources_Creation/Attributes/Strength.png"/>
                 </DockPanel.Background>
             </DockPanel>
             <DockPanel Style="{StaticResource DockPanel_Style}">
-                <ComboBox x:Name="cmbAttributeValuesDex" Tag="DEX" SelectionChanged="cmbAttributeValuesDex_SelectionChanged" IsEditable="False">
-                    <ComboBoxItem Name="cmbAttributeValuesDexItem1" Content="8"/>
-                    <ComboBoxItem Name="cmbAttributeValuesDexItem2" Content="10"/>
-                    <ComboBoxItem Name="cmbAttributeValuesDexItem3" Content="12"/>
-                    <ComboBoxItem Name="cmbAttributeValuesDexItem4" Content="13"/>
-                    <ComboBoxItem Name="cmbAttributeValuesDexItem5" Content="14"/>
-                    <ComboBoxItem Name="cmbAttributeValuesDexItem6" Content="15"/>
-                </ComboBox>
+                <ComboBox x:Name="cmbAttributeValuesDex" Tag="DEX" SelectionChanged="cmbAttributeValuesDex_SelectionChanged" IsEditable="False"/>
                 <Label Name="Label_DEX" Tag="DEX"/>
                 <DockPanel.Background>
                     <ImageBrush ImageSource="Resources_Creation/Attributes/Dexterity.png"/>
                 </DockPanel.Background>
             </DockPanel>
             <DockPanel Style="{StaticResource DockPanel_Style}">
-              <ComboBox x:Name="cmbAttributeValuesCon" Tag="CON" SelectionChanged="cmbAttributeValuesCon_SelectionChanged" IsEditable="False">
-                    <ComboBoxItem Name="cmbAttributeValuesConItem1" Content="8"/>
-                    <ComboBoxItem Name="cmbAttributeValuesConItem2" Content="10"/>
-                    <ComboBoxItem Name="cmbAttributeValuesConItem3" Content="12"/>
-                    <ComboBoxItem Name="cmbAttributeValuesConItem4" Content="13"/>
-                    <ComboBoxItem Name="cmbAttributeValuesConItem5" Content="14"/>
-                    <ComboBoxItem Name="cmbAttributeValuesConItem6" Content="15"/>
-              </ComboBox>
+                <ComboBox x:Name="cmbAttributeValuesCon" Tag="CON" SelectionChanged="cmbAttributeValuesCon_SelectionChanged" IsEditable="False"/>
                 <Label Name="Label_CON" Tag="CON"/>
                 <DockPanel.Background>
                     <ImageBrush ImageSource="Resources_Creation/Attributes/Constitution.png"/>
                 </DockPanel.Background>
             </DockPanel>
             <DockPanel Style="{StaticResource DockPanel_Style}">
-              <ComboBox x:Name="cmbAttributeValuesInt" Tag="INT" SelectionChanged="cmbAttributeValuesInt_SelectionChanged" IsEditable="False">
-                    <ComboBoxItem Name="cmbAttributeValuesIntItem1" Content="8"/>
-                    <ComboBoxItem Name="cmbAttributeValuesIntItem2" Content="10"/>
-                    <ComboBoxItem Name="cmbAttributeValuesIntItem3" Content="12"/>
-                    <ComboBoxItem Name="cmbAttributeValuesIntItem4" Content="13"/>
-                    <ComboBoxItem Name="cmbAttributeValuesIntItem5" Content="14"/>
-                    <ComboBoxItem Name="cmbAttributeValuesIntItem6" Content="15"/>
-              </ComboBox>
+                <ComboBox x:Name="cmbAttributeValuesInt" Tag="INT" SelectionChanged="cmbAttributeValuesInt_SelectionChanged" IsEditable="False"/>
                 <Label Name="Label_INT" Tag="INT"/>
                 <DockPanel.Background>
                     <ImageBrush ImageSource="Resources_Creation/Attributes/Intelligence.png"/>
                 </DockPanel.Background>
             </DockPanel>
             <DockPanel Style="{StaticResource DockPanel_Style}">
-              <ComboBox x:Name="cmbAttributeValuesWis" Tag="WIS" SelectionChanged="cmbAttributeValuesWis_SelectionChanged" IsEditable="False">
-                    <ComboBoxItem Name="cmbAttributeValuesWisItem1" Content="8"/>
-                    <ComboBoxItem Name="cmbAttributeValuesWisItem2" Content="10"/>
-                    <ComboBoxItem Name="cmbAttributeValuesWisItem3" Content="12"/>
-                    <ComboBoxItem Name="cmbAttributeValuesWisItem4" Content="13"/>
-                    <ComboBoxItem Name="cmbAttributeValuesWisItem5" Content="14"/>
-                    <ComboBoxItem Name="cmbAttributeValuesWisItem6" Content="15"/>
-              </ComboBox>
+                <ComboBox x:Name="cmbAttributeValuesWis" Tag="WIS" SelectionChanged="cmbAttributeValuesWis_SelectionChanged" IsEditable="False"/>
                 <Label Name="Label_WIS" Tag="WIS"/>
                 <DockPanel.Background>
                     <ImageBrush ImageSource="Resources_Creation/Attributes/Wisdom.png"/>
                 </DockPanel.Background>
             </DockPanel>
             <DockPanel Style="{StaticResource DockPanel_Style}">
-              <ComboBox x:Name="cmbAttributeValuesCha" Tag="CHA" SelectionChanged="cmbAttributeValuesCha_SelectionChanged" IsEditable="False">
-                    <ComboBoxItem Name="cmbAttributeValuesChaItem1" Content="8"/>
-                    <ComboBoxItem Name="cmbAttributeValuesChaItem2" Content="10"/>
-                    <ComboBoxItem Name="cmbAttributeValuesChaItem3" Content="12"/>
-                    <ComboBoxItem Name="cmbAttributeValuesChaItem4" Content="13"/>
-                    <ComboBoxItem Name="cmbAttributeValuesChaItem5" Content="14"/>
-                    <ComboBoxItem Name="cmbAttributeValuesChaItem6" Content="15"/>
-              </ComboBox>
+                <ComboBox x:Name="cmbAttributeValuesCha" Tag="CHA" SelectionChanged="cmbAttributeValuesCha_SelectionChanged" IsEditable="False"/>
                 <Label Name="Label_CHA" Tag="CHA"/>
                 <DockPanel.Background>
                     <ImageBrush ImageSource="Resources_Creation/Attributes/Charisma.png"/>

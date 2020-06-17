@@ -79,21 +79,7 @@ namespace DND
             }
             else
             {
-                if (
-                    (item as DataGridItem).IdCol.ToString().IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).NameCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).DescCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).HigherLvlCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).RangeCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).ComponentsCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).MaterialCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).DurationCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).CastingTimeCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).LevelCol.ToString().IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).SchoolCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).ClassesCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (item as DataGridItem).SubclassesCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0
-                )
+                if ((item as DataGridItem).NameCol.IndexOf(TextBox_Spells_Info_Filter.Text, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     return true;
                 }

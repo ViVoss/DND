@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DND"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="Window_Information" Height="800" Width="1280">
+        Title="Window_Information" Height="800" Width="1280" ResizeMode="CanMinimize">
     <Window.Resources>
     <Style TargetType="Button">
         <Setter Property="Margin" Value="10"/>
