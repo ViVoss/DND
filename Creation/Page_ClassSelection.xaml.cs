@@ -263,7 +263,7 @@ namespace DND
 
                 foreach (Choice choice in choices)
                 {
-                    chooseFrom += "Choose " + choice.Choose + " from:";
+                    chooseFrom += "Choose " + choice.Choose + " from: ";
 
                     foreach (StartingEquipmentElement startingEquipElem in choice.From)
                     {
