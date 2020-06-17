@@ -52,10 +52,8 @@ namespace DND
             TextBlock_ClassHitPointsHigherLevelValue.Visibility = Visibility.Visible;
             TextBlock_ClassProficienciesValue.Visibility = Visibility.Visible;
             TextBlock_ClassSavingThrowsValue.Visibility = Visibility.Visible;
-            TextBlock_ClassSkillsValue.Visibility = Visibility.Visible;
             TextBlock_ClassStartingEquipmentValue.Visibility = Visibility.Visible;
             TextBlock_ChoicesToMake.Visibility = Visibility.Visible;
-            TextBlock_ChooseFrom.Visibility = Visibility.Visible;
 
             string currClass = ((Button)sender).Tag.ToString();
 
@@ -201,48 +199,64 @@ namespace DND
 
             TextBlock_ClassSavingThrowsValue.Text = savingThrows;
 
-            string skillChoices = "";
+            ClassSkillsStackPanel.Children.RemoveRange(1, ClassSkillsStackPanel.Children.Count - 1);
 
             foreach (ProficiencyChoice skills in clazz.ProficiencyChoices)
             {
-                skillChoices += "Choose " + skills.Choose + " from: ";
+                TextBlock SkillsToChooseFrom_TextBlock = new TextBlock();
+                SkillsToChooseFrom_TextBlock.FontSize = 10;
+                SkillsToChooseFrom_TextBlock.TextWrapping = TextWrapping.Wrap;
+                SkillsToChooseFrom_TextBlock.Text = "Choose " + skills.Choose + " from: ";
 
-                foreach (Proficiency skill in skills.From)
+                ClassSkillsStackPanel.Children.Add(SkillsToChooseFrom_TextBlock);
+
+                for (int i = 0; i < skills.Choose; i++)
                 {
-                    string skillStr = skill.Name;
-                    skillStr = skillStr.Replace("Skill: ", "");
+                    ComboBox SkillsToChooseFrom_ComboBox = new ComboBox();
+                    SkillsToChooseFrom_ComboBox.Width = 200;
+                    SkillsToChooseFrom_ComboBox.HorizontalAlignment = HorizontalAlignment.Left;
 
-                    if (skill.Equals(skills.From.Last()))
+                    foreach (Proficiency skill in skills.From)
                     {
-                        skillChoices += skillStr + "\n\n";
+                        string skillStr = skill.Name;
+                        skillStr = skillStr.Replace("Skill: ", "");
+
+                        SkillsToChooseFrom_ComboBox.Items.Add(skillStr);
                     }
-                    else
-                    {
-                        skillChoices += skillStr + ", ";
-                    }
+
+                    ClassSkillsStackPanel.Children.Add(SkillsToChooseFrom_ComboBox);
                 }
             }
-
-            TextBlock_ClassSkillsValue.Text = skillChoices;
         }
 
         private void addStartingEquipInfoToTextBlock(StartingEquipment startingEquipment)
         {
             string startingEquip = "";
 
-            foreach (StartingEquipmentElement startingEquipmentElement in startingEquipment.StartingEquipmentElement)
+            if (startingEquipment.StartingEquipmentElement.Count > 0)
             {
-                if (startingEquipmentElement.Equals(startingEquipment.StartingEquipmentElement.Last()))
+                foreach (StartingEquipmentElement startingEquipmentElement in startingEquipment.StartingEquipmentElement)
                 {
-                    startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name;
-                }
-                else
-                {
-                    startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name + ", ";
+                    {
+                        if (startingEquipmentElement.Equals(startingEquipment.StartingEquipmentElement.Last()))
+                        {
+                            startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name + "\n";
+                        }
+                        else
+                        {
+                            startingEquip += startingEquipmentElement.Quantity + " " + startingEquipmentElement.Item.Name + ", ";
+                        }
+                    }
                 }
             }
+            else
+            {
+                startingEquip = "-";
+            }
 
-            TextBlock_ChoicesToMake.Text = "Choices to make: " + startingEquipment.ChoicesToMake;
+            TextBlock_ChoicesToMake.Text = "Choices to make: " + startingEquipment.ChoicesToMake + "\n";
+
+            ClassStartingEquipmentStackPanel.Children.RemoveRange(3, ClassStartingEquipmentStackPanel.Children.Count);
 
             addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice, 1);
             addStartingEquipmentChoiceToMakeInfoToTextBlock(startingEquipment.Choice2, 2);
@@ -255,31 +269,36 @@ namespace DND
 
         private void addStartingEquipmentChoiceToMakeInfoToTextBlock(List<Choice> choices, int choiceNumber)
         {
-            string chooseFrom = "";
-
             if (choices != null)
             {
-                chooseFrom += "Choice " + choiceNumber + ":\n";
+                TextBlock TextBlock_StartingEquipChoice = new TextBlock();
+                TextBlock_StartingEquipChoice.FontSize = 10;
+                TextBlock_StartingEquipChoice.TextWrapping = TextWrapping.Wrap;
+                TextBlock_StartingEquipChoice.Text = "Choice " + choiceNumber + ":";
+
+                ClassStartingEquipmentStackPanel.Children.Add(TextBlock_StartingEquipChoice);
 
                 foreach (Choice choice in choices)
                 {
-                    chooseFrom += "Choose " + choice.Choose + " from: ";
+                    TextBlock TextBlock_StartingEquipChooseFrom = new TextBlock();
+                    TextBlock_StartingEquipChooseFrom.FontSize = 10;
+                    TextBlock_StartingEquipChooseFrom.TextWrapping = TextWrapping.Wrap;
+                    TextBlock_StartingEquipChooseFrom.Text = "Choose " + choice.Choose + " from: ";
+
+                    ClassStartingEquipmentStackPanel.Children.Add(TextBlock_StartingEquipChooseFrom);
+
+                    ComboBox ComboBox_StartingEquipment = new ComboBox();
+                    ComboBox_StartingEquipment.Width = 200;
+                    ComboBox_StartingEquipment.HorizontalAlignment = HorizontalAlignment.Left;
 
                     foreach (StartingEquipmentElement startingEquipElem in choice.From)
                     {
-                        if (startingEquipElem.Equals(choice.From.Last()))
-                        {
-                            chooseFrom += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + "\n\n";
-                        }
-                        else
-                        {
-                            chooseFrom += startingEquipElem.Quantity + " " + startingEquipElem.Item.Name + ", ";
-                        }
+                        ComboBox_StartingEquipment.Items.Add(startingEquipElem.Quantity + " " + startingEquipElem.Item.Name);
                     }
+                    
+                    ClassStartingEquipmentStackPanel.Children.Add(ComboBox_StartingEquipment);
                 }
             }
-
-            TextBlock_ChooseFrom.Text += chooseFrom;
         }
     }
 }

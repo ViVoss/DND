@@ -6,12 +6,15 @@
       xmlns:local="clr-namespace:DND"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="Spell Selection" Background="LightCoral">
+      Title="Spell Selection"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
         </Grid.Background>
-        <TextBox Text="Spells" Margin="100"/>
+        <StackPanel Name="SpellSelection_StackPanel" Margin="5">
+            
+        </StackPanel>
     </Grid>
 </Page>

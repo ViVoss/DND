@@ -41,6 +41,8 @@ namespace DND
             TextBlock_BackgroundEquipKey.Visibility = Visibility.Visible;
             TextBlock_BackgroundEquipOptionsKey.Visibility = Visibility.Visible;
             TextBlock_BackgroundFeatureKey.Visibility = Visibility.Visible;
+            ComboBox_BackgroundLanguageOptions.Visibility = Visibility.Visible;
+            ComboBox_BackgroundEquipmentOptions.Visibility = Visibility.Visible;
 
             switch (currBackground)
             {
@@ -191,28 +193,20 @@ namespace DND
 
             TextBlock_BackgroundToolProfValue.Text = toolProfs;
 
-            string languageOptions = "";
+            ComboBox_BackgroundLanguageOptions.IsEnabled = true;
+            ComboBox_BackgroundLanguageOptions.Items.Clear();
 
             if (background.LanguageOptions.From.Count > 0)
             {
                 foreach (string language in background.LanguageOptions.From)
                 {
-                    if (language.Equals(background.ToolProficiences.Last()))
-                    {
-                        languageOptions += language;
-                    }
-                    else
-                    {
-                        languageOptions += language + ", ";
-                    }
+                    ComboBox_BackgroundLanguageOptions.Items.Add(language);
                 }
             }
             else
             {
-                languageOptions = "-";
+                ComboBox_BackgroundLanguageOptions.IsEnabled = false;
             }
-
-            TextBlock_BackgroundLangOptionsValue.Text = languageOptions;
 
             string equipments = "";
 
@@ -226,7 +220,7 @@ namespace DND
                     }
                     else
                     {
-                        equipments += equipment + ", ";
+                        equipments += equipment + "\n";
                     }
                 }
             }
@@ -236,29 +230,21 @@ namespace DND
             }
 
             TextBlock_BackgroundEquipValue.Text = equipments;
-            
-            string equipmentOptions = "";
+
+            ComboBox_BackgroundEquipmentOptions.IsEnabled = true;
+            ComboBox_BackgroundEquipmentOptions.Items.Clear();
 
             if (background.EquipmentOptions.From.Count > 0)
             {
                 foreach (string equipmentOption in background.EquipmentOptions.From)
                 {
-                    if (equipmentOption.Equals(background.ToolProficiences.Last()))
-                    {
-                        equipmentOptions += equipmentOption;
-                    }
-                    else
-                    {
-                        equipmentOptions += equipmentOption + ", ";
-                    }
+                    ComboBox_BackgroundEquipmentOptions.Items.Add(equipmentOption);
                 }
             }
             else
             {
-                equipmentOptions = "-";
+                ComboBox_BackgroundEquipmentOptions.IsEnabled = false;
             }
-
-            TextBlock_BackgroundEquipOptionsValue.Text = equipmentOptions;
 
             string features = "";
 

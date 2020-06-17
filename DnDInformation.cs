@@ -121,5 +121,49 @@ namespace DND
             return spellList;
         }
 
+        public List<Spells> GetSpellsInformationPerClassAndLevel(string clazz, int level)
+        {
+            List<Spells> spellList = new List<Spells>();
+
+            WebAufruf<SpellsCollection> webAufruf = new WebAufruf<SpellsCollection>();
+            SpellsCollection spells = webAufruf.GetJsonResponse("spells");
+
+            foreach (Result result in spells.Results)
+            {
+                WebAufruf<Spells> webAufruf1 = new WebAufruf<Spells>();
+                requestParameter = "spells/" + result.Index;
+                Spells spell = webAufruf1.GetJsonResponse(requestParameter);
+
+                if (spell.Level == level) {
+                    foreach (Klasse klasse in spell.Classes)
+                    {
+                        if (klasse.Name.ToLower().Equals(clazz))
+                        {
+                            spellList.Add(new Spells()
+                            {
+                                Name = spell.Name,
+                                Desc = spell.Desc,
+                                HigherLevel = spell.HigherLevel,
+                                Range = spell.Range,
+                                Components = spell.Components,
+                                Material = spell.Material,
+                                Ritual = spell.Ritual,
+                                Duration = spell.Duration,
+                                Concentration = spell.Concentration,
+                                CastingTime = spell.CastingTime,
+                                Level = spell.Level,
+                                School = spell.School,
+                                Classes = spell.Classes,
+                                Subclasses = spell.Subclasses
+                            });
+                        }
+                    }
+                }
+
+            }
+
+            return spellList;
+        }
+
     }
 }
