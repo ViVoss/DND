@@ -56,5 +56,8 @@ namespace DND
         public int SeventhLevelSpellCol { get; set; }
         public int EigthLevelSpellCol { get; set; }
         public int NinthLevelSpellCol { get; set; }
+        public int SpellSlotsCol { get; set; }
+        public int SlotLevelCol { get; set; }
+        public int InvocationsKnownCol { get; set; }
     }
 }

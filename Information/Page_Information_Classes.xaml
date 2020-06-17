@@ -41,7 +41,7 @@
                     <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
                 </TextBlock.Background>
             </TextBlock>
-            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="ClassDataGrid_SelectionChanged">
+            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="LevelColumn" Header="Level" Width="50" Binding="{Binding Path=LevelCol}" IsReadOnly="True"/>
                     <DataGridTextColumn x:Name="ProfBonusColumn" Header="Proficiency Bonus" Width="*" Binding="{Binding Path=ProfBonusCol}" IsReadOnly="True"/>
@@ -70,6 +70,9 @@
                     <DataGridTextColumn x:Name="SeventhLevelSpellColumn" Header="7." Width="*" Binding="{Binding Path=SeventhLevelSpellCol}" IsReadOnly="True"/>
                     <DataGridTextColumn x:Name="EigthLevelSpellColumn" Header="8." Width="*" Binding="{Binding Path=EigthLevelSpellCol}" IsReadOnly="True"/>
                     <DataGridTextColumn x:Name="NinthLevelSpellColumn" Header="9." Width="*" Binding="{Binding Path=NinthLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SpellSlotsColumn" Header="Spell Slots" Width="*" Binding="{Binding Path=SpellSlotsCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SlotLevelColumn" Header="Slot Level" Width="*" Binding="{Binding Path=SlotLevelCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="InvocationsKnownColumn" Header="Invocations Known" Width="*" Binding="{Binding Path=InvocationsKnownCol}" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Grid.Background>
@@ -121,7 +124,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Druid" Grid.Row="3">
+            <Button Name="Druid" Tag="druid" Grid.Row="3">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Druid.png"/>
@@ -131,7 +134,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Fighter" Grid.Row="4">
+            <Button Name="Fighter" Tag="fighter" Grid.Row="4">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Fighter.png"/>
@@ -141,7 +144,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Monk" Grid.Row="5">
+            <Button Name="Monk" Tag="monk" Grid.Row="5">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Monk.png"/>
@@ -151,7 +154,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Paladin" Grid.Row="6">
+            <Button Name="Paladin" Tag="paladin" Grid.Row="6">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Paladin.png"/>
@@ -161,7 +164,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Ranger" Grid.Row="7">
+            <Button Name="Ranger" Tag="ranger" Grid.Row="7">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Ranger.png"/>
@@ -171,7 +174,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Rogue" Grid.Row="8">
+            <Button Name="Rogue" Tag="rogue" Grid.Row="8">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Rogue.png"/>
@@ -181,7 +184,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Sorcerer" Grid.Row="9">
+            <Button Name="Sorcerer" Tag="sorcerer" Grid.Row="9">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Sorcerer.png"/>
@@ -191,7 +194,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Warlock" Grid.Row="10">
+            <Button Name="Warlock" Tag="warlock" Grid.Row="10">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Warlock.png"/>
@@ -201,7 +204,7 @@
                     </Viewbox>
                 </DockPanel>
             </Button>
-            <Button Name="Wizard" Grid.Row="11">
+            <Button Name="Wizard" Tag="wizard" Grid.Row="11">
                 <DockPanel>
                     <Viewbox>
                         <Image Source="Resources_Information/Class_Icons/Wizard.png"/>
