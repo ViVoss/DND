@@ -41,7 +41,7 @@
                     <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
                 </TextBlock.Background>
             </TextBlock>
-            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="ClassDataGrid_SelectionChanged">
+            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="LevelColumn" Header="Level" Width="50" Binding="{Binding Path=LevelCol}" IsReadOnly="True"/>
                     <DataGridTextColumn x:Name="ProfBonusColumn" Header="Proficiency Bonus" Width="*" Binding="{Binding Path=ProfBonusCol}" IsReadOnly="True"/>
