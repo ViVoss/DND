@@ -28,7 +28,7 @@ namespace DND
 
             string abilityBonusInc = "";
 
-            if (subrace.AbilityBonuses.Count() > 0)
+            if (subrace.AbilityBonuses.Count > 0)
             {
                 foreach (AbilityBonus abilityBonus in subrace.AbilityBonuses)
                 {
@@ -51,7 +51,7 @@ namespace DND
 
             string startingProficiencies = "";
 
-            if (subrace.StartingProficiencies.Count() > 0)
+            if (subrace.StartingProficiencies.Count > 0)
             {
                 foreach (StartingProficiency startingProficiency in subrace.StartingProficiencies)
                 {
@@ -74,7 +74,7 @@ namespace DND
 
             string languages = "";
 
-            if (subrace.Languages.Count() > 0)
+            if (subrace.Languages.Count > 0)
             {
                 foreach (Language lang in subrace.Languages)
                 {
@@ -97,9 +97,16 @@ namespace DND
 
             if (subrace.LanguageOptions != null)
             {
-                foreach (From lang in subrace.LanguageOptions?.From)
+                if (subrace.LanguageOptions.From.Count > 0)
                 {
-                    LanguageOption_ComboBox.Items.Add(lang.Name);
+                    foreach (From lang in subrace.LanguageOptions.From)
+                    {
+                        LanguageOption_ComboBox.Items.Add(lang.Name);
+                    }
+                }
+                else
+                {
+                    LanguageOption_ComboBox.IsEnabled = false;
                 }
             }
             else
@@ -109,7 +116,7 @@ namespace DND
 
             string racialTraits = "";
 
-            if (subrace.RacialTraits.Count() > 0)
+            if (subrace.RacialTraits.Count > 0)
             {
                 foreach (Rac racialTrait in subrace.RacialTraits)
                 {
@@ -132,9 +139,15 @@ namespace DND
 
             if (subrace.RacialTraitOptions != null)
             {
-                foreach (From racialTraitOptions in subrace.RacialTraitOptions?.From)
+                if (subrace.RacialTraitOptions.From.Count > 0) {
+                    foreach (From racialTraitOptions in subrace.RacialTraitOptions.From)
+                    {
+                        RacialTraitOption_ComboBox.Items.Add(racialTraitOptions.Name);
+                    }
+                }
+                else
                 {
-                    RacialTraitOption_ComboBox.Items.Add(racialTraitOptions.Name);
+                    RacialTraitOption_ComboBox.IsEnabled = false;
                 }
             }
             else
