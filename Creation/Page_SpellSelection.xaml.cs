@@ -25,7 +25,8 @@ namespace DND
     {
         DnDInformation dndInformation = new DnDInformation();
         List<Spells> spellList = new List<Spells>();
-        int choicesToMake;
+        List<string> list = new List<string>();
+        int choicesToMake = 1;
 
 
         public Creation Creation { get; set; }
@@ -51,49 +52,56 @@ namespace DND
                 case "cleric":
                     Label_SpellSelectionClassTitle.Content = "Cleric";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("cleric", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
                 case "druid":
                     Label_SpellSelectionClassTitle.Content = "Druid";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("druid", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
                 case "paladin":
                     Label_SpellSelectionClassTitle.Content = "Paladin";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("paladin", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
                 case "ranger":
                     Label_SpellSelectionClassTitle.Content = "Ranger";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("ranger", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
                 case "sorcerer":
                     Label_SpellSelectionClassTitle.Content = "Sorcerer";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("sorcerer", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
                 case "warlock":
                     Label_SpellSelectionClassTitle.Content = "Warlock";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("warlock", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
                 case "wizard":
                     Label_SpellSelectionClassTitle.Content = "Wizard";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("wizard", 1);
-                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
                     EnableContinueBtn();
 
                     break;
@@ -115,15 +123,34 @@ namespace DND
 
         private void EnableContinueBtn()
         {
-            this.Creation.Btn_Continue.IsEnabled = true;
+            if (Character.Current.SpellList.Spells.Count > choicesToMake - 2)
+            {
+                this.Creation.Btn_Continue.IsEnabled = true;
+            }
+            else
+            {
+                this.Creation.Btn_Continue.IsEnabled = false;
+            }
         }
 
         private void SpellSelection_CheckListBox_ItemSelectionChanged(object sender, ItemSelectionChangedEventArgs e)
         {
-            if (SpellSelection_CheckListBox.SelectedItems.Count >= choicesToMake)
+            if (SpellSelection_CheckListBox.SelectedItem != null)
             {
+                Character.Current.SpellList.Spells.Add(new Spell(SpellSelection_CheckListBox.SelectedItem.ToString(), 1, true));
             }
 
+            EnableContinueBtn();
+
+            if (Character.Current.SpellList.Spells.Count > choicesToMake)
+            {
+                Character.Current.SpellList.Spells.RemoveAt(choicesToMake - 1);
+            }
+
+            if (SpellSelection_CheckListBox.SelectedItems.Count > choicesToMake)
+            {
+                SpellSelection_CheckListBox.SelectedItems.RemoveAt(choicesToMake - 1);
+            }
         }
     }
 }

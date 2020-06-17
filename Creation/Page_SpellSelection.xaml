@@ -25,7 +25,8 @@
                 </Label.Background>
             </Label>
             <TextBlock Name="SpellSelectionChoiceToMake_TextBlock" Margin="5,5,5,5" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-            <xctk:CheckListBox Name="SpellSelection_CheckListBox" Width="400" ItemSelectionChanged="SpellSelection_CheckListBox_ItemSelectionChanged"/>
+            <xctk:CheckListBox Name="SpellSelection_CheckListBox" Width="400" ItemSelectionChanged="SpellSelection_CheckListBox_ItemSelectionChanged" IsSelectAllActive="False"/>
+            <TextBlock Name="Test"/>
         </StackPanel>
     </Grid>
 </Page>
