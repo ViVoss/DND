@@ -7,11 +7,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
+using Xceed.Wpf.Toolkit.Primitives;
 
 namespace DND
 {
@@ -22,6 +25,8 @@ namespace DND
     {
         DnDInformation dndInformation = new DnDInformation();
         List<Spells> spellList = new List<Spells>();
+        int choicesToMake;
+
 
         public Creation Creation { get; set; }
 
@@ -36,47 +41,89 @@ namespace DND
             switch (Character.Current.Class)
             {
                 case "bard":
+                    Label_SpellSelectionClassTitle.Content = "Bard";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("bard", 1);
-                    foreach (Spells spell in spellList)
-                    {
-                        TextBox textBox = new TextBox();
-                        textBox.TextWrapping = TextWrapping.Wrap;
-                        textBox.Text = spell.Name;
-                        SpellSelection_StackPanel.Children.Add(textBox);
-                    }
+                    choicesToMake = 3;
+                    AddSpellsInformationPerClassAndLevel(spellList, choicesToMake);
+                    EnableContinueBtn();
 
                     break;
                 case "cleric":
+                    Label_SpellSelectionClassTitle.Content = "Cleric";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("cleric", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 case "druid":
+                    Label_SpellSelectionClassTitle.Content = "Druid";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("druid", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 case "paladin":
+                    Label_SpellSelectionClassTitle.Content = "Paladin";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("paladin", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 case "ranger":
+                    Label_SpellSelectionClassTitle.Content = "Ranger";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("ranger", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 case "sorcerer":
+                    Label_SpellSelectionClassTitle.Content = "Sorcerer";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("sorcerer", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 case "warlock":
+                    Label_SpellSelectionClassTitle.Content = "Warlock";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("warlock", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 case "wizard":
+                    Label_SpellSelectionClassTitle.Content = "Wizard";
                     spellList = dndInformation.GetSpellsInformationPerClassAndLevel("wizard", 1);
+                    AddSpellsInformationPerClassAndLevel(spellList, 3);
+                    EnableContinueBtn();
 
                     break;
                 default:
                     break;
             }
+        }
+
+        private void AddSpellsInformationPerClassAndLevel(List<Spells> spellList, int choicesToMake)
+        {
+            SpellSelection_CheckListBox.Items.Clear();
+
+            SpellSelectionChoiceToMake_TextBlock.Text = "Please select " + choicesToMake + " spells:";
+
+            foreach (Spells spell in spellList) {
+                SpellSelection_CheckListBox.Items.Add(spell.Name);
+            }
+        }
+
+        private void EnableContinueBtn()
+        {
+            this.Creation.Btn_Continue.IsEnabled = true;
+        }
+
+        private void SpellSelection_CheckListBox_ItemSelectionChanged(object sender, ItemSelectionChangedEventArgs e)
+        {
+            if (SpellSelection_CheckListBox.SelectedItems.Count >= choicesToMake)
+            {
+            }
+
         }
     }
 }

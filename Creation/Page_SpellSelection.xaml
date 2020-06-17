@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DND"
+      xmlns:local="clr-namespace:DND" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Spell Selection"
@@ -13,8 +13,19 @@
         <Grid.Background>
             <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
         </Grid.Background>
-        <StackPanel Name="SpellSelection_StackPanel" Margin="5">
-            
+        <StackPanel Name="SpellSelection_StackPanel" Margin="10,10,10,10">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type StackPanel}">
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Label Name="Label_SpellSelectionClassTitle" Padding="5,5,5,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Label.Background>
+                    <ImageBrush ImageSource="../Information/Resources_Information/PaperTexture2.jpg"/>
+                </Label.Background>
+            </Label>
+            <TextBlock Name="SpellSelectionChoiceToMake_TextBlock" Margin="5,5,5,5" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <xctk:CheckListBox Name="SpellSelection_CheckListBox" Width="400" ItemSelectionChanged="SpellSelection_CheckListBox_ItemSelectionChanged"/>
         </StackPanel>
     </Grid>
 </Page>

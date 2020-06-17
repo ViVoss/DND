@@ -149,9 +149,47 @@ namespace DND
                 Character.Current.Attributes.Intelligence = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesInt.Text);
                 Character.Current.Attributes.Wisdom = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesWis.Text);
                 Character.Current.Attributes.Charisma = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesCha.Text);
-                
+
                 //InventorySelection laden
-                Frame1.Content = SpellSelection;
+                switch (Character.Current.Class)
+                {
+                    case "bard":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "cleric":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "druid":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "paladin":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "ranger":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "sorcerer":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "warlock":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "wizard":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    default:
+                        Frame1.Content = MiscellaneousSelection;
+
+                        break;
+                }
             }
 
 
@@ -232,7 +270,45 @@ namespace DND
             }
             else if (Frame1.Content == MiscellaneousSelection)
             {
-                Frame1.Content = SpellSelection;
+                switch (Character.Current.Class)
+                {
+                    case "bard":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "cleric":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "druid":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "paladin":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "ranger":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "sorcerer":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "warlock":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    case "wizard":
+                        Frame1.Content = SpellSelection;
+
+                        break;
+                    default:
+                        Frame1.Content = AttributeSelection;
+
+                        break;
+                }
             }
             else if (Frame1.Content == OverviewSelection)
             {
