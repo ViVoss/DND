@@ -36,5 +36,25 @@ namespace DND
         public string RacialTraitOptionsCol { get; set; }
         public string LanguageDescCol { get; set; }
         public string SizeDescCol { get; set; }
+        public int ProfBonusCol { get; set; }
+        public string FeaturesCol { get; set; }
+        public string MartialArtsCol { get; set; }
+        public string KiPointsCol { get; set; }
+        public string UnarmoredMovementCol { get; set; }
+        public string SneakAttackCol { get; set; }
+        public string SorceryPointsCol { get; set; }
+        public string RagesCol { get; set; }
+        public int RageDamageCol { get; set; }
+        public int CantripsKnownCol { get; set; }
+        public int SpellsKnownCol { get; set; }
+        public int FirstLevelSpellCol { get; set; }
+        public int SecondLevelSpellCol { get; set; }
+        public int ThirdLevelSpellCol { get; set; }
+        public int FourthLevelSpellCol { get; set; }
+        public int FithLevelSpellCol { get; set; }
+        public int SixthLevelSpellCol { get; set; }
+        public int SeventhLevelSpellCol { get; set; }
+        public int EigthLevelSpellCol { get; set; }
+        public int NinthLevelSpellCol { get; set; }
     }
 }

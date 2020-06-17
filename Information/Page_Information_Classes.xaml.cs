@@ -28,91 +28,162 @@ namespace DND
 
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
-            string currRace = ((Button)sender).Tag.ToString();
+            string currClass = ((Button)sender).Tag.ToString();
 
             //TextBlock_RaceInfoTitle.Visibility = Visibility.Visible;
-
-            switch (currRace)
+            RagesColumn.Visibility = Visibility.Hidden;
+            RageDamageColumn.Visibility = Visibility.Hidden;
+            MartialArtsColumn.Visibility = Visibility.Hidden;
+            KiPointsColumn.Visibility = Visibility.Hidden;
+            UnarmoredMovementColumn.Visibility = Visibility.Hidden;
+            SneakAttackColumn.Visibility = Visibility.Hidden;
+            SorceryPointsColumn.Visibility = Visibility.Hidden;
+            CantripsKnownColumn.Visibility = Visibility.Hidden;
+            SpellsKnownColumn.Visibility = Visibility.Hidden;
+            FirstLevelSpellColumn.Visibility = Visibility.Hidden;
+            SecondLevelSpellColumn.Visibility = Visibility.Hidden;
+            ThirdLevelSpellColumn.Visibility = Visibility.Hidden;
+            FourthLevelSpellColumn.Visibility = Visibility.Hidden;
+            FithLevelSpellColumn.Visibility = Visibility.Hidden;
+            SixthLevelSpellColumn.Visibility = Visibility.Hidden;
+            SeventhLevelSpellColumn.Visibility = Visibility.Hidden;
+            EigthLevelSpellColumn.Visibility = Visibility.Hidden;
+            NinthLevelSpellColumn.Visibility = Visibility.Hidden;
+            switch (currClass)
             {
                 case "barbarian":
                     ClassDataGrid.Items.Clear();
-                    //SubraceDataGrid.Items.Clear();
-                    //SubraceDataGrid.Visibility = Visibility.Visible;
-
-
-                    //TextBlock_SubRaceInfoTitle.Visibility = Visibility.Visible;
+                    RagesColumn.Visibility = Visibility.Visible;
+                    RageDamageColumn.Visibility = Visibility.Visible;
                     TextBlock_ClassInfoTitle.Text = "Barbarian";
-                    //TextBlock_SubRaceInfoTitle.Text = "Dwarf Subraces";
-
-                    //ClassLevels barbarian = dndInformation.GetClassLevelsDataGridInformation("barbarian");
-                    //SubRace hillDwarf = dndInformation.GetSubRaceDataGridInformation("hill-dwarf");
-                    //SubRace mountainDwarf = dndInformation.GetSubRaceDbDataGridInformation("mountain-dwarf");
-
-                    //addClassDataGridInformation(barbarian,1);
-                    //addSubRaceDataGridInformation(hillDwarf, 1);
-                    //addSubRaceDataGridInformation(mountainDwarf, 2);
-
+                    for (int i = 1; i <= 20; i++)
+                    {
+                        KlasseLevel barbarian = dndInformation.GetClassLevelInformation("barbarian", i);
+                        addClassDataGridInformation(barbarian);
+                    }
+                    break;
+                case "bard":
+                    ClassDataGrid.Items.Clear();
+                    CantripsKnownColumn.Visibility = Visibility.Visible;
+                    SpellsKnownColumn.Visibility = Visibility.Visible;
+                    FirstLevelSpellColumn.Visibility = Visibility.Visible;
+                    SecondLevelSpellColumn.Visibility = Visibility.Visible;
+                    ThirdLevelSpellColumn.Visibility = Visibility.Visible;
+                    FourthLevelSpellColumn.Visibility = Visibility.Visible;
+                    FithLevelSpellColumn.Visibility = Visibility.Visible;
+                    SixthLevelSpellColumn.Visibility = Visibility.Visible;
+                    SeventhLevelSpellColumn.Visibility = Visibility.Visible;
+                    EigthLevelSpellColumn.Visibility = Visibility.Visible;
+                    NinthLevelSpellColumn.Visibility = Visibility.Visible;
+                    TextBlock_ClassInfoTitle.Text = "Bard";
+                    for (int i = 1; i <= 20; i++)
+                    {
+                        KlasseLevel bard = dndInformation.GetClassLevelInformation("bard", i);
+                        addClassDataGridInformation(bard);
+                    }
+                    break;
+                case "cleric":
+                    ClassDataGrid.Items.Clear();
+                    CantripsKnownColumn.Visibility = Visibility.Visible;
+                    SpellsKnownColumn.Visibility = Visibility.Visible;
+                    FirstLevelSpellColumn.Visibility = Visibility.Visible;
+                    SecondLevelSpellColumn.Visibility = Visibility.Visible;
+                    ThirdLevelSpellColumn.Visibility = Visibility.Visible;
+                    FourthLevelSpellColumn.Visibility = Visibility.Visible;
+                    FithLevelSpellColumn.Visibility = Visibility.Visible;
+                    SixthLevelSpellColumn.Visibility = Visibility.Visible;
+                    SeventhLevelSpellColumn.Visibility = Visibility.Visible;
+                    EigthLevelSpellColumn.Visibility = Visibility.Visible;
+                    NinthLevelSpellColumn.Visibility = Visibility.Visible;
+                    TextBlock_ClassInfoTitle.Text = "Cleric";
+                    for (int i = 1; i <= 20; i++)
+                    {
+                        KlasseLevel cleric = dndInformation.GetClassLevelInformation("cleric", i);
+                        addClassDataGridInformation(cleric);
+                    }
                     break;
             }
         }
-        public void addClassDataGridInformation(ClassLevels classlvls, int lvl)
+        public void addClassDataGridInformation(KlasseLevel classlvls)
         {
-            /*string compAbilityBonuses = "";
-            string traits = "";
-            string languages = "";
-            */
-            /*
-            foreach (AbilityBonus abilityBonus in race.AbilityBonuses)
+            string features = "";
+            foreach (Features feature in classlvls.Features)
             {
-                if (abilityBonus.Equals(race.AbilityBonuses.Last()))
+                if (feature.Equals(classlvls.Features.Last()))
                 {
-                    compAbilityBonuses += abilityBonus.Name + " +" + abilityBonus.Bonus;
+                    features += feature.Name;
                 }
                 else
                 {
-                    compAbilityBonuses += abilityBonus.Name + " +" + abilityBonus.Bonus + ", ";
+                    features += feature.Name + ", ";
                 }
             }
-
-            foreach (Trait trait in race.Traits)
+            switch(classlvls.klasse.Name)
             {
-                if (trait.Equals(race.Traits.Last()))
-                {
-                    traits += trait.Name;
-                }
-                else
-                {
-                    traits += trait.Name + ", ";
-                }
+                case "Barbarian":
+                    if ((classlvls.Level == 6) || (classlvls.Level == 10) || (classlvls.Level == 14))
+                    {
+                        features += "Path Feature";
+                    }
+                    break;
+                case "Bard":
+                    if ((classlvls.Level == 6) || (classlvls.Level == 14))
+                    {
+                        features += ", Bard College Feature";
+                    }
+                    break;
+                case "Cleric":
+                    if ((classlvls.Level == 2) || (classlvls.Level == 6) || (classlvls.Level == 8) || (classlvls.Level == 17))
+                    {
+                        features += ", Divine Domain Feature";
+                    }
+                    break;
             }
-
-            foreach (Language language in race.Languages)
+            switch(classlvls.klasse.Name)
             {
-                if (language.Equals(race.Languages.Last()))
-                {
-                    languages += language.Name;
-                }
-                else
-                {
-                    languages += language.Name + ", ";
-                }
+                case "Barbarian":
+                    DataGridItem dataClassGridItem = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        RagesCol = classlvls.ClassSpecific.RageCount,
+                        RageDamageCol = classlvls.ClassSpecific.RageDamageBonus
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem);
+                    break;
+                case "Bard":
+                case "Cleric":
+                    DataGridItem dataClassGridItem1 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        CantripsKnownCol = classlvls.Spellcasting.CantripsKnown,
+                        SpellsKnownCol = classlvls.Spellcasting.SpellsKnown,
+                        FirstLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel1,
+                        SecondLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel2,
+                        ThirdLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel3,
+                        FourthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel4,
+                        FithLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel5,
+                        SixthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel6,
+                        SeventhLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel7,
+                        EigthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel8,
+                        NinthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel9
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem1);
+                    break;
             }
-            */
-            DataGridItem dataClassGridItem = new DataGridItem()
-            {
-                LevelCol = lvl,
-                //ProficiencyBonusCol = classlvls.Class,
-                /*AgeCol = race.Age,
-                AlignmentCol = race.Alignment,
-                SizeCol = race.Size,
-                SizeDescCol = race.SizeDescription,
-                TraitsCol = traits,
-                SpeedCol = race.Speed,
-                LanguagesCol = languages,
-                LanguageDescCol = race.LanguageDesc*/
-            };
-
-            ClassDataGrid.Items.Add(dataClassGridItem);
         }
+        /*
+        private void ClassDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            KlasseLevel test = (KlasseLevel)ClassDataGrid.SelectedItem;
+            foreach (Features features in test.Features)
+            {
+                MessageBox.Show(features.Name);
+            }
+        }
+        */
     }
 }

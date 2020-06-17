@@ -174,6 +174,7 @@
     <Compile Include="Information\Level_Tables\Level_Table_Cleric.xaml.cs">
       <DependentUpon>Level_Table_Cleric.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KlasseLevel.cs" />
     <Compile Include="MongoConnection.cs" />
     <Compile Include="Creation\Page_ClassSelection.xaml.cs">
       <DependentUpon>Page_ClassSelection.xaml</DependentUpon>

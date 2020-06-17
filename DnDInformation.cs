@@ -49,6 +49,15 @@ namespace DND
 
             return clazz;
         }
+        public KlasseLevel GetClassLevelInformation(string klasse, int i)
+        {
+            WebAufruf<KlasseLevel> webAufruf = new WebAufruf<KlasseLevel>();
+
+            requestParameter = "classes/" + klasse + "/levels/" + i;
+            KlasseLevel classlevel = webAufruf.GetJsonResponse(requestParameter);
+            
+            return classlevel;
+        }
 
         public StartingEquipment GetStartingEquipmentInformation(string klasse)
         {

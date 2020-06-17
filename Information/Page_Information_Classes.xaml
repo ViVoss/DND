@@ -41,60 +41,35 @@
                     <ImageBrush ImageSource="Resources_Information/PaperTexture2.jpg"/>
                 </TextBlock.Background>
             </TextBlock>
-            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="ClassDataGrid_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Level" Width="30" Binding="{Binding Path=LevelCol}" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="nd" Width="*" Binding="{Binding Path=ndCol}" IsReadOnly="True">
+                    <DataGridTextColumn x:Name="LevelColumn" Header="Level" Width="50" Binding="{Binding Path=LevelCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="ProfBonusColumn" Header="Proficiency Bonus" Width="*" Binding="{Binding Path=ProfBonusCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="MartialArtsColumn" Header="Martial Arts" Width="*" Binding="{Binding Path=MartialArtsCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="KiPointsColumn" Header="Ki Points" Width="*" Binding="{Binding Path=KiPointsCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="UnarmoredMovementColumn" Header="Unarmored Movement" Width="*" Binding="{Binding Path=UnarmoredMovementCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SneakAttackColumn" Header="Sneak Attack" Width="*" Binding="{Binding Path=SneakAttackCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SorceryPointsColumn" Header="Sorcery Points" Width="*" Binding="{Binding Path=SorceryPointsCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="FeaturesColumn" Header="Features" Width="200" Binding="{Binding Path=FeaturesCol}" IsReadOnly="True">
                         <DataGridTextColumn.ElementStyle>
                             <Style>
                                 <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Age" Width="*" Binding="{Binding Path=AgeCol}" IsReadOnly="True">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Alignment" Width="*" Binding="{Binding Path=AlignmentCol}" IsReadOnly="True">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Size" Width="70" Binding="{Binding Path=SizeCol}" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Size Description" Width="*" Binding="{Binding Path=SizeDescCol}" IsReadOnly="True">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Traits" Width="*" Binding="{Binding Path=TraitsCol}" IsReadOnly="True">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Speed" Width="50" Binding="{Binding Path=SpeedCol}" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Languages" Width="*" Binding="{Binding Path=LanguagesCol}" IsReadOnly="True">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Language Description" Width="*" Binding="{Binding Path=LanguageDescCol}" IsReadOnly="True">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="RagesColumn" Header="Rages" Width="*" Binding="{Binding Path=RagesCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="RageDamageColumn" Header="Rage Damage" Width="*" Binding="{Binding Path=RageDamageCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="CantripsKnownColumn" Header="Cantrips Known" Width="*" Binding="{Binding Path=CantripsKnownCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SpellsKnownColumn" Header="Spells Known" Width="*" Binding="{Binding Path=SpellsKnownCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="FirstLevelSpellColumn" Header="1." Width="*" Binding="{Binding Path=FirstLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SecondLevelSpellColumn" Header="2." Width="*" Binding="{Binding Path=SecondLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="ThirdLevelSpellColumn" Header="3." Width="*" Binding="{Binding Path=ThirdLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="FourthLevelSpellColumn" Header="4." Width="*" Binding="{Binding Path=FourthLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="FithLevelSpellColumn" Header="5." Width="*" Binding="{Binding Path=FithLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SixthLevelSpellColumn" Header="6." Width="*" Binding="{Binding Path=SixthLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="SeventhLevelSpellColumn" Header="7." Width="*" Binding="{Binding Path=SeventhLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="EigthLevelSpellColumn" Header="8." Width="*" Binding="{Binding Path=EigthLevelSpellCol}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="NinthLevelSpellColumn" Header="9." Width="*" Binding="{Binding Path=NinthLevelSpellCol}" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Grid.Background>
