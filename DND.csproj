@@ -179,9 +179,6 @@
     <Compile Include="Creation\Page_AttributeSelection.xaml.cs">
       <DependentUpon>Page_AttributeSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creation\Page_InventorySelection.xaml.cs">
-      <DependentUpon>Page_InventorySelection.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Creation\Page_Miscellaneous.xaml.cs">
       <DependentUpon>Page_Miscellaneous.xaml</DependentUpon>
     </Compile>
@@ -334,10 +331,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Creation\Page_AttributeSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Creation\Page_InventorySelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

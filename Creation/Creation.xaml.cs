@@ -24,7 +24,6 @@ namespace DND
         Page_RaceSelection RaceSelection;
         Page_BackgroundSelection BackgroundSelection;
         Page_AttributeSelection AttributeSelection;
-        Page_InventorySelection InventorySelection;
         Page_SpellSelection SpellSelection;
         Page_Miscellaneous MiscellaneousSelection;
         Page_Overview OverviewSelection;
@@ -57,7 +56,6 @@ namespace DND
             ClassSelection = new Page_ClassSelection(this);
             BackgroundSelection = new Page_BackgroundSelection(this);
             AttributeSelection = new Page_AttributeSelection(this);
-            InventorySelection = new Page_InventorySelection(this);
             SpellSelection = new Page_SpellSelection(this);
             MiscellaneousSelection = new Page_Miscellaneous(this);
             OverviewSelection = new Page_Overview(this);
@@ -153,14 +151,6 @@ namespace DND
                 Character.Current.Attributes.Charisma = Convert.ToUInt16(AttributeSelection.cmbAttributeValuesCha.Text);
                 
                 //InventorySelection laden
-                Frame1.Content = InventorySelection;
-            }
-
-            else if (Frame1.Content == InventorySelection)
-            {
-                //InventorySelection speichern
-
-                //SpellSelection laden
                 Frame1.Content = SpellSelection;
             }
 
@@ -236,13 +226,9 @@ namespace DND
                 if (this.TextBox_Background.Text != "")
                     ButtonContinueEnabled(true);
             }
-            else if (Frame1.Content == InventorySelection)
-            {
-                Frame1.Content = AttributeSelection;
-            }
             else if (Frame1.Content == SpellSelection)
             {
-                Frame1.Content = InventorySelection;
+                Frame1.Content = AttributeSelection;
             }
             else if (Frame1.Content == MiscellaneousSelection)
             {
