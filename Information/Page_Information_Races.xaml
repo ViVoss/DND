@@ -187,7 +187,7 @@
             <Button Name="Dwarf" Tag="dwarf">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Barbarian.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Dwarf.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Dwarf"/>
@@ -197,7 +197,7 @@
             <Button Name="Elf" Tag="elf" Grid.Row="1">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Bard.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Elf.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Elf"/>
@@ -207,7 +207,7 @@
             <Button Name="Halfling" Tag="halfling" Grid.Row="2">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Cleric.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Halfling.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Halfling"/>
@@ -217,7 +217,7 @@
             <Button Name="Human" Tag="human" Grid.Row="3">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Druid.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Human.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Human"/>
@@ -227,7 +227,7 @@
             <Button Name="Dragonborn" Tag="dragonborn" Grid.Row="4">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Fighter.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Dragonborn.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Dragonborn"/>
@@ -237,7 +237,7 @@
             <Button Name="Gnome" Tag="gnome" Grid.Row="5">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Monk.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Gnome.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Gnome"/>
@@ -247,7 +247,7 @@
             <Button Name="HalfOrc" Tag="half-orc" Grid.Row="6">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Paladin.png"/>
+                        <Image Source="Resources_Information/Race_Icons/HalfOrc.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Half-Orc"/>
@@ -257,7 +257,7 @@
             <Button Name="HalfElf" Tag="half-elf" Grid.Row="7">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Ranger.png"/>
+                        <Image Source="Resources_Information/Race_Icons/HalfElf.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Half-Elf"/>
@@ -267,7 +267,7 @@
             <Button Name="Tiefling" Tag="tiefling" Grid.Row="8">
                 <DockPanel>
                     <Viewbox>
-                        <Image Source="Resources_Information/Class_Icons/Rogue.png"/>
+                        <Image Source="Resources_Information/Race_Icons/Tiefling.png"/>
                     </Viewbox>
                     <Viewbox Stretch="Uniform">
                         <TextBlock Text="Tiefling"/>

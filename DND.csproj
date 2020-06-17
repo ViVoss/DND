@@ -165,15 +165,6 @@
       <DependentUpon>Page_Information_Spells.xaml</DependentUpon>
     </Compile>
     <Compile Include="Klasse.cs" />
-    <Compile Include="Information\Level_Tables\Level_Table_Barbarian.xaml.cs">
-      <DependentUpon>Level_Table_Barbarian.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Information\Level_Tables\Level_Table_Bard.xaml.cs">
-      <DependentUpon>Level_Table_Bard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Information\Level_Tables\Level_Table_Cleric.xaml.cs">
-      <DependentUpon>Level_Table_Cleric.xaml</DependentUpon>
-    </Compile>
     <Compile Include="KlasseLevel.cs" />
     <Compile Include="MongoConnection.cs" />
     <Compile Include="Creation\Page_ClassSelection.xaml.cs">
@@ -271,23 +262,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Information\Level_Tables\Level_Table_Barbarian.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Information\Level_Tables\Level_Table_Bard.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Information\Page_Information_Races.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Information\Page_Information_Spells.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Information\Level_Tables\Level_Table_Cleric.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -522,12 +501,34 @@
   <ItemGroup>
     <Resource Include="Information\Resources_Information\Class_Icons\Wizard.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Menu\Spells.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Information\Resources_Information\PaperTexture.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Information\Resources_Information\PaperTexture2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\Races.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\D20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\Classes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Information\Resources_Information\Race_Icons\Dwarf.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\Halfling.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\Human.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\Gnome.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\Dragonborn.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\HalfOrc.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\HalfElf.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\Elf.png" />
+    <Resource Include="Information\Resources_Information\Race_Icons\Tiefling.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />

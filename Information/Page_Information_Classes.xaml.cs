@@ -24,11 +24,15 @@ namespace DND
         public Page_Information_Classes()
         {
             InitializeComponent();
+
         }
         private int warlockslots;
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
             string currClass = ((Button)sender).Tag.ToString();
+            LevelColumn.Visibility = Visibility.Visible;
+            ProfBonusColumn.Visibility = Visibility.Visible;
+            FeaturesColumn.Visibility = Visibility.Visible;
             TextBlock_ClassInfoTitle.Visibility = Visibility.Visible;
             RagesColumn.Visibility = Visibility.Hidden;
             RageDamageColumn.Visibility = Visibility.Hidden;
@@ -255,6 +259,10 @@ namespace DND
                     {
                         features += ", Bard College Feature";
                     }
+                    if ((classlvls.Level == 3) || (classlvls.Level == 10))
+                    {
+                        features += ", Expertise";
+                    }
                     break;
                 case "Cleric":
                     if ((classlvls.Level == 2) || (classlvls.Level == 6) || (classlvls.Level == 8) || (classlvls.Level == 17))
@@ -301,17 +309,37 @@ namespace DND
                     {
                         features += "Roguish Archetype Feature";
                     }
+                    if (classlvls.Level == 1)
+                    {
+                        features += ", Expertise";
+                    }
+                    if (classlvls.Level == 6)
+                    {
+                        features += "Expertise";
+                    }
                     break;
                 case "Sorcerer":
                     if ((classlvls.Level == 6) || (classlvls.Level == 14) || (classlvls.Level == 18))
                     {
                         features += "Sorcerous Origin Feature";
                     }
+                    if ((classlvls.Level == 3) || (classlvls.Level == 10) || (classlvls.Level == 17))
+                    {
+                        features += "Metamagic";
+                    }
                     break;
                 case "Warlock":
                     if ((classlvls.Level == 6) || (classlvls.Level == 10) || (classlvls.Level == 14))
                     {
                         features += "Otherworldly Patron Feature";
+                    }
+                    if (classlvls.Level == 2)
+                    {
+                        features += "Eldritch Invocations";
+                    }
+                    if (classlvls.Level == 3)
+                    {
+                        features += "Pact Boon";
                     }
                     break;
                 case "Wizard":

@@ -9,8 +9,6 @@
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="10"/>
-            <Setter Property="BorderBrush" Value="Yellow"/>
-            <Setter Property="BorderThickness" Value="10"/>
         </Style>
         <Style TargetType="Image">
             <Setter Property="Width" Value="40"/>
@@ -42,7 +40,7 @@
                 <Button Name="Creation" Grid.Column="0" Grid.Row="0" Click="Creation_ButtonClick">
                     <DockPanel>
                         <Viewbox>
-                            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Button_Icon_Red.svg/2000px-Button_Icon_Red.svg.png"/>
+                            <Image Source="D20.png"/>
                         </Viewbox>
                         <Viewbox Stretch="Uniform">
                             <TextBlock Text="Character&#x0a;Creation"/>
@@ -52,7 +50,7 @@
                 <Button Name="Spells" Grid.Column="1" Grid.Row="0" Click="Spells_Click" >
                     <DockPanel>
                         <Viewbox>
-                            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Button_Icon_Red.svg/2000px-Button_Icon_Red.svg.png"/>
+                            <Image Source="Spells.png"/>
                         </Viewbox>
                         <Viewbox Stretch="Uniform">
                             <TextBlock Text="Spells"/>
@@ -62,7 +60,7 @@
                 <Button Name="Races" Grid.Column="2" Grid.Row="0" Click="Races_Click">
                     <DockPanel>
                         <Viewbox>
-                            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Button_Icon_Red.svg/2000px-Button_Icon_Red.svg.png"/>
+                            <Image Source="Races.png"/>
                         </Viewbox>
                         <Viewbox Stretch="Uniform">
                             <TextBlock Text="Races" />
@@ -72,7 +70,7 @@
                 <Button Name="Classes" Grid.Column="3" Grid.Row="0" Click="Classes_Click">
                     <DockPanel>
                         <Viewbox>
-                            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Button_Icon_Red.svg/2000px-Button_Icon_Red.svg.png"/>
+                            <Image Source="Classes.png"/>
                         </Viewbox>
                         <Viewbox Stretch="Uniform">
                             <TextBlock Text="Classes"/>

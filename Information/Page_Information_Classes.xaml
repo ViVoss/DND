@@ -39,36 +39,36 @@
             </TextBlock>
             <DataGrid MaxWidth="1100" Grid.Column="0" Grid.Row="2" Name="ClassDataGrid" Margin="0,50,0,0" AlternatingRowBackground="LightGray" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="LevelColumn" Header="Level" Width="*" Binding="{Binding Path=LevelCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="ProfBonusColumn" Header="Proficiency Bonus" Width="*" Binding="{Binding Path=ProfBonusCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="MartialArtsColumn" Header="Martial Arts" Width="*" Binding="{Binding Path=MartialArtsCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="KiPointsColumn" Header="Ki Points" Width="*" Binding="{Binding Path=KiPointsCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="UnarmoredMovementColumn" Header="Unarmored Movement" Width="*" Binding="{Binding Path=UnarmoredMovementCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SneakAttackColumn" Header="Sneak Attack" Width="*" Binding="{Binding Path=SneakAttackCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SorceryPointsColumn" Header="Sorcery Points" Width="*" Binding="{Binding Path=SorceryPointsCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="FeaturesColumn" Header="Features" Width="400" Binding="{Binding Path=FeaturesCol}" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn x:Name="LevelColumn" Header="Level" Width="*" Binding="{Binding Path=LevelCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="ProfBonusColumn" Header="Proficiency Bonus" Width="*" Binding="{Binding Path=ProfBonusCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="MartialArtsColumn" Header="Martial Arts" Width="*" Binding="{Binding Path=MartialArtsCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="KiPointsColumn" Header="Ki Points" Width="*" Binding="{Binding Path=KiPointsCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="UnarmoredMovementColumn" Header="Unarmored Movement" Width="*" Binding="{Binding Path=UnarmoredMovementCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SneakAttackColumn" Header="Sneak Attack" Width="*" Binding="{Binding Path=SneakAttackCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SorceryPointsColumn" Header="Sorcery Points" Width="*" Binding="{Binding Path=SorceryPointsCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="FeaturesColumn" Header="Features" Width="400" Binding="{Binding Path=FeaturesCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden">
                         <DataGridTextColumn.ElementStyle>
                             <Style>
                                 <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn x:Name="RagesColumn" Header="Rages" Width="*" Binding="{Binding Path=RagesCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="RageDamageColumn" Header="Rage Damage" Width="*" Binding="{Binding Path=RageDamageCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="CantripsKnownColumn" Header="Cantrips Known" Width="*" Binding="{Binding Path=CantripsKnownCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SpellsKnownColumn" Header="Spells Known" Width="*" Binding="{Binding Path=SpellsKnownCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="FirstLevelSpellColumn" Header="1." Width="*" Binding="{Binding Path=FirstLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SecondLevelSpellColumn" Header="2." Width="*" Binding="{Binding Path=SecondLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="ThirdLevelSpellColumn" Header="3." Width="*" Binding="{Binding Path=ThirdLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="FourthLevelSpellColumn" Header="4." Width="*" Binding="{Binding Path=FourthLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="FithLevelSpellColumn" Header="5." Width="*" Binding="{Binding Path=FithLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SixthLevelSpellColumn" Header="6." Width="*" Binding="{Binding Path=SixthLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SeventhLevelSpellColumn" Header="7." Width="*" Binding="{Binding Path=SeventhLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="EigthLevelSpellColumn" Header="8." Width="*" Binding="{Binding Path=EigthLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="NinthLevelSpellColumn" Header="9." Width="*" Binding="{Binding Path=NinthLevelSpellCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SpellSlotsColumn" Header="Spell Slots" Width="*" Binding="{Binding Path=SpellSlotsCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="SlotLevelColumn" Header="Slot Level" Width="*" Binding="{Binding Path=SlotLevelCol}" IsReadOnly="True" CanUserSort="False"/>
-                    <DataGridTextColumn x:Name="InvocationsKnownColumn" Header="Invocations Known" Width="*" Binding="{Binding Path=InvocationsKnownCol}" IsReadOnly="True" CanUserSort="False"/>
+                    <DataGridTextColumn x:Name="RagesColumn" Header="Rages" Width="*" Binding="{Binding Path=RagesCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="RageDamageColumn" Header="Rage Damage" Width="*" Binding="{Binding Path=RageDamageCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="CantripsKnownColumn" Header="Cantrips Known" Width="*" Binding="{Binding Path=CantripsKnownCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SpellsKnownColumn" Header="Spells Known" Width="*" Binding="{Binding Path=SpellsKnownCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="FirstLevelSpellColumn" Header="1." Width="*" Binding="{Binding Path=FirstLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SecondLevelSpellColumn" Header="2." Width="*" Binding="{Binding Path=SecondLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="ThirdLevelSpellColumn" Header="3." Width="*" Binding="{Binding Path=ThirdLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="FourthLevelSpellColumn" Header="4." Width="*" Binding="{Binding Path=FourthLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="FithLevelSpellColumn" Header="5." Width="*" Binding="{Binding Path=FithLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SixthLevelSpellColumn" Header="6." Width="*" Binding="{Binding Path=SixthLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SeventhLevelSpellColumn" Header="7." Width="*" Binding="{Binding Path=SeventhLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="EigthLevelSpellColumn" Header="8." Width="*" Binding="{Binding Path=EigthLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="NinthLevelSpellColumn" Header="9." Width="*" Binding="{Binding Path=NinthLevelSpellCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SpellSlotsColumn" Header="Spell Slots" Width="*" Binding="{Binding Path=SpellSlotsCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="SlotLevelColumn" Header="Slot Level" Width="*" Binding="{Binding Path=SlotLevelCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
+                    <DataGridTextColumn x:Name="InvocationsKnownColumn" Header="Invocations Known" Width="*" Binding="{Binding Path=InvocationsKnownCol}" IsReadOnly="True" CanUserSort="False" Visibility="Hidden"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Grid.Background>
