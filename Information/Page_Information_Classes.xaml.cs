@@ -25,7 +25,7 @@ namespace DND
         {
             InitializeComponent();
         }
-
+        private int warlockslots;
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
             string currClass = ((Button)sender).Tag.ToString();
@@ -48,6 +48,9 @@ namespace DND
             SeventhLevelSpellColumn.Visibility = Visibility.Hidden;
             EigthLevelSpellColumn.Visibility = Visibility.Hidden;
             NinthLevelSpellColumn.Visibility = Visibility.Hidden;
+            SpellSlotsColumn.Visibility = Visibility.Hidden;
+            SlotLevelColumn.Visibility = Visibility.Hidden;
+            InvocationsKnownColumn.Visibility = Visibility.Hidden;
             switch (currClass)
             {
                 case "barbarian":
@@ -324,19 +327,18 @@ namespace DND
                     DataGridItem dataClassGridItem = new DataGridItem()
                     {
                         LevelCol = classlvls.Level,
-                        ProfBonusCol = classlvls.ProfBonus,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
                         FeaturesCol = features,
                         RagesCol = classlvls.ClassSpecific.RageCount,
-                        RageDamageCol = classlvls.ClassSpecific.RageDamageBonus
+                        RageDamageCol = "+" + classlvls.ClassSpecific.RageDamageBonus
                     };
                     ClassDataGrid.Items.Add(dataClassGridItem);
                     break;
                 case "Bard":
-                case "Sorcerer":
                     DataGridItem dataClassGridItem1 = new DataGridItem()
                     {
                         LevelCol = classlvls.Level,
-                        ProfBonusCol = classlvls.ProfBonus,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
                         FeaturesCol = features,
                         CantripsKnownCol = classlvls.Spellcasting.CantripsKnown,
                         SpellsKnownCol = classlvls.Spellcasting.SpellsKnown,
@@ -358,7 +360,7 @@ namespace DND
                     DataGridItem dataClassGridItem2 = new DataGridItem()
                     {
                         LevelCol = classlvls.Level,
-                        ProfBonusCol = classlvls.ProfBonus,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
                         FeaturesCol = features,
                         CantripsKnownCol = classlvls.Spellcasting.CantripsKnown,
                         FirstLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel1,
@@ -373,39 +375,132 @@ namespace DND
                     };
                     ClassDataGrid.Items.Add(dataClassGridItem2);
                     break;
-                    /*
-
-                case "monk":
-                    MartialArtsColumn.Visibility = Visibility.Visible;
-                    KiPointsColumn.Visibility = Visibility.Visible;
-                    UnarmoredMovementColumn.Visibility = Visibility.Visible;
+                case "Fighter":
+                    DataGridItem dataClassGridItem9 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem9);
                     break;
-                case "paladin":
-                    FirstLevelSpellColumn.Visibility = Visibility.Visible;
-                    SecondLevelSpellColumn.Visibility = Visibility.Visible;
-                    ThirdLevelSpellColumn.Visibility = Visibility.Visible;
-                    FourthLevelSpellColumn.Visibility = Visibility.Visible;
-                    FithLevelSpellColumn.Visibility = Visibility.Visible;
+                case "Monk":
+                    DataGridItem dataClassGridItem3 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        MartialArtsCol = classlvls.ClassSpecific.MartialArts.DiceCount + "d" + classlvls.ClassSpecific.MartialArts.DiceValue,
+                        KiPointsCol = classlvls.ClassSpecific.KiPoints,
+                        UnarmoredMovementCol = "+" + classlvls.ClassSpecific.UnarmoredMovement + " ft."
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem3);
                     break;
-                case "ranger":
-                    SpellsKnownColumn.Visibility = Visibility.Visible;
-                    FirstLevelSpellColumn.Visibility = Visibility.Visible;
-                    SecondLevelSpellColumn.Visibility = Visibility.Visible;
-                    ThirdLevelSpellColumn.Visibility = Visibility.Visible;
-                    FourthLevelSpellColumn.Visibility = Visibility.Visible;
-                    FithLevelSpellColumn.Visibility = Visibility.Visible;
+                case "Paladin":
+                    DataGridItem dataClassGridItem4 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        FirstLevelSpellCol = classlvls.SpellSlotsLevel1,
+                        SecondLevelSpellCol = classlvls.SpellSlotsLevel2,
+                        ThirdLevelSpellCol = classlvls.SpellSlotsLevel3,
+                        FourthLevelSpellCol = classlvls.SpellSlotsLevel4,
+                        FithLevelSpellCol = classlvls.SpellSlotsLevel5
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem4);
                     break;
-                case "rogue":
-                    SneakAttackColumn.Visibility = Visibility.Visible;
+                case "Ranger":
+                    DataGridItem dataClassGridItem5 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        SpellsKnownCol = classlvls.Spellcasting.SpellsKnown,
+                        FirstLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel1,
+                        SecondLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel2,
+                        ThirdLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel3,
+                        FourthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel4,
+                        FithLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel5
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem5);
                     break;
-                case "warlock":
-                    CantripsKnownColumn.Visibility = Visibility.Visible;
-                    SpellsKnownColumn.Visibility = Visibility.Visible;
-                    SpellSlotsColumn.Visibility = Visibility.Visible;
-                    SlotLevelColumn.Visibility = Visibility.Visible;
-                    InvocationsKnownColumn.Visibility = Visibility.Visible;
-                    break;*/
+                case "Rogue":
+                    DataGridItem dataClassGridItem6 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        SneakAttackCol = classlvls.ClassSpecific.SneakAttack.DiceCount + "d" + classlvls.ClassSpecific.SneakAttack.DiceValue
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem6);
+                    break;
+                case "Sorcerer":
+                    DataGridItem dataClassGridItem7 = new DataGridItem()
+                    {
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        SorceryPointsCol = classlvls.ClassSpecific.SorceryPoints,
+                        CantripsKnownCol = classlvls.Spellcasting.CantripsKnown,
+                        SpellsKnownCol = classlvls.Spellcasting.SpellsKnown,
+                        FirstLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel1,
+                        SecondLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel2,
+                        ThirdLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel3,
+                        FourthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel4,
+                        FithLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel5,
+                        SixthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel6,
+                        SeventhLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel7,
+                        EigthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel8,
+                        NinthLevelSpellCol = classlvls.Spellcasting.SpellSlotsLevel9
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem7);
+                    break;
+                case "Warlock":
+                    DataGridItem dataClassGridItem8 = new DataGridItem()
+                    {                        
+                        LevelCol = classlvls.Level,
+                        ProfBonusCol = "+" + classlvls.ProfBonus,
+                        FeaturesCol = features,
+                        CantripsKnownCol = classlvls.Spellcasting.CantripsKnown,
+                        SpellsKnownCol = classlvls.Spellcasting.SpellsKnown,
+                        SlotLevelCol = GetSlotLevel(classlvls),
+                        SpellSlotsCol = warlockslots,
+                        InvocationsKnownCol = classlvls.ClassSpecific.InvocationsKnown
+                    };
+                    ClassDataGrid.Items.Add(dataClassGridItem8);
+                    break;
             }
+        }
+        public string GetSlotLevel(KlasseLevel classlvls)
+        {
+            string slotlvl = "";
+            if (classlvls.Spellcasting.SpellSlotsLevel1 != 0)
+            {
+                slotlvl = "1st";
+                warlockslots = classlvls.Spellcasting.SpellSlotsLevel1;
+            }
+            if (classlvls.Spellcasting.SpellSlotsLevel2 != 0)
+            {
+                slotlvl = "2nd";
+                warlockslots = classlvls.Spellcasting.SpellSlotsLevel2;
+            }
+            if (classlvls.Spellcasting.SpellSlotsLevel3 != 0)
+            {
+                slotlvl = "3rd";
+                warlockslots = classlvls.Spellcasting.SpellSlotsLevel3;
+            }
+            if (classlvls.Spellcasting.SpellSlotsLevel4 != 0)
+            {
+                slotlvl = "4th";
+                warlockslots = classlvls.Spellcasting.SpellSlotsLevel4;
+            }
+            if (classlvls.Spellcasting.SpellSlotsLevel5 != 0)
+            {
+                slotlvl = "5th";
+                warlockslots = classlvls.Spellcasting.SpellSlotsLevel5;
+            }
+            return slotlvl;
         }
     }
 }

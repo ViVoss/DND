@@ -34,13 +34,30 @@ namespace DND
 
         [JsonProperty("class")]
         public Klasse klasse { get; set; }
+
         [JsonProperty("subclass")]
         public Subclass Subclass { get; set; }
+
         [JsonProperty("spellcasting")]
         public Spellcasting Spellcasting { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }
+
+        [JsonProperty("spell_slots_level_1")]
+        public int SpellSlotsLevel1 { get; set; }
+
+        [JsonProperty("spell_slots_level_2")]
+        public int SpellSlotsLevel2 { get; set; }
+
+        [JsonProperty("spell_slots_level_3")]
+        public int SpellSlotsLevel3 { get; set; }
+
+        [JsonProperty("spell_slots_level_4")]
+        public int SpellSlotsLevel4 { get; set; }
+
+        [JsonProperty("spell_slots_level_5")]
+        public int SpellSlotsLevel5 { get; set; }
     }
     public partial class Subclass
     {
@@ -54,24 +71,34 @@ namespace DND
     {
         [JsonProperty("cantrips_known")]
         public int CantripsKnown { get; set; }
+
         [JsonProperty("spells_known")]
         public int SpellsKnown { get; set; }
+
         [JsonProperty("spell_slots_level_1")]
         public int SpellSlotsLevel1 { get; set; }
+
         [JsonProperty("spell_slots_level_2")]
         public int SpellSlotsLevel2 { get; set; }
+
         [JsonProperty("spell_slots_level_3")]
         public int SpellSlotsLevel3 { get; set; }
+
         [JsonProperty("spell_slots_level_4")]
         public int SpellSlotsLevel4 { get; set; }
+
         [JsonProperty("spell_slots_level_5")]
         public int SpellSlotsLevel5 { get; set; }
+
         [JsonProperty("spell_slots_level_6")]
         public int SpellSlotsLevel6 { get; set; }
+
         [JsonProperty("spell_slots_level_7")]
         public int SpellSlotsLevel7 { get; set; }
+
         [JsonProperty("spell_slots_level_8")]
         public int SpellSlotsLevel8 { get; set; }
+
         [JsonProperty("spell_slots_level_9")]
         public int SpellSlotsLevel9 { get; set; }
     }
@@ -93,23 +120,54 @@ namespace DND
 
         [JsonProperty("brutal_critical_dice")]
         public int BrutalCriticalDice { get; set; }
+
         [JsonProperty("martial_arts")]
         public MartialArts MartialArts { get; set; }
+
+        [JsonProperty("ki_points")]
+        public int KiPoints { get; set; }
+
+        [JsonProperty("unarmored_movement")]
+        public int UnarmoredMovement { get; set; }
+
         [JsonProperty("bardic_inspiration_die")]
         public int BardicInspirationDie { get; set; }
+
         [JsonProperty("song_of_rest_die")]
         public int SongOfRestDie { get; set; }
+
         [JsonProperty("magical_secrets_max_5")]
         public int MagicalSecretsMax5 { get; set; }
+
         [JsonProperty("magical_secrets_max_7")]
         public int MagicalSecretsMax7 { get; set; }
+
         [JsonProperty("magical_secrets_max_9")]
         public int MagicalSecretsMax9 { get; set; }
+
         [JsonProperty("channel_divinity_charges")]
         public int ChannelDivinityCharges { get; set; }
+
         [JsonProperty("destroy_undead_cr")]
         public double DestroyUndeadCR { get; set; }
 
+        [JsonProperty("invocations_known")]
+        public int InvocationsKnown { get; set; }
+
+        [JsonProperty("sneak_attack")]
+        public SneakAttack SneakAttack { get; set; }
+
+        [JsonProperty("sorcery_points")]
+        public int SorceryPoints { get; set; }
+
+    }
+    public partial class SneakAttack
+    {
+        [JsonProperty("dice_count")]
+        public int DiceCount { get; set; }
+
+        [JsonProperty("dice_value")]
+        public int DiceValue { get; set; }
     }
     public partial class FeatureChoice
     {
