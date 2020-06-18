@@ -7,9 +7,44 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Overview">
-
     <Grid>
-        <TextBox Text="OVERVIEW"/>
-        <Button Name="Save" Content="SAVE" Margin="50" Click="Save_Click"/>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="Resources_Creation/PaperTexture.jpg"/>
+            </Grid.Background>
+            <!--
+            <StackPanel Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Name"/>
+                    <TextBox Name="CharacterName" MaxLength="64" Width="406" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Race"/>
+                    <TextBox Name="Race" MaxLength="64" Width="406" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Subrace"/>
+                    <TextBox Name="Subrace" MaxLength="64" Width="406" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Class"/>
+                    <TextBox Name="Class" Width="406" MaxLength="64" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Background"/>
+                    <TextBox Name="Background" Width="406" MaxLength="64" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Attributes"/>
+                    <TextBox Name="Attributes" Width="406" MaxLength="64" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Spells"/>
+                    <TextBox Name="Spells" MaxLength="64" Width="406" Margin="0,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+            </StackPanel>
+            -->
+        </Grid>
+        <Button Name="Save" Content="Save Character" Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" FontSize="20" Click="Save_Click"/>
     </Grid>
 </Page>
