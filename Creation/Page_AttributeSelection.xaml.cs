@@ -45,6 +45,20 @@ namespace DND
             cmbAttributeValuesInt.ItemsSource = cmbItemList;
             cmbAttributeValuesWis.ItemsSource = cmbItemList;
             cmbAttributeValuesCha.ItemsSource = cmbItemList;
+
+            loadAttributes();
+        }
+
+        private void loadAttributes()
+        {
+            this.cmbAttributeValuesStr.Text = Character.Current.Attributes.Strength.ToString();
+            this.cmbAttributeValuesDex.Text = Character.Current.Attributes.Dexterity.ToString();
+            this.cmbAttributeValuesCon.Text = Character.Current.Attributes.Constitution.ToString();
+            this.cmbAttributeValuesInt.Text = Character.Current.Attributes.Intelligence.ToString();
+            this.cmbAttributeValuesWis.Text = Character.Current.Attributes.Wisdom.ToString();
+            this.cmbAttributeValuesCha.Text = Character.Current.Attributes.Charisma.ToString();
+
+
         }
 
         private void cmbAttributeValuesStr_SelectionChanged(object sender, SelectionChangedEventArgs e)

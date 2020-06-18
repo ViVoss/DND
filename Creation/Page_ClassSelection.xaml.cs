@@ -32,6 +32,9 @@ namespace DND
         private void Button_Class_Click(object sender, RoutedEventArgs e)
         {
 
+            skillComboBoxList.Clear();
+            equipmentComboBoxList.Clear();
+
             Creation.TextBox_Class.Text = ((Button)sender).Tag.ToString();
             Character.Current.Class = Creation.TextBox_Class.Text;
             this.Creation.ButtonContinueEnabled(true);
@@ -158,7 +161,46 @@ namespace DND
                 default:
                     break;
             }
+
+
+
+
+            //load saved skills
+            if (Character.Current.ClassSkills != null)
+            {
+                String[] skills = new string[Character.Current.ClassSkills.Count];
+                Character.Current.ClassSkills.CopyTo(skills);
+                for (int i = 0; i < skills.Length; i++)
+                {
+                    try
+                    {
+                        skillComboBoxList[i].SelectedValue = skills[i];
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+
+            //load saved equipment
+            if (Character.Current.ClassStartEquipment != null)
+            {
+                String[] equipment = new string[Character.Current.ClassStartEquipment.Count];
+                Character.Current.ClassStartEquipment.CopyTo(equipment);
+                for (int i = 0; i < equipment.Length; i++)
+                {
+                    try
+                    {
+                        equipmentComboBoxList[i].SelectedValue = equipment[i];
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
         }
+
+        public List<ComboBox> skillComboBoxList = new List<ComboBox>();
 
         private void addClassInfoToTextBlock(Klasse clazz)
         {
@@ -213,8 +255,10 @@ namespace DND
                 for (int i = 0; i < skills.Choose; i++)
                 {
                     ComboBox SkillsToChooseFrom_ComboBox = new ComboBox();
+                    skillComboBoxList.Add(SkillsToChooseFrom_ComboBox);
                     SkillsToChooseFrom_ComboBox.Width = 200;
                     SkillsToChooseFrom_ComboBox.HorizontalAlignment = HorizontalAlignment.Left;
+                    SkillsToChooseFrom_ComboBox.SelectionChanged += new SelectionChangedEventHandler(SkillsChanged);
 
                     foreach (Proficiency skill in skills.From)
                     {
@@ -267,6 +311,8 @@ namespace DND
             TextBlock_ClassStartingEquipmentValue.Text = startingEquip;
         }
 
+        public List<ComboBox> equipmentComboBoxList = new List<ComboBox>();
+
         private void addStartingEquipmentChoiceToMakeInfoToTextBlock(List<Choice> choices, int choiceNumber)
         {
             if (choices != null)
@@ -288,8 +334,10 @@ namespace DND
                     ClassStartingEquipmentStackPanel.Children.Add(TextBlock_StartingEquipChooseFrom);
 
                     ComboBox ComboBox_StartingEquipment = new ComboBox();
+                    equipmentComboBoxList.Add(ComboBox_StartingEquipment);
                     ComboBox_StartingEquipment.Width = 200;
                     ComboBox_StartingEquipment.HorizontalAlignment = HorizontalAlignment.Left;
+                    ComboBox_StartingEquipment.SelectionChanged += new SelectionChangedEventHandler(EquipmentChanged);
 
                     foreach (StartingEquipmentElement startingEquipElem in choice.From)
                     {
@@ -299,6 +347,32 @@ namespace DND
                     ClassStartingEquipmentStackPanel.Children.Add(ComboBox_StartingEquipment);
                 }
             }
+        }
+
+        private void SkillsChanged(object sender, RoutedEventArgs e)
+        {
+            List<String> skills = new List<String>();
+            foreach (ComboBox comboBox in skillComboBoxList)
+            {
+                if (comboBox.SelectedValue != null)
+                {
+                    skills.Add(comboBox.SelectedValue.ToString());
+                }
+            }
+            Character.Current.ClassSkills = skills;
+        }
+
+        private void EquipmentChanged(object sender, RoutedEventArgs e)
+        {
+            List<String> equip = new List<String>();
+            foreach (ComboBox comboBox in equipmentComboBoxList)
+            {
+                if(comboBox.SelectedValue != null)
+                {
+                    equip.Add(comboBox.SelectedValue.ToString());
+                }
+            }
+            Character.Current.ClassStartEquipment = equip;
         }
     }
 }

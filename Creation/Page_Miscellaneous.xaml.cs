@@ -43,6 +43,14 @@ namespace DND
             this.CharacterHairColor.Text = Character.Current.Appearance.Haircolor;
             this.CharacterEyeColor.Text = Character.Current.Appearance.Eyecolor;
             this.CharacterSkinColor.Text = Character.Current.Appearance.Skincolor;
+            this.CharacterPersonalityTrait1.Text = Character.Current.PersonalityTraitOne;
+            this.CharacterPersonalityTrait2.Text = Character.Current.PersonalityTraitTwo;
+            this.CharacterIdeals.Text = Character.Current.Ideals;
+            this.CharacterBonds.Text = Character.Current.Bonds;
+            this.CharacterFlaws.Text = Character.Current.Flaws;
+            this.CharacterFactionName.Text = Character.Current.FactionName;
+            this.CharacterDescriptionBackstory.Text = Character.Current.BackStory;
+            this.CharacterNotes.Text = Character.Current.Notes;
 
         }
 
@@ -117,42 +125,42 @@ namespace DND
 
         private void CharacterPersonalityTrait1_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.PersonalityTraitOne = ((TextBox)sender).Text;
         }
 
         private void CharacterPersonalityTrait2_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.PersonalityTraitTwo = ((TextBox)sender).Text;
         }
 
         private void CharacterIdeals_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.Ideals = ((TextBox)sender).Text;
         }
 
         private void CharacterBonds_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.Bonds = ((TextBox)sender).Text;
         }
 
         private void CharacterFlaws_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.Flaws = ((TextBox)sender).Text;
         }
 
         private void CharacterFactionName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.FactionName = ((TextBox)sender).Text;
         }
 
         private void CharacterDescriptionBackstory_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.BackStory = ((TextBox)sender).Text;
         }
 
         private void CharacterNotes_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Character.Current.Notes = ((TextBox)sender).Text;
         }
     }
 }

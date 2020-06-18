@@ -22,7 +22,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="buttonCharacterÖffnen" Content="Öffnen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10" IsEnabled="False" Click="btnCharacterÖffnen_Click"/>
-        <Button x:Name="buttonCharacterLöschen" Content="Löschen" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="10" IsEnabled="False" Click="btnCharacterLöschen_Click"/>
+        <Button x:Name="buttonCharacterÖffnen" Content="Open" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10" IsEnabled="False" Click="btnCharacterÖffnen_Click"/>
+        <Button x:Name="buttonCharacterLöschen" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="10" IsEnabled="False" Click="btnCharacterLöschen_Click"/>
     </Grid>
 </Page>

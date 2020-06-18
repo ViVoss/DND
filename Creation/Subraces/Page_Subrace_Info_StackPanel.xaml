@@ -31,7 +31,7 @@
             </StackPanel>
             <StackPanel>
                 <TextBlock Name="TextBlock_Subrace_LanguageOptionsKey" Text="Language Option:" FontWeight="Bold" FontSize="10"/>
-                <ComboBox Name="LanguageOption_ComboBox" Margin="0,0,5,5"/>
+                <ComboBox Name="LanguageOption_ComboBox" Margin="0,0,5,5" SelectionChanged="LanguageOption_ComboBox_SelectionChanged"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Name="TextBlock_Subrace_RacialTraitsKey" Text="Racial Traits:" FontWeight="Bold" FontSize="10"/>
@@ -39,7 +39,7 @@
             </StackPanel>
             <StackPanel>
                 <TextBlock Name="TextBlock_Subrace_RacialTraitOptionsKey" Text="Racial Trait Options:" FontWeight="Bold" FontSize="10"/>
-                <ComboBox Name="RacialTraitOption_ComboBox" Margin="0,0,5,5"/>
+                <ComboBox Name="RacialTraitOption_ComboBox" Margin="0,0,5,5" SelectionChanged="RacialTraitOption_ComboBox_SelectionChanged"/>
             </StackPanel>
             <StackPanel.Background>
                 <ImageBrush ImageSource="Resources_Subraces/General/PaperTexture2.jpg"/>

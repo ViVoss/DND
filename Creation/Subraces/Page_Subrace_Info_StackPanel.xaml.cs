@@ -24,6 +24,15 @@ namespace DND
         {
             InitializeComponent();
 
+            if(Character.Current.RaceLanguage != "")
+            {
+                this.LanguageOption_ComboBox.SelectedValue = Character.Current.RaceLanguage;
+            }
+            if(Character.Current.RaceTraitOption != "")
+            {
+                this.RacialTraitOption_ComboBox.SelectedValue = Character.Current.RaceTraitOption;
+            }
+
             Label_Subrace.Content = subrace.Name;
 
             string abilityBonusInc = "";
@@ -155,6 +164,16 @@ namespace DND
                 RacialTraitOption_ComboBox.IsEnabled = false;
             }
 
+        }
+
+        private void LanguageOption_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Character.Current.RaceLanguage = ((ComboBox)sender).SelectedValue.ToString();
+        }
+
+        private void RacialTraitOption_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Character.Current.RaceTraitOption = ((ComboBox)sender).SelectedValue.ToString();
         }
     }
 }

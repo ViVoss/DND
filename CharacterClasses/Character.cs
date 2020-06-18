@@ -63,6 +63,12 @@ namespace DND
         [BsonElement("class")]
         public String Class { get; set; }
 
+        [BsonElement("classskills")]
+        public List<String> ClassSkills { get; set; }
+
+        [BsonElement("classstartequipment")]
+        public List<String> ClassStartEquipment { get; set; }
+
         [BsonElement("level")]
         public UInt16 Level { get; set; } = 1;
 
@@ -72,8 +78,20 @@ namespace DND
         [BsonElement("background")]
         public String Background { get; set; }
 
+        [BsonElement("backgroundlanguage")]
+        public String BackgroundLanguage { get; set; }
+
+        [BsonElement("backgroundequipment")]
+        public String BackgroundEquipment { get; set; }
+
         [BsonElement("race")]
         public String Race { get; set; }
+
+        [BsonElement("racelanguage")]
+        public String RaceLanguage { get; set; }
+
+        [BsonElement("racetraitoption")]
+        public String RaceTraitOption { get; set; }
 
         [BsonElement("subrace")]
         public String SubRace { get; set; }
@@ -89,6 +107,33 @@ namespace DND
 
         [BsonElement("alignment")]
         public String Alignment { get; set; }
+
+        [BsonElement("spells")]
+        public List<String> Spells { get; set; }
+
+        [BsonElement("personalitytraitone")]
+        public String PersonalityTraitOne { get; set; }
+
+        [BsonElement("personalitytraittwo")]
+        public String PersonalityTraitTwo { get; set; }
+
+        [BsonElement("ideals")]
+        public String Ideals { get; set; }
+
+        [BsonElement("bonds")]
+        public String Bonds { get; set; }
+
+        [BsonElement("flaws")]
+        public String Flaws { get; set; }
+
+        [BsonElement("factionname")]
+        public String FactionName { get; set; }
+
+        [BsonElement("backstory")]
+        public String BackStory { get; set; }
+
+        [BsonElement("notes")]
+        public String Notes { get; set; }
 
         [BsonIgnore]
         public static Character Current { get; set; }
@@ -128,7 +173,7 @@ namespace DND
 
             bool exists = Exists(Character.Current.OldCharacterName);
 
-            MessageBox.Show(exists.ToString());
+            //MessageBox.Show("Existed before: " + exists.ToString());
 
             if (exists)
             {

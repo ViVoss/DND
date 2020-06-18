@@ -54,7 +54,7 @@
                 </StackPanel>
                 <StackPanel Name="BackgroundLangOptionsStackPanel">
                     <TextBlock Name="TextBlock_BackgroundLangOptionsKey" Text="Language Options: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                    <ComboBox Name="ComboBox_BackgroundLanguageOptions" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                    <ComboBox Name="ComboBox_BackgroundLanguageOptions" Width="300" HorizontalAlignment="Left" Visibility="Hidden" SelectionChanged="ComboBox_BackgroundLanguageOptions_SelectionChanged"/>
                 </StackPanel>
                 <StackPanel Name="BackgroundEquipStackPanel">
                     <TextBlock Name="TextBlock_BackgroundEquipKey" Text="Equipment: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
@@ -62,7 +62,7 @@
                 </StackPanel>
                 <StackPanel Name="BackgroundEquipOptionsStackPanel">
                     <TextBlock Name="TextBlock_BackgroundEquipOptionsKey" Text="Equipment Options: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>
-                    <ComboBox Name="ComboBox_BackgroundEquipmentOptions" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                    <ComboBox Name="ComboBox_BackgroundEquipmentOptions" Width="300" HorizontalAlignment="Left" Visibility="Hidden" SelectionChanged="ComboBox_BackgroundEquipmentOptions_SelectionChanged"/>
                 </StackPanel>
                 <StackPanel Name="BackgroundFeatureStackPanel">
                     <TextBlock Name="TextBlock_BackgroundFeatureKey" Text="Feature: " TextWrapping="Wrap" Padding="0,0,5,0" FontWeight="Bold" Visibility="Hidden"/>

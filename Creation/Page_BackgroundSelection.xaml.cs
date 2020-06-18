@@ -32,6 +32,9 @@ namespace DND
 
         private void Button_Background_Click(object sender, RoutedEventArgs e)
         {
+            this.ComboBox_BackgroundLanguageOptions.SelectedValue = Character.Current.BackgroundLanguage;
+            this.ComboBox_BackgroundEquipmentOptions.SelectedValue = Character.Current.BackgroundEquipment;
+
             string currBackground = ((Button)sender).Tag.ToString();
 
             Label_BackgroundInfoTitle.Visibility = Visibility.Visible;
@@ -268,6 +271,17 @@ namespace DND
             }
             
             TextBlock_BackgroundFeatureValue.Text = features;
+        }
+
+        private void ComboBox_BackgroundLanguageOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Character.Current.BackgroundLanguage = ((ComboBox)sender).SelectedValue.ToString();
+            
+        }
+
+        private void ComboBox_BackgroundEquipmentOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Character.Current.BackgroundEquipment = ((ComboBox)sender).SelectedValue.ToString();
         }
     }
 }

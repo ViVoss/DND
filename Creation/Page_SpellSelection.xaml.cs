@@ -119,6 +119,12 @@ namespace DND
             foreach (Spells spell in spellList) {
                 SpellSelection_CheckListBox.Items.Add(spell.Name);
             }
+
+            //select spells
+            foreach (string spell in Character.Current.Spells)
+            {
+                SpellSelection_CheckListBox.SelectedItems.Add(spell);
+            }
         }
 
         private void EnableContinueBtn()
@@ -135,6 +141,7 @@ namespace DND
 
         private void SpellSelection_CheckListBox_ItemSelectionChanged(object sender, ItemSelectionChangedEventArgs e)
         {
+
             if (SpellSelection_CheckListBox.SelectedItem != null)
             {
                 Character.Current.SpellList.Spells.Add(new Spell(SpellSelection_CheckListBox.SelectedItem.ToString(), 1, true));
@@ -151,6 +158,14 @@ namespace DND
             {
                 SpellSelection_CheckListBox.SelectedItems.RemoveAt(choicesToMake - 1);
             }
+
+            List<String> spells = new List<String>();
+            foreach (var item in SpellSelection_CheckListBox.SelectedItems)
+            {
+                spells.Add(item.ToString());
+            }
+
+            Character.Current.Spells = spells;
         }
     }
 }

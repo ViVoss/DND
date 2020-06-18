@@ -84,6 +84,8 @@ namespace DND
         {
             if (Frame1.Content == RaceSelection)
             {
+                Character.Current.OldCharacterName = Character.Current.CharacterName;
+
                 //RaceSelection speichern
                 Character.Current.Race = this.TextBox_Race.Text;
                 Character.Current.SubRace = this.TextBox_Subrace.Text;
@@ -203,10 +205,7 @@ namespace DND
                 if (Character.Current.CharacterName != "")
                 {
                     //Kopie vom CharacterName im OldCharacterName hinterlegen
-                    if (Character.Current.OldCharacterName == null)
-                    {
-                        Character.Current.OldCharacterName = Character.Current.CharacterName;
-                    }
+                    Character.Current.OldCharacterName = Character.Current.CharacterName;
 
                     //Characternamen auslesen
                     MiscellaneousSelection.CharacterName.Text = Character.Current.CharacterName;
