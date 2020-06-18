@@ -121,9 +121,12 @@ namespace DND
             }
 
             //select spells
-            foreach (string spell in Character.Current.Spells)
+            if (Character.Current.Spells != null)
             {
-                SpellSelection_CheckListBox.SelectedItems.Add(spell);
+                foreach (string spell in Character.Current.Spells)
+                {
+                    SpellSelection_CheckListBox.SelectedItems.Add(spell);
+                }
             }
         }
 
